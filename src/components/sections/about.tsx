@@ -227,7 +227,7 @@ export function About() {
 								Soy Ingeniero en Computación por la UNAM (2017-2022), un viaje académico que culminó con la defensa de mi tesis en la Universidad Atlántica de Florida, ampliando mi perspectiva global.
 							</p>
 							<p>
-								Actualmente, mi carrera se centra en la intersección de las tecnologías que están definiendo el futuro: <strong>Web3, criptomonedas e Inteligencia Artificial</strong>. Como <strong>Cofundador y CTO de Criptec.io</strong>, lidero el desarrollo de soluciones innovadoras en el espacio cripto.
+								Currently, my career is focused on the intersection of technologies defining the future: <strong>Web3, cryptocurrencies, and Artificial Intelligence</strong>. As <strong>Creative Director at <Link href="https://criptec.io" target="_blank" className="text-primary-foreground underline hover:text-zinc-300">Criptec.io</Link></strong>, I lead the development of innovative solutions in the crypto space.
 							</p>
 							<p>
 								Desde enero de 2022, también me desempeño como <strong>QA Engineer en American Express</strong>, donde aplico mi atención al detalle para garantizar la calidad y robustez de productos de clase mundial. Esta experiencia corporativa complementa mi agilidad en el mundo startup, dándome una visión integral del ciclo de vida del software.
