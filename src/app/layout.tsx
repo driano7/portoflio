@@ -45,6 +45,7 @@ export default function RootLayout({
           attribute="class"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           defaultTheme="dark"
 <<<<<<< HEAD
           enableSystem
@@ -69,8 +70,11 @@ export default function RootLayout({
 >>>>>>> e27c3de (habia visto la animación rápidamente y la quitaste (los puntos de fondo))
 =======
           defaultTheme="dark"
+=======
+          defaultTheme="system"
+>>>>>>> 48211b0 (¿puedes abrir el sitio de acuerdo al tema que tiene establecido el dispo)
           themes={["light", "dark", "dim"]}
-          enableSystem={false}
+          enableSystem
           disableTransitionOnChange
         >
 <<<<<<< HEAD
