@@ -3,10 +3,14 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 'use client';
 =======
 'use client';
 <<<<<<< HEAD
+=======
+'use client';
+>>>>>>> 321e9f9 (no veo la pinshi foto :((( jajaj)
 import Image from "next/image";
 >>>>>>> 321e9f9 (no veo la pinshi foto :((( jajaj)
 =======
