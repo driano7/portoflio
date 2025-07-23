@@ -38,7 +38,7 @@ export default async function ProjectsPage() {
   const repos = await getRepos();
 
   return (
-    <div className="bg-black text-white min-h-screen">
+    <div className="bg-background text-white min-h-screen">
       <Particles
         className="absolute inset-0 -z-10 animate-fade-in"
         quantity={100}

@@ -5,7 +5,7 @@ import Particles from '@/components/particles';
 
 export function Landing() {
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-black text-white">
+    <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-background text-white">
       <Particles
         className="absolute inset-0 -z-10 animate-fade-in"
         quantity={100}
