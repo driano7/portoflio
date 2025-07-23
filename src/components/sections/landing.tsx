@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import Link from 'next/link';
+import { Particles } from '@/components/particles';
 
 export function Landing() {
   return (
