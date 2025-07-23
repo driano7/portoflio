@@ -42,7 +42,7 @@ export default function Particles({
 
   useEffect(() => {
     initCanvas();
-  }, [refresh, quantity, staticity, ease, theme]);
+  }, [theme]); // Rerun when theme changes
 
   const initCanvas = () => {
     resizeCanvas();
