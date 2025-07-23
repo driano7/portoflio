@@ -13,11 +13,12 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: 'placehold.co',
-        port: '',
-        pathname: '/**',
       },
     ],
   },
+  devIndicators: {
+    buildActivity: false
+  }
 };
 
 export default nextConfig;
