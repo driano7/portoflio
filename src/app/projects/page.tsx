@@ -35,7 +35,15 @@ export default async function ProjectsPage() {
   const repos = await getRepos();
 
   return (
+<<<<<<< HEAD
     <div className="bg-transparent min-h-screen">
+=======
+    <div className="bg-background text-white min-h-screen">
+      <Particles
+        className="absolute inset-0 -z-10 animate-fade-in"
+        quantity={100}
+      />
+>>>>>>> 214392b (los temas que cambian es el recuadro de los temas, no todo el sitio web)
       <header className="fixed inset-x-0 top-0 z-50 backdrop-blur-sm">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-start h-16">
