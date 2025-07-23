@@ -36,8 +36,11 @@ export default async function ProjectsPage() {
 
   return (
 <<<<<<< HEAD
+<<<<<<< HEAD
     <div className="bg-transparent min-h-screen">
 =======
+=======
+>>>>>>> 214392b (los temas que cambian es el recuadro de los temas, no todo el sitio web)
     <div className="bg-background text-white min-h-screen">
       <Particles
         className="absolute inset-0 -z-10 animate-fade-in"
