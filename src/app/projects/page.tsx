@@ -1,7 +1,6 @@
 import { Projects } from "@/components/sections/projects";
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
-import Particles from '@/components/particles';
 
 export type Repository = {
   id: number;
@@ -36,11 +35,7 @@ export default async function ProjectsPage() {
   const repos = await getRepos();
 
   return (
-    <div className="bg-background text-foreground min-h-screen">
-      <Particles
-        className="absolute inset-0 -z-10 animate-fade-in"
-        quantity={100}
-      />
+    <div className="bg-transparent min-h-screen">
       <header className="fixed inset-x-0 top-0 z-50 backdrop-blur-sm">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-start h-16">

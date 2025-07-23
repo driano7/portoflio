@@ -4,6 +4,7 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from '@/components/theme-provider';
 import { ThemeSwitcher } from '@/components/theme-switcher';
+import { Background } from '@/components/background';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -26,8 +27,10 @@ export default function RootLayout({
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
+          enableSystem
           disableTransitionOnChange
         >
+          <Background />
           <div className="absolute top-4 right-4 z-50">
             <ThemeSwitcher />
           </div>

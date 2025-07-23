@@ -1,20 +1,10 @@
 'use client';
 import React from 'react';
 import Link from 'next/link';
-import Particles from '@/components/particles';
-import { Github, Linkedin } from 'lucide-react';
 
 export function Landing() {
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-background text-foreground">
-      <div className="hidden sm:flex absolute inset-0 -z-10 animate-fade-in">
-        <Particles
-            className="absolute inset-0"
-            quantity={500}
-            ease={80}
-            refresh
-        />
-      </div>
+    <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-transparent text-foreground">
       <div
         className="relative z-10 flex flex-col items-center text-center px-4 animate-fade-in"
       >
