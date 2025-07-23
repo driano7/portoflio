@@ -11,9 +11,9 @@ const socials = [
 	},
 	{
 		icon: <Mail size={20} />,
-		href: "mailto:donalex7@gmail.com",
+		href: "mailto:donovanriano@gmail.com",
 		label: "Email",
-		handle: "donalex7@gmail.com",
+		handle: "donovanriano@gmail.com",
 	},
 	{
 		icon: <Github size={20} />,
@@ -39,31 +39,28 @@ export function Contact() {
 						I'm open to new opportunities. Feel free to reach out.
 					</p>
 				</div>
-				<div className="mx-auto mt-16 grid grid-cols-1 gap-8 text-center sm:grid-cols-2">
+				<div className="mx-auto mt-16 grid grid-cols-1 gap-8 text-center sm:grid-cols-2 lg:grid-cols-4">
 					{socials.map((s) => (
-						<Card key={s.label} className="p-4 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-zinc-700 transition-colors">
-							<Link
-								href={s.href}
-								target="_blank"
-								className="p-4 relative flex flex-col items-center gap-4 duration-700 group"
-							>
-								<span
-									className="absolute w-px h-2/3 bg-gradient-to-b from-zinc-500 via-zinc-500/50 to-transparent"
-									aria-hidden="true"
-								/>
-								<span className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full border border-zinc-800 bg-zinc-900 text-sm text-zinc-200 duration-1000 group-hover:text-white group-hover:bg-zinc-900">
-									{s.icon}
-								</span>{" "}
-								<div className="z-10 flex flex-col items-center">
-									<span className="text-xl font-medium text-zinc-200 duration-150 lg:text-3xl group-hover:text-white">
-										{s.handle}
-									</span>
-									<span className="mt-4 text-sm text-center text-zinc-400 duration-1000 group-hover:text-zinc-200">
-										{s.label}
-									</span>
+						<Link href={s.href} target="_blank" key={s.label}>
+							<Card className="p-4 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-zinc-700 transition-colors h-full">
+								<div
+									className="p-4 relative flex flex-col items-center gap-4 duration-700 group h-full justify-center"
+								>
+									<span
+										className="absolute w-px h-2/3 bg-gradient-to-b from-zinc-500 via-zinc-500/50 to-transparent"
+										aria-hidden="true"
+									/>
+									<span className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full border border-zinc-800 bg-zinc-900 text-sm text-zinc-200 duration-1000 group-hover:text-white group-hover:bg-zinc-900">
+										{s.icon}
+									</span>{" "}
+									<div className="z-10 flex flex-col items-center">
+										<span className="text-xl font-medium text-zinc-200 duration-150 lg:text-3xl group-hover:text-white">
+											{s.label}
+										</span>
+									</div>
 								</div>
-							</Link>
-						</Card>
+							</Card>
+						</Link>
 					))}
 				</div>
 			</div>
