@@ -118,9 +118,13 @@ export function Background() {
     };
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     let animationFrameId: number;
 =======
 >>>>>>> e27c3de (habia visto la animación rápidamente y la quitaste (los puntos de fondo))
+=======
+    let animationFrameId: number;
+>>>>>>> 7c077b0 (¿puedes arreglar la animación del fondo?)
     const animate = () => {
       ctx.clearRect(0, 0, width, height);
       for (const circle of circles) {
@@ -131,8 +135,12 @@ export function Background() {
       animationFrameId = requestAnimationFrame(animate);
 =======
       connect();
+<<<<<<< HEAD
       requestAnimationFrame(animate);
 >>>>>>> e27c3de (habia visto la animación rápidamente y la quitaste (los puntos de fondo))
+=======
+      animationFrameId = requestAnimationFrame(animate);
+>>>>>>> 7c077b0 (¿puedes arreglar la animación del fondo?)
     };
 
     const handleResize = () => {
@@ -147,9 +155,13 @@ export function Background() {
     return () => {
       window.removeEventListener('resize', handleResize);
 <<<<<<< HEAD
+<<<<<<< HEAD
       cancelAnimationFrame(animationFrameId);
 =======
 >>>>>>> e27c3de (habia visto la animación rápidamente y la quitaste (los puntos de fondo))
+=======
+      cancelAnimationFrame(animationFrameId);
+>>>>>>> 7c077b0 (¿puedes arreglar la animación del fondo?)
     };
   }, [theme]);
 
@@ -160,7 +172,11 @@ export function Background() {
     />
   );
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 }
 >>>>>>> e27c3de (habia visto la animación rápidamente y la quitaste (los puntos de fondo))
+=======
+}
+>>>>>>> 7c077b0 (¿puedes arreglar la animación del fondo?)
