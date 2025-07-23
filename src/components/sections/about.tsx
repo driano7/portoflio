@@ -75,6 +75,9 @@ export function About() {
 							<p>
 								Since January 2022, I have also served as a <strong>QA Engineer at American Express</strong>, where I apply my attention to detail to ensure the quality and robustness of world-class products. This role has also been crucial in developing my skills in communication, project management, and leadership. This corporate experience complements my agility in the startup world, giving me a comprehensive view of the software lifecycle.
 							</p>
+							<p>
+								As a future project, I am working hard with my team to open a coffee shop in Mexico City, offering quality Mexican-origin beverages.
+							</p>
 						</div>
 						<div className="flex items-start justify-center lg:justify-end">
 							<Image
