@@ -23,7 +23,10 @@ export function Background() {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> e27c3de (habia visto la animación rápidamente y la quitaste (los puntos de fondo))
     const connect = () => {
         let opacity = 1;
         for (let i = 0; i < circles.length; i++) {
@@ -48,9 +51,12 @@ export function Background() {
     };
 
 
+<<<<<<< HEAD
 >>>>>>> e27c3de (habia visto la animación rápidamente y la quitaste (los puntos de fondo))
 =======
 >>>>>>> 77c6510 (mejora la animación de los puntos balncos de fondo del homepage por favo)
+=======
+>>>>>>> e27c3de (habia visto la animación rápidamente y la quitaste (los puntos de fondo))
     class Circle {
       x: number;
       y: number;
@@ -63,6 +69,7 @@ export function Background() {
         this.x = x;
         this.y = y;
         this.color = color;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         this.size = Math.random() * 1.5 + 1;
@@ -78,6 +85,11 @@ export function Background() {
         this.speedX = Math.random() * 2 - 1;
         this.speedY = Math.random() * 2 - 1;
 >>>>>>> 77c6510 (mejora la animación de los puntos balncos de fondo del homepage por favo)
+=======
+        this.size = Math.random() * 2 + 1;
+        this.speedX = Math.random() * 3 - 1.5;
+        this.speedY = Math.random() * 3 - 1.5;
+>>>>>>> e27c3de (habia visto la animación rápidamente y la quitaste (los puntos de fondo))
       }
 
       update() {
@@ -109,6 +121,7 @@ export function Background() {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       for (let i = 0; i < 100; i++) {
 =======
       for (let i = 0; i < 80; i++) {
@@ -116,10 +129,14 @@ export function Background() {
 =======
       for (let i = 0; i < 100; i++) {
 >>>>>>> 77c6510 (mejora la animación de los puntos balncos de fondo del homepage por favo)
+=======
+      for (let i = 0; i < 80; i++) {
+>>>>>>> e27c3de (habia visto la animación rápidamente y la quitaste (los puntos de fondo))
         circles.push(
           new Circle(
             Math.random() * width,
             Math.random() * height,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             `rgba(${particleColor}, ${Math.random() * 0.4 + 0.1})`
@@ -129,11 +146,15 @@ export function Background() {
 =======
             `rgba(${particleColor}, ${Math.random() * 0.4 + 0.1})`
 >>>>>>> 77c6510 (mejora la animación de los puntos balncos de fondo del homepage por favo)
+=======
+            `rgba(${particleColor}, ${Math.random()})`
+>>>>>>> e27c3de (habia visto la animación rápidamente y la quitaste (los puntos de fondo))
           )
         );
       }
     };
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     let animationFrameId: number;
@@ -142,12 +163,15 @@ export function Background() {
 =======
     let animationFrameId: number;
 >>>>>>> 7c077b0 (¿puedes arreglar la animación del fondo?)
+=======
+>>>>>>> e27c3de (habia visto la animación rápidamente y la quitaste (los puntos de fondo))
     const animate = () => {
       ctx.clearRect(0, 0, width, height);
       for (const circle of circles) {
         circle.update();
         circle.draw();
       }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -161,6 +185,10 @@ export function Background() {
 =======
       animationFrameId = requestAnimationFrame(animate);
 >>>>>>> 7c077b0 (¿puedes arreglar la animación del fondo?)
+=======
+      connect();
+      requestAnimationFrame(animate);
+>>>>>>> e27c3de (habia visto la animación rápidamente y la quitaste (los puntos de fondo))
     };
 
     const handleResize = () => {
@@ -176,12 +204,15 @@ export function Background() {
       window.removeEventListener('resize', handleResize);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       cancelAnimationFrame(animationFrameId);
 =======
 >>>>>>> e27c3de (habia visto la animación rápidamente y la quitaste (los puntos de fondo))
 =======
       cancelAnimationFrame(animationFrameId);
 >>>>>>> 7c077b0 (¿puedes arreglar la animación del fondo?)
+=======
+>>>>>>> e27c3de (habia visto la animación rápidamente y la quitaste (los puntos de fondo))
     };
   }, [theme]);
 
@@ -193,6 +224,7 @@ export function Background() {
   );
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 }
@@ -200,3 +232,6 @@ export function Background() {
 =======
 }
 >>>>>>> 7c077b0 (¿puedes arreglar la animación del fondo?)
+=======
+}
+>>>>>>> e27c3de (habia visto la animación rápidamente y la quitaste (los puntos de fondo))
