@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 'use client';
 import Link from "next/link";
 
@@ -34,12 +35,17 @@ export function About() {
 							</p>
 						</div>
 =======
+=======
+import Image from "next/image";
+
+>>>>>>> 894718b (agrega esta foto en la parte superior derecha del about (con bordes redo)
 export function About() {
 	return (
 		<div id="about" className="relative py-24 sm:py-32 animate-fade-in">
 			<div className="container mx-auto px-4">
 				<div className="mx-auto max-w-2xl lg:max-w-4xl">
 					<h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl text-center">About Me</h2>
+<<<<<<< HEAD
 					<div className="mt-8 space-y-6 text-lg leading-8 text-zinc-400">
 						<p>
 							I am a passionate full-stack developer with a keen eye for creating beautiful, modern, and highly functional user interfaces. My journey in web development began with a fascination for how things work on the internet, which quickly grew into a full-fledged passion for building seamless digital experiences.
@@ -51,13 +57,41 @@ export function About() {
 							When I'm not coding, I enjoy contributing to open-source projects, exploring new hiking trails, and experimenting with new recipes in the kitchen. I believe in continuous learning and am always looking for new opportunities to grow as a developer and as an individual.
 						</p>
 >>>>>>> 24442a0 (¡puedes agregar una sección que diga about me? y que puedas poner descri)
+=======
+					<div className="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-12">
+						<div className="lg:col-span-2 space-y-6 text-lg leading-8 text-zinc-400">
+							<p>
+								Soy Ingeniero en Computación por la UNAM (2017-2022), un viaje académico que culminó con la defensa de mi tesis en la Universidad Atlántica de Florida, ampliando mi perspectiva global.
+							</p>
+							<p>
+								Actualmente, mi carrera se centra en la intersección de las tecnologías que están definiendo el futuro: <strong>Web3, criptomonedas e Inteligencia Artificial</strong>. Como <strong>Cofundador y CTO de Criptec.io</strong>, lidero el desarrollo de soluciones innovadoras en el espacio cripto.
+							</p>
+							<p>
+								Desde enero de 2022, también me desempeño como <strong>QA Engineer en American Express</strong>, donde aplico mi atención al detalle para garantizar la calidad y robustez de productos de clase mundial. Esta experiencia corporativa complementa mi agilidad en el mundo startup, dándome una visión integral del ciclo de vida del software.
+							</p>
+						</div>
+						<div className="flex items-start justify-center lg:justify-end">
+							<Image
+								src="/profile.jpg"
+								alt="Donovan Riaño"
+								width={300}
+								height={300}
+								className="rounded-2xl object-cover aspect-square"
+								data-ai-hint="man portrait"
+							/>
+						</div>
+>>>>>>> 894718b (agrega esta foto en la parte superior derecha del about (con bordes redo)
 					</div>
 				</div>
 			</div>
 		</div>
 	);
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 }
 >>>>>>> 24442a0 (¡puedes agregar una sección que diga about me? y que puedas poner descri)
+=======
+}
+>>>>>>> 894718b (agrega esta foto en la parte superior derecha del about (con bordes redo)
