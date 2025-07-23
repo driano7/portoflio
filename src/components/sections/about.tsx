@@ -10,12 +10,18 @@ export function About() {
 				<div id="about" className="mx-auto max-w-2xl lg:max-w-4xl">
 					<h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl text-center">About Me</h2>
 					<div className="mt-8 text-lg leading-8 text-zinc-400 text-justify">
+<<<<<<< HEAD
 						<img
 							src="/profile.jpg"
+=======
+						<Image
+							src="https://placehold.co/300x300.png"
+>>>>>>> f277cdb (alinea el texto del about con la foto que no cargas como este ejemplo, d)
 							alt="Donovan Riaño"
 							width={300}
 							height={300}
 							className="rounded-2xl object-cover aspect-square float-none sm:float-right ml-0 sm:ml-8 mb-4 sm:mb-2"
+<<<<<<< HEAD
 						/>
 						<div className="space-y-6">
 							<p>
@@ -63,6 +69,11 @@ export function About() {
 =======
 					<div className="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-12">
 						<div className="lg:col-span-2 space-y-6 text-lg leading-8 text-zinc-400 text-justify">
+=======
+							data-ai-hint="man portrait"
+						/>
+						<div className="space-y-6">
+>>>>>>> f277cdb (alinea el texto del about con la foto que no cargas como este ejemplo, d)
 							<p>
 								I hold a bachelor's degree in Computer Engineering from UNAM (2017-2022), an academic journey that culminated with the defense of my thesis—my fourth scientific paper on web ads detection and the analysis of malpractices by big companies—at Florida Atlantic University (FAU), broadening my global perspective.
 							</p>
@@ -79,6 +90,7 @@ export function About() {
 								As a future project, I am working hard with my team to open a coffee shop in Mexico City. You can follow our journey at <Link href="https://xococafe.netlify.app" target="_blank" className="underline font-bold hover:text-zinc-300">Xoco Café</Link>. We will offer quality Mexican-origin beverages, with flavor and quality as our main cornerstones, and we will also accept <strong>crypto payments</strong>.
 							</p>
 						</div>
+<<<<<<< HEAD
 						<div className="flex items-start justify-center lg:justify-end">
 							<Image
 								src="https://placehold.co/300x300.png"
@@ -90,11 +102,14 @@ export function About() {
 							/>
 						</div>
 >>>>>>> 894718b (agrega esta foto en la parte superior derecha del about (con bordes redo)
+=======
+>>>>>>> f277cdb (alinea el texto del about con la foto que no cargas como este ejemplo, d)
 					</div>
 				</div>
 			</div>
 		</div>
 	);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 }
@@ -104,3 +119,6 @@ export function About() {
 =======
 }
 >>>>>>> 894718b (agrega esta foto en la parte superior derecha del about (con bordes redo)
+=======
+}
+>>>>>>> f277cdb (alinea el texto del about con la foto que no cargas como este ejemplo, d)
