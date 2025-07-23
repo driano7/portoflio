@@ -5,6 +5,9 @@ import React, { useRef, useEffect } from 'react';
 =======
 import { cn } from '@/lib/utils';
 import { useTheme } from 'next-themes';
+<<<<<<< HEAD
+>>>>>>> 43930a9 (soluciona lo de la foto y lo de la animación de inicio)
+=======
 >>>>>>> 43930a9 (soluciona lo de la foto y lo de la animación de inicio)
 
 interface ParticlesProps {
@@ -39,6 +42,9 @@ export function Particles({
   const mousePosition = useRef({ x: 0, y: 0 });
   const { theme } = useTheme();
 
+<<<<<<< HEAD
+>>>>>>> 43930a9 (soluciona lo de la foto y lo de la animación de inicio)
+=======
 >>>>>>> 43930a9 (soluciona lo de la foto y lo de la animación de inicio)
   const dpr = typeof window !== 'undefined' ? window.devicePixelRatio : 1;
 
@@ -64,6 +70,9 @@ export function Particles({
       initCanvas();
     }
   }, [refresh, theme]);
+<<<<<<< HEAD
+>>>>>>> 43930a9 (soluciona lo de la foto y lo de la animación de inicio)
+=======
 >>>>>>> 43930a9 (soluciona lo de la foto y lo de la animación de inicio)
 
   const initCanvas = () => {
@@ -119,7 +128,11 @@ export function Particles({
     const translateX = 0;
     const translateY = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
     const size = Math.floor(Math.random() * 2) + 1;
+=======
+    const size = Math.floor(Math.random() * 2) + 0.5;
+>>>>>>> 43930a9 (soluciona lo de la foto y lo de la animación de inicio)
 =======
     const size = Math.floor(Math.random() * 2) + 0.5;
 >>>>>>> 43930a9 (soluciona lo de la foto y lo de la animación de inicio)
@@ -192,7 +205,10 @@ export function Particles({
     clearContext();
     circles.current.forEach((circle: Circle, i: number) => {
 <<<<<<< HEAD
+<<<<<<< HEAD
       // Handle the alpha animation
+=======
+>>>>>>> 43930a9 (soluciona lo de la foto y lo de la animación de inicio)
 =======
 >>>>>>> 43930a9 (soluciona lo de la foto y lo de la animación de inicio)
       const edge = [
@@ -220,9 +236,13 @@ export function Particles({
         ease;
       circle.translateY +=
 <<<<<<< HEAD
+<<<<<<< HEAD
         (mouse.current.y / (staticity / circle.magnetism) - circle.translateY) /
         ease;
       // circle gets out of the canvas
+=======
+        (mousePosition.current.y / (staticity / circle.magnetism) - circle.translateY) / ease;
+>>>>>>> 43930a9 (soluciona lo de la foto y lo de la animación de inicio)
 =======
         (mousePosition.current.y / (staticity / circle.magnetism) - circle.translateY) / ease;
 >>>>>>> 43930a9 (soluciona lo de la foto y lo de la animación de inicio)
