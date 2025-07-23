@@ -37,6 +37,7 @@ export function About() {
 =======
 =======
 import Image from "next/image";
+import Link from "next/link";
 
 >>>>>>> 894718b (agrega esta foto en la parte superior derecha del about (con bordes redo)
 export function About() {
@@ -61,13 +62,13 @@ export function About() {
 					<div className="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-12">
 						<div className="lg:col-span-2 space-y-6 text-lg leading-8 text-zinc-400">
 							<p>
-								Soy Ingeniero en Computación por la UNAM (2017-2022), un viaje académico que culminó con la defensa de mi tesis en la Universidad Atlántica de Florida, ampliando mi perspectiva global.
+								I hold a degree in Computer Engineering from UNAM (2017-2022), an academic journey that culminated with the defense of my thesis at Florida Atlantic University, broadening my global perspective.
 							</p>
 							<p>
-								Actualmente, mi carrera se centra en la intersección de las tecnologías que están definiendo el futuro: <strong>Web3, criptomonedas e Inteligencia Artificial</strong>. Como <strong>Cofundador y CTO de Criptec.io</strong>, lidero el desarrollo de soluciones innovadoras en el espacio cripto.
+								Currently, my career is focused on the intersection of technologies defining the future: <strong>Web3, cryptocurrencies, and Artificial Intelligence</strong>. As <strong>Creative Director at <Link href="https://criptec.io" target="_blank" className="text-primary-foreground underline hover:text-zinc-300">Criptec.io</Link></strong>, I lead the development of innovative solutions in the crypto space.
 							</p>
 							<p>
-								Desde enero de 2022, también me desempeño como <strong>QA Engineer en American Express</strong>, donde aplico mi atención al detalle para garantizar la calidad y robustez de productos de clase mundial. Esta experiencia corporativa complementa mi agilidad en el mundo startup, dándome una visión integral del ciclo de vida del software.
+								Since January 2022, I have also served as a <strong>QA Engineer at American Express</strong>, where I apply my attention to detail to ensure the quality and robustness of world-class products. This corporate experience complements my agility in the startup world, giving me a comprehensive view of the software lifecycle.
 							</p>
 						</div>
 						<div className="flex items-start justify-center lg:justify-end">
