@@ -171,7 +171,7 @@ export function About() {
 								src="https://placehold.co/300x300.png"
 =======
 					<div className="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-12">
-						<div className="lg:col-span-2 space-y-6 text-lg leading-8 text-zinc-400">
+						<div className="lg:col-span-2 space-y-6 text-lg leading-8 text-zinc-400 text-justify">
 							<p>
 								I hold a degree in Computer Engineering from UNAM (2017-2022), an academic journey that culminated with the defense of my thesis at Florida Atlantic University, broadening my global perspective.
 							</p>
@@ -184,8 +184,12 @@ export function About() {
 						</div>
 						<div className="flex items-start justify-center lg:justify-end">
 							<Image
+<<<<<<< HEAD
 								src="/profile.jpg"
 >>>>>>> 894718b (agrega esta foto en la parte superior derecha del about (con bordes redo)
+=======
+								src="https://placehold.co/300x300.png"
+>>>>>>> c4e77c1 (soluciona el tema de mi foto de perfil en about)
 								alt="Donovan Riaño"
 								width={300}
 								height={300}
