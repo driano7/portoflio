@@ -24,6 +24,7 @@ export function Background() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> e27c3de (habia visto la animación rápidamente y la quitaste (los puntos de fondo))
@@ -57,6 +58,8 @@ export function Background() {
 >>>>>>> 77c6510 (mejora la animación de los puntos balncos de fondo del homepage por favo)
 =======
 >>>>>>> e27c3de (habia visto la animación rápidamente y la quitaste (los puntos de fondo))
+=======
+>>>>>>> 77c6510 (mejora la animación de los puntos balncos de fondo del homepage por favo)
     class Circle {
       x: number;
       y: number;
@@ -69,6 +72,7 @@ export function Background() {
         this.x = x;
         this.y = y;
         this.color = color;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -90,6 +94,11 @@ export function Background() {
         this.speedX = Math.random() * 3 - 1.5;
         this.speedY = Math.random() * 3 - 1.5;
 >>>>>>> e27c3de (habia visto la animación rápidamente y la quitaste (los puntos de fondo))
+=======
+        this.size = Math.random() * 1.5 + 1;
+        this.speedX = Math.random() * 2 - 1;
+        this.speedY = Math.random() * 2 - 1;
+>>>>>>> 77c6510 (mejora la animación de los puntos balncos de fondo del homepage por favo)
       }
 
       update() {
@@ -122,6 +131,7 @@ export function Background() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       for (let i = 0; i < 100; i++) {
 =======
       for (let i = 0; i < 80; i++) {
@@ -132,6 +142,9 @@ export function Background() {
 =======
       for (let i = 0; i < 80; i++) {
 >>>>>>> e27c3de (habia visto la animación rápidamente y la quitaste (los puntos de fondo))
+=======
+      for (let i = 0; i < 100; i++) {
+>>>>>>> 77c6510 (mejora la animación de los puntos balncos de fondo del homepage por favo)
         circles.push(
           new Circle(
             Math.random() * width,
@@ -139,6 +152,7 @@ export function Background() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             `rgba(${particleColor}, ${Math.random() * 0.4 + 0.1})`
 =======
             `rgba(${particleColor}, ${Math.random()})`
@@ -149,6 +163,9 @@ export function Background() {
 =======
             `rgba(${particleColor}, ${Math.random()})`
 >>>>>>> e27c3de (habia visto la animación rápidamente y la quitaste (los puntos de fondo))
+=======
+            `rgba(${particleColor}, ${Math.random() * 0.4 + 0.1})`
+>>>>>>> 77c6510 (mejora la animación de los puntos balncos de fondo del homepage por favo)
           )
         );
       }
@@ -178,6 +195,9 @@ export function Background() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 77c6510 (mejora la animación de los puntos balncos de fondo del homepage por favo)
 =======
 >>>>>>> 77c6510 (mejora la animación de los puntos balncos de fondo del homepage por favo)
       animationFrameId = requestAnimationFrame(animate);
