@@ -157,6 +157,7 @@ export function Background() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     let animationFrameId: number;
 =======
 >>>>>>> e27c3de (habia visto la animación rápidamente y la quitaste (los puntos de fondo))
@@ -165,6 +166,9 @@ export function Background() {
 >>>>>>> 7c077b0 (¿puedes arreglar la animación del fondo?)
 =======
 >>>>>>> e27c3de (habia visto la animación rápidamente y la quitaste (los puntos de fondo))
+=======
+    let animationFrameId: number;
+>>>>>>> 7c077b0 (¿puedes arreglar la animación del fondo?)
     const animate = () => {
       ctx.clearRect(0, 0, width, height);
       for (const circle of circles) {
@@ -187,8 +191,12 @@ export function Background() {
 >>>>>>> 7c077b0 (¿puedes arreglar la animación del fondo?)
 =======
       connect();
+<<<<<<< HEAD
       requestAnimationFrame(animate);
 >>>>>>> e27c3de (habia visto la animación rápidamente y la quitaste (los puntos de fondo))
+=======
+      animationFrameId = requestAnimationFrame(animate);
+>>>>>>> 7c077b0 (¿puedes arreglar la animación del fondo?)
     };
 
     const handleResize = () => {
@@ -205,6 +213,7 @@ export function Background() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       cancelAnimationFrame(animationFrameId);
 =======
 >>>>>>> e27c3de (habia visto la animación rápidamente y la quitaste (los puntos de fondo))
@@ -213,6 +222,9 @@ export function Background() {
 >>>>>>> 7c077b0 (¿puedes arreglar la animación del fondo?)
 =======
 >>>>>>> e27c3de (habia visto la animación rápidamente y la quitaste (los puntos de fondo))
+=======
+      cancelAnimationFrame(animationFrameId);
+>>>>>>> 7c077b0 (¿puedes arreglar la animación del fondo?)
     };
   }, [theme]);
 
@@ -225,6 +237,7 @@ export function Background() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 }
@@ -235,3 +248,6 @@ export function Background() {
 =======
 }
 >>>>>>> e27c3de (habia visto la animación rápidamente y la quitaste (los puntos de fondo))
+=======
+}
+>>>>>>> 7c077b0 (¿puedes arreglar la animación del fondo?)
