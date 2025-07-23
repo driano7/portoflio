@@ -42,7 +42,7 @@ export default function Particles({
 
   useEffect(() => {
     initCanvas();
-  }, [theme]); // Rerun when theme changes
+  }, [theme, refresh]);
 
   const initCanvas = () => {
     resizeCanvas();
@@ -52,8 +52,14 @@ export default function Particles({
   const onMouseMove = (e: MouseEvent) => {
     if (canvasRef.current) {
       const rect = canvasRef.current.getBoundingClientRect();
-      mousePosition.current.x = e.clientX - rect.left;
-      mousePosition.current.y = e.clientY - rect.top;
+      const { w, h } = canvasSize.current;
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const inside = x < w && x > 0 && y < h && y > 0;
+      if (inside) {
+        mousePosition.current.x = x;
+        mousePosition.current.y = y;
+      }
     }
   };
 
@@ -88,7 +94,7 @@ export default function Particles({
     const y = Math.floor(Math.random() * canvasSize.current.h);
     const translateX = 0;
     const translateY = 0;
-    const size = Math.floor(Math.random() * 2) + 0.1;
+    const size = Math.floor(Math.random() * 2) + 1;
     const alpha = 0;
     const targetAlpha = parseFloat((Math.random() * 0.6 + 0.1).toFixed(1));
     const dx = (Math.random() - 0.5) * 0.2;
@@ -143,7 +149,6 @@ export default function Particles({
   const animate = () => {
     clearContext();
     circles.current.forEach((circle: Circle, i: number) => {
-      // Handle the alpha value
       const edge = [
         circle.x + circle.translateX,
         canvasSize.current.w - (circle.x + circle.translateX),
@@ -165,9 +170,9 @@ export default function Particles({
       circle.x += circle.dx;
       circle.y += circle.dy;
       circle.translateX +=
-        (mousePosition.current.x - circle.x) / (staticity / circle.magnetism) - circle.translateX / ease;
+        (mousePosition.current.x - (circle.x + circle.translateX)) / (staticity / circle.magnetism) - circle.translateX / ease;
       circle.translateY +=
-        (mousePosition.current.y - circle.y) / (staticity / circle.magnetism) - circle.translateY / ease;
+        (mousePosition.current.y - (circle.y + circle.translateY)) / (staticity / circle.magnetism) - circle.translateY / ease;
       
       if (
         circle.x < -circle.size ||
