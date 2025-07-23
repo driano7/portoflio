@@ -60,7 +60,7 @@ export function About() {
 >>>>>>> 24442a0 (¡puedes agregar una sección que diga about me? y que puedas poner descri)
 =======
 					<div className="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-12">
-						<div className="lg:col-span-2 space-y-6 text-lg leading-8 text-zinc-400">
+						<div className="lg:col-span-2 space-y-6 text-lg leading-8 text-zinc-400 text-justify">
 							<p>
 								I hold a degree in Computer Engineering from UNAM (2017-2022), an academic journey that culminated with the defense of my thesis at Florida Atlantic University, broadening my global perspective.
 							</p>
@@ -73,7 +73,7 @@ export function About() {
 						</div>
 						<div className="flex items-start justify-center lg:justify-end">
 							<Image
-								src="/profile.jpg"
+								src="https://placehold.co/300x300.png"
 								alt="Donovan Riaño"
 								width={300}
 								height={300}
