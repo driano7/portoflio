@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from '@/components/theme-provider';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { ThemeSwitcher } from '@/components/theme-switcher';
 import { Background } from '@/components/background';
 =======
@@ -12,6 +13,8 @@ import { Background } from '@/components/background';
 =======
 import { Background } from '@/components/background';
 >>>>>>> e27c3de (habia visto la animación rápidamente y la quitaste (los puntos de fondo))
+=======
+>>>>>>> 8873152 (agregame el botón para elegir los temas (light, dark, dim) del lado supe)
 
 const inter = Inter({
   subsets: ['latin'],
@@ -37,6 +40,7 @@ export default function RootLayout({
         <ThemeProvider
           attribute="class"
 <<<<<<< HEAD
+<<<<<<< HEAD
           defaultTheme="dark"
 <<<<<<< HEAD
           enableSystem
@@ -59,6 +63,11 @@ export default function RootLayout({
 =======
           <Background />
 >>>>>>> e27c3de (habia visto la animación rápidamente y la quitaste (los puntos de fondo))
+=======
+          defaultTheme="dark"
+          themes={["light", "dark", "dim"]}
+        >
+>>>>>>> 8873152 (agregame el botón para elegir los temas (light, dark, dim) del lado supe)
           {children}
           <Toaster />
         </ThemeProvider>

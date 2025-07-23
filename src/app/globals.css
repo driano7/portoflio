@@ -11,6 +11,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
 <<<<<<< HEAD
+<<<<<<< HEAD
     --primary: 240 5.9% 10%;
     --primary-foreground: 0 0% 98%;
     --secondary: 240 4.8% 95.9%;
@@ -25,6 +26,8 @@
     --input: 240 5.9% 90%;
     --ring: 240 5.9% 10%;
 =======
+=======
+>>>>>>> 8873152 (agregame el botón para elegir los temas (light, dark, dim) del lado supe)
     --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96.1%;
@@ -38,6 +41,9 @@
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
+<<<<<<< HEAD
+>>>>>>> 8873152 (agregame el botón para elegir los temas (light, dark, dim) del lado supe)
+=======
 >>>>>>> 8873152 (agregame el botón para elegir los temas (light, dark, dim) del lado supe)
     --radius: 0.5rem;
   }
@@ -66,6 +72,7 @@
 
   .dim {
 <<<<<<< HEAD
+<<<<<<< HEAD
     --background: 224 71.4% 4.1%;
     --foreground: 210 20% 98%;
     --card: 224 71.4% 4.1%;
@@ -86,6 +93,8 @@
     --input: 215 27.9% 16.9%;
     --ring: 216 12.2% 83.9%;
 =======
+=======
+>>>>>>> 8873152 (agregame el botón para elegir los temas (light, dark, dim) del lado supe)
     --background: 225 10% 10%;
     --foreground: 0 0% 98%;
     --card: 225 10% 10%;
@@ -105,6 +114,9 @@
     --border: 225 3.7% 20.9%;
     --input: 225 3.7% 20.9%;
     --ring: 225 4.9% 83.9%;
+<<<<<<< HEAD
+>>>>>>> 8873152 (agregame el botón para elegir los temas (light, dark, dim) del lado supe)
+=======
 >>>>>>> 8873152 (agregame el botón para elegir los temas (light, dark, dim) del lado supe)
   }
 }
