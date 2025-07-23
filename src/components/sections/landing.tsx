@@ -35,6 +35,12 @@ export function Landing() {
             About
           </Link>
           <Link
+            href="/about#web3"
+            className="text-sm duration-500 text-zinc-500 hover:text-zinc-300"
+          >
+            Web3
+          </Link>
+          <Link
             href="/projects"
             className="text-sm duration-500 text-muted-foreground hover:text-foreground"
           >
