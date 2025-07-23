@@ -25,7 +25,11 @@ export default function AboutPage() {
         </div>
     );
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 }
 >>>>>>> 24442a0 (¡puedes agregar una sección que diga about me? y que puedas poner descri)
+=======
+}
+>>>>>>> 894718b (agrega esta foto en la parte superior derecha del about (con bordes redo)

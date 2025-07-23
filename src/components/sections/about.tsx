@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 'use client';
 =======
 'use client';
@@ -113,12 +114,17 @@ export function About() {
 					<h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl text-center">About Me</h2>
 <<<<<<< HEAD
 =======
+=======
+import Image from "next/image";
+
+>>>>>>> 894718b (agrega esta foto en la parte superior derecha del about (con bordes redo)
 export function About() {
 	return (
 		<div id="about" className="relative py-24 sm:py-32 animate-fade-in">
 			<div className="container mx-auto px-4">
 				<div className="mx-auto max-w-2xl lg:max-w-4xl">
 					<h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl text-center">About Me</h2>
+<<<<<<< HEAD
 >>>>>>> 24442a0 (¡puedes agregar una sección que diga about me? y que puedas poner descri)
 					<div className="mt-8 space-y-6 text-lg leading-8 text-zinc-400">
 						<p>
@@ -162,6 +168,23 @@ export function About() {
 						<div className="flex items-start justify-center lg:justify-end">
 							<Image
 								src="https://placehold.co/300x300.png"
+=======
+					<div className="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-12">
+						<div className="lg:col-span-2 space-y-6 text-lg leading-8 text-zinc-400">
+							<p>
+								Soy Ingeniero en Computación por la UNAM (2017-2022), un viaje académico que culminó con la defensa de mi tesis en la Universidad Atlántica de Florida, ampliando mi perspectiva global.
+							</p>
+							<p>
+								Actualmente, mi carrera se centra en la intersección de las tecnologías que están definiendo el futuro: <strong>Web3, criptomonedas e Inteligencia Artificial</strong>. Como <strong>Cofundador y CTO de Criptec.io</strong>, lidero el desarrollo de soluciones innovadoras en el espacio cripto.
+							</p>
+							<p>
+								Desde enero de 2022, también me desempeño como <strong>QA Engineer en American Express</strong>, donde aplico mi atención al detalle para garantizar la calidad y robustez de productos de clase mundial. Esta experiencia corporativa complementa mi agilidad en el mundo startup, dándome una visión integral del ciclo de vida del software.
+							</p>
+						</div>
+						<div className="flex items-start justify-center lg:justify-end">
+							<Image
+								src="/profile.jpg"
+>>>>>>> 894718b (agrega esta foto en la parte superior derecha del about (con bordes redo)
 								alt="Donovan Riaño"
 								width={300}
 								height={300}
@@ -169,6 +192,7 @@ export function About() {
 								data-ai-hint="man portrait"
 							/>
 						</div>
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 894718b (agrega esta foto en la parte superior derecha del about (con bordes redo)
 =======
@@ -179,11 +203,14 @@ export function About() {
 >>>>>>> 90340d2 (alinea el texto del about con la foto que no cargas como este ejemplo, d)
 =======
 >>>>>>> 24442a0 (¡puedes agregar una sección que diga about me? y que puedas poner descri)
+=======
+>>>>>>> 894718b (agrega esta foto en la parte superior derecha del about (con bordes redo)
 					</div>
 				</div>
 			</div>
 		</div>
 	);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -217,3 +244,6 @@ export function About() {
 =======
 }
 >>>>>>> 24442a0 (¡puedes agregar una sección que diga about me? y que puedas poner descri)
+=======
+}
+>>>>>>> 894718b (agrega esta foto en la parte superior derecha del about (con bordes redo)
