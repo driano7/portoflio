@@ -24,6 +24,7 @@ export function About() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 5d93610 (jaja no se ve la foto :()
 =======
@@ -54,10 +55,15 @@ export function About() {
 =======
 >>>>>>> f277cdb (alinea el texto del about con la foto que no cargas como este ejemplo, d)
 >>>>>>> a8defe1 (no veo la pinshi foto :((( jajaj)
+=======
+						<Image
+							src="https://placehold.co/300x300.png"
+>>>>>>> f277cdb (alinea el texto del about con la foto que no cargas como este ejemplo, d)
 							alt="Donovan Riaño"
 							width={300}
 							height={300}
 							className="rounded-2xl object-cover aspect-square float-none sm:float-right ml-0 sm:ml-8 mb-4 sm:mb-2"
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -78,6 +84,9 @@ export function About() {
 							data-ai-hint="man portrait"
 >>>>>>> f277cdb (alinea el texto del about con la foto que no cargas como este ejemplo, d)
 >>>>>>> a8defe1 (no veo la pinshi foto :((( jajaj)
+=======
+							data-ai-hint="man portrait"
+>>>>>>> f277cdb (alinea el texto del about con la foto que no cargas como este ejemplo, d)
 						/>
 						<div className="space-y-6">
 							<p>
@@ -96,6 +105,7 @@ export function About() {
 								As a future project, I am working hard with my team to open a coffee shop in Mexico City. You can follow our journey at <Link href="https://xococafe.netlify.app" target="_blank" className="underline font-bold hover:text-zinc-300">Xoco Café</Link>. We will offer quality Mexican-origin beverages, with flavor and quality as our main cornerstones, and we will also accept <strong>crypto payments</strong>.
 							</p>
 						</div>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -210,11 +220,14 @@ export function About() {
 >>>>>>> 24442a0 (¡puedes agregar una sección que diga about me? y que puedas poner descri)
 =======
 >>>>>>> 894718b (agrega esta foto en la parte superior derecha del about (con bordes redo)
+=======
+>>>>>>> f277cdb (alinea el texto del about con la foto que no cargas como este ejemplo, d)
 					</div>
 				</div>
 			</div>
 		</div>
 	);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -252,3 +265,6 @@ export function About() {
 =======
 }
 >>>>>>> 894718b (agrega esta foto en la parte superior derecha del about (con bordes redo)
+=======
+}
+>>>>>>> f277cdb (alinea el texto del about con la foto que no cargas como este ejemplo, d)
