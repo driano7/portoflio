@@ -5,6 +5,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 'use client';
+<<<<<<< HEAD
 =======
 'use client';
 <<<<<<< HEAD
@@ -13,6 +14,8 @@
 >>>>>>> 321e9f9 (no veo la pinshi foto :((( jajaj)
 import Image from "next/image";
 >>>>>>> 321e9f9 (no veo la pinshi foto :((( jajaj)
+=======
+>>>>>>> 5d93610 (jaja no se ve la foto :()
 =======
 >>>>>>> 5d93610 (jaja no se ve la foto :()
 import Link from "next/link";
@@ -29,6 +32,7 @@ export function About() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 5d93610 (jaja no se ve la foto :()
 =======
@@ -37,6 +41,8 @@ export function About() {
 =======
 >>>>>>> 5d93610 (jaja no se ve la foto :()
 >>>>>>> 55a8b73 (jaja no se ve la foto :()
+=======
+>>>>>>> 5d93610 (jaja no se ve la foto :()
 						<img
 							src="/profile.jpg"
 =======
@@ -249,6 +255,7 @@ export function About() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 }
@@ -283,3 +290,6 @@ export function About() {
 =======
 }
 >>>>>>> 12524c9 (agrega esta foto en mi about por favor)
+=======
+}
+>>>>>>> 5d93610 (jaja no se ve la foto :()
