@@ -113,20 +113,24 @@ export function Background() {
       }
 
       draw() {
-        ctx.fillStyle = this.color;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
+        if (ctx) {
+            ctx.fillStyle = this.color;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fill();
+        }
       }
     }
 
     const init = () => {
       width = window.innerWidth;
       height = window.innerHeight;
-      canvas.width = width;
-      canvas.height = height;
+      if (canvas) {
+        canvas.width = width;
+        canvas.height = height;
+      }
       circles = [];
-      const particleColor = theme === 'dark' || theme === 'dim' ? '255, 255, 255' : '0, 0, 0';
+      const particleColor = theme === 'light' ? '0, 0, 0' : '255, 255, 255';
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -187,10 +191,12 @@ export function Background() {
     let animationFrameId: number;
 >>>>>>> 7c077b0 (¿puedes arreglar la animación del fondo?)
     const animate = () => {
-      ctx.clearRect(0, 0, width, height);
-      for (const circle of circles) {
-        circle.update();
-        circle.draw();
+      if (ctx) {
+          ctx.clearRect(0, 0, width, height);
+          for (const circle of circles) {
+            circle.update();
+            circle.draw();
+          }
       }
 <<<<<<< HEAD
 <<<<<<< HEAD

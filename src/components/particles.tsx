@@ -162,7 +162,7 @@ export function Particles({
       context.current.beginPath();
       context.current.arc(x, y, size, 0, 2 * Math.PI);
 
-      const particleColor = theme === 'dark' || theme === 'dim' ? `255, 255, 255` : `0, 0, 0`;
+      const particleColor = theme === 'light' ? '0, 0, 0' : '255, 255, 255';
       context.current.fillStyle = `rgba(${particleColor}, ${alpha})`;
 
       context.current.fill();

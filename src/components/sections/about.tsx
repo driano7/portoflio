@@ -230,8 +230,15 @@ export function About() {
 								Currently, my career is focused on the intersection of technologies defining the future: <strong>Web3, cryptocurrencies, and Artificial Intelligence</strong>. As <strong>Creative Director at <Link href="https://criptec.io" target="_blank" className="text-primary-foreground underline hover:text-zinc-300">Criptec.io</Link></strong>, I lead the development of innovative solutions in the crypto space.
 							</p>
 							<p>
+<<<<<<< HEAD
 								Desde enero de 2022, también me desempeño como <strong>QA Engineer en American Express</strong>, donde aplico mi atención al detalle para garantizar la calidad y robustez de productos de clase mundial. Esta experiencia corporativa complementa mi agilidad en el mundo startup, dándome una visión integral del ciclo de vida del software.
+<<<<<<< HEAD
 >>>>>>> eb071c7 (pon la info en inglés)
+=======
+=======
+								Since January 2022, I have also served as a <strong>QA Engineer at American Express</strong>, where I apply my attention to detail to ensure the quality and robustness of world-class products. This role has also been crucial in developing my skills in communication, project management, and leadership. This corporate experience complements my agility in the startup world, giving me a comprehensive view of the software lifecycle.
+>>>>>>> deb0649 (en la parte de amex agrega que he desarrollado habilidades de comunicaci)
+>>>>>>> 691a690 (para el tema light, ¿puedes invertir los colores de los puntos? para que)
 							</p>
 						</div>
 						<div className="flex items-start justify-center lg:justify-end">
