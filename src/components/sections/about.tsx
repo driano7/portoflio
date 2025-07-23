@@ -62,7 +62,7 @@ export function About() {
 					<div className="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-12">
 						<div className="lg:col-span-2 space-y-6 text-lg leading-8 text-zinc-400 text-justify">
 							<p>
-								I hold a degree in Computer Engineering from UNAM (2017-2022), an academic journey that culminated with the defense of my thesis at Florida Atlantic University, broadening my global perspective.
+								I hold a bachelor's degree in Computer Engineering from UNAM (2017-2022), an academic journey that culminated with the defense of my thesis at Florida Atlantic University (FAU), broadening my global perspective.
 							</p>
 							<p>
 								Currently, my career is focused on the intersection of technologies defining the future: <strong>Web3, cryptocurrencies, and Artificial Intelligence</strong>. As <strong>Creative Director at <Link href="https://criptec.io" target="_blank" className="underline hover:text-zinc-300">Criptec.io</Link></strong>, I lead the development of innovative solutions in the crypto space.
