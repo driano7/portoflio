@@ -4,8 +4,11 @@
 'use client';
 =======
 'use client';
+<<<<<<< HEAD
 import Image from "next/image";
 >>>>>>> 321e9f9 (no veo la pinshi foto :((( jajaj)
+=======
+>>>>>>> 5d93610 (jaja no se ve la foto :()
 import Link from "next/link";
 
 export function About() {
@@ -16,6 +19,9 @@ export function About() {
 					<h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl text-center">About Me</h2>
 					<div className="mt-8 text-lg leading-8 text-zinc-400 text-justify">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5d93610 (jaja no se ve la foto :()
 						<img
 							src="/profile.jpg"
 =======
@@ -125,6 +131,7 @@ export function About() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 }
@@ -138,3 +145,6 @@ export function About() {
 =======
 }
 >>>>>>> 12524c9 (agrega esta foto en mi about por favor)
+=======
+}
+>>>>>>> 5d93610 (jaja no se ve la foto :()
