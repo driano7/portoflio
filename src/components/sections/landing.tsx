@@ -36,6 +36,15 @@ export function Landing() {
         <nav className="my-16 flex items-center justify-center gap-4">
           <Link
             href="/about"
+<<<<<<< HEAD
+=======
+            className="text-sm duration-500 text-zinc-500 hover:text-zinc-300"
+          >
+            About
+          </Link>
+          <Link
+            href="/projects"
+>>>>>>> 24442a0 (¡puedes agregar una sección que diga about me? y que puedas poner descri)
             className="text-sm duration-500 text-zinc-500 hover:text-zinc-300"
           >
             About

@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 'use client';
 =======
 'use client';
@@ -111,6 +112,14 @@ export function About() {
 				<div id="about" className="mx-auto max-w-2xl lg:max-w-4xl">
 					<h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl text-center">About Me</h2>
 <<<<<<< HEAD
+=======
+export function About() {
+	return (
+		<div id="about" className="relative py-24 sm:py-32 animate-fade-in">
+			<div className="container mx-auto px-4">
+				<div className="mx-auto max-w-2xl lg:max-w-4xl">
+					<h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl text-center">About Me</h2>
+>>>>>>> 24442a0 (¡puedes agregar una sección que diga about me? y que puedas poner descri)
 					<div className="mt-8 space-y-6 text-lg leading-8 text-zinc-400">
 						<p>
 							I am a passionate full-stack developer with a keen eye for creating beautiful, modern, and highly functional user interfaces. My journey in web development began with a fascination for how things work on the internet, which quickly grew into a full-fledged passion for building seamless digital experiences.
@@ -121,6 +130,7 @@ export function About() {
 						<p>
 							When I'm not coding, I enjoy contributing to open-source projects, exploring new hiking trails, and experimenting with new recipes in the kitchen. I believe in continuous learning and am always looking for new opportunities to grow as a developer and as an individual.
 						</p>
+<<<<<<< HEAD
 >>>>>>> 24442a0 (¡puedes agregar una sección que diga about me? y que puedas poner descri)
 =======
 					<div className="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-12">
@@ -167,11 +177,14 @@ export function About() {
 >>>>>>> 66060a3 (En about, deja como último párrafo que deseo abrir una cafeteria en la c)
 =======
 >>>>>>> 90340d2 (alinea el texto del about con la foto que no cargas como este ejemplo, d)
+=======
+>>>>>>> 24442a0 (¡puedes agregar una sección que diga about me? y que puedas poner descri)
 					</div>
 				</div>
 			</div>
 		</div>
 	);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -201,3 +214,6 @@ export function About() {
 =======
 }
 >>>>>>> a8defe1 (no veo la pinshi foto :((( jajaj)
+=======
+}
+>>>>>>> 24442a0 (¡puedes agregar una sección que diga about me? y que puedas poner descri)

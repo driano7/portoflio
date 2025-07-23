@@ -24,4 +24,8 @@ export default function AboutPage() {
             </main>
         </div>
     );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 24442a0 (¡puedes agregar una sección que diga about me? y que puedas poner descri)
