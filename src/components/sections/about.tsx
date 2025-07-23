@@ -33,6 +33,7 @@ export function About() {
 <<<<<<< HEAD
 							src="https://placehold.co/300x300.png"
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> f277cdb (alinea el texto del about con la foto que no cargas como este ejemplo, d)
 =======
 							src="/profile.jpg"
@@ -43,10 +44,14 @@ export function About() {
 >>>>>>> 90340d2 (alinea el texto del about con la foto que no cargas como este ejemplo, d)
 =======
 >>>>>>> 707025d (agrega esta foto en mi about por favor)
+=======
+>>>>>>> f277cdb (alinea el texto del about con la foto que no cargas como este ejemplo, d)
+>>>>>>> a8defe1 (no veo la pinshi foto :((( jajaj)
 							alt="Donovan Riaño"
 							width={300}
 							height={300}
 							className="rounded-2xl object-cover aspect-square float-none sm:float-right ml-0 sm:ml-8 mb-4 sm:mb-2"
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -61,6 +66,11 @@ export function About() {
 =======
 							data-ai-hint="man portrait"
 >>>>>>> 707025d (agrega esta foto en mi about por favor)
+=======
+=======
+							data-ai-hint="man portrait"
+>>>>>>> f277cdb (alinea el texto del about con la foto que no cargas como este ejemplo, d)
+>>>>>>> a8defe1 (no veo la pinshi foto :((( jajaj)
 						/>
 						<div className="space-y-6">
 							<p>
@@ -163,6 +173,7 @@ export function About() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 }
@@ -182,3 +193,6 @@ export function About() {
 =======
 }
 >>>>>>> 707025d (agrega esta foto en mi about por favor)
+=======
+}
+>>>>>>> a8defe1 (no veo la pinshi foto :((( jajaj)
