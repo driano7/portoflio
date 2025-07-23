@@ -1,6 +1,11 @@
 
 'use client';
 import React, { useRef, useEffect } from 'react';
+<<<<<<< HEAD
+=======
+import { cn } from '@/lib/utils';
+import { useTheme } from 'next-themes';
+>>>>>>> 43930a9 (soluciona lo de la foto y lo de la animación de inicio)
 
 interface ParticlesProps {
   className?: string;
@@ -12,7 +17,7 @@ interface ParticlesProps {
 
 export function Particles({
   className = '',
-  quantity = 30,
+  quantity = 100,
   staticity = 50,
   ease = 50,
   refresh = false,
@@ -21,6 +26,7 @@ export function Particles({
   const canvasContainerRef = useRef<HTMLDivElement>(null);
   const context = useRef<CanvasRenderingContext2D | null>(null);
   const circles = useRef<any[]>([]);
+<<<<<<< HEAD
   const mousePosition = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
   const mouse = useRef<{ x: number; y: number; vx: number; vy: number }>({
     x: 0,
@@ -29,6 +35,11 @@ export function Particles({
     vy: 0,
   });
   const canvasSize = useRef<{ w: number; h: number }>({ w: 0, h: 0 });
+=======
+  const mousePosition = useRef({ x: 0, y: 0 });
+  const { theme } = useTheme();
+
+>>>>>>> 43930a9 (soluciona lo de la foto y lo de la animación de inicio)
   const dpr = typeof window !== 'undefined' ? window.devicePixelRatio : 1;
 
   useEffect(() => {
@@ -42,11 +53,18 @@ export function Particles({
     return () => {
       window.removeEventListener('resize', initCanvas);
     };
-  }, []);
+  }, [theme]);
 
   useEffect(() => {
+<<<<<<< HEAD
     initCanvas();
   }, [refresh]);
+=======
+    if (refresh) {
+      initCanvas();
+    }
+  }, [refresh, theme]);
+>>>>>>> 43930a9 (soluciona lo de la foto y lo de la animación de inicio)
 
   const initCanvas = () => {
     resizeCanvas();
@@ -80,6 +98,8 @@ export function Particles({
     magnetism: number;
   };
 
+  const canvasSize = useRef({ w: 0, h: 0 });
+
   const resizeCanvas = () => {
     if (canvasContainerRef.current && canvasRef.current && context.current) {
       circles.current.length = 0;
@@ -98,9 +118,13 @@ export function Particles({
     const y = Math.floor(Math.random() * canvasSize.current.h);
     const translateX = 0;
     const translateY = 0;
+<<<<<<< HEAD
     const size = Math.floor(Math.random() * 2) + 1;
+=======
+    const size = Math.floor(Math.random() * 2) + 0.5;
+>>>>>>> 43930a9 (soluciona lo de la foto y lo de la animación de inicio)
     const alpha = 0;
-    const targetAlpha = parseFloat((Math.random() * 0.6 + 0.1).toFixed(1));
+    const targetAlpha = parseFloat((Math.random() * 0.4 + 0.1).toFixed(1));
     const dx = (Math.random() - 0.5) * 0.2;
     const dy = (Math.random() - 0.5) * 0.2;
     const magnetism = 0.1 + Math.random() * 4;
@@ -124,7 +148,10 @@ export function Particles({
       context.current.translate(translateX, translateY);
       context.current.beginPath();
       context.current.arc(x, y, size, 0, 2 * Math.PI);
-      context.current.fillStyle = `rgba(255, 255, 255, ${alpha})`;
+
+      const particleColor = theme === 'dark' || theme === 'dim' ? `255, 255, 255` : `0, 0, 0`;
+      context.current.fillStyle = `rgba(${particleColor}, ${alpha})`;
+
       context.current.fill();
       context.current.setTransform(dpr, 0, 0, dpr, 0, 0);
 
@@ -164,7 +191,10 @@ export function Particles({
   const animate = () => {
     clearContext();
     circles.current.forEach((circle: Circle, i: number) => {
+<<<<<<< HEAD
       // Handle the alpha animation
+=======
+>>>>>>> 43930a9 (soluciona lo de la foto y lo de la animación de inicio)
       const edge = [
         circle.x + circle.translateX, // x
         canvasSize.current.w - circle.x - circle.translateX, // w - x
@@ -189,21 +219,22 @@ export function Particles({
         (mouse.current.x / (staticity / circle.magnetism) - circle.translateX) /
         ease;
       circle.translateY +=
+<<<<<<< HEAD
         (mouse.current.y / (staticity / circle.magnetism) - circle.translateY) /
         ease;
       // circle gets out of the canvas
+=======
+        (mousePosition.current.y / (staticity / circle.magnetism) - circle.translateY) / ease;
+>>>>>>> 43930a9 (soluciona lo de la foto y lo de la animación de inicio)
       if (
         circle.x < -50 ||
         circle.x > canvasSize.current.w + 50 ||
         circle.y < -50 ||
         circle.y > canvasSize.current.h + 50
       ) {
-        // remove the circle from the array
         circles.current.splice(i, 1);
-        // create a new circle
         const newCircle = circleParams();
         drawCircle(newCircle);
-        // update the circle position
       } else {
         drawCircle(
           {
