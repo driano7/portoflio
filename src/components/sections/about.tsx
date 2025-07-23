@@ -1,6 +1,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 'use client';
+=======
+'use client';
+import Image from "next/image";
+>>>>>>> 321e9f9 (no veo la pinshi foto :((( jajaj)
 import Link from "next/link";
 
 export function About() {
