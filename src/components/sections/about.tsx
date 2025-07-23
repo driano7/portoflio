@@ -65,7 +65,7 @@ export function About() {
 								I hold a bachelor's degree in Computer Engineering from UNAM (2017-2022), an academic journey that culminated with the defense of my thesis at Florida Atlantic University (FAU), broadening my global perspective.
 							</p>
 							<p>
-								Currently, my career is focused on the intersection of technologies defining the future: <strong>Web3, cryptocurrencies, and Artificial Intelligence</strong>. As <strong>Creative Director at <Link href="https://criptec.io" target="_blank" className="underline hover:text-zinc-300">Criptec.io</Link></strong>, I lead the development of innovative solutions in the crypto space.
+								Currently, my career is focused on the intersection of technologies defining the future: <strong>Web3, cryptocurrencies, and Artificial Intelligence</strong>. As <strong>Creative Director at <Link href="https://criptec.io" target="_blank" className="underline hover:text-zinc-300">Criptec.io</Link></strong>, I lead the development of innovative solutions in the crypto space. My skills were also recognized by <strong>Meta (formerly Facebook)</strong>, where I went through a comprehensive interview process, underscoring my potential for contributing to top-tier tech companies.
 							</p>
 							<p>
 								Since January 2022, I have also served as a <strong>QA Engineer at American Express</strong>, where I apply my attention to detail to ensure the quality and robustness of world-class products. This role has also been crucial in developing my skills in communication, project management, and leadership. This corporate experience complements my agility in the startup world, giving me a comprehensive view of the software lifecycle.
