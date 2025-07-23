@@ -1,4 +1,5 @@
 'use client';
+import { useTheme } from 'next-themes';
 import React, { useRef, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 
@@ -8,7 +9,6 @@ type ParticlesProps = {
   staticity?: number;
   ease?: number;
   refresh?: boolean;
-  color?: string;
 };
 
 export default function Particles({
@@ -17,8 +17,8 @@ export default function Particles({
   staticity = 50,
   ease = 50,
   refresh = false,
-  color = '#ffffff',
 }: ParticlesProps) {
+  const { theme } = useTheme();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const canvasContainerRef = useRef<HTMLDivElement>(null);
   const context = useRef<CanvasRenderingContext2D | null>(null);
@@ -26,6 +26,7 @@ export default function Particles({
   const mousePosition = useRef({ x: 0, y: 0 });
   const canvasSize = useRef({ w: 0, h: 0 });
   const dpr = typeof window !== 'undefined' ? window.devicePixelRatio : 1;
+  const color = theme === 'dark' || theme === 'dim' ? '#ffffff' : '#000000';
 
   useEffect(() => {
     if (canvasRef.current) {
@@ -42,7 +43,7 @@ export default function Particles({
 
   useEffect(() => {
     initCanvas();
-  }, [refresh, color, quantity, staticity, ease]);
+  }, [refresh, color, quantity, staticity, ease, theme]);
 
   const initCanvas = () => {
     resizeCanvas();
@@ -103,7 +104,8 @@ export default function Particles({
       context.current.translate(translateX, translateY);
       context.current.beginPath();
       context.current.arc(x, y, size, 0, 2 * Math.PI);
-      context.current.fillStyle = `rgba(${parseInt(color.slice(1, 3), 16)}, ${parseInt(color.slice(3, 5), 16)}, ${parseInt(color.slice(5, 7), 16)}, ${alpha})`;
+      const particleColor = theme === 'dark' || theme === 'dim' ? '255, 255, 255' : '0, 0, 0';
+      context.current.fillStyle = `rgba(${particleColor}, ${alpha})`;
       context.current.fill();
       context.current.setTransform(dpr, 0, 0, dpr, 0, 0);
 
