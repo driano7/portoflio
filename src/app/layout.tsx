@@ -36,6 +36,7 @@ export default function RootLayout({
       <body className={`${inter.variable} font-sans antialiased`}>
         <ThemeProvider
           attribute="class"
+<<<<<<< HEAD
           defaultTheme="dark"
 <<<<<<< HEAD
           enableSystem
@@ -46,8 +47,11 @@ export default function RootLayout({
             <ThemeSwitcher />
           </div>
 =======
+=======
+          defaultTheme="system"
+>>>>>>> 48211b0 (¿puedes abrir el sitio de acuerdo al tema que tiene establecido el dispo)
           themes={["light", "dark", "dim"]}
-          enableSystem={false}
+          enableSystem
           disableTransitionOnChange
         >
 <<<<<<< HEAD

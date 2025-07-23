@@ -37,6 +37,10 @@ export function ThemeSwitcher() {
           <Laptop className="mr-2 h-4 w-4" />
           Dim
         </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setTheme("system")}>
+          <Laptop className="mr-2 h-4 w-4" />
+          System
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   )
