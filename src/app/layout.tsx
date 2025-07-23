@@ -4,10 +4,14 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from '@/components/theme-provider';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { ThemeSwitcher } from '@/components/theme-switcher';
 import { Background } from '@/components/background';
 =======
 >>>>>>> 8873152 (agregame el botón para elegir los temas (light, dark, dim) del lado supe)
+=======
+import { Background } from '@/components/background';
+>>>>>>> e27c3de (habia visto la animación rápidamente y la quitaste (los puntos de fondo))
 
 const inter = Inter({
   subsets: ['latin'],
@@ -43,7 +47,11 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange
         >
+<<<<<<< HEAD
 >>>>>>> 8873152 (agregame el botón para elegir los temas (light, dark, dim) del lado supe)
+=======
+          <Background />
+>>>>>>> e27c3de (habia visto la animación rápidamente y la quitaste (los puntos de fondo))
           {children}
           <Toaster />
         </ThemeProvider>
