@@ -40,6 +40,8 @@ export default function RootLayout({
           </div>
 =======
           themes={["light", "dark", "dim"]}
+          enableSystem={false}
+          disableTransitionOnChange
         >
 >>>>>>> 8873152 (agregame el botón para elegir los temas (light, dark, dim) del lado supe)
           {children}
