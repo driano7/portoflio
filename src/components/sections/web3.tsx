@@ -54,6 +54,7 @@ export function Web3() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 											Level 1: Fundamentals <ArrowRight className="w-4 h-4" />
 										</Link>
 										<Link href="https://drive.google.com/drive/u/1/folders/1TY4kh6dDwImbmLUr2pYP2FtUFgy78qQR" target="_blank" className="flex items-center justify-center gap-2 w-full text-center px-4 py-2 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition-colors">
@@ -95,6 +96,12 @@ export function Web3() {
 >>>>>>> 8584ffd (el nivel 2 dejalo como intermedio, en inglés también, en lugar de avanza)
 =======
 >>>>>>> 6446fb1 (separa las secciones de web 3 y about, que sean dos links distintos)
+=======
+											Level 1: Fundamentals <ArrowRight className="w-4 h-4" />
+										</Link>
+										<Link href="https://drive.google.com/drive/u/1/folders/1TY4kh6dDwImbmLUr2pYP2FtUFgy78qQR" target="_blank" className="flex items-center justify-center gap-2 w-full text-center px-4 py-2 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition-colors">
+											Level 2: Advanced <ArrowRight className="w-4 h-4" />
+>>>>>>> 97d7183 (en la sección de web 3, en los links de nivel 1 y dos, ponlos en inglés)
 										</Link>
 									</div>
 								</CardContent>
