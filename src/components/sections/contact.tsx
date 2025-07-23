@@ -31,7 +31,7 @@ const socials = [
 
 export function Contact() {
 	return (
-		<div id="contact" className="bg-zinc-900/50 relative py-24 sm:py-32">
+		<div id="contact" className="relative py-24 sm:py-32 animate-fade-in">
 			<div className="container mx-auto px-4">
 				<div className="mx-auto max-w-2xl text-center">
 					<h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Contact</h2>
@@ -39,13 +39,13 @@ export function Contact() {
 						I'm open to new opportunities. Feel free to reach out.
 					</p>
 				</div>
-				<div className="mx-auto mt-16 grid grid-cols-1 gap-8 text-center lg:grid-cols-2">
+				<div className="mx-auto mt-16 grid grid-cols-1 gap-8 text-center sm:grid-cols-2">
 					{socials.map((s) => (
-						<Card key={s.label} className="p-8 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-zinc-700 transition-colors">
+						<Card key={s.label} className="p-4 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-zinc-700 transition-colors">
 							<Link
 								href={s.href}
 								target="_blank"
-								className="p-8 relative flex flex-col items-center gap-4 duration-700"
+								className="p-4 relative flex flex-col items-center gap-4 duration-700 group"
 							>
 								<span
 									className="absolute w-px h-2/3 bg-gradient-to-b from-zinc-500 via-zinc-500/50 to-transparent"
