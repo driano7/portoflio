@@ -26,7 +26,6 @@ export default function Particles({
   const mousePosition = useRef({ x: 0, y: 0 });
   const canvasSize = useRef({ w: 0, h: 0 });
   const dpr = typeof window !== 'undefined' ? window.devicePixelRatio : 1;
-  const color = theme === 'dark' || theme === 'dim' ? '#ffffff' : '#000000';
 
   useEffect(() => {
     if (canvasRef.current) {
@@ -43,7 +42,7 @@ export default function Particles({
 
   useEffect(() => {
     initCanvas();
-  }, [refresh, color, quantity, staticity, ease, theme]);
+  }, [refresh, quantity, staticity, ease, theme]);
 
   const initCanvas = () => {
     resizeCanvas();
