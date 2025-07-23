@@ -5,6 +5,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 'use client';
 <<<<<<< HEAD
 =======
@@ -23,12 +24,17 @@ import Link from "next/link";
 
 =======
 >>>>>>> 711cccd (agrega esta foto en la parte superior derecha del about (con bordes redo)
+=======
+import Image from "next/image";
+
+>>>>>>> eb071c7 (pon la info en inglés)
 export function About() {
 	return (
 		<div className="relative py-24 sm:py-32 animate-fade-in">
 			<div className="container mx-auto px-4">
 				<div id="about" className="mx-auto max-w-2xl lg:max-w-4xl">
 					<h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl text-center">About Me</h2>
+<<<<<<< HEAD
 <<<<<<< HEAD
 					<div className="mt-8 text-lg leading-8 text-zinc-400 text-justify">
 <<<<<<< HEAD
@@ -214,16 +220,32 @@ export function About() {
 							</p>
 							<p>
 								Since January 2022, I have also served as a <strong>QA Engineer at American Express</strong>, where I apply my attention to detail to ensure the quality and robustness of world-class products. This corporate experience complements my agility in the startup world, giving me a comprehensive view of the software lifecycle.
+=======
+					<div className="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-12">
+						<div className="lg:col-span-2 space-y-6 text-lg leading-8 text-zinc-400">
+							<p>
+								Soy Ingeniero en Computación por la UNAM (2017-2022), un viaje académico que culminó con la defensa de mi tesis en la Universidad Atlántica de Florida, ampliando mi perspectiva global.
+							</p>
+							<p>
+								Actualmente, mi carrera se centra en la intersección de las tecnologías que están definiendo el futuro: <strong>Web3, criptomonedas e Inteligencia Artificial</strong>. Como <strong>Cofundador y CTO de Criptec.io</strong>, lidero el desarrollo de soluciones innovadoras en el espacio cripto.
+							</p>
+							<p>
+								Desde enero de 2022, también me desempeño como <strong>QA Engineer en American Express</strong>, donde aplico mi atención al detalle para garantizar la calidad y robustez de productos de clase mundial. Esta experiencia corporativa complementa mi agilidad en el mundo startup, dándome una visión integral del ciclo de vida del software.
+>>>>>>> eb071c7 (pon la info en inglés)
 							</p>
 						</div>
 						<div className="flex items-start justify-center lg:justify-end">
 							<Image
+<<<<<<< HEAD
 <<<<<<< HEAD
 								src="/profile.jpg"
 >>>>>>> 894718b (agrega esta foto en la parte superior derecha del about (con bordes redo)
 =======
 								src="https://placehold.co/300x300.png"
 >>>>>>> c4e77c1 (soluciona el tema de mi foto de perfil en about)
+=======
+								src="/profile.jpg"
+>>>>>>> eb071c7 (pon la info en inglés)
 								alt="Donovan Riaño"
 								width={300}
 								height={300}
@@ -231,6 +253,7 @@ export function About() {
 								data-ai-hint="man portrait"
 							/>
 						</div>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 894718b (agrega esta foto en la parte superior derecha del about (con bordes redo)
@@ -248,6 +271,8 @@ export function About() {
 >>>>>>> f277cdb (alinea el texto del about con la foto que no cargas como este ejemplo, d)
 =======
 >>>>>>> 711cccd (agrega esta foto en la parte superior derecha del about (con bordes redo)
+=======
+>>>>>>> eb071c7 (pon la info en inglés)
 					</div>
 				</div>
 			</div>
