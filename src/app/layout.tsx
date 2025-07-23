@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} font-sans antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          <div className="absolute bottom-4 right-4 z-50">
+          <div className="absolute top-4 right-4 z-50">
             <ThemeSwitcher />
           </div>
           {children}

@@ -20,7 +20,6 @@ async function getRepos(): Promise<Repository[]> {
       next: { revalidate: 3600 } // Revalidate every hour
     });
     if (!res.ok) {
-      console.error('Failed to fetch repos:', res.statusText);
       return [];
     }
     const data = await res.json();
@@ -29,7 +28,6 @@ async function getRepos(): Promise<Repository[]> {
 
     return data.filter((repo: Repository) => new Date(repo.pushed_at) > threeYearsAgo);
   } catch (error) {
-    console.error('Error fetching repositories:', error);
     return [];
   }
 }
@@ -38,7 +36,7 @@ export default async function ProjectsPage() {
   const repos = await getRepos();
 
   return (
-    <div className="bg-background text-white min-h-screen">
+    <div className="bg-background text-foreground min-h-screen">
       <Particles
         className="absolute inset-0 -z-10 animate-fade-in"
         quantity={100}
