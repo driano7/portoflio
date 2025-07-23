@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 'use client';
 <<<<<<< HEAD
 =======
@@ -20,12 +21,15 @@ import Image from "next/image";
 >>>>>>> 5d93610 (jaja no se ve la foto :()
 import Link from "next/link";
 
+=======
+>>>>>>> 711cccd (agrega esta foto en la parte superior derecha del about (con bordes redo)
 export function About() {
 	return (
 		<div className="relative py-24 sm:py-32 animate-fade-in">
 			<div className="container mx-auto px-4">
 				<div id="about" className="mx-auto max-w-2xl lg:max-w-4xl">
 					<h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl text-center">About Me</h2>
+<<<<<<< HEAD
 					<div className="mt-8 text-lg leading-8 text-zinc-400 text-justify">
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -154,6 +158,8 @@ export function About() {
 					<h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl text-center">About Me</h2>
 <<<<<<< HEAD
 >>>>>>> 24442a0 (¡puedes agregar una sección que diga about me? y que puedas poner descri)
+=======
+>>>>>>> 711cccd (agrega esta foto en la parte superior derecha del about (con bordes redo)
 					<div className="mt-8 space-y-6 text-lg leading-8 text-zinc-400">
 						<p>
 							I am a passionate full-stack developer with a keen eye for creating beautiful, modern, and highly functional user interfaces. My journey in web development began with a fascination for how things work on the internet, which quickly grew into a full-fledged passion for building seamless digital experiences.
@@ -164,6 +170,7 @@ export function About() {
 						<p>
 							When I'm not coding, I enjoy contributing to open-source projects, exploring new hiking trails, and experimenting with new recipes in the kitchen. I believe in continuous learning and am always looking for new opportunities to grow as a developer and as an individual.
 						</p>
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 24442a0 (¡puedes agregar una sección que diga about me? y que puedas poner descri)
 =======
@@ -239,11 +246,14 @@ export function About() {
 >>>>>>> 894718b (agrega esta foto en la parte superior derecha del about (con bordes redo)
 =======
 >>>>>>> f277cdb (alinea el texto del about con la foto que no cargas como este ejemplo, d)
+=======
+>>>>>>> 711cccd (agrega esta foto en la parte superior derecha del about (con bordes redo)
 					</div>
 				</div>
 			</div>
 		</div>
 	);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -293,3 +303,6 @@ export function About() {
 =======
 }
 >>>>>>> 5d93610 (jaja no se ve la foto :()
+=======
+}
+>>>>>>> 711cccd (agrega esta foto en la parte superior derecha del about (con bordes redo)
