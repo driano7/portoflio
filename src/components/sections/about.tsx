@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 'use client';
 import Link from "next/link";
 
@@ -32,9 +33,31 @@ export function About() {
 								As a future project, I am working hard with my team to open a coffee shop in Mexico City. You can follow our journey at <Link href="https://xococafe.netlify.app" target="_blank" className="underline font-bold hover:text-zinc-300">Xoco Café</Link>. We will offer quality Mexican-origin beverages, with flavor and quality as our main cornerstones, and we will also accept <strong>crypto payments</strong>.
 							</p>
 						</div>
+=======
+export function About() {
+	return (
+		<div id="about" className="relative py-24 sm:py-32 animate-fade-in">
+			<div className="container mx-auto px-4">
+				<div className="mx-auto max-w-2xl lg:max-w-4xl">
+					<h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl text-center">About Me</h2>
+					<div className="mt-8 space-y-6 text-lg leading-8 text-zinc-400">
+						<p>
+							I am a passionate full-stack developer with a keen eye for creating beautiful, modern, and highly functional user interfaces. My journey in web development began with a fascination for how things work on the internet, which quickly grew into a full-fledged passion for building seamless digital experiences.
+						</p>
+						<p>
+							I specialize in the frontend with React and Next.js, building responsive and performant applications. On the backend, I am proficient with Node.js and have experience with various databases, both SQL and NoSQL. I enjoy the challenge of solving complex problems and am always eager to learn new technologies to improve my skills.
+						</p>
+						<p>
+							When I'm not coding, I enjoy contributing to open-source projects, exploring new hiking trails, and experimenting with new recipes in the kitchen. I believe in continuous learning and am always looking for new opportunities to grow as a developer and as an individual.
+						</p>
+>>>>>>> 24442a0 (¡puedes agregar una sección que diga about me? y que puedas poner descri)
 					</div>
 				</div>
 			</div>
 		</div>
 	);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 24442a0 (¡puedes agregar una sección que diga about me? y que puedas poner descri)

@@ -29,6 +29,12 @@ export function Landing() {
         </p>
         <nav className="my-16 flex items-center justify-center gap-4">
           <Link
+            href="/about"
+            className="text-sm duration-500 text-zinc-500 hover:text-zinc-300"
+          >
+            About
+          </Link>
+          <Link
             href="/projects"
             className="text-sm duration-500 text-muted-foreground hover:text-foreground"
           >
