@@ -3,8 +3,11 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from '@/components/theme-provider';
+<<<<<<< HEAD
 import { ThemeSwitcher } from '@/components/theme-switcher';
 import { Background } from '@/components/background';
+=======
+>>>>>>> 8873152 (agregame el botón para elegir los temas (light, dark, dim) del lado supe)
 
 const inter = Inter({
   subsets: ['latin'],
@@ -27,6 +30,7 @@ export default function RootLayout({
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
+<<<<<<< HEAD
           enableSystem
           disableTransitionOnChange
         >
@@ -34,6 +38,10 @@ export default function RootLayout({
           <div className="absolute top-4 right-4 z-50">
             <ThemeSwitcher />
           </div>
+=======
+          themes={["light", "dark", "dim"]}
+        >
+>>>>>>> 8873152 (agregame el botón para elegir los temas (light, dark, dim) del lado supe)
           {children}
           <Toaster />
         </ThemeProvider>

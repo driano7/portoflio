@@ -10,6 +10,7 @@
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
+<<<<<<< HEAD
     --primary: 240 5.9% 10%;
     --primary-foreground: 0 0% 98%;
     --secondary: 240 4.8% 95.9%;
@@ -23,6 +24,21 @@
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
     --ring: 240 5.9% 10%;
+=======
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+>>>>>>> 8873152 (agregame el botón para elegir los temas (light, dark, dim) del lado supe)
     --radius: 0.5rem;
   }
  
@@ -49,6 +65,7 @@
   }
 
   .dim {
+<<<<<<< HEAD
     --background: 224 71.4% 4.1%;
     --foreground: 210 20% 98%;
     --card: 224 71.4% 4.1%;
@@ -68,6 +85,27 @@
     --border: 215 27.9% 16.9%;
     --input: 215 27.9% 16.9%;
     --ring: 216 12.2% 83.9%;
+=======
+    --background: 225 10% 10%;
+    --foreground: 0 0% 98%;
+    --card: 225 10% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 225 10% 10%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 225 5.9% 15%;
+    --secondary: 225 3.7% 20.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 225 3.7% 20.9%;
+    --muted-foreground: 225 5% 69.9%;
+    --accent: 225 3.7% 20.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 35.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 225 3.7% 20.9%;
+    --input: 225 3.7% 20.9%;
+    --ring: 225 4.9% 83.9%;
+>>>>>>> 8873152 (agregame el botón para elegir los temas (light, dark, dim) del lado supe)
   }
 }
 
