@@ -21,10 +21,15 @@ export function About() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 5d93610 (jaja no se ve la foto :()
 =======
 >>>>>>> 90340d2 (alinea el texto del about con la foto que no cargas como este ejemplo, d)
+=======
+=======
+>>>>>>> 5d93610 (jaja no se ve la foto :()
+>>>>>>> 55a8b73 (jaja no se ve la foto :()
 						<img
 							src="/profile.jpg"
 =======
