@@ -1,10 +1,6 @@
-import { Header } from "@/components/header";
 import { Landing } from "@/components/sections/landing";
-import { About } from "@/components/sections/about";
-import { FeaturedProjects } from "@/components/sections/featured-projects";
-import { GithubRepos } from "@/components/sections/github-repos";
-import { TechStack } from "@/components/sections/tech-stack";
-import { Footer } from "@/components/sections/footer";
+import { Projects } from "@/components/sections/projects";
+import { Contact } from "@/components/sections/contact";
 
 export type Repository = {
   id: number;
@@ -27,7 +23,10 @@ async function getRepos(): Promise<Repository[]> {
       return [];
     }
     const data = await res.json();
-    return data;
+    const threeYearsAgo = new Date();
+    threeYearsAgo.setFullYear(threeYearsAgo.getFullYear() - 3);
+
+    return data.filter((repo: Repository) => new Date(repo.pushed_at) > threeYearsAgo);
   } catch (error) {
     console.error('Error fetching repositories:', error);
     return [];
@@ -35,24 +34,15 @@ async function getRepos(): Promise<Repository[]> {
 }
 
 export default async function Home() {
-  const allRepos = await getRepos();
-
-  const featuredProjectsNames = ['strawberry-wallet', 'xoco-cafe'];
-  
-  const featuredProjects = allRepos.filter(repo => featuredProjectsNames.includes(repo.name));
-  const otherRepos = allRepos.filter(repo => !featuredProjectsNames.includes(repo.name));
+  const repos = await getRepos();
 
   return (
-    <div className="flex min-h-screen flex-col">
-      <Header />
+    <div className="flex min-h-screen flex-col bg-black text-white">
       <main className="flex-1">
         <Landing />
-        <About />
-        <FeaturedProjects projects={featuredProjects} />
-        <GithubRepos repos={otherRepos} />
-        <TechStack />
+        <Projects projects={repos} />
+        <Contact />
       </main>
-      <Footer />
     </div>
   );
 }
