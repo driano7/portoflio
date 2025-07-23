@@ -22,8 +22,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head />
       <body className={`${inter.variable} font-sans antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
           <div className="absolute top-4 right-4 z-50">
             <ThemeSwitcher />
           </div>

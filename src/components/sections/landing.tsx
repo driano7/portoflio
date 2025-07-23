@@ -6,10 +6,15 @@ import Particles from '@/components/particles';
 export function Landing() {
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-background text-foreground">
-      <Particles
-        className="absolute inset-0 -z-10 animate-fade-in"
-        quantity={100}
-      />
+      <div className="absolute inset-0 -z-10 animate-fade-in">
+        <Particles
+            className="absolute inset-0 -z-10"
+            quantity={500}
+            ease={80}
+            color={"#ffffff"}
+            refresh
+        />
+      </div>
       <div
         className="relative z-10 flex flex-col items-center text-center px-4 animate-fade-in"
       >
