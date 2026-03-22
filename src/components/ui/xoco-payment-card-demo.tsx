@@ -117,7 +117,7 @@ export function XocoPaymentCardDemo({ playSequence, cardholder }: XocoPaymentCar
   };
 
   return (
-    <div className="relative mx-auto w-full min-h-[420px] sm:min-h-[560px] flex flex-col items-center justify-center gap-4">
+    <div className="relative mx-auto w-full min-h-[240px] sm:min-h-[340px] md:min-h-[560px] flex flex-col items-center justify-center gap-4">
       <div
         className="relative w-full max-w-[340px] aspect-[1.58/1] transition-transform duration-700"
         style={{ transform: `scale(${scale})` }}

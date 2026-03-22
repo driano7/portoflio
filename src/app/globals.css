@@ -496,7 +496,7 @@
 
 @media (max-width: 1023px) {
   .about-card-stack {
-    height: 1240px;
+    height: 1160px;
   }
 
   .about-stack-item--middle {
@@ -510,7 +510,7 @@
 
 @media (max-width: 767px) {
   .about-card-stack {
-    height: 1520px;
+    height: 1320px;
   }
 
   .about-stack-item--middle {

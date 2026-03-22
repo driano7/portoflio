@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronDown, ChevronLeft, ChevronRight, ChevronUp } from "lucide-react";
 import { useLocale } from "next-intl";
 import type { AppLocale } from "@/i18n/routing";
 import { XocoPaymentCardDemo } from "@/components/ui/xoco-payment-card-demo";
@@ -25,6 +25,8 @@ export function About() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [hasManualNavigation, setHasManualNavigation] = useState(false);
+  const [isAboutVisible, setIsAboutVisible] = useState(false);
+  const [atPageBottom, setAtPageBottom] = useState(false);
   const animatingRef = useRef(false);
   const hintPlayedRef = useRef(false);
 
@@ -38,14 +40,9 @@ export function About() {
               imageSrc: "/donovan.jpeg",
               imageAlt: "Donovan Riaño",
               content: (
-                <div className="space-y-4">
-                  <p>
-                    Soy Ingeniero en Computación por la UNAM (2017-2022), una etapa académica que culminó con la defensa de mi tesis, mi cuarto artículo científico sobre detección de publicidad web y análisis de malas prácticas de grandes compañías, en Florida Atlantic University (FAU), ampliando mi perspectiva global. Me comunico profesionalmente en <strong>español</strong>, <strong>inglés (avanzado)</strong> y <strong>portugués (básico)</strong>.
-                  </p>
-                  <p>
-                    También me apasiona viajar por el mundo y mantengo un compromiso profundo con Latinoamérica. Por eso recorro distintos países de la región, conecto con las personas, aprendo de sus culturas y entiendo de primera mano nuestras problemáticas. Esa experiencia la incorporo directamente en las soluciones de software en las que trabajo, para construir productos más útiles, sensibles al contexto y con impacto real.
-                  </p>
-                </div>
+                <p>
+                  Soy Ingeniero en Computación por la UNAM (2017-2022) y realicé investigación académica en Florida Atlantic University (FAU), donde reforcé una visión técnica con perspectiva internacional. Me comunico profesionalmente en <strong>español</strong>, <strong>inglés (avanzado)</strong> y <strong>portugués (básico)</strong>. Viajar por Latinoamérica me permite entender mejor el contexto regional y convertir ese aprendizaje en productos digitales con impacto real.
+                </p>
               ),
             },
             {
@@ -55,7 +52,7 @@ export function About() {
               imageAlt: "Rol profesional de Donovan Riaño",
               content: (
                 <p>
-                  Mi rol principal está enfocado en <strong>UX/UI, gestión de producto y prototipado con IA</strong>. Trabajo desde las necesidades y requisitos reales del usuario para diseñar y construir aplicaciones y sitios web que no solo funcionen técnicamente, sino que también comuniquen valor de marca con claridad. Este enfoque impacta directamente en la proyección de imagen de mis clientes y facilita el cierre de ventas mediante experiencias digitales más confiables, claras y orientadas a conversión. Además, incorporo <strong>agentes de IA</strong> en mi flujo de trabajo para construir los productos que desarrollo con mayor velocidad y profundidad técnica, lo que me permite ampliar continuamente mis habilidades.
+                  Mi rol está enfocado en <strong>UX/UI, gestión de producto y prototipado con IA</strong>. Diseño y construyo apps y sitios web a partir de necesidades reales de negocio y usuario, cuidando conversión, claridad y escalabilidad. Además, utilizo <strong>agentes de IA</strong> para acelerar ejecución, mejorar calidad de entrega y ampliar mis capacidades técnicas.
                 </p>
               ),
             },
@@ -67,14 +64,9 @@ export function About() {
               imageSrcDark: "/criptec-logo-white.png",
               imageAlt: "Donovan Riaño en Criptec",
               content: (
-                <div className="space-y-4">
-                  <p>
-                    Actualmente, mi carrera está enfocada en la intersección de tecnologías que definen el futuro: <strong>Web3, criptomonedas e Inteligencia Artificial</strong>. Como <strong>Creative Director en <Link href="https://criptec.io" target="_blank" className="underline hover:text-zinc-900 dark:hover:text-zinc-100">Criptec.io</Link></strong>, lidero el desarrollo de soluciones innovadoras dentro del ecosistema cripto. En los últimos meses también me he enfocado intensamente en la arquitectura de interfaz, refinando componentes, microinteracciones y adaptación visual de un repositorio anterior hacia un sistema más consistente, escalable y orientado a producto.
-                  </p>
-                  <p>
-                    Dentro de Criptec también desarrollo contenido profesional para redes sociales en formato video, enfocado en noticias y análisis de <strong>Inteligencia Artificial, cripto, Web3 y tecnología en general</strong>. Este trabajo complementa la estrategia de marca y educación, traduciendo temas complejos en mensajes claros, útiles y accionables para la comunidad.
-                  </p>
-                </div>
+                <p>
+                  En <strong><Link href="https://criptec.io" target="_blank" className="underline hover:text-zinc-900 dark:hover:text-zinc-100">Criptec.io</Link></strong>, como Creative Director, lidero iniciativas en <strong>Web3, cripto e IA</strong> con foco en producto, marca y experiencia de usuario. También produzco contenido de valor para redes sociales sobre tecnología, IA y ecosistema cripto, transformando temas complejos en mensajes claros y accionables.
+                </p>
               ),
             },
             {
@@ -84,7 +76,7 @@ export function About() {
               imageAlt: "Xoco Suite",
               content: (
                 <p>
-                  De forma paralela, estoy desarrollando <strong>Xoco Suite</strong>, un software integral para restaurantes y negocios de alimentos que conecta <strong>sitio web</strong>, <strong>app de cliente</strong> y <strong>punto de venta</strong> en una sola operación. La plataforma sincroniza pedidos entre la app y el POS, incorpora <strong>métricas avanzadas</strong>, y añade <strong>gestión de higiene y cumplimiento</strong> alineada a lineamientos de organismos gubernamentales. Además, gracias al acuerdo con <strong><Link href="https://blokko.io" target="_blank" className="underline hover:text-zinc-900 dark:hover:text-zinc-100">blokko.io</Link></strong>, permite recibir pagos en <strong>cripto</strong> y en sistemas latinoamericanos como <strong>PIX, SPEI o Mercado Libre</strong>, con liquidación al día siguiente en moneda local, bajo una experiencia equivalente a una transacción con tarjeta Visa o Master card.
+                  Desarrollo <strong>Xoco Suite</strong>, una plataforma para restaurantes que unifica <strong>sitio web, app de cliente y punto de venta</strong>, con sincronización de pedidos, analítica avanzada y gestión de higiene/compliance. Además, mediante <strong><Link href="https://blokko.io" target="_blank" className="underline hover:text-zinc-900 dark:hover:text-zinc-100">blokko.io</Link></strong>, integra pagos en cripto y rieles LATAM (PIX, SPEI, Mercado Libre) con liquidación al día siguiente en moneda local.
                 </p>
               ),
             },
@@ -94,14 +86,9 @@ export function About() {
               imageSrc: "/chalten.jpeg",
               imageAlt: "Habilidades de Donovan Riaño",
               content: (
-                <div className="space-y-4">
-                  <p>
-                    Mis habilidades también fueron reconocidas por <strong>Meta (antes Facebook) en 2021</strong>, donde pasé por un proceso de entrevistas integral que reforzó mi potencial para aportar en empresas de tecnología de primer nivel.
-                  </p>
-                  <p>
-                    Desde enero de 2022 también me desempeño como <strong>QA Engineer en American Express</strong>, donde aplico mi atención al detalle para asegurar calidad y robustez en productos globales. Este rol también ha sido clave para fortalecer mis habilidades de comunicación, gestión de proyectos y liderazgo, complementando mi agilidad del mundo startup con una visión integral del ciclo de vida del software.
-                  </p>
-                </div>
+                <p>
+                  Mi perfil combina experiencia en ecosistemas startup y corporativos: fui evaluado por <strong>Meta</strong> en procesos de alto nivel y actualmente trabajo como <strong>QA Engineer en American Express</strong>, fortaleciendo calidad, comunicación técnica, liderazgo y ejecución en productos de escala global.
+                </p>
               ),
             },
             {
@@ -111,7 +98,7 @@ export function About() {
               imageAlt: "Proyecto futuro de Donovan Riaño",
               content: (
                 <p>
-                  Como proyecto futuro, estoy trabajando junto con mi equipo para abrir una cafetería en Ciudad de México. Puedes seguir nuestro camino en{" "}
+                  Como siguiente etapa, estoy construyendo con mi equipo una cafetería en Ciudad de México. Puedes seguir el proyecto en{" "}
                   <Link
                     href="https://xococafe.netlify.app"
                     target="_blank"
@@ -119,7 +106,7 @@ export function About() {
                   >
                     Xoco Café
                   </Link>
-                  . Ofreceremos bebidas mexicanas de alta calidad, con sabor y calidad como pilares principales, y también aceptaremos <strong>pagos con cripto</strong>.
+                  , donde combinamos hospitalidad, producto y tecnología, incluyendo <strong>pagos con cripto</strong>.
                 </p>
               ),
             },
@@ -131,14 +118,9 @@ export function About() {
               imageSrc: "/donovan.jpeg",
               imageAlt: "Donovan Riaño",
               content: (
-                <div className="space-y-4">
-                  <p>
-                    I hold a bachelor&apos;s degree in Computer Engineering from UNAM (2017-2022), an academic journey that culminated with the defense of my thesis—my fourth scientific paper on web ads detection and the analysis of malpractices by big companies—at Florida Atlantic University (FAU), broadening my global perspective. I communicate professionally in <strong>Spanish</strong>, <strong>English (advanced)</strong>, and <strong>Portuguese (basic)</strong>.
-                  </p>
-                  <p>
-                    I am also passionate about traveling the world and I keep a strong commitment to Latin America. That is why I travel across different countries in the region, connect with people, and learn from their cultures and everyday challenges. I apply those insights directly to the software solutions I build, so products are more useful, context-aware, and capable of creating real impact.
-                  </p>
-                </div>
+                <p>
+                  I hold a Computer Engineering degree from UNAM (2017-2022) and completed academic research at Florida Atlantic University (FAU), strengthening both technical depth and global perspective. I work professionally in <strong>Spanish</strong>, <strong>English (advanced)</strong>, and <strong>Portuguese (basic)</strong>. Traveling across Latin America helps me design software with stronger context awareness and practical impact.
+                </p>
               ),
             },
             {
@@ -148,7 +130,7 @@ export function About() {
               imageAlt: "Professional role of Donovan Riaño",
               content: (
                 <p>
-                  My core role is focused on <strong>UX/UI, product management, and AI-assisted prototyping</strong>. I work from real user needs and requirements to design and build web applications and websites that are not only technically solid, but also communicate brand value with clarity. This approach has a direct impact on my clients&apos; brand projection and helps close sales faster through more trustworthy, clearer, and conversion-oriented digital experiences. In addition, I integrate <strong>AI agents</strong> into my workflow to build the products I develop with greater speed and technical depth, which continuously expands my skill set.
+                  My core role focuses on <strong>UX/UI, product management, and AI-assisted prototyping</strong>. I design and build apps and websites from real user and business requirements, prioritizing clarity, conversion, and scalability. I also leverage <strong>AI agents</strong> to accelerate delivery and raise technical quality.
                 </p>
               ),
             },
@@ -160,14 +142,9 @@ export function About() {
               imageSrcDark: "/criptec-logo-white.png",
               imageAlt: "Donovan Riaño at Criptec",
               content: (
-                <div className="space-y-4">
-                  <p>
-                    Currently, my career is focused on the intersection of technologies defining the future: <strong>Web3, cryptocurrencies, and Artificial Intelligence</strong>. As <strong>Creative Director at <Link href="https://criptec.io" target="_blank" className="underline hover:text-zinc-900 dark:hover:text-zinc-100">Criptec.io</Link></strong>, I lead the development of innovative solutions in the crypto space. Over the last few months, I have also invested significant effort in UI architecture, polishing components, micro-interactions, and adapting a previous repository into a more consistent, scalable, product-oriented system.
-                  </p>
-                  <p>
-                    At Criptec, I also produce professional social media video content focused on news and analysis related to <strong>Artificial Intelligence, crypto, Web3, and technology in general</strong>. This work strengthens our branding and educational strategy by translating complex topics into clear, practical, and actionable insights for the community.
-                  </p>
-                </div>
+                <p>
+                  At <strong><Link href="https://criptec.io" target="_blank" className="underline hover:text-zinc-900 dark:hover:text-zinc-100">Criptec.io</Link></strong>, as Creative Director, I lead initiatives in <strong>Web3, crypto, and AI</strong> with a product-and-experience-first approach. I also produce educational social media content that turns complex technical topics into clear, practical insights for the community.
+                </p>
               ),
             },
             {
@@ -177,7 +154,7 @@ export function About() {
               imageAlt: "Xoco Suite",
               content: (
                 <p>
-                  In parallel, I am building <strong>Xoco Suite</strong>, an integrated software product for restaurants and food businesses that unifies a <strong>website</strong>, <strong>client app</strong>, and <strong>point-of-sale system</strong> into one connected operation. The platform synchronizes orders between the app and POS, provides <strong>advanced metrics</strong>, and includes <strong>hygiene and compliance management</strong> aligned with government regulatory guidelines. In addition, through an agreement with <strong><Link href="https://blokko.io" target="_blank" className="underline hover:text-zinc-900 dark:hover:text-zinc-100">blokko.io</Link></strong>, it supports payments in <strong>crypto</strong> and LATAM rails such as <strong>PIX, SPEI, and Mercado Libre</strong>, settling to local currency the next day with an experience equivalent to a Visa or Master card transaction.
+                  I am building <strong>Xoco Suite</strong>, a restaurant platform that unifies <strong>website, client app, and POS</strong>, with synchronized orders, advanced analytics, and hygiene/compliance workflows. Through <strong><Link href="https://blokko.io" target="_blank" className="underline hover:text-zinc-900 dark:hover:text-zinc-100">blokko.io</Link></strong>, it also supports crypto and LATAM payment rails (PIX, SPEI, Mercado Libre) with next-day local-currency settlement.
                 </p>
               ),
             },
@@ -187,14 +164,9 @@ export function About() {
               imageSrc: "/chalten.jpeg",
               imageAlt: "Skills of Donovan Riaño",
               content: (
-                <div className="space-y-4">
-                  <p>
-                    My skills were also recognized by <strong>Meta (formerly Facebook) in 2021</strong>, where I went through a comprehensive interview process, underscoring my potential for contributing to top-tier tech companies.
-                  </p>
-                  <p>
-                    Since January 2022, I have also served as a <strong>QA Engineer at American Express</strong>, where I apply my attention to detail to ensure the quality and robustness of world-class products. This role has also been crucial in developing my skills in communication, project management, and leadership. This corporate experience complements my agility in the startup world, giving me a comprehensive view of the software lifecycle.
-                  </p>
-                </div>
+                <p>
+                  My profile combines startup execution and enterprise rigor: I went through high-standard evaluation processes at <strong>Meta</strong> and currently work as a <strong>QA Engineer at American Express</strong>, strengthening software quality, technical communication, leadership, and delivery consistency at global scale.
+                </p>
               ),
             },
             {
@@ -204,7 +176,7 @@ export function About() {
               imageAlt: "Future project of Donovan Riaño",
               content: (
                 <p>
-                  As a future project, I am working hard with my team to open a coffee shop in Mexico City. You can follow our journey at{" "}
+                  As a next chapter, I am building a coffee shop in Mexico City with my team. You can follow the project at{" "}
                   <Link
                     href="https://xococafe.netlify.app"
                     target="_blank"
@@ -212,7 +184,7 @@ export function About() {
                   >
                     Xoco Café
                   </Link>
-                  . We will offer quality Mexican-origin beverages, with flavor and quality as our main cornerstones, and we will also accept <strong>crypto payments</strong>.
+                  , where we combine hospitality, product thinking, and technology, including <strong>crypto payments</strong>.
                 </p>
               ),
             },
@@ -243,6 +215,38 @@ export function About() {
     }, 60_000);
     return () => window.clearInterval(interval);
   }, [hasManualNavigation, moveCard]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollBottom = window.innerHeight + window.scrollY;
+      const pageHeight = document.documentElement.scrollHeight;
+      setAtPageBottom(scrollBottom >= pageHeight - 24);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    const node = sectionRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        setIsAboutVisible(Boolean(entry?.isIntersecting));
+      },
+      { threshold: 0.18 },
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const node = sectionRef.current;
@@ -286,13 +290,54 @@ export function About() {
 
   return (
     <div className="relative py-24 sm:py-32 animate-fade-in">
+      {isAboutVisible ? (
+        <div
+          aria-hidden
+          className={`pointer-events-none fixed left-1/2 -translate-x-1/2 ${
+            atPageBottom ? "top-1 z-40" : "top-1/2 -translate-y-1/2 z-40"
+          }`}
+        >
+          <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-violet-400/35 bg-zinc-900/70 text-violet-200 shadow-lg backdrop-blur-md dark:bg-zinc-950/75">
+            {atPageBottom ? (
+              <ChevronUp className="h-5 w-5 animate-bounce" />
+            ) : (
+              <ChevronDown className="h-5 w-5 animate-bounce" />
+            )}
+          </span>
+        </div>
+      ) : null}
       <div className="container mx-auto px-4">
         <div id="about" ref={sectionRef} className="mx-auto max-w-2xl lg:max-w-4xl">
           <h2 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-4xl text-center">
             {isEs ? <>Sobre <span className="text-violet-400">mí</span></> : <>About <span className="text-violet-400">Me</span></>}
           </h2>
 
-          <div className="mt-10 text-lg leading-8 text-zinc-700 dark:text-zinc-300 text-justify">
+          <div className="mt-2 flex items-center justify-center gap-3 sm:hidden">
+            <button
+              type="button"
+              aria-label={isEs ? "Tarjeta anterior" : "Previous card"}
+              onClick={() => moveCard(-1, true)}
+              className="no-frosted group relative inline-flex h-9 w-9 items-center justify-center overflow-hidden rounded-full border border-violet-400/35 bg-zinc-900/60 text-zinc-100 transition-transform duration-200 hover:scale-105 hover:border-violet-300/60 active:scale-95 disabled:opacity-50 dark:bg-zinc-950/70"
+              disabled={isAnimating}
+            >
+              <span className="pointer-events-none absolute inset-0 theme-toggle-gradient" aria-hidden />
+              <span className="pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" aria-hidden />
+              <ChevronLeft className="relative h-3.5 w-3.5 text-violet-200" />
+            </button>
+            <button
+              type="button"
+              aria-label={isEs ? "Tarjeta siguiente" : "Next card"}
+              onClick={() => moveCard(1, true)}
+              className="no-frosted group relative inline-flex h-9 w-9 items-center justify-center overflow-hidden rounded-full border border-violet-400/35 bg-zinc-900/60 text-zinc-100 transition-transform duration-200 hover:scale-105 hover:border-violet-300/60 active:scale-95 disabled:opacity-50 dark:bg-zinc-950/70"
+              disabled={isAnimating}
+            >
+              <span className="pointer-events-none absolute inset-0 theme-toggle-gradient" aria-hidden />
+              <span className="pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" aria-hidden />
+              <ChevronRight className="relative h-3.5 w-3.5 text-violet-200" />
+            </button>
+          </div>
+
+          <div className="mt-2 sm:mt-4 text-lg leading-8 text-zinc-700 dark:text-zinc-300 text-justify">
             <div className={`about-card-stack ${isAnimating ? "is-animating" : ""}`}>
               {visibleCards.map((card, index) => {
                 const isTopCard = index === 0;
@@ -318,7 +363,7 @@ export function About() {
                                 width={340}
                                 height={680}
                                 quality={100}
-                                className={`rounded-2xl w-full h-full min-h-[420px] sm:min-h-[560px] shadow-2xl shadow-black/25 border border-white/10 dark:hidden ${
+                                className={`rounded-2xl w-full aspect-square md:aspect-auto h-auto md:h-full md:min-h-[560px] shadow-2xl shadow-black/25 border border-white/10 dark:hidden ${
                                   card.id === "criptec"
                                     ? "object-contain bg-zinc-50 p-5 sm:p-6"
                                     : "object-cover"
@@ -331,7 +376,7 @@ export function About() {
                                 width={340}
                                 height={680}
                                 quality={100}
-                                className={`rounded-2xl w-full h-full min-h-[420px] sm:min-h-[560px] shadow-2xl shadow-black/25 border border-white/10 hidden dark:block ${
+                                className={`rounded-2xl w-full aspect-square md:aspect-auto h-auto md:h-full md:min-h-[560px] shadow-2xl shadow-black/25 border border-white/10 hidden dark:block ${
                                   card.id === "criptec"
                                     ? "object-contain bg-zinc-900 p-5 sm:p-6"
                                     : "object-cover"
@@ -345,7 +390,7 @@ export function About() {
                               alt={card.imageAlt}
                               width={340}
                               height={680}
-                              className="rounded-2xl object-cover w-full h-full min-h-[420px] sm:min-h-[560px] shadow-2xl shadow-black/25 border border-white/10"
+                              className="rounded-2xl object-cover w-full aspect-square md:aspect-auto h-auto md:h-full md:min-h-[560px] shadow-2xl shadow-black/25 border border-white/10"
                               priority={index === 0}
                             />
                           )}
@@ -367,7 +412,7 @@ export function About() {
                 );
               })}
             </div>
-            <div className="-mt-16 flex items-center justify-center gap-3">
+            <div className="-mt-16 hidden sm:flex items-center justify-center gap-3">
               <button
                 type="button"
                 aria-label={isEs ? "Tarjeta anterior" : "Previous card"}
