@@ -1,0 +1,55 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "web3": "DeFi & CeFi Finance",
+    "web3Desktop": "DeFi & CeFi Finance",
+    "web3Mobile": "DeFi & CeFi",
+    "projects": "Projects",
+    "contact": "Contact",
+    "brand": "Navigation"
+  },
+  "landing": {
+    "subtitle": "Full-stack developer building functional interfaces with intention.",
+    "about": "About",
+    "web3": "DeFi & CeFi Finance",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "language": {
+    "switchToEnglish": "Switch to English",
+    "switchToSpanish": "Switch to Spanish"
+  },
+  "education": {
+    "title": "My portfolios and real-time contributions",
+    "subtitle": "Documentation-style guides with side index, continuous navigation and the same portfolio visual language.",
+    "tracks": {
+      "tradfi": "Traditional finance and stock market",
+      "defi": "Decentralized finance"
+    },
+    "labels": {
+      "level": "Level",
+      "glossary": "Glossary",
+      "openGuide": "Open guide",
+      "onThisPage": "On this page",
+      "guideTree": "Guide tree",
+      "programSubmenu": "Program submenu",
+      "trackTradfi": "Traditional finance",
+      "trackDefi": "Decentralized finance",
+      "prev": "Previous",
+      "next": "Next"
+    },
+    "levels": {
+      "tradfi1": "Level 1: Financial Fundamentals",
+      "tradfi2": "Level 2: Introduction to the Stock Market",
+      "tradfi3": "Level 3: Strategy and Portfolio Management",
+      "defi1": "Level 1: Fundamentals",
+      "defi2": "Level 2: Intermediate",
+      "defi3": "Level 3: Advanced",
+      "defiGlossary": "Extra section: Glossary",
+      "fundamental": "Fundamental",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced"
+    }
+  }
+}

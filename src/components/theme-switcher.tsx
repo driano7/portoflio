@@ -1,47 +1,60 @@
 "use client"
 
 import * as React from "react"
-import { Laptop, Moon, Sun } from "lucide-react"
+import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 
 import { Button } from "@/components/ui/button"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
 
 export function ThemeSwitcher() {
-  const { setTheme } = useTheme()
+  const { resolvedTheme, setTheme } = useTheme()
+  const [burstKey, setBurstKey] = React.useState(0)
+
+  const handleToggleTheme = () => {
+    const nextTheme = resolvedTheme === "light" ? "dark" : "light"
+    const applyTheme = () => setTheme(nextTheme)
+
+    if (
+      typeof document !== "undefined" &&
+      typeof window !== "undefined" &&
+      "startViewTransition" in document &&
+      !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      ;(document as Document & {
+        startViewTransition: (cb: () => void) => { finished: Promise<void> };
+      }).startViewTransition(() => {
+        applyTheme()
+      })
+    } else {
+      applyTheme()
+    }
+
+    setBurstKey((key) => key + 1)
+  }
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon">
-          <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-          <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-          <span className="sr-only">Toggle theme</span>
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme("light")}>
-          <Sun className="mr-2 h-4 w-4" />
-          Light
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")}>
-          <Moon className="mr-2 h-4 w-4" />
-          Dark
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dim")}>
-          <Laptop className="mr-2 h-4 w-4" />
-          Dim
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>
-          <Laptop className="mr-2 h-4 w-4" />
-          System
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
+    <Button
+      variant="ghost"
+      size="sm"
+      onClick={handleToggleTheme}
+      className="no-frosted group relative overflow-hidden rounded-full border border-violet-400/35 bg-zinc-900/60 px-3 text-zinc-100 transition-transform duration-200 hover:scale-105 hover:border-violet-300/60 active:scale-95 dark:bg-zinc-950/70"
+      aria-label="Toggle theme"
+    >
+      <span className="pointer-events-none absolute inset-0 theme-toggle-gradient" aria-hidden />
+      <span className="pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" aria-hidden />
+      <span key={burstKey} className="pointer-events-none absolute inset-0 theme-burst" aria-hidden />
+
+      <span className="relative inline-flex items-center gap-2">
+        {resolvedTheme === "light" ? (
+          <span className="inline-flex theme-icon-in">
+            <Sun className="h-[1.1rem] w-[1.1rem] text-violet-400" />
+          </span>
+        ) : (
+          <span className="inline-flex theme-icon-in">
+            <Moon className="h-[1.1rem] w-[1.1rem] text-violet-300" />
+          </span>
+        )}
+      </span>
+    </Button>
   )
 }

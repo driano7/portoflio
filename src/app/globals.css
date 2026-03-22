@@ -10,24 +10,6 @@
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
-=======
-=======
->>>>>>> 8873152 (agregame el botón para elegir los temas (light, dark, dim) del lado supe)
     --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96.1%;
@@ -41,13 +23,9 @@
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
-<<<<<<< HEAD
->>>>>>> 8873152 (agregame el botón para elegir los temas (light, dark, dim) del lado supe)
-=======
->>>>>>> 8873152 (agregame el botón para elegir los temas (light, dark, dim) del lado supe)
     --radius: 0.5rem;
   }
- 
+
   .dark {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
@@ -71,30 +49,6 @@
   }
 
   .dim {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    --background: 224 71.4% 4.1%;
-    --foreground: 210 20% 98%;
-    --card: 224 71.4% 4.1%;
-    --card-foreground: 210 20% 98%;
-    --popover: 224 71.4% 4.1%;
-    --popover-foreground: 210 20% 98%;
-    --primary: 210 20% 98%;
-    --primary-foreground: 220.9 39.3% 11%;
-    --secondary: 215 27.9% 16.9%;
-    --secondary-foreground: 210 20% 98%;
-    --muted: 215 27.9% 16.9%;
-    --muted-foreground: 217.9 10.6% 64.9%;
-    --accent: 215 27.9% 16.9%;
-    --accent-foreground: 210 20% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 20% 98%;
-    --border: 215 27.9% 16.9%;
-    --input: 215 27.9% 16.9%;
-    --ring: 216 12.2% 83.9%;
-=======
-=======
->>>>>>> 8873152 (agregame el botón para elegir los temas (light, dark, dim) del lado supe)
     --background: 225 10% 10%;
     --foreground: 0 0% 98%;
     --card: 225 10% 10%;
@@ -114,10 +68,6 @@
     --border: 225 3.7% 20.9%;
     --input: 225 3.7% 20.9%;
     --ring: 225 4.9% 83.9%;
-<<<<<<< HEAD
->>>>>>> 8873152 (agregame el botón para elegir los temas (light, dark, dim) del lado supe)
-=======
->>>>>>> 8873152 (agregame el botón para elegir los temas (light, dark, dim) del lado supe)
   }
 }
 
@@ -125,8 +75,523 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
     scroll-behavior: smooth;
   }
+}
+
+/* GitHub calendar highlight (moved from styled-jsx to keep Server Components compatible) */
+.github-calendar-purple .ContributionCalendar-day[data-level="0"],
+.github-calendar-purple rect[data-level="0"] {
+  fill: #ede9fe !important;
+}
+
+.github-calendar-purple .ContributionCalendar-day[data-level="1"],
+.github-calendar-purple rect[data-level="1"] {
+  fill: #c4b5fd !important;
+}
+
+.github-calendar-purple .ContributionCalendar-day[data-level="2"],
+.github-calendar-purple rect[data-level="2"] {
+  fill: #a78bfa !important;
+}
+
+.github-calendar-purple .ContributionCalendar-day[data-level="3"],
+.github-calendar-purple rect[data-level="3"] {
+  fill: #8b5cf6 !important;
+}
+
+.github-calendar-purple .ContributionCalendar-day[data-level="4"],
+.github-calendar-purple rect[data-level="4"] {
+  fill: #6d28d9 !important;
+}
+
+.dark .github-calendar-purple .ContributionCalendar-day[data-level="0"],
+.dark .github-calendar-purple rect[data-level="0"] {
+  fill: #1f1b2e !important;
+}
+
+.dark .github-calendar-purple .ContributionCalendar-day[data-level="1"],
+.dark .github-calendar-purple rect[data-level="1"] {
+  fill: #4c1d95 !important;
+}
+
+.dark .github-calendar-purple .ContributionCalendar-day[data-level="2"],
+.dark .github-calendar-purple rect[data-level="2"] {
+  fill: #6d28d9 !important;
+}
+
+.dark .github-calendar-purple .ContributionCalendar-day[data-level="3"],
+.dark .github-calendar-purple rect[data-level="3"] {
+  fill: #8b5cf6 !important;
+}
+
+.dark .github-calendar-purple .ContributionCalendar-day[data-level="4"],
+.dark .github-calendar-purple rect[data-level="4"] {
+  fill: #c4b5fd !important;
+}
+
+.github-calendar-purple text,
+.github-calendar-purple svg text {
+  fill: #334155 !important;
+}
+
+.dark .github-calendar-purple text,
+.dark .github-calendar-purple svg text {
+  fill: #d4d4d8 !important;
+}
+
+.github-calendar-purple .float-left.text-gray,
+.github-calendar-purple .float-left.text-gray a,
+.github-calendar-purple .contrib-column,
+.github-calendar-purple .contrib-number {
+  color: #5b21b6 !important;
+}
+
+.dark .github-calendar-purple .float-left.text-gray,
+.dark .github-calendar-purple .float-left.text-gray a,
+.dark .github-calendar-purple .contrib-column,
+.dark .github-calendar-purple .contrib-number {
+  color: #c4b5fd !important;
+}
+
+.github-calendar-purple .calendar {
+  width: 100%;
+}
+
+.github-calendar-purple svg.ContributionCalendar-grid {
+  width: 100%;
+}
+
+@keyframes typing-caret-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0.2;
+  }
+}
+
+[data-typing-active="true"] > .typing-caret {
+  animation: typing-caret-blink 0.9s steps(1) infinite;
+}
+
+[data-typing-active="false"] > .typing-caret {
+  opacity: 0.35;
+}
+
+@keyframes theme-icon-in {
+  0% {
+    transform: rotate(-90deg) scale(0.7);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes theme-burst {
+  0% {
+    opacity: 0.55;
+    clip-path: circle(0% at 50% 50%);
+  }
+  100% {
+    opacity: 0;
+    clip-path: circle(130% at 50% 50%);
+  }
+}
+
+.theme-icon-in {
+  animation: theme-icon-in 360ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.theme-burst {
+  background: radial-gradient(circle at center, rgba(139, 92, 246, 0.35) 0%, rgba(124, 58, 237, 0.2) 42%, rgba(91, 33, 182, 0) 72%);
+  animation: theme-burst 560ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes theme-gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.theme-toggle-gradient {
+  background: linear-gradient(
+    120deg,
+    rgba(124, 58, 237, 0.25) 0%,
+    rgba(139, 92, 246, 0.32) 30%,
+    rgba(56, 189, 248, 0.24) 60%,
+    rgba(168, 85, 247, 0.22) 100%
+  );
+  background-size: 200% 200%;
+  animation: theme-gradient-flow 4.8s ease-in-out infinite;
+  will-change: background-position;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 440ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.btn-frosted {
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  background: rgba(24, 24, 27, 0.64);
+  color: #f4f4f5;
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.12);
+  transition:
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    color 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.btn-frosted::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    120deg,
+    rgba(124, 58, 237, 0.25) 0%,
+    rgba(139, 92, 246, 0.32) 30%,
+    rgba(56, 189, 248, 0.24) 60%,
+    rgba(168, 85, 247, 0.22) 100%
+  );
+  background-size: 200% 200%;
+  animation: theme-gradient-flow 4.8s ease-in-out infinite;
+  opacity: 0.78;
+}
+
+.btn-frosted::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+  opacity: 0;
+  transition: opacity 280ms ease;
+}
+
+.btn-frosted:hover {
+  transform: translateY(-1px) scale(1.01);
+  border-color: rgba(196, 181, 253, 0.7);
+  box-shadow: 0 10px 26px rgba(124, 58, 237, 0.2);
+}
+
+.btn-frosted:hover::after {
+  opacity: 1;
+}
+
+.btn-frosted:active {
+  transform: scale(0.985);
+}
+
+.btn-frosted > * {
+  position: relative;
+  z-index: 1;
+}
+
+:not(.dark) .btn-frosted {
+  background: rgba(255, 255, 255, 0.72);
+  color: #1f2937;
+  border-color: rgba(139, 92, 246, 0.45);
+}
+
+.landing-reveal-title {
+  display: inline-grid;
+  gap: 0.08em;
+  text-wrap: balance;
+}
+
+.landing-reveal-title__line {
+  display: block;
+  overflow: hidden;
+}
+
+.landing-reveal-title__line > span {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(8px);
+  transform: translateY(112%);
+  animation: landing-title-reveal 1120ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.landing-reveal-title__line:nth-child(1) > span {
+  animation-delay: 140ms;
+}
+
+.landing-reveal-title__line:nth-child(2) > span {
+  animation-delay: 340ms;
+}
+
+.landing-reveal-subtitle {
+  opacity: 0;
+  filter: blur(6px);
+  transform: translateY(22px);
+  animation: landing-subtitle-reveal 880ms cubic-bezier(0.22, 1, 0.36, 1) 520ms forwards;
+}
+
+.landing-reveal-nav {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: landing-nav-reveal 760ms cubic-bezier(0.22, 1, 0.36, 1) 760ms forwards;
+}
+
+@keyframes landing-title-reveal {
+  0% {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(112%);
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes landing-subtitle-reveal {
+  from {
+    opacity: 0;
+    filter: blur(6px);
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes landing-nav-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .landing-reveal-title__line > span,
+  .landing-reveal-subtitle,
+  .landing-reveal-nav {
+    animation: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+  }
+}
+
+.about-card-stack {
+  position: relative;
+  height: 980px;
+  perspective: 1200px;
+}
+
+.about-stack-item {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  transform-origin: 25% 50%;
+  transition: transform 720ms cubic-bezier(0.22, 1, 0.36, 1), opacity 720ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.about-stack-item--top {
+  transform: scale(1) translate3d(0, 0, 0);
+  z-index: 30;
+  opacity: 1;
+}
+
+.about-stack-item--middle {
+  transform: scale(0.92) translate3d(28px, 64px, 0);
+  z-index: 20;
+  opacity: 0.92;
+}
+
+.about-stack-item--back {
+  transform: scale(0.84) translate3d(62px, 126px, 0);
+  z-index: 10;
+  opacity: 0.9;
+}
+
+.about-stack-card {
+  box-shadow:
+    0 24px 44px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+@keyframes about-stack-slide-out {
+  0% {
+    transform: scale(1) translate3d(0, 0, 0);
+    z-index: 30;
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.9) translate3d(-16%, -2%, 0) rotate(-6deg);
+    opacity: 0.75;
+  }
+  100% {
+    transform: scale(0.84) translate3d(62px, 126px, 0);
+    z-index: 10;
+    opacity: 0.9;
+  }
+}
+
+@keyframes about-stack-to-top {
+  0% {
+    transform: scale(0.92) translate3d(28px, 64px, 0);
+    opacity: 0.92;
+  }
+  100% {
+    transform: scale(1) translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes about-stack-to-middle {
+  0% {
+    transform: scale(0.84) translate3d(62px, 126px, 0);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(0.92) translate3d(28px, 64px, 0);
+    opacity: 0.92;
+  }
+}
+
+.about-card-stack.is-animating .about-stack-item--top {
+  animation: about-stack-slide-out 860ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.about-card-stack.is-animating .about-stack-item--middle {
+  animation: about-stack-to-top 860ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.about-card-stack.is-animating .about-stack-item--back {
+  animation: about-stack-to-middle 860ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@media (max-width: 1023px) {
+  .about-card-stack {
+    height: 1240px;
+  }
+
+  .about-stack-item--middle {
+    transform: scale(0.95) translate3d(16px, 34px, 0);
+  }
+
+  .about-stack-item--back {
+    transform: scale(0.9) translate3d(34px, 74px, 0);
+  }
+}
+
+@media (max-width: 767px) {
+  .about-card-stack {
+    height: 1520px;
+  }
+
+  .about-stack-item--middle {
+    transform: scale(0.97) translate3d(10px, 22px, 0);
+  }
+
+  .about-stack-item--back {
+    transform: scale(0.93) translate3d(20px, 46px, 0);
+  }
+}
+
+@keyframes defi-dropdown-content-in {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes defi-dropdown-line-in {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.defi-dropdown-reveal {
+  animation: defi-dropdown-content-in 460ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.defi-dropdown-reveal > * {
+  opacity: 0;
+  animation: defi-dropdown-line-in 520ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.defi-dropdown-reveal > *:nth-child(1) {
+  animation-delay: 70ms;
+}
+
+.defi-dropdown-reveal > *:nth-child(2) {
+  animation-delay: 130ms;
+}
+
+.defi-dropdown-reveal > *:nth-child(3) {
+  animation-delay: 190ms;
+}
+
+.defi-dropdown-reveal > *:nth-child(4) {
+  animation-delay: 250ms;
+}
+
+.defi-dropdown-reveal > *:nth-child(5) {
+  animation-delay: 310ms;
+}
+
+.defi-dropdown-reveal > *:nth-child(6) {
+  animation-delay: 360ms;
+}
+
+@keyframes fundamentals-button-float {
+  0% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.35);
+  }
+  45% {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 0 0 6px rgba(168, 85, 247, 0);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 0 0 0 rgba(168, 85, 247, 0);
+  }
+}
+
+.defi-dropdown-button-fundamentals {
+  animation: fundamentals-button-float 2.2s ease-in-out infinite;
 }

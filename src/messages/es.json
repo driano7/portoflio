@@ -1,0 +1,55 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "web3": "Finanzas DeFi y CeFi",
+    "web3Desktop": "Finanzas DeFi y CeFi",
+    "web3Mobile": "DeFi y CeFi",
+    "projects": "Proyectos",
+    "contact": "Contacto",
+    "brand": "Navegación"
+  },
+  "landing": {
+    "subtitle": "Desarrollador full-stack construyendo interfaces funcionales y con intención.",
+    "about": "Sobre mí",
+    "web3": "Finanzas DeFi y CeFi",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "language": {
+    "switchToEnglish": "Cambiar a inglés",
+    "switchToSpanish": "Cambiar a español"
+  },
+  "education": {
+    "title": "Mis portafolios y contribuciones en tiempo real",
+    "subtitle": "Guías tipo documentación con índice lateral, navegación continua y la misma identidad visual del portafolio.",
+    "tracks": {
+      "tradfi": "Finanzas tradicionales y bolsa de valores",
+      "defi": "Finanzas descentralizadas"
+    },
+    "labels": {
+      "level": "Nivel",
+      "glossary": "Glosario",
+      "openGuide": "Abrir guía",
+      "onThisPage": "En esta página",
+      "guideTree": "Árbol de guías",
+      "programSubmenu": "Submenú del programa",
+      "trackTradfi": "Finanzas tradicionales",
+      "trackDefi": "Finanzas descentralizadas",
+      "prev": "Anterior",
+      "next": "Siguiente"
+    },
+    "levels": {
+      "tradfi1": "Nivel 1: Fundamentos Financieros",
+      "tradfi2": "Nivel 2: Introducción al Mercado de Valores",
+      "tradfi3": "Nivel 3: Estrategias y Gestión de Portafolio",
+      "defi1": "Nivel 1: Fundamentos",
+      "defi2": "Nivel 2: Intermedio",
+      "defi3": "Nivel 3: Avanzado",
+      "defiGlossary": "Sección extra: Glosario",
+      "fundamental": "Fundamental",
+      "intermediate": "Intermedio",
+      "advanced": "Avanzado"
+    }
+  }
+}

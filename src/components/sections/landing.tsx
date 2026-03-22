@@ -1,83 +1,42 @@
 'use client';
-import React from 'react';
+
+import { useEffect } from 'react';
 import Link from 'next/link';
-import { Particles } from '@/components/particles';
+import { useRouter } from 'next/navigation';
+import { useTranslations } from "next-intl";
 
 export function Landing() {
+  const router = useRouter();
+  const t = useTranslations("landing");
+
+  useEffect(() => {
+    const routes = ['/about', '/web3', '/projects'];
+    for (const route of routes) {
+      router.prefetch(route);
+    }
+  }, [router]);
+
   return (
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-transparent text-foreground">
-      <div
-        className="relative z-10 flex flex-col items-center text-center px-4 animate-fade-in"
-      >
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-primary to-foreground/80">
-=======
-=======
->>>>>>> 214392b (los temas que cambian es el recuadro de los temas, no todo el sitio web)
     <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
-      <Particles
-        className="absolute inset-0 -z-10 animate-fade-in"
-        quantity={100}
-      />
-      <div
-        className="relative z-10 flex flex-col items-center text-center px-4 animate-fade-in"
-      >
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-foreground to-zinc-500">
-<<<<<<< HEAD
->>>>>>> 214392b (los temas que cambian es el recuadro de los temas, no todo el sitio web)
-=======
->>>>>>> 214392b (los temas que cambian es el recuadro de los temas, no todo el sitio web)
-          Donovan Riaño
+      <div className="relative z-10 flex flex-col items-center text-center px-4 animate-fade-in">
+        <h1 className="landing-reveal-title whitespace-nowrap text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
+          <span className="landing-reveal-title__line">
+            <span className="bg-gradient-to-b from-foreground to-zinc-500 bg-clip-text text-transparent">Donovan Riaño</span>
+          </span>
         </h1>
-        <p className="mt-4 text-lg text-muted-foreground">
-          Full-stack developer building beautiful and functional user interfaces.
+        <p className="landing-reveal-subtitle mt-4 text-lg text-muted-foreground">
+          {t("subtitle")}
         </p>
-        <nav className="my-16 flex items-center justify-center gap-4">
-          <Link
-            href="/about"
-<<<<<<< HEAD
-=======
-            className="text-sm duration-500 text-zinc-500 hover:text-zinc-300"
-          >
-            About
+
+        <nav className="landing-reveal-nav my-16 flex items-center justify-center gap-4">
+          <Link href="/about" prefetch className="text-sm duration-500 text-zinc-500 hover:text-zinc-300">
+            {t("about")}
           </Link>
-          <Link
-            href="/web3"
-            className="text-sm duration-500 text-zinc-500 hover:text-zinc-300"
-          >
-            Web3
+          <Link href="/web3" prefetch className="text-sm duration-500 text-zinc-500 hover:text-zinc-300">
+            {t("web3")}
           </Link>
-          <Link
-            href="/projects"
->>>>>>> 24442a0 (¡puedes agregar una sección que diga about me? y que puedas poner descri)
-            className="text-sm duration-500 text-zinc-500 hover:text-zinc-300"
-          >
-            About
-          </Link>
-          <Link
-            href="/web3"
-            className="text-sm duration-500 text-zinc-500 hover:text-zinc-300"
-          >
-            Web3
-          </Link>
-          <Link
-            href="/web3"
-            className="text-sm duration-500 text-zinc-500 hover:text-zinc-300"
-          >
-            Web3
-          </Link>
-          <Link
-            href="/projects"
-            className="text-sm duration-500 text-muted-foreground hover:text-foreground"
-          >
-            Projects
-          </Link>
-          <Link
-            href="/contact"
-            className="text-sm duration-500 text-muted-foreground hover:text-foreground"
-          >
-            Contact
+          <Link href="/projects" prefetch className="text-sm duration-500 text-zinc-500 hover:text-zinc-300">
+            {t("projects")}
           </Link>
         </nav>
       </div>

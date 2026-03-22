@@ -5,18 +5,18 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400/60 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        default: "border-violet-400/45 text-zinc-900 dark:text-zinc-100",
         destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+          "border-red-400/50 text-red-100 bg-red-600/20 hover:bg-red-600/30",
         outline:
-          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+          "border-violet-400/45 text-zinc-900 dark:text-zinc-100",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
+          "border-violet-400/40 text-zinc-900 dark:text-zinc-100",
+        ghost: "border-violet-300/35 text-zinc-900 dark:text-zinc-100",
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
@@ -42,9 +42,12 @@ export interface ButtonProps
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button"
+    const disableFrosted =
+      typeof className === "string" && className.includes("no-frosted")
+    const useFrosted = variant !== "link" && !disableFrosted
     return (
       <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
+        className={cn(useFrosted && "btn-frosted", buttonVariants({ variant, size, className }))}
         ref={ref}
         {...props}
       />
