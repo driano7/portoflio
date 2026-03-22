@@ -71,9 +71,11 @@ export function SiteHeader({ className }: SiteHeaderProps) {
         <Link
           href="/"
           prefetch
-          className="truncate rounded-xl px-2 py-1 text-sm font-semibold tracking-tight text-zinc-900 transition-colors hover:text-violet-600 dark:text-zinc-100 dark:hover:text-violet-300 sm:hidden"
+          className="truncate rounded-xl px-2 py-1 text-sm font-semibold tracking-tight transition-opacity hover:opacity-90 sm:hidden"
         >
-          Donovan Riaño
+          <span className="bg-gradient-to-b from-foreground to-zinc-500 bg-clip-text text-transparent">
+            Donovan Riaño
+          </span>
         </Link>
 
         <div className="flex shrink-0 items-center gap-1">

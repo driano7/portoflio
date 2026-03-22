@@ -595,3 +595,32 @@
 .defi-dropdown-button-fundamentals {
   animation: fundamentals-button-float 2.2s ease-in-out infinite;
 }
+
+@keyframes xoco-reload-float {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-2px) scale(1.04);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes xoco-reload-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.xoco-reload-button {
+  animation: xoco-reload-float 1.9s ease-in-out infinite;
+}
+
+.xoco-reload-button > svg {
+  animation: xoco-reload-spin 2.6s linear infinite;
+}

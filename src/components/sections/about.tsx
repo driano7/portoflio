@@ -6,11 +6,14 @@ import Link from 'next/link';
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useLocale } from "next-intl";
 import type { AppLocale } from "@/i18n/routing";
+import { XocoPaymentCardDemo } from "@/components/ui/xoco-payment-card-demo";
 
 type AboutCard = {
   id: string;
   title: string;
   imageSrc: string;
+  imageSrcLight?: string;
+  imageSrcDark?: string;
   imageAlt: string;
   content: React.ReactNode;
 };
@@ -48,7 +51,7 @@ export function About() {
             {
               id: "role",
               title: "My role",
-              imageSrc: "/donovan.jpeg",
+              imageSrc: "/iguazu.jpeg",
               imageAlt: "Rol profesional de Donovan Riaño",
               content: (
                 <p>
@@ -59,7 +62,9 @@ export function About() {
             {
               id: "criptec",
               title: "Criptec",
-              imageSrc: "/donovan.jpeg",
+              imageSrc: "/criptec-logo-color.png",
+              imageSrcLight: "/criptec-logo-color.png",
+              imageSrcDark: "/criptec-logo-white.png",
               imageAlt: "Donovan Riaño en Criptec",
               content: (
                 <div className="space-y-4">
@@ -86,7 +91,7 @@ export function About() {
             {
               id: "skills",
               title: "My skills",
-              imageSrc: "/iguazu.jpeg",
+              imageSrc: "/chalten.jpeg",
               imageAlt: "Habilidades de Donovan Riaño",
               content: (
                 <div className="space-y-4">
@@ -102,7 +107,7 @@ export function About() {
             {
               id: "future",
               title: "Proyecto futuro",
-              imageSrc: "/iguazu.jpeg",
+              imageSrc: "/canada.jpeg",
               imageAlt: "Proyecto futuro de Donovan Riaño",
               content: (
                 <p>
@@ -139,7 +144,7 @@ export function About() {
             {
               id: "role",
               title: "My role",
-              imageSrc: "/donovan.jpeg",
+              imageSrc: "/iguazu.jpeg",
               imageAlt: "Professional role of Donovan Riaño",
               content: (
                 <p>
@@ -150,7 +155,9 @@ export function About() {
             {
               id: "criptec",
               title: "Criptec",
-              imageSrc: "/donovan.jpeg",
+              imageSrc: "/criptec-logo-color.png",
+              imageSrcLight: "/criptec-logo-color.png",
+              imageSrcDark: "/criptec-logo-white.png",
               imageAlt: "Donovan Riaño at Criptec",
               content: (
                 <div className="space-y-4">
@@ -177,7 +184,7 @@ export function About() {
             {
               id: "skills",
               title: "My skills",
-              imageSrc: "/iguazu.jpeg",
+              imageSrc: "/chalten.jpeg",
               imageAlt: "Skills of Donovan Riaño",
               content: (
                 <div className="space-y-4">
@@ -193,7 +200,7 @@ export function About() {
             {
               id: "future",
               title: "Future project",
-              imageSrc: "/iguazu.jpeg",
+              imageSrc: "/canada.jpeg",
               imageAlt: "Future project of Donovan Riaño",
               content: (
                 <p>
@@ -301,14 +308,47 @@ export function About() {
                     <div className="about-stack-card relative overflow-hidden rounded-3xl border border-zinc-200/80 bg-white/90 dark:border-zinc-800 dark:bg-zinc-900/85">
                       <div className="grid grid-cols-1 md:grid-cols-[320px_1fr] gap-6 p-5 sm:p-7 items-stretch">
                         <div className="relative w-full h-full self-stretch">
-                          <Image
-                            src={card.imageSrc}
-                            alt={card.imageAlt}
-                            width={340}
-                            height={680}
-                            className="rounded-2xl object-cover w-full h-full min-h-[420px] sm:min-h-[560px] shadow-2xl shadow-black/25 border border-white/10"
-                            priority={index === 0}
-                          />
+                          {card.id === "xoco-suite" ? (
+                            <XocoPaymentCardDemo playSequence={isTopCard} cardholder="Donovan Riaño" />
+                          ) : card.imageSrcLight && card.imageSrcDark ? (
+                            <>
+                              <Image
+                                src={card.imageSrcLight}
+                                alt={card.imageAlt}
+                                width={340}
+                                height={680}
+                                quality={100}
+                                className={`rounded-2xl w-full h-full min-h-[420px] sm:min-h-[560px] shadow-2xl shadow-black/25 border border-white/10 dark:hidden ${
+                                  card.id === "criptec"
+                                    ? "object-contain bg-zinc-50 p-5 sm:p-6"
+                                    : "object-cover"
+                                }`}
+                                priority={index === 0}
+                              />
+                              <Image
+                                src={card.imageSrcDark}
+                                alt={card.imageAlt}
+                                width={340}
+                                height={680}
+                                quality={100}
+                                className={`rounded-2xl w-full h-full min-h-[420px] sm:min-h-[560px] shadow-2xl shadow-black/25 border border-white/10 hidden dark:block ${
+                                  card.id === "criptec"
+                                    ? "object-contain bg-zinc-900 p-5 sm:p-6"
+                                    : "object-cover"
+                                }`}
+                                priority={index === 0}
+                              />
+                            </>
+                          ) : (
+                            <Image
+                              src={card.imageSrc}
+                              alt={card.imageAlt}
+                              width={340}
+                              height={680}
+                              className="rounded-2xl object-cover w-full h-full min-h-[420px] sm:min-h-[560px] shadow-2xl shadow-black/25 border border-white/10"
+                              priority={index === 0}
+                            />
+                          )}
                         </div>
                         <div className="min-w-0">
                           <h3 className="text-xl sm:text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mb-4">

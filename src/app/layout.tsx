@@ -16,6 +16,29 @@ const inter = Inter({
   variable: '--font-inter',
 });
 
+const themeInitScript = `
+(() => {
+  try {
+    const root = document.documentElement;
+    const stored = localStorage.getItem("theme");
+    let resolved = "";
+
+    if (stored === "light" || stored === "dark" || stored === "dim") {
+      resolved = stored;
+    } else if (window.matchMedia) {
+      resolved = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    } else {
+      resolved = "dark";
+    }
+
+    root.classList.remove("light", "dark", "dim");
+    root.classList.add(resolved || "dark");
+  } catch {
+    document.documentElement.classList.add("dark");
+  }
+})();
+`;
+
 const metadataBase =
   process.env.NEXT_PUBLIC_SITE_URL
     ? new URL(process.env.NEXT_PUBLIC_SITE_URL)
@@ -69,6 +92,9 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body className={`${inter.variable} font-sans antialiased`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
             <ThemeProvider
