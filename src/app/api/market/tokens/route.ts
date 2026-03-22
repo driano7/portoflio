@@ -20,10 +20,16 @@ type CmcResponse = {
 };
 
 export async function GET() {
-  const apiKey = process.env.COINMARKETCAP_API_KEY;
+  const apiKey =
+    process.env.COINMARKETCAP_API_KEY ||
+    process.env.CMC_API_KEY ||
+    process.env.NEXT_PUBLIC_COINMARKETCAP_API_KEY;
   if (!apiKey) {
     return NextResponse.json(
-      { error: "COINMARKETCAP_API_KEY is not configured." },
+      {
+        error:
+          "CoinMarketCap API key is not configured. Set COINMARKETCAP_API_KEY (or CMC_API_KEY) in your runtime environment.",
+      },
       { status: 500 },
     );
   }

@@ -23,11 +23,15 @@ export function About() {
   const locale = useLocale() as AppLocale;
   const isEs = locale === "es";
   const sectionRef = useRef<HTMLDivElement | null>(null);
+  const topCardRef = useRef<HTMLElement | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [hasManualNavigation, setHasManualNavigation] = useState(false);
   const [isAboutVisible, setIsAboutVisible] = useState(false);
   const [atPageBottom, setAtPageBottom] = useState(false);
+  const [stackHeight, setStackHeight] = useState<number | null>(null);
+  const [typingReady, setTypingReady] = useState(false);
+  const [typingRun, setTypingRun] = useState(0);
   const animatingRef = useRef(false);
   const hintPlayedRef = useRef(false);
 
@@ -209,6 +213,16 @@ export function About() {
     [cards.length],
   );
 
+  const measureStackHeight = useCallback(() => {
+    const cardEl = topCardRef.current;
+    if (!cardEl) return;
+
+    const cardHeight = cardEl.offsetHeight;
+    const viewportWidth = window.innerWidth;
+    const stackTail = viewportWidth < 768 ? 56 : viewportWidth < 1024 ? 86 : 136;
+    setStackHeight(Math.ceil(cardHeight + stackTail));
+  }, []);
+
   useEffect(() => {
     if (hasManualNavigation) return;
     const interval = window.setInterval(() => {
@@ -232,6 +246,35 @@ export function About() {
       window.removeEventListener("resize", handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    const onResize = () => {
+      measureStackHeight();
+    };
+
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, [measureStackHeight]);
+
+  useEffect(() => {
+    setTypingReady(false);
+
+    let rafId = 0;
+    let timeoutId = 0;
+
+    rafId = window.requestAnimationFrame(() => {
+      measureStackHeight();
+      timeoutId = window.setTimeout(() => {
+        setTypingReady(true);
+        setTypingRun((value) => value + 1);
+      }, 120);
+    });
+
+    return () => {
+      window.cancelAnimationFrame(rafId);
+      window.clearTimeout(timeoutId);
+    };
+  }, [activeIndex, measureStackHeight]);
 
   useEffect(() => {
     const node = sectionRef.current;
@@ -333,7 +376,10 @@ export function About() {
           </div>
 
           <div className="mt-2 sm:mt-4 text-lg leading-8 text-zinc-700 dark:text-zinc-300 text-justify">
-            <div className={`about-card-stack ${isAnimating ? "is-animating" : ""}`}>
+            <div
+              className={`about-card-stack ${isAnimating ? "is-animating" : ""}`}
+              style={stackHeight ? { height: `${stackHeight}px` } : undefined}
+            >
               {visibleCards.map((card, index) => {
                 const isTopCard = index === 0;
                 const stackClass =
@@ -344,7 +390,11 @@ export function About() {
                     : "about-stack-item about-stack-item--back";
 
                 return (
-                  <article key={`${card.id}-${activeIndex}-${index}`} className={stackClass}>
+                  <article
+                    key={`${card.id}-${activeIndex}-${index}`}
+                    className={stackClass}
+                    ref={isTopCard ? (node) => { topCardRef.current = node; } : undefined}
+                  >
                     <div className="about-stack-card relative overflow-hidden rounded-3xl border border-zinc-200/80 bg-white/90 dark:border-zinc-800 dark:bg-zinc-900/85">
                       <div className="grid grid-cols-1 md:grid-cols-[320px_1fr] gap-6 p-5 sm:p-7 items-stretch">
                         <div className="relative w-full h-full self-stretch">
@@ -358,6 +408,7 @@ export function About() {
                                 width={340}
                                 height={680}
                                 quality={100}
+                                onLoad={isTopCard ? measureStackHeight : undefined}
                                 className={`rounded-2xl w-full aspect-square md:aspect-auto h-auto md:h-full md:min-h-[560px] shadow-2xl shadow-black/25 border border-white/10 dark:hidden ${
                                   card.id === "criptec"
                                     ? "object-contain bg-zinc-50 p-5 sm:p-6"
@@ -371,6 +422,7 @@ export function About() {
                                 width={340}
                                 height={680}
                                 quality={100}
+                                onLoad={isTopCard ? measureStackHeight : undefined}
                                 className={`rounded-2xl w-full aspect-square md:aspect-auto h-auto md:h-full md:min-h-[560px] shadow-2xl shadow-black/25 border border-white/10 hidden dark:block ${
                                   card.id === "criptec"
                                     ? "object-contain bg-zinc-900 p-5 sm:p-6"
@@ -385,6 +437,7 @@ export function About() {
                               alt={card.imageAlt}
                               width={340}
                               height={680}
+                              onLoad={isTopCard ? measureStackHeight : undefined}
                               className="rounded-2xl object-cover w-full aspect-square md:aspect-auto h-auto md:h-full md:min-h-[560px] shadow-2xl shadow-black/25 border border-white/10"
                               priority={index === 0}
                             />
@@ -396,9 +449,13 @@ export function About() {
                           </h3>
                           <div className="space-y-4 text-base sm:text-lg leading-8 text-zinc-700 dark:text-zinc-300">
                             {isTopCard ? (
-                              <ScrollTyping key={`typing-${card.id}-${activeIndex}`}>
-                                {card.content}
-                              </ScrollTyping>
+                              typingReady ? (
+                                <ScrollTyping key={`typing-${card.id}-${activeIndex}-${typingRun}`}>
+                                  {card.content}
+                                </ScrollTyping>
+                              ) : (
+                                <div className="opacity-0">{card.content}</div>
+                              )
                             ) : (
                               card.content
                             )}

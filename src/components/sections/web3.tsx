@@ -131,7 +131,7 @@ export function Web3() {
                     </ul>
                     <p>
                       {isEs
-                        ? "El objetivo no es venderte una estrategia, sino darte herramientas claras para que tomes decisiones informadas según tus metas, tu perfil y tu horizonte."
+                        ? "El objetivo es darte herramientas claras para que tomes decisiones informadas según tus metas, tu perfil y tu horizonte."
                         : "The goal is not to sell you a strategy, but to provide clear tools so you can make informed decisions based on your goals, profile, and time horizon."}
                     </p>
                   </CardContent>

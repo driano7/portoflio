@@ -40,12 +40,22 @@ const themeInitScript = `
 })();
 `;
 
-const metadataBase =
-  process.env.NEXT_PUBLIC_SITE_URL
-    ? new URL(process.env.NEXT_PUBLIC_SITE_URL)
-    : process.env.VERCEL_URL
-      ? new URL(`https://${process.env.VERCEL_URL}`)
-      : new URL("http://localhost:3000");
+const resolveMetadataBase = () => {
+  const rawUrl =
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    process.env.URL ||
+    process.env.DEPLOY_PRIME_URL ||
+    (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
+
+  const normalized = rawUrl.startsWith("http://") || rawUrl.startsWith("https://")
+    ? rawUrl
+    : `https://${rawUrl}`;
+
+  return new URL(normalized);
+};
+
+const metadataBase = resolveMetadataBase();
+const ogImageUrl = new URL("/donovan.jpeg", metadataBase).toString();
 
 export const metadata: Metadata = {
   metadataBase,
@@ -56,13 +66,13 @@ export const metadata: Metadata = {
     title: 'Donovan Riaño | Sitio personal',
     description:
       'Ingeniero en Computación y Creative Director especializado en UX/UI, producto, Web3 e IA. Conoce mis proyectos, experiencia y visión.',
-    url: '/',
+    url: metadataBase.toString(),
     siteName: 'Donovan Riaño',
     locale: 'es_MX',
     type: 'website',
     images: [
       {
-        url: '/donovan.jpeg',
+        url: ogImageUrl,
         width: 1200,
         height: 1200,
         alt: 'Donovan Riaño',
@@ -74,7 +84,7 @@ export const metadata: Metadata = {
     title: 'Donovan Riaño | Sitio personal',
     description:
       'Ingeniero en Computación y Creative Director. UX/UI, producto, Web3 e IA aplicados a soluciones reales.',
-    images: ['/donovan.jpeg'],
+    images: [ogImageUrl],
   },
   icons: {
     icon: "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡️</text></svg>",
@@ -107,8 +117,8 @@ export default async function RootLayout({
             <Background />
             <SiteHeader />
             <ScrollToTopOnRoute />
+            <div className="relative z-10">{children}</div>
             <MobileDocNav />
-            <div className="relative z-10 pb-28 sm:pb-0">{children}</div>
             <SiteFooter />
             <Toaster />
           </ThemeProvider>
