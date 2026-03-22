@@ -103,36 +103,68 @@ export function Web3() {
                 <Card className="bg-white/90 border-zinc-200 dark:bg-zinc-900 dark:border-zinc-800">
                   <CardHeader>
                     <CardTitle className="text-zinc-900 dark:text-white">
-                      {isEs ? "Por qué soy tu mejor opción para aprender y crecer" : "Why I&apos;m your best option to learn and grow"}
+                      {isEs ? "Contenido para aprender inversiones de forma autónoma" : "Educational content for autonomous investing learning"}
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="text-zinc-700 dark:text-zinc-400 space-y-4 text-justify">
                     <p>
                       {isEs
-                        ? "Gracias a mi formación en ingeniería, tengo una base sólida para comprender conceptos financieros, económicos y de negocio. Esto me permite:"
-                        : "Thanks to my background in engineering, I have a solid foundation for understanding financial, economic, and business concepts. This allows me to:"}
+                        ? "Comparto este contenido desde una perspectiva técnica y práctica para que cualquier persona pueda aprender a su ritmo y construir criterio propio al momento de invertir."
+                        : "I share this content from a technical and practical perspective so anyone can learn at their own pace and build independent judgment when investing."}
                     </p>
                     <ul className="list-disc pl-5 space-y-2">
                       <li>
                         {isEs
-                          ? "Analizar qué hacen las compañías, cómo crecen y quiénes son sus clientes."
-                          : "Analyze what companies do, how they grow, and who their customers are."}
+                          ? "Entender cómo funciona una empresa, su crecimiento y su modelo de negocio."
+                          : "Understand how a company works, how it grows, and how its business model creates value."}
                       </li>
                       <li>
                         {isEs
-                          ? "Interpretar noticias de negocio, desarrollos del mercado y motores de innovación."
-                          : "Interpret business news, developments, and innovation drivers."}
+                          ? "Interpretar noticias financieras y movimientos de mercado con contexto."
+                          : "Interpret financial news and market moves with context."}
                       </li>
                       <li>
                         {isEs
-                          ? "Identificar oportunidades de valor en distintos sectores para construir portafolios diversificados."
-                          : "Identify value opportunities across sectors to build diversified investment portfolios."}
+                          ? "Aplicar fundamentos de diversificación y gestión de riesgo en portafolios reales."
+                          : "Apply diversification and risk-management fundamentals to real portfolios."}
                       </li>
                     </ul>
                     <p>
                       {isEs
-                        ? "Mi misión es compartir este conocimiento de forma clara y práctica, ayudando a las personas a tomar decisiones financieras informadas según sus metas y perfil de inversionista."
-                        : "My mission is to share this knowledge in a clear and practical way, helping people make informed financial decisions tailored to their goals and investor profile."}
+                        ? "El objetivo no es venderte una estrategia, sino darte herramientas claras para que tomes decisiones informadas según tus metas, tu perfil y tu horizonte."
+                        : "The goal is not to sell you a strategy, but to provide clear tools so you can make informed decisions based on your goals, profile, and time horizon."}
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-white/90 border-zinc-200 dark:bg-zinc-900 dark:border-zinc-800">
+                  <CardContent className="pt-6 text-zinc-700 dark:text-zinc-400 space-y-3 text-justify">
+                    <p>
+                      {isEs ? (
+                        <>
+                          <strong>CeFi</strong> (Centralized Finance) usa intermediarios como exchanges o plataformas custodias para facilitar la operación y la experiencia de usuario.
+                        </>
+                      ) : (
+                        <>
+                          <strong>CeFi</strong> (Centralized Finance) uses intermediaries such as exchanges or custodial platforms to simplify operations and user experience.
+                        </>
+                      )}
+                    </p>
+                    <p>
+                      {isEs ? (
+                        <>
+                          <strong>DeFi</strong> (Decentralized Finance) opera con contratos inteligentes y protocolos abiertos, donde tú gestionas tus activos y llaves.
+                        </>
+                      ) : (
+                        <>
+                          <strong>DeFi</strong> (Decentralized Finance) runs through smart contracts and open protocols, where you manage your own assets and keys.
+                        </>
+                      )}
+                    </p>
+                    <p>
+                      {isEs
+                        ? "Diferencia clave: CeFi ofrece mayor comodidad con confianza delegada; DeFi ofrece mayor soberanía con mayor responsabilidad operativa."
+                        : "Key difference: CeFi offers convenience with delegated trust; DeFi offers sovereignty with higher operational responsibility."}
                     </p>
                   </CardContent>
                 </Card>

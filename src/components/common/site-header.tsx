@@ -28,6 +28,7 @@ const navItems: NavItem[] = [
 export function SiteHeader({ className }: SiteHeaderProps) {
   const pathname = usePathname();
   const t = useTranslations("nav");
+  const isHome = pathname === "/";
   const navLabel = (labelKey: NavItem["labelKey"], mobile: boolean) => {
     if (labelKey !== "web3") return t(labelKey);
     return mobile ? t("web3Mobile") : t("web3Desktop");
@@ -67,10 +68,12 @@ export function SiteHeader({ className }: SiteHeaderProps) {
         <Link
           href="/"
           prefetch
-          className="truncate rounded-xl px-2 py-1 text-sm font-semibold tracking-tight transition-opacity hover:opacity-90 sm:hidden"
+          aria-label={t("home")}
+          className="inline-flex items-center gap-1.5 truncate rounded-xl px-2 py-1 text-sm font-semibold tracking-tight transition-opacity hover:opacity-90 sm:hidden"
         >
+          {!isHome ? <Home className="h-3.5 w-3.5 text-zinc-500 dark:text-zinc-400" /> : null}
           <span className="bg-gradient-to-b from-foreground to-zinc-500 bg-clip-text text-transparent">
-            Donovan Riaño
+            <span className="underline decoration-zinc-500/70 underline-offset-4">Donovan Riaño</span>
           </span>
         </Link>
 
