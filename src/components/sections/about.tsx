@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ChevronDown, ChevronLeft, ChevronRight, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 import { useLocale } from "next-intl";
 import type { AppLocale } from "@/i18n/routing";
 import { XocoPaymentCardDemo } from "@/components/ui/xoco-payment-card-demo";
@@ -290,19 +290,13 @@ export function About() {
 
   return (
     <div className="relative py-24 sm:py-32 animate-fade-in">
-      {isAboutVisible ? (
+      {isAboutVisible && !atPageBottom ? (
         <div
           aria-hidden
-          className={`pointer-events-none fixed left-1/2 -translate-x-1/2 ${
-            atPageBottom ? "top-1 z-40" : "top-1/2 -translate-y-1/2 z-40"
-          }`}
+          className="pointer-events-none fixed left-1/2 bottom-28 z-40 -translate-x-1/2 sm:hidden"
         >
           <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-violet-400/35 bg-zinc-900/70 text-violet-200 shadow-lg backdrop-blur-md dark:bg-zinc-950/75">
-            {atPageBottom ? (
-              <ChevronUp className="h-5 w-5 animate-bounce" />
-            ) : (
-              <ChevronDown className="h-5 w-5 animate-bounce" />
-            )}
+            <ChevronDown className="h-5 w-5 animate-bounce" />
           </span>
         </div>
       ) : null}

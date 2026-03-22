@@ -6,6 +6,7 @@ import "./globals.css";
 import { Background } from '@/components/background';
 import { SiteHeader } from "@/components/common/site-header";
 import { SiteFooter } from "@/components/common/site-footer";
+import { MobileDocNav } from "@/components/common/mobile-doc-nav";
 import { ScrollToTopOnRoute } from "@/components/common/scroll-to-top-on-route";
 import { resolveAppLocale } from "@/i18n/resolve-locale";
 import { ThemeProvider } from '@/components/theme-provider';
@@ -106,7 +107,8 @@ export default async function RootLayout({
             <Background />
             <SiteHeader />
             <ScrollToTopOnRoute />
-            <div className="relative z-10">{children}</div>
+            <MobileDocNav />
+            <div className="relative z-10 pb-28 sm:pb-0">{children}</div>
             <SiteFooter />
             <Toaster />
           </ThemeProvider>
