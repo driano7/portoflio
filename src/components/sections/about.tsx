@@ -7,6 +7,7 @@ import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 import { useLocale } from "next-intl";
 import type { AppLocale } from "@/i18n/routing";
 import { XocoPaymentCardDemo } from "@/components/ui/xoco-payment-card-demo";
+import { ScrollTyping } from "@/components/ui/scroll-typing";
 
 type AboutCard = {
   id: string;
@@ -394,7 +395,13 @@ export function About() {
                             {card.title}
                           </h3>
                           <div className="space-y-4 text-base sm:text-lg leading-8 text-zinc-700 dark:text-zinc-300">
-                            {card.content}
+                            {isTopCard ? (
+                              <ScrollTyping key={`typing-${card.id}-${activeIndex}`}>
+                                {card.content}
+                              </ScrollTyping>
+                            ) : (
+                              card.content
+                            )}
                           </div>
                         </div>
                       </div>

@@ -407,7 +407,7 @@
 
 .about-card-stack {
   position: relative;
-  height: 980px;
+  height: 860px;
   perspective: 1200px;
 }
 
@@ -496,7 +496,7 @@
 
 @media (max-width: 1023px) {
   .about-card-stack {
-    height: 1160px;
+    height: 920px;
   }
 
   .about-stack-item--middle {
@@ -510,7 +510,7 @@
 
 @media (max-width: 767px) {
   .about-card-stack {
-    height: 1320px;
+    height: 820px;
   }
 
   .about-stack-item--middle {

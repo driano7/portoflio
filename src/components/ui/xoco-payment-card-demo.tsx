@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import Image from "next/image";
 import { RefreshCw } from "lucide-react";
 
 type XocoPaymentCardDemoProps = {
@@ -174,7 +175,14 @@ export function XocoPaymentCardDemo({ playSequence, cardholder }: XocoPaymentCar
               <div className="h-9 rounded-sm bg-zinc-800/90" />
               <div className="mt-4 flex items-center justify-between">
                 <p className="text-[10px] uppercase tracking-[0.2em] text-zinc-400">Card data</p>
-                <p className="text-[11px] font-bold tracking-[0.18em] text-zinc-100">VISA</p>
+                <Image
+                  src="/visa-logo.svg"
+                  alt="Visa"
+                  width={52}
+                  height={18}
+                  className="h-[14px] w-auto object-contain opacity-95"
+                  priority={false}
+                />
               </div>
               <div className="mt-3 rounded bg-zinc-100/90 px-2 py-1 text-right">
                 <p className="font-mono text-sm tracking-[0.22em] text-zinc-900">

@@ -32,7 +32,7 @@ export function MobileDocNav() {
     <div className="pointer-events-none fixed inset-x-0 bottom-4 z-[70] px-4 sm:hidden">
       <nav
         className={cn(
-          "pointer-events-auto relative mx-auto flex w-full max-w-md items-center justify-between gap-2 rounded-[1.6rem] border px-3 py-1.5 shadow-2xl backdrop-blur-xl",
+          "pointer-events-auto relative mx-auto flex w-full max-w-md items-center justify-between gap-2 rounded-[1.6rem] border px-3 py-1 shadow-2xl backdrop-blur-xl",
           "border-zinc-300/40 bg-zinc-100/70 dark:border-white/10 dark:bg-zinc-900/55",
         )}
       >
