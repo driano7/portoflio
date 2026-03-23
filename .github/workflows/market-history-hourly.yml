@@ -1,0 +1,32 @@
+name: Market History Hourly Sync
+
+on:
+  schedule:
+    # Runs every hour at minute 0 (includes 21:00 UTC = 3:00 PM America/Mexico_City).
+    - cron: "0 * * * *"
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger market history sync
+        env:
+          SITE_URL: ${{ secrets.SITE_URL }}
+          MARKET_CRON_SECRET: ${{ secrets.MARKET_CRON_SECRET }}
+        run: |
+          if [ -z "$SITE_URL" ]; then
+            echo "Missing SITE_URL secret"
+            exit 1
+          fi
+          if [ -z "$MARKET_CRON_SECRET" ]; then
+            echo "Missing MARKET_CRON_SECRET secret"
+            exit 1
+          fi
+
+          URL="${SITE_URL%/}/api/market/cron-sync"
+          echo "Calling $URL"
+          curl --fail --show-error --silent \
+            -H "Authorization: Bearer $MARKET_CRON_SECRET" \
+            "$URL"
+

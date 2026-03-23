@@ -428,13 +428,13 @@
 .about-stack-item--middle {
   transform: scale(0.92) translate3d(28px, 64px, 0);
   z-index: 20;
-  opacity: 0.92;
+  opacity: 0.97;
 }
 
 .about-stack-item--back {
   transform: scale(0.84) translate3d(62px, 126px, 0);
   z-index: 10;
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
 .about-stack-card {
@@ -456,14 +456,14 @@
   100% {
     transform: scale(0.84) translate3d(62px, 126px, 0);
     z-index: 10;
-    opacity: 0.9;
+    opacity: 0.95;
   }
 }
 
 @keyframes about-stack-to-top {
   0% {
     transform: scale(0.92) translate3d(28px, 64px, 0);
-    opacity: 0.92;
+    opacity: 0.97;
   }
   100% {
     transform: scale(1) translate3d(0, 0, 0);
@@ -474,11 +474,11 @@
 @keyframes about-stack-to-middle {
   0% {
     transform: scale(0.84) translate3d(62px, 126px, 0);
-    opacity: 0.9;
+    opacity: 0.95;
   }
   100% {
     transform: scale(0.92) translate3d(28px, 64px, 0);
-    opacity: 0.92;
+    opacity: 0.97;
   }
 }
 

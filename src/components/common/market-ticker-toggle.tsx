@@ -1,0 +1,57 @@
+"use client";
+
+import { useState } from "react";
+import { ArrowDownRight, ArrowUpRight, X } from "lucide-react";
+import { useLocale } from "next-intl";
+
+import type { AppLocale } from "@/i18n/routing";
+import { Button } from "@/components/ui/button";
+import { DefiMarketTicker } from "@/components/sections/defi-market-ticker";
+
+export function MarketTickerToggle() {
+  const locale = useLocale() as AppLocale;
+  const isEs = locale === "es";
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className="relative">
+      <Button
+        type="button"
+        variant="ghost"
+        size="sm"
+        onClick={() => setOpen((value) => !value)}
+        className="no-frosted gap-1 border-none bg-transparent px-2 text-zinc-700 hover:bg-zinc-200/70 hover:text-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-white"
+        aria-label={isEs ? "Mostrar precios de tokens" : "Show token prices"}
+      >
+        <span className="inline-flex items-center">
+          <ArrowUpRight className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
+          <ArrowDownRight className="-ml-1 h-4 w-4 text-red-600 dark:text-red-400" />
+        </span>
+      </Button>
+
+      {open ? (
+        <>
+          <button
+            type="button"
+            aria-label={isEs ? "Cerrar panel de precios" : "Close prices panel"}
+            onClick={() => setOpen(false)}
+            className="fixed inset-0 z-[60] bg-black/48 backdrop-blur-[3px]"
+          />
+          <div className="absolute right-0 top-[calc(100%+0.55rem)] z-[70] w-[min(98vw,54rem)] rounded-2xl border border-black/10 bg-white/92 p-3 md:p-4 shadow-2xl backdrop-blur-md dark:border-white/10 dark:bg-zinc-950/82">
+            <div className="mb-2 flex items-center justify-end">
+              <button
+                type="button"
+                onClick={() => setOpen(false)}
+                aria-label={isEs ? "Cerrar precios" : "Close prices"}
+                className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-zinc-300/90 bg-white/80 text-zinc-700 transition-colors hover:bg-zinc-100 hover:text-zinc-900 dark:border-zinc-700 dark:bg-zinc-900/70 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-zinc-100"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            </div>
+            <DefiMarketTicker />
+          </div>
+        </>
+      ) : null}
+    </div>
+  );
+}

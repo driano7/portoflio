@@ -7,7 +7,6 @@ import { ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
 import { ScrollRevealStagger } from "@/components/ui/scroll-reveal-stagger";
 import { useLocale } from "next-intl";
 import type { AppLocale } from "@/i18n/routing";
-import { DefiMarketTicker } from "@/components/sections/defi-market-ticker";
 
 type CollapsibleCardProps = {
   title: string;
@@ -103,36 +102,36 @@ export function Web3() {
                 <Card className="bg-white/90 border-zinc-200 dark:bg-zinc-900 dark:border-zinc-800">
                   <CardHeader>
                     <CardTitle className="text-zinc-900 dark:text-white">
-                      {isEs ? "Contenido para aprender inversiones de forma autónoma" : "Educational content for autonomous investing learning"}
+                      {isEs ? "Ruta de formación financiera autónoma para prepararte para cripto" : "Autonomous financial training path to prepare for crypto"}
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="text-zinc-700 dark:text-zinc-400 space-y-4 text-justify">
                     <p>
                       {isEs
-                        ? "Comparto este contenido desde una perspectiva técnica y práctica para que cualquier persona pueda aprender a su ritmo y construir criterio propio al momento de invertir."
-                        : "I share this content from a technical and practical perspective so anyone can learn at their own pace and build independent judgment when investing."}
+                        ? "Este contenido está diseñado para que cualquier persona fortalezca sus bases en finanzas personales, finanzas básicas e intermedias antes de profundizar en los tópicos de cripto."
+                        : "This content is designed so anyone can strengthen personal finance, basic finance, and intermediate finance foundations before going deeper into crypto topics."}
                     </p>
                     <ul className="list-disc pl-5 space-y-2">
                       <li>
                         {isEs
-                          ? "Entender cómo funciona una empresa, su crecimiento y su modelo de negocio."
-                          : "Understand how a company works, how it grows, and how its business model creates value."}
+                          ? "Conectar principios económicos (ahorro, inflación, riesgo y asignación de capital) con decisiones cotidianas de dinero."
+                          : "Connect economic principles (saving, inflation, risk, and capital allocation) with everyday money decisions."}
                       </li>
                       <li>
                         {isEs
-                          ? "Interpretar noticias financieras y movimientos de mercado con contexto."
-                          : "Interpret financial news and market moves with context."}
+                          ? "Entender conceptos tecnológicos y operativos de CeFi y DeFi desde una perspectiva económica, técnica y práctica."
+                          : "Understand CeFi and DeFi technological and operational concepts from an economic, technical, and practical perspective."}
                       </li>
                       <li>
                         {isEs
-                          ? "Aplicar fundamentos de diversificación y gestión de riesgo en portafolios reales."
-                          : "Apply diversification and risk-management fundamentals to real portfolios."}
+                          ? "Aplicar una gestión financiera personal simple: presupuesto, control de gastos, priorización de metas y administración de riesgo."
+                          : "Apply simple personal finance management: budgeting, expense control, goal prioritization, and risk management."}
                       </li>
                     </ul>
                     <p>
                       {isEs
-                        ? "El objetivo es darte herramientas claras para que tomes decisiones informadas según tus metas, tu perfil y tu horizonte."
-                        : "The goal is not to sell you a strategy, but to provide clear tools so you can make informed decisions based on your goals, profile, and time horizon."}
+                        ? "No se ofrece asesoría de inversión ni preparación para certificaciones. Es una ruta educativa para gestionar el dinero de forma clara, práctica y sencilla, atendiendo una necesidad histórica en nuestra realidad latinoamericana."
+                        : "This is not investment advice and it is not designed to prepare users for certifications. It is an educational path to manage money in a clear, practical, and simple way, addressing a longstanding need in the Latin American context."}
                     </p>
                   </CardContent>
                 </Card>
@@ -363,7 +362,6 @@ export function Web3() {
                     <li>{isEs ? "Nivel 2: Intermedio" : "Level 2: Intermediate"}</li>
                     <li>{isEs ? "Nivel 3: Avanzado (inglés)" : "Level 3: Advanced (English)"}</li>
                   </ul>
-                  <DefiMarketTicker />
                   <div className="mt-6">
                     <Link
                       href="/web3/education"

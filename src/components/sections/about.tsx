@@ -23,7 +23,7 @@ export function About() {
   const locale = useLocale() as AppLocale;
   const isEs = locale === "es";
   const sectionRef = useRef<HTMLDivElement | null>(null);
-  const topCardRef = useRef<HTMLElement | null>(null);
+  const cardMeasureRefs = useRef<Array<HTMLElement | null>>([]);
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [hasManualNavigation, setHasManualNavigation] = useState(false);
@@ -214,13 +214,15 @@ export function About() {
   );
 
   const measureStackHeight = useCallback(() => {
-    const cardEl = topCardRef.current;
-    if (!cardEl) return;
+    const tallestCardHeight = cardMeasureRefs.current.reduce((maxHeight, node) => {
+      if (!node) return maxHeight;
+      return Math.max(maxHeight, node.offsetHeight);
+    }, 0);
+    if (!tallestCardHeight) return;
 
-    const cardHeight = cardEl.offsetHeight;
     const viewportWidth = window.innerWidth;
     const stackTail = viewportWidth < 768 ? 56 : viewportWidth < 1024 ? 86 : 136;
-    setStackHeight(Math.ceil(cardHeight + stackTail));
+    setStackHeight(Math.ceil(tallestCardHeight + stackTail));
   }, []);
 
   useEffect(() => {
@@ -252,9 +254,27 @@ export function About() {
       measureStackHeight();
     };
 
+    onResize();
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
   }, [measureStackHeight]);
+
+  useEffect(() => {
+    let rafId = 0;
+    rafId = window.requestAnimationFrame(() => {
+      measureStackHeight();
+    });
+
+    if (document.fonts?.ready) {
+      void document.fonts.ready.then(() => {
+        measureStackHeight();
+      });
+    }
+
+    return () => {
+      window.cancelAnimationFrame(rafId);
+    };
+  }, [cards, measureStackHeight]);
 
   useEffect(() => {
     setTypingReady(false);
@@ -263,7 +283,6 @@ export function About() {
     let timeoutId = 0;
 
     rafId = window.requestAnimationFrame(() => {
-      measureStackHeight();
       timeoutId = window.setTimeout(() => {
         setTypingReady(true);
         setTypingRun((value) => value + 1);
@@ -274,7 +293,7 @@ export function About() {
       window.cancelAnimationFrame(rafId);
       window.clearTimeout(timeoutId);
     };
-  }, [activeIndex, measureStackHeight]);
+  }, [activeIndex]);
 
   useEffect(() => {
     const node = sectionRef.current;
@@ -376,99 +395,128 @@ export function About() {
           </div>
 
           <div className="mt-2 sm:mt-4 text-lg leading-8 text-zinc-700 dark:text-zinc-300 text-justify">
-            <div
-              className={`about-card-stack ${isAnimating ? "is-animating" : ""}`}
-              style={stackHeight ? { height: `${stackHeight}px` } : undefined}
-            >
-              {visibleCards.map((card, index) => {
-                const isTopCard = index === 0;
-                const stackClass =
-                  isTopCard
-                    ? "about-stack-item about-stack-item--top"
-                    : index === 1
-                    ? "about-stack-item about-stack-item--middle"
-                    : "about-stack-item about-stack-item--back";
-
-                return (
+            <div className="relative">
+              <div aria-hidden className="pointer-events-none invisible absolute inset-x-0 top-0 -z-10">
+                {cards.map((card, index) => (
                   <article
-                    key={`${card.id}-${activeIndex}-${index}`}
-                    className={stackClass}
-                    ref={isTopCard ? (node) => { topCardRef.current = node; } : undefined}
+                    key={`measure-${card.id}`}
+                    ref={(node) => {
+                      cardMeasureRefs.current[index] = node;
+                    }}
+                    className={index === cards.length - 1 ? "" : "mb-5"}
                   >
                     <div className="about-stack-card relative overflow-hidden rounded-3xl border border-zinc-200/80 bg-white/90 dark:border-zinc-800 dark:bg-zinc-900/85">
                       <div className="grid grid-cols-1 md:grid-cols-[320px_1fr] gap-6 p-5 sm:p-7 items-stretch">
                         <div className="relative w-full h-full self-stretch">
-                          {card.id === "xoco-suite" ? (
-                            <XocoPaymentCardDemo playSequence={isTopCard} cardholder="Donovan Riaño" />
-                          ) : card.imageSrcLight && card.imageSrcDark ? (
-                            <>
-                              <Image
-                                src={card.imageSrcLight}
-                                alt={card.imageAlt}
-                                width={340}
-                                height={680}
-                                quality={100}
-                                onLoad={isTopCard ? measureStackHeight : undefined}
-                                className={`rounded-2xl w-full aspect-square md:aspect-auto h-auto md:h-full md:min-h-[560px] shadow-2xl shadow-black/25 border border-white/10 dark:hidden ${
-                                  card.id === "criptec"
-                                    ? "object-contain bg-zinc-50 p-5 sm:p-6"
-                                    : "object-cover"
-                                }`}
-                                priority={index === 0}
-                              />
-                              <Image
-                                src={card.imageSrcDark}
-                                alt={card.imageAlt}
-                                width={340}
-                                height={680}
-                                quality={100}
-                                onLoad={isTopCard ? measureStackHeight : undefined}
-                                className={`rounded-2xl w-full aspect-square md:aspect-auto h-auto md:h-full md:min-h-[560px] shadow-2xl shadow-black/25 border border-white/10 hidden dark:block ${
-                                  card.id === "criptec"
-                                    ? "object-contain bg-zinc-900 p-5 sm:p-6"
-                                    : "object-cover"
-                                }`}
-                                priority={index === 0}
-                              />
-                            </>
-                          ) : (
-                            <Image
-                              src={card.imageSrc}
-                              alt={card.imageAlt}
-                              width={340}
-                              height={680}
-                              onLoad={isTopCard ? measureStackHeight : undefined}
-                              className="rounded-2xl object-cover w-full aspect-square md:aspect-auto h-auto md:h-full md:min-h-[560px] shadow-2xl shadow-black/25 border border-white/10"
-                              priority={index === 0}
-                            />
-                          )}
+                          <div className="rounded-2xl w-full aspect-square md:aspect-auto h-auto md:h-full md:min-h-[560px] shadow-2xl shadow-black/25 border border-white/10" />
                         </div>
                         <div className="min-w-0">
                           <h3 className="text-xl sm:text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mb-4">
                             {card.title}
                           </h3>
                           <div className="space-y-4 text-base sm:text-lg leading-8 text-zinc-700 dark:text-zinc-300">
-                            {isTopCard ? (
-                              typingReady ? (
-                                <ScrollTyping key={`typing-${card.id}-${activeIndex}-${typingRun}`}>
-                                  {card.content}
-                                </ScrollTyping>
-                              ) : (
-                                <div className="opacity-0">{card.content}</div>
-                              )
-                            ) : (
-                              card.content
-                            )}
+                            {card.content}
                           </div>
                         </div>
                       </div>
-                      {!isTopCard ? (
-                        <div className="pointer-events-none absolute inset-0 z-20 bg-black/98 backdrop-blur-[1px]" />
-                      ) : null}
                     </div>
                   </article>
-                );
-              })}
+                ))}
+              </div>
+
+              <div
+                className={`about-card-stack ${isAnimating ? "is-animating" : ""}`}
+                style={stackHeight ? { height: `${stackHeight}px` } : undefined}
+              >
+                {visibleCards.map((card, index) => {
+                  const isTopCard = index === 0;
+                  const stackClass =
+                    isTopCard
+                      ? "about-stack-item about-stack-item--top"
+                      : index === 1
+                      ? "about-stack-item about-stack-item--middle"
+                      : "about-stack-item about-stack-item--back";
+
+                  return (
+                    <article
+                      key={`${card.id}-${activeIndex}-${index}`}
+                      className={stackClass}
+                    >
+                      <div className="about-stack-card relative overflow-hidden rounded-3xl border border-zinc-200/80 bg-white/90 dark:border-zinc-800 dark:bg-zinc-900/85">
+                        <div className="grid grid-cols-1 md:grid-cols-[320px_1fr] gap-6 p-5 sm:p-7 items-stretch">
+                          <div className="relative w-full h-full self-stretch">
+                            {card.id === "xoco-suite" ? (
+                              <XocoPaymentCardDemo playSequence={isTopCard} cardholder="Donovan Riaño" />
+                            ) : card.imageSrcLight && card.imageSrcDark ? (
+                              <>
+                                <Image
+                                  src={card.imageSrcLight}
+                                  alt={card.imageAlt}
+                                  width={340}
+                                  height={680}
+                                  quality={100}
+                                  onLoad={isTopCard ? measureStackHeight : undefined}
+                                  className={`rounded-2xl w-full aspect-square md:aspect-auto h-auto md:h-full md:min-h-[560px] shadow-2xl shadow-black/25 border border-white/10 dark:hidden ${
+                                    card.id === "criptec"
+                                      ? "object-contain bg-zinc-50 p-5 sm:p-6"
+                                      : "object-cover"
+                                  }`}
+                                  priority={index === 0}
+                                />
+                                <Image
+                                  src={card.imageSrcDark}
+                                  alt={card.imageAlt}
+                                  width={340}
+                                  height={680}
+                                  quality={100}
+                                  onLoad={isTopCard ? measureStackHeight : undefined}
+                                  className={`rounded-2xl w-full aspect-square md:aspect-auto h-auto md:h-full md:min-h-[560px] shadow-2xl shadow-black/25 border border-white/10 hidden dark:block ${
+                                    card.id === "criptec"
+                                      ? "object-contain bg-zinc-900 p-5 sm:p-6"
+                                      : "object-cover"
+                                  }`}
+                                  priority={index === 0}
+                                />
+                              </>
+                            ) : (
+                              <Image
+                                src={card.imageSrc}
+                                alt={card.imageAlt}
+                                width={340}
+                                height={680}
+                                onLoad={isTopCard ? measureStackHeight : undefined}
+                                className="rounded-2xl object-cover w-full aspect-square md:aspect-auto h-auto md:h-full md:min-h-[560px] shadow-2xl shadow-black/25 border border-white/10"
+                                priority={index === 0}
+                              />
+                            )}
+                          </div>
+                          <div className="min-w-0">
+                            <h3 className="text-xl sm:text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mb-4">
+                              {card.title}
+                            </h3>
+                            <div className="space-y-4 text-base sm:text-lg leading-8 text-zinc-700 dark:text-zinc-300">
+                              {isTopCard ? (
+                                typingReady ? (
+                                  <ScrollTyping key={`typing-${card.id}-${activeIndex}-${typingRun}`}>
+                                    {card.content}
+                                  </ScrollTyping>
+                                ) : (
+                                  <div className="opacity-0">{card.content}</div>
+                                )
+                              ) : (
+                                card.content
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                        {!isTopCard ? (
+                          <div className="pointer-events-none absolute inset-0 z-20 bg-black/90 backdrop-blur-[1px]" />
+                        ) : null}
+                      </div>
+                    </article>
+                  );
+                })}
+              </div>
             </div>
             <div className="-mt-16 hidden sm:flex items-center justify-center gap-3">
               <button

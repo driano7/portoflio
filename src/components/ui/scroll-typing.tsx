@@ -13,12 +13,14 @@ type TextNodeRecord = {
 };
 
 const clamp = (value: number, min: number, max: number) => Math.min(max, Math.max(min, value));
+const TYPING_SPEED_CHARS_PER_SECOND = 92;
 
 export function ScrollTyping({ children, className }: ScrollTypingProps) {
 	const containerRef = useRef<HTMLDivElement>(null);
-	const targetCharsRef = useRef(0);
 	const renderedCharsRef = useRef(0);
 	const rafRef = useRef<number | null>(null);
+	const lastFrameRef = useRef(0);
+	const carryRef = useRef(0);
 
 	useLayoutEffect(() => {
 		const container = containerRef.current;
@@ -52,65 +54,43 @@ export function ScrollTyping({ children, className }: ScrollTypingProps) {
 			}
 		};
 
-		const calculateProgress = () => {
-			const viewportHeight = window.innerHeight || 1;
-			const rect = container.getBoundingClientRect();
-			const revealWindow = rect.height + viewportHeight * 0.8;
-			const rawProgress = (viewportHeight * 0.92 - rect.top) / Math.max(revealWindow, 1);
-			const nearViewport = rect.top < viewportHeight * 1.05 && rect.bottom > viewportHeight * 0.08;
-			const progress = clamp(rawProgress, 0, 1);
-
-			// Avoid "all blank" perception when the section is already in view.
-			if (nearViewport && progress < 0.1) {
-				return 0.1;
+		const tick = (timestamp: number) => {
+			if (lastFrameRef.current === 0) {
+				lastFrameRef.current = timestamp;
 			}
 
-			return progress;
-		};
+			const elapsedSeconds = (timestamp - lastFrameRef.current) / 1000;
+			lastFrameRef.current = timestamp;
+			carryRef.current += elapsedSeconds * TYPING_SPEED_CHARS_PER_SECOND;
 
-		const tick = () => {
-			const current = renderedCharsRef.current;
-			const target = targetCharsRef.current;
-			const delta = target - current;
+			const nextChars = Math.floor(carryRef.current);
+			if (nextChars <= 0) {
+				rafRef.current = window.requestAnimationFrame(tick);
+				return;
+			}
 
-			if (delta === 0) {
+			carryRef.current -= nextChars;
+			renderedCharsRef.current = clamp(renderedCharsRef.current + nextChars, 0, totalChars);
+			applyCharCount(renderedCharsRef.current);
+
+			if (renderedCharsRef.current >= totalChars) {
 				container.dataset.typingActive = "false";
 				rafRef.current = null;
 				return;
 			}
 
-			// Human-like typing/backspacing speed based on distance.
-			const step = Math.max(1, Math.ceil(Math.abs(delta) * 0.08));
-			const next = current + Math.sign(delta) * step;
-			const bounded = delta > 0 ? Math.min(next, target) : Math.max(next, target);
-
-			renderedCharsRef.current = bounded;
-			applyCharCount(bounded);
 			container.dataset.typingActive = "true";
 			rafRef.current = window.requestAnimationFrame(tick);
 		};
 
-		const updateTarget = () => {
-			const progress = calculateProgress();
-			targetCharsRef.current = Math.floor(totalChars * progress);
-			if (!rafRef.current) {
-				rafRef.current = window.requestAnimationFrame(tick);
-			}
-		};
-
-		const onScroll = () => {
-			updateTarget();
-		};
-
-		targetCharsRef.current = Math.floor(totalChars * calculateProgress());
-		renderedCharsRef.current = targetCharsRef.current;
-		applyCharCount(renderedCharsRef.current);
-		window.addEventListener("scroll", onScroll, { passive: true });
-		window.addEventListener("resize", onScroll);
+		renderedCharsRef.current = 0;
+		lastFrameRef.current = 0;
+		carryRef.current = 0;
+		applyCharCount(0);
+		container.dataset.typingActive = totalChars > 0 ? "true" : "false";
+		rafRef.current = window.requestAnimationFrame(tick);
 
 		return () => {
-			window.removeEventListener("scroll", onScroll);
-			window.removeEventListener("resize", onScroll);
 			if (rafRef.current) {
 				window.cancelAnimationFrame(rafRef.current);
 			}
@@ -118,7 +98,7 @@ export function ScrollTyping({ children, className }: ScrollTypingProps) {
 				item.node.textContent = item.original;
 			}
 		};
-	}, []);
+	}, [children]);
 
 	return (
 		<div className={className} ref={containerRef} data-typing-active="false">
