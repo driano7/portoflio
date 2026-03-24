@@ -17,6 +17,8 @@ export function Projects({ projects }: ProjectsProps) {
   const locale = useLocale() as AppLocale;
   const isEs = locale === "es";
   const latestProjects = projects.slice(0, 7);
+  const getDisplayProjectName = (name: string) =>
+    name.toLowerCase() === "portoflio" ? "Portfolio" : name;
 
   return (
     <section id="projects" className="relative py-20">
@@ -119,6 +121,26 @@ export function Projects({ projects }: ProjectsProps) {
               ? "Objetivo: seguridad operativa con mejor experiencia de usuario para pagos y transferencias en entornos Web3."
               : "Goal: stronger operational security with a better user experience for Web3 payments and transfers."}
           </p>
+          <div className="mt-4 flex flex-wrap items-center gap-2">
+            <Link
+              href="https://strawberrywallet.netlify.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-900/60 px-3 py-2 text-xs text-zinc-200 transition-colors hover:border-violet-400/50 hover:text-white"
+            >
+              {isEs ? "Abrir app Strawberry" : "Open Strawberry app"}
+              <ArrowUpRight className="h-3.5 w-3.5" />
+            </Link>
+            <Link
+              href="https://github.com/driano7/StrawberryWallet"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-900/60 px-3 py-2 text-xs text-zinc-200 transition-colors hover:border-violet-400/50 hover:text-white"
+            >
+              {isEs ? "Repo Strawberry Wallet" : "Strawberry Wallet repo"}
+              <ArrowUpRight className="h-3.5 w-3.5" />
+            </Link>
+          </div>
         </div>
 
         <div className="mt-12 mb-6 flex items-center justify-between gap-3">
@@ -132,6 +154,8 @@ export function Projects({ projects }: ProjectsProps) {
 
         <ScrollRevealStagger className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {latestProjects.map((project, index) => {
+            const displayName = getDisplayProjectName(project.name);
+            const hasCover = Boolean(project.coverImageUrl);
             const bars = [24, 40, 58, 76].map((base, barIndex) => {
               const activityBoost = Math.min(22, Math.floor((project.stargazers_count + project.forks_count) / (barIndex + 3)));
               return Math.min(92, base + activityBoost);
@@ -143,22 +167,39 @@ export function Projects({ projects }: ProjectsProps) {
                 className="rounded-[2rem] border border-zinc-300 bg-white/80 p-3 transition-colors hover:border-violet-400/60 dark:border-zinc-800 dark:bg-zinc-900/70 dark:hover:border-violet-500/45"
               >
                 <div className="relative mb-4 h-44 overflow-hidden rounded-[1.4rem] border border-zinc-300/80 bg-gradient-to-br from-violet-500/20 via-zinc-100 to-sky-500/15 p-4 dark:border-zinc-700/70 dark:via-zinc-900">
-                  <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-violet-400/20 blur-xl" />
-                  <div className="absolute -bottom-8 -left-6 h-24 w-24 rounded-full bg-sky-400/15 blur-xl" />
+                  {hasCover ? (
+                    <>
+                      <img
+                        src={project.coverImageUrl ?? ""}
+                        alt={`${displayName} cover`}
+                        loading="lazy"
+                        className="absolute inset-0 h-full w-full object-cover"
+                        referrerPolicy="no-referrer"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/15 to-black/45" />
+                    </>
+                  ) : (
+                    <>
+                      <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-violet-400/20 blur-xl" />
+                      <div className="absolute -bottom-8 -left-6 h-24 w-24 rounded-full bg-sky-400/15 blur-xl" />
+                    </>
+                  )}
                   <div className="relative flex h-full flex-col justify-between">
                     <div className="inline-flex w-fit items-center gap-1.5 rounded-full border border-zinc-300 bg-white/80 px-2.5 py-1 text-[11px] font-semibold text-zinc-700 dark:border-zinc-600 dark:bg-zinc-900/70 dark:text-zinc-200">
                       <Globe2 className="h-3.5 w-3.5 text-violet-500 dark:text-violet-300" />
                       {project.language ?? (isEs ? "Repositorio" : "Repository")}
                     </div>
-                    <div className="flex items-end gap-2">
-                      {bars.map((height, barIndex) => (
-                        <div
-                          key={`${project.id}-bar-${barIndex}`}
-                          className="w-10 rounded-t-xl border border-violet-500/30 bg-violet-500/70"
-                          style={{ height: `${height}%` }}
-                        />
-                      ))}
-                    </div>
+                    {!hasCover ? (
+                      <div className="flex items-end gap-2">
+                        {bars.map((height, barIndex) => (
+                          <div
+                            key={`${project.id}-bar-${barIndex}`}
+                            className="w-10 rounded-t-xl border border-violet-500/30 bg-violet-500/70"
+                            style={{ height: `${height}%` }}
+                          />
+                        ))}
+                      </div>
+                    ) : null}
                   </div>
                 </div>
 
@@ -167,7 +208,7 @@ export function Projects({ projects }: ProjectsProps) {
                     #{index + 1} {isEs ? "Portafolio" : "Portfolio"}
                   </div>
 
-                  <h4 className="text-xl font-bold leading-tight text-zinc-900 dark:text-white">{project.name}</h4>
+                  <h4 className="text-xl font-bold leading-tight text-zinc-900 dark:text-white">{displayName}</h4>
                   <p className="mt-2 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
                     {project.description ?? (isEs ? "Repositorio sin descripción por el momento." : "Repository without description yet.")}
                   </p>

@@ -1,26 +1,40 @@
 import { NextRequest, NextResponse } from "next/server";
 
 import type { ChartPoint } from "@/lib/market-history";
-import { getMarketChartPoints } from "@/lib/market-history";
+import {
+  getMarketChartPoints,
+  getRequiredPointsForSymbol,
+  getSamplingHoursForSymbol,
+  getWindowHoursForSymbol,
+} from "@/lib/market-history";
 import { fetchLatestMarketTokens } from "@/lib/market-tokens";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
 const ALLOWED_SYMBOLS = new Set(["BTC", "ETH", "SOL", "XRP", "USDT", "BNB"]);
-const FULL_DAY_POINTS = 24;
 
-function buildEstimated24hPoints(currentPrice: number, change24h: number, now = new Date()): ChartPoint[] {
+function buildEstimatedPoints(
+  currentPrice: number,
+  change24h: number,
+  pointCount: number,
+  samplingHours: number,
+  now = new Date(),
+): ChartPoint[] {
   const denominator = 1 + change24h / 100;
   const safeDenominator = Number.isFinite(denominator) && Math.abs(denominator) > 1e-6 ? denominator : 1;
   const startPrice = currentPrice / safeDenominator;
   const endPrice = currentPrice;
   const points: ChartPoint[] = [];
+  const safePointCount = Math.max(pointCount, 2);
+  const denominatorSteps = Math.max(safePointCount - 1, 1);
 
-  for (let i = 0; i < 24; i += 1) {
-    const weight = i / 23;
+  for (let i = 0; i < safePointCount; i += 1) {
+    const weight = i / denominatorSteps;
     const priceUsd = startPrice + (endPrice - startPrice) * weight;
-    const time = new Date(now.getTime() - (23 - i) * 60 * 60 * 1000).toISOString();
+    const time = new Date(
+      now.getTime() - (denominatorSteps - i) * samplingHours * 60 * 60 * 1000,
+    ).toISOString();
     points.push({
       time,
       priceUsd: Number(priceUsd.toFixed(8)),
@@ -36,12 +50,17 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: "Unsupported symbol." }, { status: 400 });
   }
 
+  const requiredPoints = getRequiredPointsForSymbol(symbol);
+  const samplingHours = getSamplingHoursForSymbol(symbol);
+  const windowHours = getWindowHoursForSymbol();
   const points = getMarketChartPoints(symbol);
-  if (points.length >= FULL_DAY_POINTS) {
+  if (points.length >= requiredPoints) {
     return NextResponse.json({
       symbol,
       points,
       source: "stored_history",
+      windowHours,
+      samplingHours,
       storedPoints: points.length,
       updatedAt: new Date().toISOString(),
     });
@@ -55,8 +74,7 @@ export async function GET(request: NextRequest) {
   if (!apiKey) {
     return NextResponse.json(
       {
-        error:
-          "Not enough stored data yet. Hourly points are collected and a daily cut is generated at 15:00 (America/Mexico_City).",
+        error: `Not enough stored data yet. ${requiredPoints} points are required for ${symbol} (every ${samplingHours}h).`,
       },
       { status: 404 },
     );
@@ -69,11 +87,18 @@ export async function GET(request: NextRequest) {
     if (typeof token?.priceUsd === "number" && typeof token?.change24h === "number") {
       return NextResponse.json({
         symbol,
-        points: buildEstimated24hPoints(token.priceUsd, token.change24h),
+        points: buildEstimatedPoints(
+          token.priceUsd,
+          token.change24h,
+          requiredPoints,
+          samplingHours,
+        ),
         source: "estimated_from_24h_change",
+        windowHours,
+        samplingHours,
         storedPoints: points.length,
         warning:
-          "Using estimated 24h curve (from current price and 24h variation) while stored hourly history is still insufficient.",
+          "Using estimated curve (from current price and 24h variation) while stored history is still insufficient.",
         updatedAt: new Date().toISOString(),
       });
     }
@@ -83,8 +108,7 @@ export async function GET(request: NextRequest) {
 
   return NextResponse.json(
     {
-      error:
-        "Not enough stored data yet. Hourly points are collected and a daily cut is generated at 15:00 (America/Mexico_City).",
+      error: `Not enough stored data yet. ${requiredPoints} points are required for ${symbol} (every ${samplingHours}h).`,
     },
     { status: 404 },
   );

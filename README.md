@@ -7,6 +7,8 @@ To get started, take a look at src/app/page.tsx.
 ## Market History Scheduler
 
 The token chart uses a server-side hourly history file (`data/market-history.txt` or `/tmp/market-history.txt`) and a daily cut at **3:00 PM America/Mexico_City**.
+Current storage caps are symbol-based: `24` points for `BTC/ETH/SOL/XRP/BNB` and `8` points for `USDT` (`128` total points max across the 6 tracked symbols per map).
+Sampling cadence is also symbol-based: `BTC/ETH/SOL/XRP/BNB` update every `1h`, while `USDT` is bucketed every `3h`.
 
 To keep it updated without user traffic, this repo includes a GitHub Actions scheduler:
 

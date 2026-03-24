@@ -93,7 +93,7 @@ export default async function RootLayout({
         <link rel="shortcut icon" href="/favicon.ico?v=20260326" />
         <link rel="manifest" href="/manifest.webmanifest?v=20260326" />
       </head>
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} min-h-screen font-sans antialiased`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
             <ThemeProvider
               attribute="class"
@@ -104,9 +104,11 @@ export default async function RootLayout({
             <Background />
             <SiteHeader />
             <ScrollToTopOnRoute />
-            <div className="relative z-10">{children}</div>
-            <MobileDocNav />
-            <SiteFooter />
+            <div className="relative z-10 flex min-h-screen flex-col">
+              <div className="flex-1">{children}</div>
+              <MobileDocNav />
+              <SiteFooter />
+            </div>
             <Toaster />
           </ThemeProvider>
         </NextIntlClientProvider>

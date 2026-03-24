@@ -27,6 +27,8 @@ type ChartPoint = {
 type ChartResponse = {
   points?: ChartPoint[];
   source?: string;
+  windowHours?: number;
+  samplingHours?: number;
   error?: string;
 };
 
@@ -34,6 +36,8 @@ type ChartState = {
   loading: boolean;
   points: ChartPoint[];
   source: string | null;
+  windowHours: number | null;
+  samplingHours: number | null;
   error: string | null;
 };
 
@@ -58,16 +62,21 @@ function formatPercent(value: number | null) {
   return `${value >= 0 ? "+" : "-"}${formatted}%`;
 }
 
-function formatSourceLabel(source: string | null, isEs: boolean) {
+function formatSourceLabel(
+  source: string | null,
+  isEs: boolean,
+  windowHours: number,
+  samplingHours: number,
+) {
   if (source === "estimated_from_24h_change") {
     return isEs
-      ? "Fuente: CoinMarketCap (estimación por variación 24h)."
-      : "Source: CoinMarketCap (estimated from 24h change).";
+      ? `Fuente: CoinMarketCap (estimación por variación 24h, muestreo cada ${samplingHours}h).`
+      : `Source: CoinMarketCap (estimated from 24h change, sampling every ${samplingHours}h).`;
   }
 
   return isEs
-    ? "Fuente: CoinMarketCap (datos horarios de mercado, 24h)."
-    : "Source: CoinMarketCap (hourly market data, 24h).";
+    ? `Fuente: CoinMarketCap (${windowHours}h, muestreo cada ${samplingHours}h).`
+    : `Source: CoinMarketCap (${windowHours}h window, sampling every ${samplingHours}h).`;
 }
 
 function buildSparkline(points: ChartPoint[]) {
@@ -200,6 +209,8 @@ export function DefiMarketTicker() {
         loading: true,
         points: prev[symbol]?.points ?? [],
         source: prev[symbol]?.source ?? null,
+        windowHours: prev[symbol]?.windowHours ?? null,
+        samplingHours: prev[symbol]?.samplingHours ?? null,
         error: null,
       },
     }));
@@ -217,6 +228,14 @@ export function DefiMarketTicker() {
           loading: false,
           points: payload.points ?? [],
           source: payload.source ?? null,
+          windowHours:
+            typeof payload.windowHours === "number"
+              ? payload.windowHours
+              : (payload.points ?? []).length || null,
+          samplingHours:
+            typeof payload.samplingHours === "number"
+              ? payload.samplingHours
+              : null,
           error: null,
         },
       }));
@@ -227,6 +246,8 @@ export function DefiMarketTicker() {
           loading: false,
           points: prev[symbol]?.points ?? [],
           source: prev[symbol]?.source ?? null,
+          windowHours: prev[symbol]?.windowHours ?? null,
+          samplingHours: prev[symbol]?.samplingHours ?? null,
           error: err instanceof Error ? err.message : "Chart unavailable",
         },
       }));
@@ -296,7 +317,10 @@ export function DefiMarketTicker() {
         <div className="mt-3 rounded-xl border border-violet-300/40 bg-white p-3 dark:border-violet-500/30 dark:bg-zinc-950">
           <div className="mb-2 flex items-center justify-between">
             <p className="text-xs font-semibold text-zinc-900 dark:text-zinc-100">
-              {selectedToken.symbol} · {isEs ? "últimas 24 horas" : "last 24 hours"}
+              {selectedToken.symbol} ·{" "}
+              {isEs
+                ? `últimas ${selectedChart?.windowHours ?? 24} horas`
+                : `last ${selectedChart?.windowHours ?? 24} hours`}
             </p>
             <button
               type="button"
@@ -320,7 +344,11 @@ export function DefiMarketTicker() {
                 viewBox={`0 0 ${sparkline.width} ${sparkline.height}`}
                 className="h-24 w-full"
                 role="img"
-                aria-label={isEs ? "Gráfica de precio de 24 horas" : "24-hour price chart"}
+                aria-label={
+                  isEs
+                    ? `Gráfica de precio de ${selectedChart?.windowHours ?? 24} horas`
+                    : `${selectedChart?.windowHours ?? 24}-hour price chart`
+                }
               >
                 <defs>
                   <linearGradient id={`token-area-${selectedToken.symbol}`} x1="0" y1="0" x2="0" y2="1">
@@ -349,14 +377,19 @@ export function DefiMarketTicker() {
                 <span>{formatUsd(sparkline.maxPrice, false)}</span>
               </div>
               <p className="mt-1 text-[11px] text-zinc-500 dark:text-zinc-400">
-                {formatSourceLabel(selectedChart?.source ?? null, isEs)}
+                {formatSourceLabel(
+                  selectedChart?.source ?? null,
+                  isEs,
+                  selectedChart?.windowHours ?? 24,
+                  selectedChart?.samplingHours ?? 1,
+                )}
               </p>
             </div>
           ) : (
             <p className="text-xs text-zinc-600 dark:text-zinc-400">
               {isEs
-                ? "Aún no hay suficientes datos históricos en el servidor. Se guarda 1 punto por hora."
-                : "There is not enough historical server data yet. We store 1 point per hour."}
+                ? "Aún no hay suficientes datos históricos en el servidor. La frecuencia depende del token (1h y USDT cada 3h)."
+                : "There is not enough historical server data yet. Frequency depends on token (1h and USDT every 3h)."}
             </p>
           )}
         </div>

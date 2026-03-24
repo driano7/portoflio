@@ -18,8 +18,10 @@ type MarketHistoryFile = {
   dailySnapshotBySymbol: Record<string, ChartPoint[]>;
 };
 
-const HOURLY_KEEP = 72;
-const CHART_KEEP = 24;
+const TARGET_WINDOW_HOURS = 24;
+const DEFAULT_TOKEN_INTERVAL_HOURS = 1;
+const STABLE_TOKEN_INTERVAL_HOURS = 3;
+const STABLE_SYMBOLS = new Set(["USDT"]);
 const MARKET_TIME_ZONE = "America/Mexico_City";
 const DAILY_CUTOFF_HOUR = 15;
 
@@ -58,7 +60,7 @@ function sanitizePoint(raw: unknown): ChartPoint | null {
   return { time: point.time, priceUsd: point.priceUsd };
 }
 
-function sanitizeSeries(raw: unknown, limit: number): ChartPoint[] {
+function sanitizeSeries(raw: unknown, limit = Number.POSITIVE_INFINITY): ChartPoint[] {
   if (!Array.isArray(raw)) return [];
   return raw
     .map(sanitizePoint)
@@ -67,12 +69,49 @@ function sanitizeSeries(raw: unknown, limit: number): ChartPoint[] {
     .slice(-limit);
 }
 
-function sanitizeMap(raw: unknown, limit: number): Record<string, ChartPoint[]> {
+function getSamplingHoursForSymbol(symbol: string) {
+  return STABLE_SYMBOLS.has(symbol.toUpperCase())
+    ? STABLE_TOKEN_INTERVAL_HOURS
+    : DEFAULT_TOKEN_INTERVAL_HOURS;
+}
+
+function getPointLimitForSymbol(symbol: string) {
+  const samplingHours = getSamplingHoursForSymbol(symbol);
+  return Math.max(2, Math.floor(TARGET_WINDOW_HOURS / samplingHours));
+}
+
+function toBucketBySamplingHours(date: Date, samplingHours: number) {
+  const bucket = new Date(date);
+  bucket.setUTCMinutes(0, 0, 0);
+  const bucketHour = bucket.getUTCHours() - (bucket.getUTCHours() % samplingHours);
+  bucket.setUTCHours(bucketHour, 0, 0, 0);
+  return bucket.toISOString();
+}
+
+function normalizeSeriesForSymbol(series: ChartPoint[], symbol: string) {
+  const samplingHours = getSamplingHoursForSymbol(symbol);
+  const pointLimit = getPointLimitForSymbol(symbol);
+  const bucketed = new Map<string, ChartPoint>();
+
+  for (const point of series) {
+    const bucketTime = toBucketBySamplingHours(new Date(point.time), samplingHours);
+    bucketed.set(bucketTime, { time: bucketTime, priceUsd: point.priceUsd });
+  }
+
+  return Array.from(bucketed.values())
+    .sort((a, b) => new Date(a.time).getTime() - new Date(b.time).getTime())
+    .slice(-pointLimit);
+}
+
+function sanitizeMap(
+  raw: unknown,
+): Record<string, ChartPoint[]> {
   if (!raw || typeof raw !== "object") return {};
   const out: Record<string, ChartPoint[]> = {};
 
   for (const [symbol, value] of Object.entries(raw as Record<string, unknown>)) {
-    const cleaned = sanitizeSeries(value, limit);
+    const rawLimit = getPointLimitForSymbol(symbol) * getSamplingHoursForSymbol(symbol);
+    const cleaned = normalizeSeriesForSymbol(sanitizeSeries(value, rawLimit), symbol);
     if (cleaned.length > 0) {
       out[symbol] = cleaned;
     }
@@ -87,7 +126,7 @@ function readHistory(): MarketHistoryFile {
     if (!fs.existsSync(storagePath)) return createEmptyHistory();
     const raw = fs.readFileSync(storagePath, "utf8");
     const parsed = JSON.parse(raw) as Partial<MarketHistoryFile> & { version?: number };
-    const hourlyBySymbol = sanitizeMap(parsed.hourlyBySymbol, HOURLY_KEEP);
+    const hourlyBySymbol = sanitizeMap(parsed.hourlyBySymbol);
 
     if (parsed.version !== 2) {
       return {
@@ -103,7 +142,7 @@ function readHistory(): MarketHistoryFile {
       dailySnapshotDate:
         typeof parsed.dailySnapshotDate === "string" ? parsed.dailySnapshotDate : null,
       hourlyBySymbol,
-      dailySnapshotBySymbol: sanitizeMap(parsed.dailySnapshotBySymbol, CHART_KEEP),
+      dailySnapshotBySymbol: sanitizeMap(parsed.dailySnapshotBySymbol),
     };
   } catch {
     return createEmptyHistory();
@@ -114,12 +153,6 @@ function writeHistory(history: MarketHistoryFile) {
   const storagePath = getStoragePath();
   ensureParentDir(storagePath);
   fs.writeFileSync(storagePath, JSON.stringify(history), "utf8");
-}
-
-function toHourBucket(date: Date) {
-  const hour = new Date(date);
-  hour.setMinutes(0, 0, 0);
-  return hour.toISOString();
 }
 
 function toDateKey(date: Date) {
@@ -175,12 +208,11 @@ function getCycleDateKey(date: Date) {
 export function updateMarketHistory(tokens: MarketTokenSnapshot[], now = new Date()) {
   const history = readHistory();
   const dayKey = history.dailySnapshotDate ? getCycleDateKey(now) : getTodayKeyInMarketTime(now);
-  const hourKey = toHourBucket(now);
 
   if (history.dailySnapshotDate !== dayKey) {
     const snapshot: Record<string, ChartPoint[]> = {};
     for (const [symbol, series] of Object.entries(history.hourlyBySymbol)) {
-      snapshot[symbol] = series.slice(-CHART_KEEP);
+      snapshot[symbol] = series.slice(-getPointLimitForSymbol(symbol));
     }
     history.dailySnapshotBySymbol = snapshot;
     history.dailySnapshotDate = dayKey;
@@ -189,16 +221,19 @@ export function updateMarketHistory(tokens: MarketTokenSnapshot[], now = new Dat
   for (const token of tokens) {
     if (typeof token.priceUsd !== "number" || !Number.isFinite(token.priceUsd)) continue;
     const symbol = token.symbol.toUpperCase();
-    const series = [...(history.hourlyBySymbol[symbol] ?? [])];
+    const samplingHours = getSamplingHoursForSymbol(symbol);
+    const pointLimit = getPointLimitForSymbol(symbol);
+    const bucketTime = toBucketBySamplingHours(now, samplingHours);
+    const series = normalizeSeriesForSymbol([...(history.hourlyBySymbol[symbol] ?? [])], symbol);
     const last = series[series.length - 1];
 
-    if (last?.time === hourKey) {
+    if (last?.time === bucketTime) {
       last.priceUsd = token.priceUsd;
     } else {
-      series.push({ time: hourKey, priceUsd: token.priceUsd });
+      series.push({ time: bucketTime, priceUsd: token.priceUsd });
     }
 
-    history.hourlyBySymbol[symbol] = series.slice(-HOURLY_KEEP);
+    history.hourlyBySymbol[symbol] = normalizeSeriesForSymbol(series, symbol).slice(-pointLimit);
   }
 
   writeHistory(history);
@@ -207,13 +242,24 @@ export function updateMarketHistory(tokens: MarketTokenSnapshot[], now = new Dat
 export function getMarketChartPoints(symbol: string, now = new Date()): ChartPoint[] {
   const history = readHistory();
   const normalized = symbol.toUpperCase();
+  const pointLimit = getPointLimitForSymbol(normalized);
   const dayKey = getCycleDateKey(now);
 
   const snapshot =
     history.dailySnapshotDate === dayKey
       ? history.dailySnapshotBySymbol[normalized] ?? []
       : [];
-  if (snapshot.length >= 2) return snapshot.slice(-CHART_KEEP);
+  if (snapshot.length >= 2) return snapshot.slice(-pointLimit);
 
-  return (history.hourlyBySymbol[normalized] ?? []).slice(-CHART_KEEP);
+  return (history.hourlyBySymbol[normalized] ?? []).slice(-pointLimit);
 }
+
+export function getRequiredPointsForSymbol(symbol: string) {
+  return getPointLimitForSymbol(symbol);
+}
+
+export function getWindowHoursForSymbol() {
+  return TARGET_WINDOW_HOURS;
+}
+
+export { getSamplingHoursForSymbol };
