@@ -13,6 +13,7 @@ type ChartPoint = {
 
 type ChartResponse = {
   points?: ChartPoint[];
+  source?: string;
   error?: string;
 };
 
@@ -23,6 +24,18 @@ function formatUsd(value: number) {
     minimumFractionDigits: value >= 10_000 ? 1 : 2,
     maximumFractionDigits: value >= 10_000 ? 1 : 2,
   }).format(value);
+}
+
+function formatSourceLabel(source: string | null, isEs: boolean) {
+  if (source === "estimated_from_24h_change") {
+    return isEs
+      ? "Fuente: CoinMarketCap (estimación por variación 24h)."
+      : "Source: CoinMarketCap (estimated from 24h change).";
+  }
+
+  return isEs
+    ? "Fuente: CoinMarketCap (datos horarios de mercado, 24h)."
+    : "Source: CoinMarketCap (hourly market data, 24h).";
 }
 
 function buildSparkline(points: ChartPoint[]) {
@@ -72,6 +85,7 @@ function buildSparkline(points: ChartPoint[]) {
 
 export function BtcGuideChart({ isEs }: BtcGuideChartProps) {
   const [points, setPoints] = useState<ChartPoint[]>([]);
+  const [source, setSource] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -84,13 +98,16 @@ export function BtcGuideChart({ isEs }: BtcGuideChartProps) {
         if (!res.ok) {
           if (disposed) return;
           setPoints([]);
+          setSource(null);
           return;
         }
         if (disposed) return;
         setPoints(payload.points ?? []);
+        setSource(payload.source ?? null);
       } catch {
         if (disposed) return;
         setPoints([]);
+        setSource(null);
       } finally {
         if (!disposed) setLoading(false);
       }
@@ -149,7 +166,7 @@ export function BtcGuideChart({ isEs }: BtcGuideChartProps) {
           <span>{formatUsd(sparkline.maxPrice)}</span>
         </div>
         <p className="mt-2 text-[11px] text-zinc-500">
-          {isEs ? "Fuente: datos horarios de mercado (24h)." : "Source: hourly market data (24h)."}
+          {formatSourceLabel(source, isEs)}
         </p>
       </div>
     </div>

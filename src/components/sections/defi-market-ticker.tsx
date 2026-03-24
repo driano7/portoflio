@@ -26,12 +26,14 @@ type ChartPoint = {
 
 type ChartResponse = {
   points?: ChartPoint[];
+  source?: string;
   error?: string;
 };
 
 type ChartState = {
   loading: boolean;
   points: ChartPoint[];
+  source: string | null;
   error: string | null;
 };
 
@@ -54,6 +56,18 @@ function formatPercent(value: number | null) {
   if (value === null) return "--";
   const formatted = Math.abs(value).toFixed(2);
   return `${value >= 0 ? "+" : "-"}${formatted}%`;
+}
+
+function formatSourceLabel(source: string | null, isEs: boolean) {
+  if (source === "estimated_from_24h_change") {
+    return isEs
+      ? "Fuente: CoinMarketCap (estimación por variación 24h)."
+      : "Source: CoinMarketCap (estimated from 24h change).";
+  }
+
+  return isEs
+    ? "Fuente: CoinMarketCap (datos horarios de mercado, 24h)."
+    : "Source: CoinMarketCap (hourly market data, 24h).";
 }
 
 function buildSparkline(points: ChartPoint[]) {
@@ -185,6 +199,7 @@ export function DefiMarketTicker() {
       [symbol]: {
         loading: true,
         points: prev[symbol]?.points ?? [],
+        source: prev[symbol]?.source ?? null,
         error: null,
       },
     }));
@@ -201,6 +216,7 @@ export function DefiMarketTicker() {
         [symbol]: {
           loading: false,
           points: payload.points ?? [],
+          source: payload.source ?? null,
           error: null,
         },
       }));
@@ -210,6 +226,7 @@ export function DefiMarketTicker() {
         [symbol]: {
           loading: false,
           points: prev[symbol]?.points ?? [],
+          source: prev[symbol]?.source ?? null,
           error: err instanceof Error ? err.message : "Chart unavailable",
         },
       }));
@@ -229,7 +246,7 @@ export function DefiMarketTicker() {
   };
 
   return (
-    <div className="rounded-2xl border border-violet-300/35 bg-white/80 p-4 md:p-5 dark:border-violet-500/25 dark:bg-zinc-900/70">
+    <div className="rounded-2xl border border-violet-300/35 bg-white p-4 md:p-5 dark:border-violet-500/25 dark:bg-zinc-900">
       <div className="mb-3">
         <div>
           <p className="text-sm font-semibold text-zinc-900 md:text-base dark:text-zinc-100">
@@ -252,7 +269,7 @@ export function DefiMarketTicker() {
             return (
               <div
                 key={token.symbol}
-                className="min-w-0 rounded-xl border border-zinc-300/80 bg-white/70 px-2 py-2 md:px-3 md:py-2.5 dark:border-zinc-700 dark:bg-zinc-950/50"
+                className="min-w-0 rounded-xl border border-zinc-300/80 bg-white px-2 py-2 md:px-3 md:py-2.5 dark:border-zinc-700 dark:bg-zinc-950"
               >
                 <p className="text-xs font-semibold text-zinc-900 dark:text-zinc-100">{token.symbol}</p>
                 <p className="mt-1 whitespace-nowrap text-sm font-bold leading-tight text-zinc-900 md:text-base dark:text-zinc-100">{formatUsd(token.priceUsd, isMobile)}</p>
@@ -276,7 +293,7 @@ export function DefiMarketTicker() {
       )}
 
       {selectedToken?.hasChartData ? (
-        <div className="mt-3 rounded-xl border border-violet-300/40 bg-white/85 p-3 dark:border-violet-500/30 dark:bg-zinc-950/65">
+        <div className="mt-3 rounded-xl border border-violet-300/40 bg-white p-3 dark:border-violet-500/30 dark:bg-zinc-950">
           <div className="mb-2 flex items-center justify-between">
             <p className="text-xs font-semibold text-zinc-900 dark:text-zinc-100">
               {selectedToken.symbol} · {isEs ? "últimas 24 horas" : "last 24 hours"}
@@ -285,7 +302,7 @@ export function DefiMarketTicker() {
               type="button"
               onClick={() => setOpenChartSymbol(null)}
               aria-label={isEs ? "Cerrar gráfica" : "Close chart"}
-              className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-zinc-300/90 bg-white/80 text-zinc-700 transition-colors hover:bg-zinc-100 hover:text-zinc-900 dark:border-zinc-700 dark:bg-zinc-900/70 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-zinc-100"
+              className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-zinc-300/90 bg-white text-zinc-700 transition-colors hover:bg-zinc-100 hover:text-zinc-900 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-zinc-100"
             >
               <X className="h-3.5 w-3.5" />
             </button>
@@ -331,6 +348,9 @@ export function DefiMarketTicker() {
                 <span>{formatUsd(sparkline.minPrice, false)}</span>
                 <span>{formatUsd(sparkline.maxPrice, false)}</span>
               </div>
+              <p className="mt-1 text-[11px] text-zinc-500 dark:text-zinc-400">
+                {formatSourceLabel(selectedChart?.source ?? null, isEs)}
+              </p>
             </div>
           ) : (
             <p className="text-xs text-zinc-600 dark:text-zinc-400">

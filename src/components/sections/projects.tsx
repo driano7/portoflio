@@ -78,6 +78,47 @@ export function Projects({ projects }: ProjectsProps) {
               ? ", permite recibir pagos en cripto o en rieles latinoamericanos como PIX, SPEI y Mercado Libre, con liquidación al día siguiente en moneda local, bajo una experiencia equivalente a una transacción con tarjeta Visa o Master card."
               : ", it supports crypto payments and LATAM payment rails such as PIX, SPEI, and Mercado Libre, with next-day settlement in local currency under an experience equivalent to a Visa or Master card transaction."}
           </p>
+          <div className="mt-4 flex flex-wrap items-center gap-2">
+            <Link
+              href="https://v0-xoco-suite-landing.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-900/60 px-3 py-2 text-xs text-zinc-200 transition-colors hover:border-violet-400/50 hover:text-white"
+            >
+              {isEs ? "Landing Xoco Suite" : "Xoco Suite landing"}
+              <ArrowUpRight className="h-3.5 w-3.5" />
+            </Link>
+            <Link
+              href="https://xococafe.site"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-900/60 px-3 py-2 text-xs text-zinc-200 transition-colors hover:border-violet-400/50 hover:text-white"
+            >
+              {isEs ? "Demo app cliente" : "Client app demo"}
+              <ArrowUpRight className="h-3.5 w-3.5" />
+            </Link>
+          </div>
+        </div>
+
+        <div className="mt-8 rounded-[2rem] border border-violet-300/40 bg-zinc-100/75 p-5 dark:border-violet-500/25 dark:bg-zinc-950/80 md:p-6">
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-violet-400/50 bg-violet-500/10 px-3 py-1 text-xs font-semibold text-violet-700 dark:border-violet-400/40 dark:text-violet-300">
+            {isEs ? "Proyecto conceptual" : "Concept project"}
+          </div>
+          <h3 className="text-2xl font-bold text-zinc-900 dark:text-white md:text-3xl">
+            {isEs
+              ? "Strawberry Wallet + ZK Proofs"
+              : "Strawberry Wallet + ZK Proofs"}
+          </h3>
+          <p className="mt-3 max-w-5xl text-sm leading-relaxed text-zinc-700 dark:text-zinc-300 md:text-base">
+            {isEs
+              ? "Concepto de wallet enfocada en privacidad y usabilidad. Usa Zero-Knowledge Proofs para validar información sin exponer datos sensibles."
+              : "A wallet concept focused on privacy and usability. It uses Zero-Knowledge Proofs to validate information without exposing sensitive data."}
+          </p>
+          <p className="mt-2 max-w-5xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 md:text-base">
+            {isEs
+              ? "Objetivo: seguridad operativa con mejor experiencia de usuario para pagos y transferencias en entornos Web3."
+              : "Goal: stronger operational security with a better user experience for Web3 payments and transfers."}
+          </p>
         </div>
 
         <div className="mt-12 mb-6 flex items-center justify-between gap-3">

@@ -7,7 +7,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BtcGuideChart } from "@/components/sections/btc-guide-chart";
 import { EthGuideChart } from "@/components/sections/eth-guide-chart";
 import { LoopingGuideImage } from "@/components/ui/looping-guide-image";
-import { ScrollRevealStagger } from "@/components/ui/scroll-reveal-stagger";
 import { fetchAndParseGoogleDoc } from "@/lib/google-docs";
 import { educationGuides, getGuideBySlug, getGuideIndex } from "@/lib/education-guides";
 import { guideFallbackSectionsEn } from "@/lib/education-guides-content-en";
@@ -66,15 +65,28 @@ export default async function EducationGuidePage({ params }: PageProps) {
 
   let sections: RenderableSection[] = [];
   let resolvedTitle = localizeGuideMeta(guide, locale).title;
+  const localizedReferenceSections =
+    locale === "en" && guideFallbackSectionsEn[guide.slug]?.length
+      ? guideFallbackSectionsEn[guide.slug]
+      : (guide.fallbackSections ?? []);
+  const englishReferenceSections = guideFallbackSectionsEn[guide.slug] ?? [];
+  const resolveSectionReferences = (index: number) => {
+    const localized = localizedReferenceSections[index]?.references;
+    if (localized && localized.length > 0) return localized;
+
+    const english = englishReferenceSections[index]?.references;
+    return english && english.length > 0 ? english : undefined;
+  };
 
   if (guide.docId) {
     const parsed = await fetchAndParseGoogleDoc(guide.docId);
     if (parsed) {
       resolvedTitle = locale === "en" ? localizeGuideMeta(guide, locale).title : parsed.title || guide.title;
-      sections = parsed.sections.map((section) => ({
+      sections = parsed.sections.map((section, index) => ({
         id: toId(localizeSectionTitle(section.title, locale)),
         title: localizeSectionTitle(section.title, locale),
         blocks: section.blocks,
+        references: resolveSectionReferences(index),
       }));
     }
   }
@@ -85,11 +97,11 @@ export default async function EducationGuidePage({ params }: PageProps) {
         ? guideFallbackSectionsEn[guide.slug]
         : guide.fallbackSections;
 
-    sections = localizedFallbackSections.map((section) => ({
+    sections = localizedFallbackSections.map((section, index) => ({
       id: toId(localizeSectionTitle(section.title, locale)),
       title: localizeSectionTitle(section.title, locale),
       imageUrl: resolveSectionImageUrl(section.imageUrl, guide.slug, localizeSectionTitle(section.title, locale)),
-      references: section.references,
+      references: resolveSectionReferences(index),
       blocks: [
         ...section.paragraphs.map((paragraph) => ({ type: "paragraph" as const, text: paragraph })),
         ...(section.bullets && section.bullets.length > 0
@@ -291,7 +303,7 @@ export default async function EducationGuidePage({ params }: PageProps) {
                               className="h-[240px] sm:h-[300px] lg:h-[340px]"
                             />
                           )}
-                          <ScrollRevealStagger className="space-y-4">
+                          <div className="space-y-4">
                             {section.blocks.map((block, blockIndex) => {
                               if (block.type === "paragraph") {
                                 return <p key={`${section.id}-p-${blockIndex}`}>{block.text}</p>;
@@ -321,7 +333,7 @@ export default async function EducationGuidePage({ params }: PageProps) {
                                 ))}
                               </ol>
                             )}
-                          </ScrollRevealStagger>
+                          </div>
                         </section>
                       </div>
                     );

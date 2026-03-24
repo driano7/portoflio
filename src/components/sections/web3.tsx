@@ -1,10 +1,11 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight, ChevronDown, ChevronUp, Instagram, Music2 } from "lucide-react";
 import { ScrollRevealStagger } from "@/components/ui/scroll-reveal-stagger";
+import { ScrollTyping } from "@/components/ui/scroll-typing";
 import { useLocale } from "next-intl";
 import type { AppLocale } from "@/i18n/routing";
 
@@ -81,13 +82,58 @@ function CollapsibleCard({
 export function Web3() {
   const locale = useLocale() as AppLocale;
   const isEs = locale === "es";
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const [isWeb3Visible, setIsWeb3Visible] = useState(false);
+  const [atPageBottom, setAtPageBottom] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollBottom = window.innerHeight + window.scrollY;
+      const pageHeight = document.documentElement.scrollHeight;
+      setAtPageBottom(scrollBottom >= pageHeight - 24);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    const node = sectionRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        setIsWeb3Visible(Boolean(entry?.isIntersecting));
+      },
+      { threshold: 0.18 },
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div className="relative py-24 sm:py-32 animate-fade-in">
+      {isWeb3Visible && !atPageBottom ? (
+        <div
+          aria-hidden
+          className="pointer-events-none fixed left-1/2 bottom-28 z-40 -translate-x-1/2 sm:hidden"
+        >
+          <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-violet-400/35 bg-zinc-900/70 text-violet-200 shadow-lg backdrop-blur-md dark:bg-zinc-950/75">
+            <ChevronDown className="h-5 w-5 animate-bounce" />
+          </span>
+        </div>
+      ) : null}
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-2xl lg:max-w-4xl">
           <ScrollRevealStagger className="space-y-16">
-            <div id="defi-cefi" className="space-y-8 scroll-mt-24">
+            <div id="defi-cefi" ref={sectionRef} className="space-y-8 scroll-mt-24">
               <h3 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-3xl text-center">
                 {isEs ? "Finanzas " : ""}
                 <span className="text-violet-400">DeFi y CeFi</span>
@@ -187,7 +233,7 @@ export function Web3() {
                       className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-900/60 px-3 py-2 text-xs text-zinc-200 transition-colors hover:border-violet-400/50 hover:text-white"
                     >
                       <Instagram className="h-3.5 w-3.5 text-violet-300" />
-                      <span className="font-medium">Instagram @mrcripto_</span>
+                      <span className="font-medium">Instagram</span>
                     </Link>
                     <Link
                       href="https://www.tiktok.com/@mrcripto_"
@@ -196,7 +242,7 @@ export function Web3() {
                       className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-900/60 px-3 py-2 text-xs text-zinc-200 transition-colors hover:border-violet-400/50 hover:text-white"
                     >
                       <Music2 className="h-3.5 w-3.5 text-violet-300" />
-                      <span className="font-medium">TikTok @mrcripto_</span>
+                      <span className="font-medium">TikTok</span>
                     </Link>
                   </div>
                 </div>
@@ -218,11 +264,11 @@ export function Web3() {
                       ariaLabel={isEs ? "Desplegar nivel 1 de CeFi" : "Toggle CeFi level 1"}
                     >
                       <div className="space-y-3">
-                        <p>
+                        <ScrollTyping>
                           {isEs
                             ? "Resumen del nivel: construye la base financiera y el marco mental para tomar decisiones de inversión con orden, objetivos y tolerancia al riesgo."
                             : "Level summary: build the financial foundation and decision framework to invest with structure, goals, and risk discipline."}
-                        </p>
+                        </ScrollTyping>
                         <p><strong>{isEs ? "Guías del nivel" : "Level guides"}</strong></p>
                         <ul className="list-disc pl-5 space-y-2">
                           <li>{isEs ? "Guía 1: Del ahorro a la inversión. Define los fundamentos de administración personal, inflación, presupuesto e interés compuesto para pasar de conservar dinero a hacerlo crecer." : "Guide 1: From saving to investing. Covers personal money management, inflation, budgeting, and compound interest."}</li>
@@ -245,11 +291,11 @@ export function Web3() {
                       ariaLabel={isEs ? "Desplegar nivel 2 de CeFi" : "Toggle CeFi level 2"}
                     >
                       <div className="space-y-3">
-                        <p>
+                        <ScrollTyping>
                           {isEs
                             ? "Resumen del nivel: introduce mercado de capitales y ejecución operativa con enfoque en costos, riesgo, horizonte y toma de decisiones informada."
                             : "Level summary: introduces capital markets and operational execution with focus on costs, risk, horizon, and informed decisions."}
-                        </p>
+                        </ScrollTyping>
                         <p><strong>{isEs ? "Guías del nivel" : "Level guides"}</strong></p>
                         <ul className="list-disc pl-5 space-y-2">
                           <li>{isEs ? "Guía 4: Bolsa e índices. Explica estructura del mercado, lógica de índices y uso estratégico de ETFs para exposición diversificada." : "Guide 4: Stock market and indices. Explains market structure, index logic, and strategic ETF exposure."}</li>
@@ -273,11 +319,11 @@ export function Web3() {
                       ariaLabel={isEs ? "Desplegar nivel 3 de CeFi" : "Toggle CeFi level 3"}
                     >
                       <div className="space-y-3">
-                        <p>
+                        <ScrollTyping>
                           {isEs
                             ? "Resumen del nivel: consolida estrategia patrimonial con criterios avanzados de diversificación, valoración y protección de capital."
                             : "Level summary: consolidates wealth strategy with advanced diversification, valuation, and capital protection criteria."}
-                        </p>
+                        </ScrollTyping>
                         <p><strong>{isEs ? "Guías del nivel" : "Level guides"}</strong></p>
                         <ul className="list-disc pl-5 space-y-2">
                           <li>{isEs ? "Guía 8: Diversificación avanzada. Profundiza en correlación, rebalanceo y control de concentración para portafolios robustos." : "Guide 8: Advanced diversification. Covers correlation, rebalancing, and concentration control for robust portfolios."}</li>
@@ -313,11 +359,11 @@ export function Web3() {
                       ariaLabel={isEs ? "Desplegar nivel 1 de DeFi" : "Toggle DeFi level 1"}
                     >
                       <div className="space-y-3">
-                        <p>
+                        <ScrollTyping>
                           {isEs
                             ? "Resumen del nivel: establece los conceptos troncales del ecosistema cripto y su arquitectura técnica para comprender cómo se mueve el valor en blockchain."
                             : "Level summary: establishes core crypto concepts and technical architecture to understand blockchain value transfer."}
-                        </p>
+                        </ScrollTyping>
                         <p><strong>{isEs ? "Guías del nivel" : "Level guides"}</strong></p>
                         <ul className="list-disc pl-5 space-y-2">
                           <li>{isEs ? "Guía 1: Qué son las criptomonedas. Presenta origen, propósito y fundamentos de descentralización, seguridad y registros distribuidos." : "Guide 1: What cryptocurrencies are. Introduces origin, purpose, decentralization, security, and distributed ledgers."}</li>
@@ -340,11 +386,11 @@ export function Web3() {
                       ariaLabel={isEs ? "Desplegar nivel 2 de DeFi" : "Toggle DeFi level 2"}
                     >
                       <div className="space-y-3">
-                        <p>
+                        <ScrollTyping>
                           {isEs
                             ? "Resumen del nivel: amplía fundamentos hacia aplicaciones y narrativas del ecosistema Web3 para entender utilidades, riesgos y evolución del mercado."
                             : "Level summary: expands fundamentals into Web3 applications and narratives to understand utility, risk, and market evolution."}
-                        </p>
+                        </ScrollTyping>
                         <p><strong>{isEs ? "Guías del nivel" : "Level guides"}</strong></p>
                         <ul className="list-disc pl-5 space-y-2">
                           <li>{isEs ? "Guía 4: Qué es Ethereum. Explica su arquitectura, EVM, gas, bifurcación histórica y evolución técnica del protocolo." : "Guide 4: What Ethereum is. Covers architecture, EVM, gas, historical fork, and protocol evolution."}</li>
@@ -371,11 +417,11 @@ export function Web3() {
                       ariaLabel={isEs ? "Desplegar nivel 3 de DeFi" : "Toggle DeFi level 3"}
                     >
                       <div className="space-y-3">
-                        <p>
+                        <ScrollTyping>
                           {isEs
                             ? "Resumen del nivel: integra protocolos de mayor complejidad, gobernanza y diseño de estrategia para ejecución avanzada en DeFi."
                             : "Level summary: integrates higher-complexity protocols, governance, and strategy design for advanced DeFi execution."}
-                        </p>
+                        </ScrollTyping>
                         <p><strong>{isEs ? "Guías del nivel" : "Level guides"}</strong></p>
                         <ul className="list-disc pl-5 space-y-2">
                           <li>{isEs ? "Guía 11: Qué son las Criptomonedas 2. Recorre altcoins de nueva generación, interoperabilidad y criterios comparativos entre redes." : "Guide 11: What Cryptocurrencies 2 is. Covers next-gen altcoins, interoperability, and comparative network criteria."}</li>
@@ -421,47 +467,6 @@ export function Web3() {
               </Card>
             </div>
 
-            <div id="strawberry" className="space-y-8 scroll-mt-24">
-              <h3 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-3xl text-center">
-                {isEs ? "Strawberry Wallet y Pruebas de Conocimiento Cero" : "Strawberry Wallet & Zero-Knowledge Proofs"}
-              </h3>
-              <CollapsibleCard
-                title={isEs ? "Arquitectura y ventajas" : "Architecture and benefits"}
-                ariaLabel={isEs ? "Desplegar Strawberry Wallet" : "Toggle Strawberry Wallet"}
-              >
-                <p>
-                  {isEs
-                    ? "Strawberry Wallet es un proyecto conceptual de cartera de criptomonedas segura y fácil de usar, diseñado con la privacidad como eje central. Una tecnología clave para lograrlo son las "
-                    : "Strawberry Wallet is a conceptual project for a secure, user-friendly cryptocurrency wallet designed with privacy at its core. A key technology enabling this is "}
-                  <strong>Zero-Knowledge Proofs (ZKPs)</strong>.
-                </p>
-                <p>
-                  {isEs
-                    ? "Las ZKPs son protocolos criptográficos que permiten demostrar conocimiento de cierta información sin revelar la información en sí. Esto tiene implicaciones profundas para la privacidad y seguridad en transacciones blockchain. Sus ventajas principales son:"
-                    : "ZKPs are cryptographic protocols that allow one party to prove to another that they know a certain piece of information without revealing the information itself. This has profound implications for privacy and security in blockchain transactions. The main advantages of ZKPs are:"}
-                </p>
-                <ul className="list-disc pl-5 space-y-2">
-                  <li>
-                    <strong>{isEs ? "Confidencialidad:" : "Confidentiality:"}</strong>{" "}
-                    {isEs
-                      ? "Las transacciones pueden validarse sin exponer detalles sensibles como montos o participantes."
-                      : "Transactions can be validated without exposing sensitive details like amounts or participants."}
-                  </li>
-                  <li>
-                    <strong>{isEs ? "Escalabilidad:" : "Scalability:"}</strong>{" "}
-                    {isEs
-                      ? "Las ZKPs pueden agrupar múltiples transacciones en una sola prueba, reduciendo datos en cadena y aumentando rendimiento."
-                      : "ZKPs can bundle multiple transactions into a single proof, reducing the data stored on the blockchain and increasing throughput."}
-                  </li>
-                  <li>
-                    <strong>{isEs ? "Seguridad:" : "Security:"}</strong>{" "}
-                    {isEs
-                      ? "Brindan verificación robusta sin centralizar ni exponer datos privados."
-                      : "They provide robust verification without centralizing or exposing private data."}
-                  </li>
-                </ul>
-              </CollapsibleCard>
-            </div>
           </ScrollRevealStagger>
         </div>
       </div>

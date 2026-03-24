@@ -8,6 +8,7 @@ export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
 const ALLOWED_SYMBOLS = new Set(["BTC", "ETH", "SOL", "XRP", "USDT", "BNB"]);
+const FULL_DAY_POINTS = 24;
 
 function buildEstimated24hPoints(currentPrice: number, change24h: number, now = new Date()): ChartPoint[] {
   const denominator = 1 + change24h / 100;
@@ -36,11 +37,12 @@ export async function GET(request: NextRequest) {
   }
 
   const points = getMarketChartPoints(symbol);
-  if (points.length >= 2) {
+  if (points.length >= FULL_DAY_POINTS) {
     return NextResponse.json({
       symbol,
       points,
       source: "stored_history",
+      storedPoints: points.length,
       updatedAt: new Date().toISOString(),
     });
   }
@@ -69,6 +71,7 @@ export async function GET(request: NextRequest) {
         symbol,
         points: buildEstimated24hPoints(token.priceUsd, token.change24h),
         source: "estimated_from_24h_change",
+        storedPoints: points.length,
         warning:
           "Using estimated 24h curve (from current price and 24h variation) while stored hourly history is still insufficient.",
         updatedAt: new Date().toISOString(),

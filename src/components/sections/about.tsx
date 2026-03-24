@@ -19,6 +19,9 @@ type AboutCard = {
   content: React.ReactNode;
 };
 
+const ABOUT_DESKTOP_MEDIA_QUERY = "(min-width: 768px)";
+const ABOUT_HINT_COUNT_STORAGE_KEY = "about_hint_count_v1";
+
 export function About() {
   const locale = useLocale() as AppLocale;
   const isEs = locale === "es";
@@ -29,11 +32,13 @@ export function About() {
   const [hasManualNavigation, setHasManualNavigation] = useState(false);
   const [isAboutVisible, setIsAboutVisible] = useState(false);
   const [atPageBottom, setAtPageBottom] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
   const [stackHeight, setStackHeight] = useState<number | null>(null);
   const [typingReady, setTypingReady] = useState(false);
   const [typingRun, setTypingRun] = useState(0);
   const animatingRef = useRef(false);
   const hintPlayedRef = useRef(false);
+  const hintCountRef = useRef(0);
 
   const cards = useMemo<AboutCard[]>(
     () =>
@@ -221,17 +226,37 @@ export function About() {
     if (!tallestCardHeight) return;
 
     const viewportWidth = window.innerWidth;
-    const stackTail = viewportWidth < 768 ? 36 : viewportWidth < 1024 ? 86 : 136;
+    const stackTail = viewportWidth < 768 ? 18 : viewportWidth < 1024 ? 28 : 36;
     setStackHeight(Math.ceil(tallestCardHeight + stackTail));
   }, []);
 
   useEffect(() => {
+    const media = window.matchMedia(ABOUT_DESKTOP_MEDIA_QUERY);
+    const sync = () => setIsDesktop(media.matches);
+
+    sync();
+    media.addEventListener("change", sync);
+    return () => media.removeEventListener("change", sync);
+  }, []);
+
+  useEffect(() => {
+    if (!isDesktop) return;
+    try {
+      const stored = Number(window.localStorage.getItem(ABOUT_HINT_COUNT_STORAGE_KEY) ?? "0");
+      hintCountRef.current = Number.isFinite(stored) && stored > 0 ? stored : 0;
+    } catch {
+      hintCountRef.current = 0;
+    }
+  }, [isDesktop]);
+
+  useEffect(() => {
+    if (!isDesktop) return;
     if (hasManualNavigation) return;
     const interval = window.setInterval(() => {
       moveCard(1, false);
     }, 60_000);
     return () => window.clearInterval(interval);
-  }, [hasManualNavigation, moveCard]);
+  }, [hasManualNavigation, isDesktop, moveCard]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -312,6 +337,7 @@ export function About() {
   }, []);
 
   useEffect(() => {
+    if (!isDesktop) return;
     const node = sectionRef.current;
     if (!node || hintPlayedRef.current) return;
 
@@ -322,7 +348,24 @@ export function About() {
       (entries) => {
         const entry = entries[0];
         if (!entry?.isIntersecting || hintPlayedRef.current || hasManualNavigation) return;
+
+        if (hintCountRef.current > 0) {
+          hintPlayedRef.current = true;
+          observer.disconnect();
+          return;
+        }
+
         hintPlayedRef.current = true;
+        hintCountRef.current += 1;
+
+        try {
+          window.localStorage.setItem(
+            ABOUT_HINT_COUNT_STORAGE_KEY,
+            String(hintCountRef.current),
+          );
+        } catch {
+          // ignore storage errors
+        }
 
         forwardTimeout = window.setTimeout(() => {
           moveCard(1, false);
@@ -343,7 +386,7 @@ export function About() {
       if (backwardTimeout) window.clearTimeout(backwardTimeout);
       observer.disconnect();
     };
-  }, [hasManualNavigation, moveCard]);
+  }, [hasManualNavigation, isDesktop, moveCard]);
 
   const first = cards[activeIndex];
   const second = cards[(activeIndex + 1) % cards.length];
@@ -352,7 +395,7 @@ export function About() {
   const visibleCards = [first, second, third];
 
   return (
-    <div className="relative animate-fade-in pt-24 pb-16 sm:py-32">
+    <div className="relative animate-fade-in pt-24 pb-10 sm:pt-32 sm:pb-20">
       {isAboutVisible && !atPageBottom ? (
         <div
           aria-hidden
