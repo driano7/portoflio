@@ -86,23 +86,23 @@ export const guideFallbackSectionsEn: Record<string, GuideSection[]> = {
       ],
       references: [
         {
-          label: "Instituto Nacional de Estadística y Geografía (INEGI). (2026). Índice Nacional de Precios al Consumidor (INPC). Recuperado el 21 de marzo de 2026, de: https://www.inegi.org.mx/temas/inpc/",
+          label: "[1] Instituto Nacional de Estadística y Geografía (INEGI). (2026). Índice Nacional de Precios al Consumidor (INPC). Recuperado el 23 de marzo de 2026, de: https://www.inegi.org.mx/temas/inpc/",
           url: "https://www.inegi.org.mx/temas/inpc/",
         },
         {
-          label: "Banco de México. (2026). Sistema de Información Económica (SIE). Recuperado el 21 de marzo de 2026, de: https://www.banxico.org.mx/SieInternet/",
+          label: "[2] Banco de México. (2026). Sistema de Información Económica (SIE). Recuperado el 23 de marzo de 2026, de: https://www.banxico.org.mx/SieInternet/",
           url: "https://www.banxico.org.mx/SieInternet/",
         },
         {
-          label: "Comisión Nacional para la Protección y Defensa de los Usuarios de Servicios Financieros (CONDUSEF). (2026). Educación financiera. Recuperado el 21 de marzo de 2026, de: https://www.condusef.gob.mx/",
+          label: "[3] Comisión Nacional para la Protección y Defensa de los Usuarios de Servicios Financieros (CONDUSEF). (2026). Educación financiera. Recuperado el 23 de marzo de 2026, de: https://www.condusef.gob.mx/",
           url: "https://www.condusef.gob.mx/",
         },
         {
-          label: "Malkiel, B. G. (2019). A Random Walk Down Wall Street (12th ed.). W. W. Norton & Company.",
+          label: "[4] Malkiel, B. G. (2019). A Random Walk Down Wall Street (12th ed.). W. W. Norton & Company.",
           url: "https://wwnorton.com/books/9780393358384",
         },
         {
-          label: "Bogle, J. C. (2017). The Little Book of Common Sense Investing (Updated ed.). Wiley.",
+          label: "[5] Bogle, J. C. (2017). The Little Book of Common Sense Investing (Updated ed.). Wiley.",
           url: "https://www.wiley.com/en-us/The+Little+Book+of+Common+Sense+Investing%2C+Updated+and+Revised-p-9781119404507",
         },
       ],
@@ -194,23 +194,23 @@ export const guideFallbackSectionsEn: Record<string, GuideSection[]> = {
       ],
       references: [
         {
-          label: "Cetesdirecto. (2026). Sitio oficial y operación de instrumentos gubernamentales. Recuperado el 21 de marzo de 2026, de: https://www.cetesdirecto.com/sites/portal/inicio",
+          label: "[1] Cetesdirecto. (2026). Sitio oficial y operación de instrumentos gubernamentales. Recuperado el 23 de marzo de 2026, de: https://www.cetesdirecto.com/sites/portal/inicio",
           url: "https://www.cetesdirecto.com/sites/portal/inicio",
         },
         {
-          label: "Instituto para la Protección al Ahorro Bancario (IPAB). (2026). Seguro de depósitos bancarios. Recuperado el 21 de marzo de 2026, de: https://www.gob.mx/ipab",
+          label: "[2] Instituto para la Protección al Ahorro Bancario (IPAB). (2026). Seguro de depósitos bancarios. Recuperado el 23 de marzo de 2026, de: https://www.gob.mx/ipab",
           url: "https://www.gob.mx/ipab",
         },
         {
-          label: "Comisión Nacional Bancaria y de Valores (CNBV). (2026). Entidades supervisadas y marco regulatorio. Recuperado el 21 de marzo de 2026, de: https://www.gob.mx/cnbv",
+          label: "[3] Comisión Nacional Bancaria y de Valores (CNBV). (2026). Entidades supervisadas y marco regulatorio. Recuperado el 23 de marzo de 2026, de: https://www.gob.mx/cnbv",
           url: "https://www.gob.mx/cnbv",
         },
         {
-          label: "Servicio de Administración Tributaria (SAT). (2026). Régimen fiscal e ISR para personas físicas. Recuperado el 21 de marzo de 2026, de: https://www.sat.gob.mx/",
+          label: "[4] Servicio de Administración Tributaria (SAT). (2026). Régimen fiscal e ISR para personas físicas. Recuperado el 23 de marzo de 2026, de: https://www.sat.gob.mx/",
           url: "https://www.sat.gob.mx/",
         },
         {
-          label: "Comisión Nacional para la Protección y Defensa de los Usuarios de Servicios Financieros (CONDUSEF). (2026). Educación financiera y alertas al usuario. Recuperado el 21 de marzo de 2026, de: https://www.condusef.gob.mx/",
+          label: "[5] Comisión Nacional para la Protección y Defensa de los Usuarios de Servicios Financieros (CONDUSEF). (2026). Educación financiera y alertas al usuario. Recuperado el 23 de marzo de 2026, de: https://www.condusef.gob.mx/",
           url: "https://www.condusef.gob.mx/",
         },
       ],
@@ -295,19 +295,19 @@ export const guideFallbackSectionsEn: Record<string, GuideSection[]> = {
       ],
       references: [
         {
-          label: "Bodie, Z., Kane, A., & Marcus, A. J. (2021). Investments (12th ed.). McGraw-Hill Education.",
+          label: "[1] Bodie, Z., Kane, A., & Marcus, A. J. (2021). Investments (12th ed.). McGraw-Hill Education.",
           url: "https://www.mheducation.com/highered/product/investments-bodie-kane/M9781260772166.html",
         },
         {
-          label: "Malkiel, B. G. (2019). A Random Walk Down Wall Street (12th ed.). W. W. Norton & Company.",
+          label: "[2] Malkiel, B. G. (2019). A Random Walk Down Wall Street (12th ed.). W. W. Norton & Company.",
           url: "https://wwnorton.com/books/9780393358384",
         },
         {
-          label: "CFA Institute. (2026). Asset allocation resources. Recuperado el 21 de marzo de 2026, de: https://www.cfainstitute.org/",
+          label: "[3] CFA Institute. (2026). Asset allocation resources. Recuperado el 23 de marzo de 2026, de: https://www.cfainstitute.org/",
           url: "https://www.cfainstitute.org/",
         },
         {
-          label: "CONDUSEF. (2026). Educación financiera para usuarios. Recuperado el 21 de marzo de 2026, de: https://www.condusef.gob.mx/",
+          label: "[4] CONDUSEF. (2026). Educación financiera para usuarios. Recuperado el 23 de marzo de 2026, de: https://www.condusef.gob.mx/",
           url: "https://www.condusef.gob.mx/",
         },
       ],
@@ -385,23 +385,23 @@ export const guideFallbackSectionsEn: Record<string, GuideSection[]> = {
       ],
       references: [
         {
-          label: "Bolsa Mexicana de Valores (BMV). (2026). Mercado de capitales. Recuperado el 21 de marzo de 2026, de: https://www.bmv.com.mx/",
+          label: "[1] Bolsa Mexicana de Valores (BMV). (2026). Mercado de capitales. Recuperado el 23 de marzo de 2026, de: https://www.bmv.com.mx/",
           url: "https://www.bmv.com.mx/",
         },
         {
-          label: "S&P Dow Jones Indices. (2026). S&P 500. Recuperado el 21 de marzo de 2026, de: https://www.spglobal.com/spdji/en/indices/equity/sp-500/",
+          label: "[2] S&P Dow Jones Indices. (2026). S&P 500. Recuperado el 23 de marzo de 2026, de: https://www.spglobal.com/spdji/en/indices/equity/sp-500/",
           url: "https://www.spglobal.com/spdji/en/indices/equity/sp-500/",
         },
         {
-          label: "Nasdaq. (2026). Nasdaq Composite Index. Recuperado el 21 de marzo de 2026, de: https://www.nasdaq.com/market-activity/index/comp",
+          label: "[3] Nasdaq. (2026). Nasdaq Composite Index. Recuperado el 23 de marzo de 2026, de: https://www.nasdaq.com/market-activity/index/comp",
           url: "https://www.nasdaq.com/market-activity/index/comp",
         },
         {
-          label: "FTSE Russell. (2026). Russell US Indexes. Recuperado el 21 de marzo de 2026, de: https://www.ftserussell.com/products/indices/russell-us",
+          label: "[4] FTSE Russell. (2026). Russell US Indexes. Recuperado el 23 de marzo de 2026, de: https://www.ftserussell.com/products/indices/russell-us",
           url: "https://www.ftserussell.com/products/indices/russell-us",
         },
         {
-          label: "Vanguard. (2026). VOO y VTI ETF profiles. Recuperado el 21 de marzo de 2026, de: https://investor.vanguard.com/investment-products/etfs",
+          label: "[5] Vanguard. (2026). VOO y VTI ETF profiles. Recuperado el 23 de marzo de 2026, de: https://investor.vanguard.com/investment-products/etfs",
           url: "https://investor.vanguard.com/investment-products/etfs",
         },
       ],
@@ -469,19 +469,19 @@ export const guideFallbackSectionsEn: Record<string, GuideSection[]> = {
       ],
       references: [
         {
-          label: "S&P Dow Jones Indices. (2026). S&P 500 methodology and constituents. Recuperado el 21 de marzo de 2026, de: https://www.spglobal.com/spdji/en/indices/equity/sp-500/",
+          label: "[1] S&P Dow Jones Indices. (2026). S&P 500 methodology and constituents. Recuperado el 23 de marzo de 2026, de: https://www.spglobal.com/spdji/en/indices/equity/sp-500/",
           url: "https://www.spglobal.com/spdji/en/indices/equity/sp-500/",
         },
         {
-          label: "State Street Global Advisors. (2026). Sector SPDR ETFs (XLK, XLF, XLE, etc.). Recuperado el 21 de marzo de 2026, de: https://www.ssga.com/us/en/intermediary/etfs/capabilities/sector-investing",
+          label: "[2] State Street Global Advisors. (2026). Sector SPDR ETFs (XLK, XLF, XLE, etc.). Recuperado el 23 de marzo de 2026, de: https://www.ssga.com/us/en/intermediary/etfs/capabilities/sector-investing",
           url: "https://www.ssga.com/us/en/intermediary/etfs/capabilities/sector-investing",
         },
         {
-          label: "Bogle, J. C. (2017). The Little Book of Common Sense Investing (Updated ed.). Wiley.",
+          label: "[3] Bogle, J. C. (2017). The Little Book of Common Sense Investing (Updated ed.). Wiley.",
           url: "https://www.wiley.com/en-us/The+Little+Book+of+Common+Sense+Investing%2C+Updated+and+Revised-p-9781119404507",
         },
         {
-          label: "Damodaran, A. (2024). Equity Risk Premiums (Data update). New York University. Recuperado el 21 de marzo de 2026, de: https://pages.stern.nyu.edu/~adamodar/",
+          label: "[4] Damodaran, A. (2024). Equity Risk Premiums (Data update). New York University. Recuperado el 23 de marzo de 2026, de: https://pages.stern.nyu.edu/~adamodar/",
           url: "https://pages.stern.nyu.edu/~adamodar/",
         },
       ],
@@ -565,19 +565,19 @@ export const guideFallbackSectionsEn: Record<string, GuideSection[]> = {
       ],
       references: [
         {
-          label: "Comisión Nacional Bancaria y de Valores (CNBV). (2026). Entidades autorizadas y supervisión. Recuperado el 21 de marzo de 2026, de: https://www.gob.mx/cnbv",
+          label: "[1] Comisión Nacional Bancaria y de Valores (CNBV). (2026). Entidades autorizadas y supervisión. Recuperado el 23 de marzo de 2026, de: https://www.gob.mx/cnbv",
           url: "https://www.gob.mx/cnbv",
         },
         {
-          label: "Bolsa Mexicana de Valores (BMV). (2026). Información de mercados y horarios. Recuperado el 21 de marzo de 2026, de: https://www.bmv.com.mx/",
+          label: "[2] Bolsa Mexicana de Valores (BMV). (2026). Información de mercados y horarios. Recuperado el 23 de marzo de 2026, de: https://www.bmv.com.mx/",
           url: "https://www.bmv.com.mx/",
         },
         {
-          label: "CONDUSEF. (2026). Recomendaciones de seguridad para usuarios financieros. Recuperado el 21 de marzo de 2026, de: https://www.condusef.gob.mx/",
+          label: "[3] CONDUSEF. (2026). Recomendaciones de seguridad para usuarios financieros. Recuperado el 23 de marzo de 2026, de: https://www.condusef.gob.mx/",
           url: "https://www.condusef.gob.mx/",
         },
         {
-          label: "U.S. Securities and Exchange Commission (SEC). (2026). Investor.gov: Basics. Recuperado el 21 de marzo de 2026, de: https://www.investor.gov/",
+          label: "[4] U.S. Securities and Exchange Commission (SEC). (2026). Investor.gov: Basics. Recuperado el 23 de marzo de 2026, de: https://www.investor.gov/",
           url: "https://www.investor.gov/",
         },
       ],
@@ -654,19 +654,19 @@ export const guideFallbackSectionsEn: Record<string, GuideSection[]> = {
       ],
       references: [
         {
-          label: "Murphy, J. J. (1999). Technical Analysis of the Financial Markets. New York Institute of Finance.",
+          label: "[1] Murphy, J. J. (1999). Technical Analysis of the Financial Markets. New York Institute of Finance.",
           url: "https://www.penguinrandomhouse.com/books/57463/technical-analysis-of-the-financial-markets-by-john-j-murphy/",
         },
         {
-          label: "Kahneman, D. (2011). Thinking, Fast and Slow. Farrar, Straus and Giroux.",
+          label: "[2] Kahneman, D. (2011). Thinking, Fast and Slow. Farrar, Straus and Giroux.",
           url: "https://us.macmillan.com/books/9780374533557/thinkingfastandslow",
         },
         {
-          label: "Yahoo Finance. (2026). Herramientas de mercado y seguimiento de activos. Recuperado el 21 de marzo de 2026, de: https://finance.yahoo.com/",
+          label: "[3] Yahoo Finance. (2026). Herramientas de mercado y seguimiento de activos. Recuperado el 23 de marzo de 2026, de: https://finance.yahoo.com/",
           url: "https://finance.yahoo.com/",
         },
         {
-          label: "TradingView. (2026). Plataforma de gráficos y análisis. Recuperado el 21 de marzo de 2026, de: https://www.tradingview.com/",
+          label: "[4] TradingView. (2026). Plataforma de gráficos y análisis. Recuperado el 23 de marzo de 2026, de: https://www.tradingview.com/",
           url: "https://www.tradingview.com/",
         },
       ],
@@ -738,19 +738,19 @@ export const guideFallbackSectionsEn: Record<string, GuideSection[]> = {
       ],
       references: [
         {
-          label: "Bodie, Z., Kane, A., & Marcus, A. J. (2021). Investments (12th ed.). McGraw-Hill Education.",
+          label: "[1] Bodie, Z., Kane, A., & Marcus, A. J. (2021). Investments (12th ed.). McGraw-Hill Education.",
           url: "https://www.mheducation.com/highered/product/investments-bodie-kane/M9781260772166.html",
         },
         {
-          label: "World Gold Council. (2026). Gold as a strategic asset. Recuperado el 21 de marzo de 2026, de: https://www.gold.org/",
+          label: "[2] World Gold Council. (2026). Gold as a strategic asset. Recuperado el 23 de marzo de 2026, de: https://www.gold.org/",
           url: "https://www.gold.org/",
         },
         {
-          label: "SPDR. (2026). SPDR Gold Shares (GLD). Recuperado el 21 de marzo de 2026, de: https://www.ssga.com/us/en/intermediary/etfs/funds/spdr-gold-shares-gld",
+          label: "[3] SPDR. (2026). SPDR Gold Shares (GLD). Recuperado el 23 de marzo de 2026, de: https://www.ssga.com/us/en/intermediary/etfs/funds/spdr-gold-shares-gld",
           url: "https://www.ssga.com/us/en/intermediary/etfs/funds/spdr-gold-shares-gld",
         },
         {
-          label: "iShares. (2026). iShares Gold Trust (IAU). Recuperado el 21 de marzo de 2026, de: https://www.ishares.com/us/products/239561/ishares-gold-trust-fund",
+          label: "[4] iShares. (2026). iShares Gold Trust (IAU). Recuperado el 23 de marzo de 2026, de: https://www.ishares.com/us/products/239561/ishares-gold-trust-fund",
           url: "https://www.ishares.com/us/products/239561/ishares-gold-trust-fund",
         },
       ],
@@ -814,19 +814,19 @@ export const guideFallbackSectionsEn: Record<string, GuideSection[]> = {
       ],
       references: [
         {
-          label: "Damodaran, A. (2024). Investment Valuation (data and teaching resources). New York University. Recuperado el 21 de marzo de 2026, de: https://pages.stern.nyu.edu/~adamodar/",
+          label: "[1] Damodaran, A. (2024). Investment Valuation (data and teaching resources). New York University. Recuperado el 23 de marzo de 2026, de: https://pages.stern.nyu.edu/~adamodar/",
           url: "https://pages.stern.nyu.edu/~adamodar/",
         },
         {
-          label: "Servicio de Administración Tributaria (SAT). (2026). Guías y obligaciones de personas físicas. Recuperado el 21 de marzo de 2026, de: https://www.sat.gob.mx/",
+          label: "[2] Servicio de Administración Tributaria (SAT). (2026). Guías y obligaciones de personas físicas. Recuperado el 23 de marzo de 2026, de: https://www.sat.gob.mx/",
           url: "https://www.sat.gob.mx/",
         },
         {
-          label: "Comisión Nacional Bancaria y de Valores (CNBV). (2026). Marco regulatorio del mercado de valores. Recuperado el 21 de marzo de 2026, de: https://www.gob.mx/cnbv",
+          label: "[3] Comisión Nacional Bancaria y de Valores (CNBV). (2026). Marco regulatorio del mercado de valores. Recuperado el 23 de marzo de 2026, de: https://www.gob.mx/cnbv",
           url: "https://www.gob.mx/cnbv",
         },
         {
-          label: "Brealey, R. A., Myers, S. C., & Allen, F. (2019). Principles of Corporate Finance (13th ed.). McGraw-Hill.",
+          label: "[4] Brealey, R. A., Myers, S. C., & Allen, F. (2019). Principles of Corporate Finance (13th ed.). McGraw-Hill.",
           url: "https://www.mheducation.com/highered/product/principles-corporate-finance-brealey-myers/M9781260565553.html",
         },
       ],
@@ -916,19 +916,19 @@ export const guideFallbackSectionsEn: Record<string, GuideSection[]> = {
       ],
       references: [
         {
-          label: "Comisión Nacional para la Protección y Defensa de los Usuarios de Servicios Financieros (CONDUSEF). (2026). Alertas y prevención de fraudes. Recuperado el 21 de marzo de 2026, de: https://www.condusef.gob.mx/",
+          label: "[1] Comisión Nacional para la Protección y Defensa de los Usuarios de Servicios Financieros (CONDUSEF). (2026). Alertas y prevención de fraudes. Recuperado el 23 de marzo de 2026, de: https://www.condusef.gob.mx/",
           url: "https://www.condusef.gob.mx/",
         },
         {
-          label: "Cybersecurity and Infrastructure Security Agency (CISA). (2026). Use strong passwords and multi-factor authentication. Recuperado el 21 de marzo de 2026, de: https://www.cisa.gov/secure-our-world",
+          label: "[2] Cybersecurity and Infrastructure Security Agency (CISA). (2026). Use strong passwords and multi-factor authentication. Recuperado el 23 de marzo de 2026, de: https://www.cisa.gov/secure-our-world",
           url: "https://www.cisa.gov/secure-our-world",
         },
         {
-          label: "U.S. Securities and Exchange Commission (SEC). (2026). Investor alerts and bulletins. Recuperado el 21 de marzo de 2026, de: https://www.investor.gov/",
+          label: "[3] U.S. Securities and Exchange Commission (SEC). (2026). Investor alerts and bulletins. Recuperado el 23 de marzo de 2026, de: https://www.investor.gov/",
           url: "https://www.investor.gov/",
         },
         {
-          label: "Comisión Nacional Bancaria y de Valores (CNBV). (2026). Recomendaciones de seguridad para usuarios financieros. Recuperado el 21 de marzo de 2026, de: https://www.gob.mx/cnbv",
+          label: "[4] Comisión Nacional Bancaria y de Valores (CNBV). (2026). Recomendaciones de seguridad para usuarios financieros. Recuperado el 23 de marzo de 2026, de: https://www.gob.mx/cnbv",
           url: "https://www.gob.mx/cnbv",
         },
       ],
@@ -1051,31 +1051,31 @@ export const guideFallbackSectionsEn: Record<string, GuideSection[]> = {
       ],
       references: [
         {
-          label: "¿Para qué sirve el dinero? (Santander)",
+          label: "[1] ¿Para qué sirve el dinero? Santander. Recuperado el 3 de marzo de 2023, de: https://www.santander.com/es/stories/para-que-sirve-el-dinero",
           url: "https://www.santander.com/es/stories/para-que-sirve-el-dinero",
         },
         {
-          label: "Historia del Dinero (Banco de México)",
+          label: "[2] Historia del Dinero. Banco de México. Recuperado el 3 de marzo de 2023, de: https://www.banxico.org.mx/mibanxico//_pdfs/historia-del-dinero.pdf",
           url: "https://www.banxico.org.mx/mibanxico//_pdfs/historia-del-dinero.pdf",
         },
         {
-          label: "El número de bitcoins es finito, no podrá haber más de 21 millones (Xataka)",
+          label: "[3] Nieto, A. El número de bitcoins es finito, no podrá haber más de 21 millones: ¿qué se espera que suceda entonces? Xataka. Recuperado el 30 de mayo de 2021, de: https://cutt.ly/NncK3a2",
           url: "https://cutt.ly/NncK3a2",
         },
         {
-          label: "Definición de seguridad informática",
+          label: "[4] Definición de seguridad informática. Recuperado el 17 de febrero de 2023, de:https://definicion.de/seguridad-informatica/",
           url: "https://definicion.de/seguridad-informatica/",
         },
         {
-          label: "VisaNet: el poder de conectar al mundo",
-          url: "https://www.visa.com.mx/la-diferencia-visa/impacto-global/visanet-poder-conectar-mundo.html",
+          label: "[5] Collado, l. VisaNet: el poder de conectar al mundo. Recuperado el 17 de febrero de 2023, de:https://www.visa.com.mx/la-diferencia-visa/impacto-global/visanet-poder-conectar-mundo.html#:~:text=En%20t%C3%A9rminos%20de%20su%20capacidad,con%20un%20rendimiento%20sin%20igual",
+          url: "https://www.visa.com.mx/la-diferencia-visa/impacto-global/visanet-poder-conectar-mundo.html#:~:text=En%20t%C3%A9rminos%20de%20su%20capacidad,con%20un%20rendimiento%20sin%20igual",
         },
         {
-          label: "El Bitcoin y las criptomonedas: ¿El dinero del futuro? (ENAE)",
-          url: "https://www.enae.es/blog/el-bitcoin-y-las-criptomonedas-el-dinero-del-futuro",
+          label: "[6] García P. El Bitcoin y las criptomonedas: ¿El dinero del futuro? ENAE. Recuperado el 1 de marzo de 2021, de: https://www.enae.es/blog/el-bitcoin-y-las-criptomonedas-el-dinero-del-futuro?gclid=Cj0KCQiA6LyfBhC3ARIsAG4gkF9yUjoyckdK976ETlowm1hblGHr6-du54K4wHN833Tf9l9_Q9nrof4aAsJdEALw_wcB&_adin=11551547647",
+          url: "https://www.enae.es/blog/el-bitcoin-y-las-criptomonedas-el-dinero-del-futuro?gclid=Cj0KCQiA6LyfBhC3ARIsAG4gkF9yUjoyckdK976ETlowm1hblGHr6-du54K4wHN833Tf9l9_Q9nrof4aAsJdEALw_wcB&_adin=11551547647",
         },
         {
-          label: "Criptomonedas: qué es el problema de los generales bizantinos y por qué explica el origen del bitcoin (BBC News Mundo)",
+          label: "[7] Brooks, D. Criptomonedas: qué es el \"problema de los generales bizantinos” y por qué explica el origen del bitcoin. BBC News Mundo. Recuperado el 1 de marzo de 2022, de: https://www.bbc.com/mundo/noticias-51380491",
           url: "https://www.bbc.com/mundo/noticias-51380491",
         },
       ],
@@ -1190,39 +1190,39 @@ export const guideFallbackSectionsEn: Record<string, GuideSection[]> = {
       ],
       references: [
         {
-          label: "Criptografía: el arte de cifrar mensajes (Becas Santander)",
-          url: "https://www.becas-santander.com/es/blog/criptografia.html",
+          label: "[1] Criptografía: el arte de cifrar mensajes. Becas Santander.  Recuperado el 11 de marzo de 2023, de: https://www.becas-santander.com/es/blog/criptografia.html#:~:text=En%20concreto%2C%20este%20t%C3%A9rmino%20proviene,transmitir%20mensajes%20de%20forma%20secreta.",
+          url: "https://www.becas-santander.com/es/blog/criptografia.html#:~:text=En%20concreto%2C%20este%20t%C3%A9rmino%20proviene,transmitir%20mensajes%20de%20forma%20secreta.",
         },
         {
-          label: "Todo sobre criptografía: algoritmos de clave simétrica y asimétrica (Redes Zone)",
+          label: "[2] López, A. Todo sobre criptografía: Algoritmos de clave simétrica y asimétrica. Redes Zone. Recuperado el 12 de marzo de 2023, de: https://www.redeszone.net/tutoriales/seguridad/criptografia-algoritmos-clave-simetrica-asimetrica/",
           url: "https://www.redeszone.net/tutoriales/seguridad/criptografia-algoritmos-clave-simetrica-asimetrica/",
         },
         {
-          label: "Encriptación simétrica y asimétrica: conoce sus diferencias (GB Advisors)",
+          label: "[3] Encriptación Simétrica y Asimétrica: Conoce sus diferencias. GB advisors.  Recuperado el 12 de marzo de 2023, de: https://www.gb-advisors.com/es/encriptacion-simetrica-y-asimetrica-conoce-sus-diferencias/",
           url: "https://www.gb-advisors.com/es/encriptacion-simetrica-y-asimetrica-conoce-sus-diferencias/",
         },
         {
-          label: "¿Qué pasó con FTX? Esto es lo que tienes que saber (New York Times)",
+          label: "[4] ¿Qué pasó con FTX? Esto es lo que tienes que saber. New York Times. Recuperado el 14 de marzo de 2023, de: https://www.nytimes.com/es/2022/11/14/espanol/ftx-criptomonedas-que-paso.html",
           url: "https://www.nytimes.com/es/2022/11/14/espanol/ftx-criptomonedas-que-paso.html",
         },
         {
-          label: "315 millones de euros en bitcoins: buscando un disco duro en un vertedero (Xataka)",
+          label: "[5] Pastor, J. 315 millones de euros en bitcoins: el hombre que lleva años buscando un disco duro en un vertedero. Xataka. Recuperado el 14 de marzo de 2023, de: https://www.xataka.com/criptomonedas/315-millones-euros-bitcoins-hombre-que-lleva-anos-buscando-disco-duro-vertedero-1",
           url: "https://www.xataka.com/criptomonedas/315-millones-euros-bitcoins-hombre-que-lleva-anos-buscando-disco-duro-vertedero-1",
         },
         {
-          label: "Principales factores que causan una pérdida de información (Recovery Labs)",
+          label: "[6] Principales factores que causan una pérdida de información. Recovery labs. Recuperado el 14 de marzo de 2023, de: https://www.recoverylabs.com/ayuda-y-soporte/data-recovery-white-papers/informes/principales-factores-que-causan-una-perdida-de-informacion/",
           url: "https://www.recoverylabs.com/ayuda-y-soporte/data-recovery-white-papers/informes/principales-factores-que-causan-una-perdida-de-informacion/",
         },
         {
-          label: "Ledger Nano S: Secure multi-currency hardware wallet (Ledger)",
+          label: "[7] Ledger Nano S: Secure multi-currency hardware wallet. Ledger. Recuperado el 14 de marzo de 2023, de: https://www.ledger.com/ledger-nano-s-secure-multi-currency-hardware-wallet",
           url: "https://www.ledger.com/ledger-nano-s-secure-multi-currency-hardware-wallet",
         },
         {
-          label: "Opera Crypto Browser y mundo dApps, NFTs y criptomonedas (Xataka)",
+          label: "[8] Pastor, J. Un vistazo a Opera Crypto Browser, un \"navegador Web3\" que nos prepara para un mundo de dApps, NFTs y criptomonedas. Xataka. Recuperado el 15 de marzo de 2023, de: https://www.xataka.com/aplicaciones/vistazo-a-opera-crypto-browser-navegador-web3-que-nos-prepara-para-mundo-dapps-nfts-criptomonedas",
           url: "https://www.xataka.com/aplicaciones/vistazo-a-opera-crypto-browser-navegador-web3-que-nos-prepara-para-mundo-dapps-nfts-criptomonedas",
         },
         {
-          label: "Samsung apuesta por criptomonedas y blockchain en Galaxy (Andro4all)",
+          label: "[9] Freire, D. Samsung apuesta por las criptomonedas y el blockchain en la última actualización de sus móviles Galaxy. Andro 4 all. Recuperado el 15 de marzo de 2023, de: https://andro4all.com/samsung/samsung-apuesta-por-las-criptomonedas-y-el-blockchain-en-la-ultima-actualizacion-de-sus-moviles-galaxy",
           url: "https://andro4all.com/samsung/samsung-apuesta-por-las-criptomonedas-y-el-blockchain-en-la-ultima-actualizacion-de-sus-moviles-galaxy",
         },
       ],
@@ -1337,31 +1337,31 @@ export const guideFallbackSectionsEn: Record<string, GuideSection[]> = {
       ],
       references: [
         {
-          label: "Bitcoin Pizza Day: así se compró la pizza más cara de la historia (Milenio Negocios)",
+          label: "[1]  ¡Feliz Bitcoin Pizza Day! Así se compró la pizza más cara de la historia. Milenio Negocios. Recuperado el 18 de marzo de 2023, de: https://www.milenio.com/negocios/bitcoin-pizza-day-compro-pizza-cara-historia",
           url: "https://www.milenio.com/negocios/bitcoin-pizza-day-compro-pizza-cara-historia",
         },
         {
-          label: "3 factores clave que determinan el valor de las criptomonedas (Expansión MX)",
+          label: "[2] 3 factores clave que determinan el valor de las criptomonedas. Expansión MX. Recuperado el 21 de marzo de 2023, de: https://expansion.mx/mercados/2022/02/22/3-factores-clave-que-determinan-el-valor-de-las-criptomonedas",
           url: "https://expansion.mx/mercados/2022/02/22/3-factores-clave-que-determinan-el-valor-de-las-criptomonedas",
         },
         {
-          label: "Ley de oferta y demanda (Economipedia)",
+          label: "[3] Sevilla, A. Ley de oferta y demanda. Economipedia. Recuperado el 21 de marzo de 2023, de: https://economipedia.com/definiciones/ley-de-oferta-y-demanda.html",
           url: "https://economipedia.com/definiciones/ley-de-oferta-y-demanda.html",
         },
         {
-          label: "Grandes criptoestafas: fraudes y hackeos en la era del bitcoin (GQ)",
+          label: "[4] Espallargas, A. Grandes criptoestafas: los mayores fraudes y hackeos en la era del bitcoin. GQ. Recuperado el 23 de marzo de 2023, de: https://www.revistagq.com/noticias/articulo/estafas-criptomoneda-bitcoin-fraude-hackeo",
           url: "https://www.revistagq.com/noticias/articulo/estafas-criptomoneda-bitcoin-fraude-hackeo",
         },
         {
-          label: "¿Qué es y cómo funciona la Lightning Network? (Bit2Me Academy)",
+          label: "[5] ¿Qué es y cómo funciona la Lightning network? Bit 2 me. Recuperado el 22 de marzo de 2023, de: https://academy.bit2me.com/lightning-network/",
           url: "https://academy.bit2me.com/lightning-network/",
         },
         {
-          label: "¿Qué es un hash y cómo funciona? (Kaspersky)",
+          label: "[6] Donohue, B. ¿Qué Es Un Hash Y Cómo Funciona? Kaspersky. Recuperado el 23 de marzo de 2023 de: https://latam.kaspersky.com/blog/que-es-un-hash-y-como-funciona/2806/",
           url: "https://latam.kaspersky.com/blog/que-es-un-hash-y-como-funciona/2806/",
         },
         {
-          label: "Smart contracts: qué son y para qué sirven (Santander)",
+          label: "[7] Smart contracts, ¿qué son y para qué sirven? Santander. Recuperado el 24 de marzo de: https://www.santander.com/es/stories/smart-contracts",
           url: "https://www.santander.com/es/stories/smart-contracts",
         },
       ],
@@ -1490,43 +1490,43 @@ export const guideFallbackSectionsEn: Record<string, GuideSection[]> = {
       ],
       references: [
         {
-          label: "El patrón modelo-vista-controlador: arquitectura y frameworks explicados (freeCodeCamp)",
+          label: "[1] Hernández, R. El patrón modelo-vista-controlador: Arquitectura y frameworks explicados. Free code camp. Recuperado el 25 de marzo de 2023, https://www.freecodecamp.org/espanol/news/el-modelo-de-arquitectura-view-controller-pattern/",
           url: "https://www.freecodecamp.org/espanol/news/el-modelo-de-arquitectura-view-controller-pattern/",
         },
         {
-          label: "Ethereum Virtual Machine, el corazón de la bestia (Ripio)",
+          label: "[2] Juarros, S. Ethereum Virtual Machine, el corazón de la bestia. Ripio. Recuperado el 24 de marzo de 2023, de: https://launchpad.ripio.com/blog/ethereum-virtual-machine-el-corazon-de-la-bestia",
           url: "https://launchpad.ripio.com/blog/ethereum-virtual-machine-el-corazon-de-la-bestia",
         },
         {
-          label: "¿Cuánto tarda una transacción de criptomonedas? (Cointelegraph en Español)",
+          label: "[3] Maldonado, J. ¿Cuánto tarda una transacción de criptomonedas?  Cointelegraph en español. Recuperado el 25 de marzo de 2023, de: https://es.cointelegraph.com/explained/how-long-does-a-cryptocurrency-transaction-take",
           url: "https://es.cointelegraph.com/explained/how-long-does-a-cryptocurrency-transaction-take",
         },
         {
-          label: "Ethereum vs. Ethereum Classic (CoinMarketCap Alexandria)",
+          label: "[4] Ethereum vs. Ethereum Classic. Alexandria, Coin Market Cap. Recuperado el 25 de febrero de 2023, de: https://coinmarketcap.com/alexandria/es/article/ethereum-vs-ethereum-classic",
           url: "https://coinmarketcap.com/alexandria/es/article/ethereum-vs-ethereum-classic",
         },
         {
-          label: "Qué es una DAO (Ripio)",
-          url: "https://launchpad.ripio.com/blog/que-es-una-dao",
+          label: "[5] Juarros, S. Qué es una DAO. Ripio. Recuperado el 26 de marzo de 2023, de: https://launchpad.ripio.com/blog/que-es-una-dao#:~:text=%E2%80%8DLas%20DAO%20son%20una%20forma,o%20sea%20organizaci%C3%B3n%20aut%C3%B3noma%20descentralizada.",
+          url: "https://launchpad.ripio.com/blog/que-es-una-dao#:~:text=%E2%80%8DLas%20DAO%20son%20una%20forma,o%20sea%20organizaci%C3%B3n%20aut%C3%B3noma%20descentralizada.",
         },
         {
-          label: "Qué es Ethereum 2.0 y The Merge (Xataka)",
+          label: "[6] Pastor, J. Qué es Ethereum 2.0: la criptodivisa renace con una nueva cadena de bloques, más transacciones y el adiós a la minería con GPUs. Xataka. Recuperado el 26 de marzo de: https://www.xataka.com/criptomonedas/que-ethereum-2-0-criptodivisa-renace-nueva-cadena-bloques-transacciones-adios-a-mineria-gpus",
           url: "https://www.xataka.com/criptomonedas/que-ethereum-2-0-criptodivisa-renace-nueva-cadena-bloques-transacciones-adios-a-mineria-gpus",
         },
         {
-          label: "¿Qué es Proof of Stake (PoS)? (Binance Academy)",
+          label: "[7] ¿Qué es Proof of Stake (PoS)? Binance. Recuperado el 26 de marzo de 2023, de: 	https://academy.binance.com/es/articles/proof-of-stake-explained",
           url: "https://academy.binance.com/es/articles/proof-of-stake-explained",
         },
         {
-          label: "¿Qué es un token? (Coinbase Learn)",
+          label: "[8] ¿Qué es un token? Coinbase. Recuperado el 27 de marzo de 2023, de: https://www.coinbase.com/es-LA/learn/crypto-basics/what-is-a-token",
           url: "https://www.coinbase.com/es-LA/learn/crypto-basics/what-is-a-token",
         },
         {
-          label: "¿Qué son los tokens nativos? (24 Noticias Bitcoin)",
+          label: "[9] ¿Qué son los tokens nativos? 24 noticias Bitcoin. Recuperado el 27 de marzo de 2023, de: https://24noticiasbitcoin.com/que-son-los-tokens-nativos/",
           url: "https://24noticiasbitcoin.com/que-son-los-tokens-nativos/",
         },
         {
-          label: "MATIC surges as Disney chooses Polygon for accelerator program (CoinDesk)",
+          label: "[10] Velasquez, F. MATIC Surges as Disney Chooses Polygon for Accelerator Program. Coindesk. Recuperado el 28 de marzo de 2023, de: https://www.coindesk.com/business/2022/07/13/polygon-joins-disneys-accelerator-program-to-develop-ar-nft-and-ai-experiences/",
           url: "https://www.coindesk.com/business/2022/07/13/polygon-joins-disneys-accelerator-program-to-develop-ar-nft-and-ai-experiences/",
         },
       ],
@@ -1620,36 +1620,36 @@ export const guideFallbackSectionsEn: Record<string, GuideSection[]> = {
       ],
       references: [
         {
-          label: "Web3: la evolución de Internet que está cada vez más cerca (Grupo 5)",
+          label: "[1] Web3 la evolución de Internet que está cada vez más cerca. Grupo 5. Recuperado el 31 de marzo de 2023, de: https://www.grupo5.com/noticia/586_web3-la-evolucion-de-internet-que-esta-cada-vez-mas-cerca.htm",
           url: "https://www.grupo5.com/noticia/586_web3-la-evolucion-de-internet-que-esta-cada-vez-mas-cerca.htm",
         },
         {
-          label: "Significado de Web (Significados.com)",
+          label: "[2] Significado de Web. Significados.com. Recuperado el 29 de marzo de 2023, de: https://www.significados.com/web/",
           url: "https://www.significados.com/web/",
         },
         {
-          label: "Significado de Internet (Significados.com)",
+          label: "[3] Significado de Internet. Significados.com. Recuperado el 29 de marzo de 2023, de: https://www.significados.com/internet/",
           url: "https://www.significados.com/internet/",
         },
         {
-          label: "Qué es la indexación web o indexar un contenido (InboundCycle)",
+          label: "[4] Botey, J. ¿Qué es la indexación web o indexar un contenido y cómo hacerlo? Inboundcycle. Recuperado el 30 de marzo de 2023, de: https://www.inboundcycle.com/blog-de-inbound-marketing/que-es-la-indexacion-o-indexar-un-contenido",
           url: "https://www.inboundcycle.com/blog-de-inbound-marketing/que-es-la-indexacion-o-indexar-un-contenido",
         },
         {
-          label: "Qué son las aplicaciones descentralizadas (DApps) (Binance Academy)",
+          label: "[5] ¿Qué son las Aplicaciones Descentralizadas (DApps)? Binance academy. Recuperado el 30 de marzo de 2023, de: https://academy.binance.com/es/articles/what-are-decentralized-applications-dapps",
           url: "https://academy.binance.com/es/articles/what-are-decentralized-applications-dapps",
         },
         {
-          label: "Web 3.0 y blockchain: el futuro de Internet (Santander X)",
+          label: "[6] Web 3.0 & blockchain: el futuro de Internet. Santander X. Recuperado el 31 de marzo de 2023, de: https://www.santanderx.com/es/blog/web-3-0.html",
           url: "https://www.santanderx.com/es/blog/web-3-0.html",
         },
         {
-          label: "Estudio sobre vulnerabilidad de mexicanos a ciberataques (Wired)",
-          url: "https://es.wired.com/articulos/ciberataques-contra-mexicanos-estudio",
+          label: "[7] Estudio revela cuán vulnerables son los mexicanos a ciberataques. Wired. Recuperado el 31 de marzo de 2023, de: https://es.wired.com/articulos/ciberataques-contra-mexicanos-estudio#:~:text=De%20acuerdo%20con%20los%20datos,en%20los%20últimos%2012%20meses",
+          url: "https://es.wired.com/articulos/ciberataques-contra-mexicanos-estudio#:~:text=De%20acuerdo%20con%20los%20datos,en%20los%20últimos%2012%20meses",
         },
         {
-          label: "Qué es la web 3 (Binance)",
-          url: "https://www.binance.com/es/blog/ecosystem/qu%C3%A9-es-la-web-3-7726791091349681472",
+          label: "[8]¿Qué es la web 3? Binance. Recuperado el 1 de abril de 2023, de: https://www.binance.com/es/blog/ecosystem/qué-es-la-web-3-7726791091349681472",
+          url: "https://www.binance.com/es/blog/ecosystem/qué-es-la-web-3-7726791091349681472",
         },
       ],
     },
@@ -1775,31 +1775,31 @@ export const guideFallbackSectionsEn: Record<string, GuideSection[]> = {
       ],
       references: [
         {
-          label: "El ser humano y el valor de las cosas (Listín Diario)",
-          url: "https://listindiario.com/la-vida/2018/01/11/498170/saber-cual-es-el-valor-de-las-cosas",
+          label: "[1] Del villar, L. Listin Diario. Recuperado el 3 de abril de 2023, de: https://listindiario.com/la-vida/2018/01/11/498170/saber-cual-es-el-valor-de-las-cosas#:~:text=El%20ser%20humano%20es%20el,los%20seres%20y%20los%20objetos.",
+          url: "https://listindiario.com/la-vida/2018/01/11/498170/saber-cual-es-el-valor-de-las-cosas#:~:text=El%20ser%20humano%20es%20el,los%20seres%20y%20los%20objetos.",
         },
         {
-          label: "Protocolos NFT de Ethereum y aplicaciones prácticas (Binance)",
+          label: "[2] Descubre los protocolos de NFT de Ethereum: la tecnología que está revolucionando la industria del arte digital y los videojuegos. Recuperado el 5 de abril de 2023, de: https://www.binance.com/es-LA/blog/nft/todo-sobre-los-nft-de-utilidad-los-tokens-%C3%BAnicos-con-aplicaciones-pr%C3%A1cticas-897687675250973294",
           url: "https://www.binance.com/es-LA/blog/nft/todo-sobre-los-nft-de-utilidad-los-tokens-%C3%BAnicos-con-aplicaciones-pr%C3%A1cticas-897687675250973294",
         },
         {
-          label: "Coca-Cola, Alibaba y Correos apuestan por NFT tangibles (Reason Why)",
+          label: "[3] Coca-Cola, Alibaba y Correos apuestan por los NFT y los hacen tangibles. Reason Why. Recuperado el 6 de abril de 2023, de: https://www.reasonwhy.es/actualidad/coca-cola-alibaba-correos-apuestan-nft",
           url: "https://www.reasonwhy.es/actualidad/coca-cola-alibaba-correos-apuestan-nft",
         },
         {
-          label: "Coachella Key Collection: NFT canjeables por boletos de por vida (El Financiero)",
+          label: "[4] ‘Coachella Key Collection’: Festival subasta NFT canjeables por boletos de por vida. El financiero. Recuperado el 6 de abril de 2023, de: https://www.elfinanciero.com.mx/entretenimiento/2022/02/05/coachella-key-collection-festival-subasta-nft-canjeables-por-boletos-de-por-vida/",
           url: "https://www.elfinanciero.com.mx/entretenimiento/2022/02/05/coachella-key-collection-festival-subasta-nft-canjeables-por-boletos-de-por-vida/",
         },
         {
-          label: "Qué es un POAP (Cryptoconexión)",
+          label: "[5] Catalán, R. ¿Qué es un POAP? Cryptoconexión. Recuperado el 5 de abril de 2023, de: https://cryptoconexion.com/que-es-un-poap/",
           url: "https://cryptoconexion.com/que-es-un-poap/",
         },
         {
-          label: "BAYC crea su propia criptomoneda (iProUP)",
+          label: "[6] Bored Ape Yacht Club crea una criptomoneda: ¿qué se podrá hacer con ella? iProUp. Recuperado el 6 de abril de 2023, de: https://www.iproup.com/economia-digital/30214-bored-ape-yacht-club-crea-su-propia-criptomoneda",
           url: "https://www.iproup.com/economia-digital/30214-bored-ape-yacht-club-crea-su-propia-criptomoneda",
         },
         {
-          label: "Beeple, artista de la era digital (GQ México)",
+          label: "[7] Villagrán, M. Así es Beeple, el artista de la era digital. GQ México. Recuperado el 7 de abril de 2023, de: https://www.gq.com.mx/entretenimiento/articulo/beeple-artista-digital-quien-es",
           url: "https://www.gq.com.mx/entretenimiento/articulo/beeple-artista-digital-quien-es",
         },
       ],
@@ -1901,63 +1901,63 @@ export const guideFallbackSectionsEn: Record<string, GuideSection[]> = {
       ],
       references: [
         {
-          label: "Snow Crash, la novela que predijo el metaverso (El Universo)",
+          label: "[1] ‘Snow Crash’, la novela que predijo el metaverso, la tecnología que algunas empresas ya usan. El universo. Recuperado el 16 de abril de 2023, de: https://www.eluniverso.com/larevista/tecnologia/snow-crash-la-novela-que-predijo-el-metaverso-la-tecnologia-que-algunas-empresas-ya-usan-nota/",
           url: "https://www.eluniverso.com/larevista/tecnologia/snow-crash-la-novela-que-predijo-el-metaverso-la-tecnologia-que-algunas-empresas-ya-usan-nota/",
         },
         {
-          label: "Metaverso: todo lo que necesitas saber (Santander)",
+          label: "[2] Metaverso: todo lo que necesitas saber para aprovechar el ‘nuevo mundo’. Santander. Recuperado el 16 de abril de 2023, de: https://www.santander.com/es/stories/metaverso-todo-lo-que-necesitas-saber-para-aprovechar-el-nuevo-mundo",
           url: "https://www.santander.com/es/stories/metaverso-todo-lo-que-necesitas-saber-para-aprovechar-el-nuevo-mundo",
         },
         {
-          label: "Regular Expressions for Web Advertising Detection (Springer)",
+          label: "[3] Riaño D., Molero-Castillo G., Piñon R., Vázquez Mena A., Bárcenas E. Regular Expressions for Web Advertising Detection based on an Automatic Sliding Algorithm. Programming and Computer Software, Springer Nature,vol. 46, no. 7, 2020. Recuperado el 17 de abril de 2023, de: https://link.springer.com/article/10.1134%2FS0361768820080162",
           url: "https://link.springer.com/article/10.1134%2FS0361768820080162",
         },
         {
-          label: "El metaverso de Zuckerberg y sus retos de adopción (El Economista)",
+          label: "[4] Téran, M. El Metaverso es un fiasco y Zuckerberg no puede esconderlo: ya no sabe cómo hacer que compres sus gafas. El economista. Recuperado el 20 de abril de 2023, de: https://www.eleconomista.es/tecnologia/noticias/12175676/03/23/El-Metaverso-es-un-fiasco-y-Zuckerberg-no-puede-esconderlo-ya-no-sabe-como-hacer-que-compres-sus-gafas.html",
           url: "https://www.eleconomista.es/tecnologia/noticias/12175676/03/23/El-Metaverso-es-un-fiasco-y-Zuckerberg-no-puede-esconderlo-ya-no-sabe-como-hacer-que-compres-sus-gafas.html",
         },
         {
-          label: "Meta Quest 2 (Meta)",
+          label: "[5] Meta Quest 2. Meta. Recuperado el 18 de abril de 2023, de: https://www.meta.com/quest/products/quest-2/",
           url: "https://www.meta.com/quest/products/quest-2/",
         },
         {
-          label: "Mocopi de Sony (20bits)",
+          label: "[6] Higuera, A. Sony lanza un dispositivo que te convierte en un personaje de anime en movimiento. 20 bits. Recuperado el 18 de abril de 2023, de: https://www.20minutos.es/tecnologia/moviles-dispositivos/sony-lanza-un-dispositivo-que-te-convierte-en-un-personaje-de-anime-en-movimiento-5081567/",
           url: "https://www.20minutos.es/tecnologia/moviles-dispositivos/sony-lanza-un-dispositivo-que-te-convierte-en-un-personaje-de-anime-en-movimiento-5081567/",
         },
         {
-          label: "RealityOS y metaverso de Apple (Xataka)",
+          label: "[7] Marquez, J. Apple finaliza el desarrollo interno de realityOS y prepara su propio metaverso, según Gurman. Xataka. Recuperado el 19 de abril de 2023, de: https://www.xataka.com/realidad-virtual-aumentada/apple-finaliza-desarrollo-interno-realityos-prepara-su-propio-metaverso-gurman",
           url: "https://www.xataka.com/realidad-virtual-aumentada/apple-finaliza-desarrollo-interno-realityos-prepara-su-propio-metaverso-gurman",
         },
         {
-          label: "HOLO en Ultra Music Festival (The Groove Cartel)",
+          label: "[8] Eric Prydz Unleashes HOLO at Ultra Music Festival Miami 2023. The groove cartel. Recuperado el 21 de abril de 2023, de: https://thegroovecartel.com/news/eric-prydz-holo-ultra-music-festival-miami-2023/",
           url: "https://thegroovecartel.com/news/eric-prydz-holo-ultra-music-festival-miami-2023/",
         },
         {
-          label: "Videojuegos y metaverso (The New York Times)",
+          label: "[9] Ovide, S. ¿Qué tienen que ver los videojuegos con el metaverso? New York Times. Recuperado el 22 de abril de 2023, de: https://www.nytimes.com/es/2022/01/25/espanol/microsoft-meta-activision-blizzard.html",
           url: "https://www.nytimes.com/es/2022/01/25/espanol/microsoft-meta-activision-blizzard.html",
         },
         {
-          label: "Gaming y adopción cripto (Cointelegraph en Español)",
+          label: "[10] Quarmby, B. Los juegos son la \"mayor oportunidad\" para las criptomonedas, dice el cofundador de Polygon. Cointelegraph en español. Recuperado el 20 de junio de 2023, de: https://es.cointelegraph.com/news/gaming-opportunity-crypto-mass-adoption-polygon-sandeep-nailwal",
           url: "https://es.cointelegraph.com/news/gaming-opportunity-crypto-mass-adoption-polygon-sandeep-nailwal",
         },
         {
-          label: "Cierre de Crayta (Medium)",
+          label: "[11] Shenton, A. A message for the Crayta Community. Medium. Recuperado el 22 de abril de 2023, de: https://medium.com/crayta/a-message-for-the-crayta-community-7c9ec53126f2",
           url: "https://medium.com/crayta/a-message-for-the-crayta-community-7c9ec53126f2",
         },
         {
-          label: "Qué es Roblox y cómo funciona (Xataka Basics)",
+          label: "[12] Fernández, Y. Qué es Roblox, en qué se diferencia de los demás y cómo funciona. Xataka Basics. Recuperado el 27 de abril de 2023, de: https://www.xataka.com/basics/que-roblox-que-se-diferencia-como-funciona",
           url: "https://www.xataka.com/basics/que-roblox-que-se-diferencia-como-funciona",
         },
         {
-          label: "Qué es The Sandbox (Planeta NFT)",
+          label: "[13] ¿Qué es The Sandbox y cómo funciona este metaverso? Planeta NFT. Recuperado el 27 de abril de 2023, de: https://planetanft.com/que-es-the-sandbox/",
           url: "https://planetanft.com/que-es-the-sandbox/",
         },
         {
-          label: "Decentraland: qué es y cómo entrar (El Grupo Informático)",
+          label: "[14] Pinto, H. Decentraland: qué es, cómo entrar, comprar y más. El grupo Informático. Recuperado el 28 de abril de 2023, de: https://www.elgrupoinformatico.com/tutoriales/decentraland-que-como-entrar-comprar-mas-t82865.html",
           url: "https://www.elgrupoinformatico.com/tutoriales/decentraland-que-como-entrar-comprar-mas-t82865.html",
         },
         {
-          label: "Sobre los estándares abiertos (Universidad de Zaragoza)",
+          label: "[15] Sobre los estándares abiertos. Oficina software libre, Universidad de Zaragoza. Recuperado el 28 de abril de 2023, de: https://osluz.unizar.es/content/sobre-los-estandares-abiertos",
           url: "https://osluz.unizar.es/content/sobre-los-estandares-abiertos",
         },
       ],
@@ -2111,47 +2111,47 @@ export const guideFallbackSectionsEn: Record<string, GuideSection[]> = {
       ],
       references: [
         {
-          label: "¿Qué es una CBDC y cuáles son sus características? (Muy Financiero)",
+          label: "[1] Gutiérrez, I. ¿Qué es una CBDC y cuáles son sus características? Muy financiero. Recuperado el 5 de junio de 2023, de: https://muyfinanciero.com/conceptos/cbdc/",
           url: "https://muyfinanciero.com/conceptos/cbdc/",
         },
         {
-          label: "Qué es Dogecoin y por qué se hizo popular (Xataka Basics)",
+          label: "[2] Fernández, Y. Qué es el Dogecoin, cómo funciona y por qué se ha hecho tan popular.  Xataka Basics. Recuperado el 7 de junio de 2023, de: https://www.xataka.com/basics/que-dogecoin-como-funciona-que-se-ha-hecho-popular",
           url: "https://www.xataka.com/basics/que-dogecoin-como-funciona-que-se-ha-hecho-popular",
         },
         {
-          label: "Qué es PEPE y su contexto frente a memecoins (Cointelegraph en Español)",
+          label: "[3] Gola, Y. ¿Qué es PEPE y puede superar a las memecoins Dogecoin y Shiba Inu? Cointelegraph en español. Recuperado el 7 de junio de 2021, de: https://es.cointelegraph.com/news/what-is-pepe-coin-flip-memecoin-dogecoin-shiba-inu",
           url: "https://es.cointelegraph.com/news/what-is-pepe-coin-flip-memecoin-dogecoin-shiba-inu",
         },
         {
-          label: "Flatcoins indexadas a inflación en Base (Cointelegraph en Español)",
+          label: "[4] Lindrea, B. Coinbase quiere que los desarrolladores construyan 'flatcoins' indexadas a la inflación en su nueva red 'Base’. Cointelegraph en español. Recuperado el 8 de junio de 2023, de: https://es.cointelegraph.com/news/coinbase-wants-devs-to-build-inflation-pegged-flatcoins-on-its-new-base-network",
           url: "https://es.cointelegraph.com/news/coinbase-wants-devs-to-build-inflation-pegged-flatcoins-on-its-new-base-network",
         },
         {
-          label: "¿Qué es Tether (USDT)? (Criptonoticias)",
+          label: "[5] Leal, A. ¿Qué es Tether (USDT)? Criptonoticias. Recuperado el 9 de junio de 2023, de: https://www.criptonoticias.com/criptopedia/que-es-tether-usdt-stablecoin/",
           url: "https://www.criptonoticias.com/criptopedia/que-es-tether-usdt-stablecoin/",
         },
         {
-          label: "¿Qué es DAI? (Bit2Me Academy)",
+          label: "[6] ¿Qué es DAI? Bit2me academy. Recuperado el 9 de junio de 2023, de: https://academy.bit2me.com/que-es-dai/",
           url: "https://academy.bit2me.com/que-es-dai/",
         },
         {
-          label: "¿Qué es EUROC y cómo se utiliza? (Escrypto)",
+          label: "[7] ¿Qué es una moneda de euro (EUROC) y cómo se utiliza? Escrypto. Recuperado el 10 de junio de 2023, de: https://www.escrypto.com/es/blog/what-is-euro-coin-euroc-and-how-do-i-use-it",
           url: "https://www.escrypto.com/es/blog/what-is-euro-coin-euroc-and-how-do-i-use-it",
         },
         {
-          label: "Implantación de Bitcoin como moneda de curso legal (Cointelegraph en Español)",
+          label: "[8] Jiménez, D. La implantación del Bitcoin como moneda de curso legal. Cointelegraph en español. Recuperado el 10 de junio de 2023, de: https://es.cointelegraph.com/news/the-implementation-of-bitcoin-as-legal-tender",
           url: "https://es.cointelegraph.com/news/the-implementation-of-bitcoin-as-legal-tender",
         },
         {
-          label: "Crypto Assets and CBDCs in LATAM and the Caribbean (IMF)",
+          label: "[9] Appendino, M. et al. Crypto Assets and CBDCs in Latin America and the Caribbean: Opportunities and Risks. International monetary fund. Recuperado el 12 de junio de 2022, de: https://www.imf.org/en/Publications/WP/Issues/2023/02/17/Crypto-Assets-and-CBDCs-in-Latin-America-and-the-Caribbean-Opportunities-and-Risks-529717",
           url: "https://www.imf.org/en/Publications/WP/Issues/2023/02/17/Crypto-Assets-and-CBDCs-in-Latin-America-and-the-Caribbean-Opportunities-and-Risks-529717",
         },
         {
-          label: "CBDC en Brasil y debate sobre real digital (BeInCrypto)",
+          label: "[10] Chavez, A.CBDC en Brasil: ¿El real digital es realmente una stablecoin? Be in crypto. Recuperado el 13 de junio de 2023, de: https://es.beincrypto.com/cbdc-brasil-real-digital-realmente-stablecoin/",
           url: "https://es.beincrypto.com/cbdc-brasil-real-digital-realmente-stablecoin/",
         },
         {
-          label: "Comprendiendo monedas digitales de bancos centrales (Cointelegraph en Español)",
+          label: "[11] Di Paula, R. CBDC: Comprendiendo un poco más sobre las monedas digitales de los bancos centrales. Cointelegraph en español. Recuperado el 13 de junio de 2023, de: https://es.cointelegraph.com/news/cbdc-understanding-a-little-more-about-central-bank-digital-currencies",
           url: "https://es.cointelegraph.com/news/cbdc-understanding-a-little-more-about-central-bank-digital-currencies",
         },
       ],
@@ -2456,39 +2456,39 @@ export const guideFallbackSectionsEn: Record<string, GuideSection[]> = {
       ],
       references: [
         {
-          label: "Identidad Digital Web 3 [Qué es y Casos de Uso Reales] (LinkedIn)",
+          label: "[1] Merodio, J. Identidad Digital Web 3 [Qué es y Casos de Uso Reales]. Linked In. Recuperado el 30 de junio de 2023, de: https://www.linkedin.com/pulse/identidad-digital-web3-qué-es-y-casos-de-uso-reales-juan-merodio/?originalSubdomain=es",
           url: "https://www.linkedin.com/pulse/identidad-digital-web3-qué-es-y-casos-de-uso-reales-juan-merodio/?originalSubdomain=es",
         },
         {
-          label: "Algorithm for Identification and Analysis of Targeted Advertising (LACCEI)",
+          label: "[2] Riaño D., Molero-Castillo G., Barcenas E., Aldeco R. Algorithm for Identification and Analysis of Targeted Advertising used in Trending Topics. An Approach to Automatic Recognition of Web Advertising Focused on Different Languages. LACCEI International Multi-Conference of Engineering, Education and Technology, Boca Ratón, Florida, EUA, 2022. Disponible en: https://www.laccei.org/LACCEI2022-BocaRaton/full_papers/FP57.pdf",
           url: "https://www.laccei.org/LACCEI2022-BocaRaton/full_papers/FP57.pdf",
         },
         {
-          label: "DeFi security and trustless bridges (Cointelegraph ES)",
+          label: "[3] Clark, A. Seguridad en DeFi: cómo los puentes trustless pueden ayudar a proteger a los usuarios. Cointelegraph en español. Recuperado el 5 de agosto de 2023, de: https://es.cointelegraph.com/news/defi-security-how-trustless-bridges-can-help-protect-users",
           url: "https://es.cointelegraph.com/news/defi-security-how-trustless-bridges-can-help-protect-users",
         },
         {
-          label: "What is Zero-Knowledge Proof and how does it impact blockchain? (Binance Academy)",
+          label: "[4] Li, K. ¿Qué es Zero-Knowledge Proof y cómo afecta a la blockchain? Binance. Recuperado el 6 de agosto de 2021, de: https://academy.binance.com/es/articles/what-is-zero-knowledge-proof-and-how-does-it-impact-blockchain",
           url: "https://academy.binance.com/es/articles/what-is-zero-knowledge-proof-and-how-does-it-impact-blockchain",
         },
         {
-          label: "What are Soulbound Tokens (SBT)? (Binance Academy)",
+          label: "[5] ¿Qué son los Soulbound Tokens (SBT)? Binance. Recuperado el 2 de agosto de 2023, de: https://academy.binance.com/es/articles/what-are-soulbound-tokens-sbt",
           url: "https://academy.binance.com/es/articles/what-are-soulbound-tokens-sbt",
         },
         {
-          label: "Soulbound Tokens vs Self-Sovereign Identity (Cryptonews)",
+          label: "[6] Soulbound Tokens vs Self-Sovereign Identity: Web3’s Search for a Digital ID Solution. Cryptonews. Recuperado el 3 de agosto de 2023, de: https://cryptonews.com/exclusives/soulbound-tokens-vs-self-sovereign-identity-web3s-search-for-a-digital-id-solution.htm",
           url: "https://cryptonews.com/exclusives/soulbound-tokens-vs-self-sovereign-identity-web3s-search-for-a-digital-id-solution.htm",
         },
         {
-          label: "Worldcoin arrives in Mexico in exchange for biometric data (R3D)",
+          label: "[7] Worldcoin llega a México con la promesa de criptomonedas a cambio de datos biométricos. Red en defensa de los derechos digitales. Recuperado el 6 de agosto de 2023, de: https://r3d.mx/2023/08/02/worldcoin-llega-a-mexico-con-la-promesa-de-criptomonedas-a-cambio-de-datos-biometricos/",
           url: "https://r3d.mx/2023/08/02/worldcoin-llega-a-mexico-con-la-promesa-de-criptomonedas-a-cambio-de-datos-biometricos/",
         },
         {
-          label: "Worldcoin to allow government and businesses to use ID system (Cointelegraph ES)",
+          label: "[8] Fortis, S. Worldcoin permitirá a gobiernos y empresas utilizar su sistema de identificación: Informe. Cointelegraph en español. Recuperado el 6 de agosto de 2023, de: https://es.cointelegraph.com/news/worldcoin-to-allow-government-and-businesses-to-use-id-system",
           url: "https://es.cointelegraph.com/news/worldcoin-to-allow-government-and-businesses-to-use-id-system",
         },
         {
-          label: "Web3 and user pushback against big tech (Cinco Días)",
+          label: "[9] Peralta, L. Web3: la revancha de los usuarios contra las empresas ‘big tech’. Cinco días. Recuperado el 7 de agosto de 2023, de: https://cincodias.elpais.com/cincodias/2021/12/24/companias/1640338509_178295.html",
           url: "https://cincodias.elpais.com/cincodias/2021/12/24/companias/1640338509_178295.html",
         },
       ],
@@ -2658,40 +2658,32 @@ export const guideFallbackSectionsEn: Record<string, GuideSection[]> = {
       ],
       references: [
         {
-          label: "Polkadot Developer Docs - Relay Chain",
-          url: "https://docs.polkadot.com/reference/polkadot-hub/consensus-and-security/relay-chain/",
+          label: "[4] Morales, J. Sobre Cardano, EMURGO y IOHK. Criptoticker. Recuperado el 25 de mayo de 2023, de: https://cryptoticker.io/es/sobre-cardano-emurgo-y-iohk/",
+          url: "https://cryptoticker.io/es/sobre-cardano-emurgo-y-iohk/",
         },
         {
-          label: "Cardano Documentation",
-          url: "https://docs.cardano.org/",
+          label: "[2] Historia del Dinero. Banco de México. Recuperado el 3 de marzo de 2023, de: https://www.banxico.org.mx/mibanxico//_pdfs/historia-del-dinero.pdf",
+          url: "https://www.banxico.org.mx/mibanxico//_pdfs/historia-del-dinero.pdf",
         },
         {
-          label: "Algorand Technology",
-          url: "https://algorand.co/technology",
+          label: "[3] Nieto, A. El número de bitcoins es finito, no podrá haber más de 21 millones: ¿qué se espera que suceda entonces? Xataka. Recuperado el 30 de mayo de 2021, de: https://cutt.ly/NncK3a2",
+          url: "https://cutt.ly/NncK3a2",
         },
         {
-          label: "Solana Docs",
-          url: "https://solana.com/docs",
+          label: "[4] Definición de seguridad informática. Recuperado el 17 de febrero de 2023, de:https://definicion.de/seguridad-informatica/",
+          url: "https://definicion.de/seguridad-informatica/",
         },
         {
-          label: "XRPL Consensus Structure",
-          url: "https://xrpl.org/docs/concepts/consensus-protocol/consensus-structure",
+          label: "[5] Collado, l. VisaNet: el poder de conectar al mundo. Recuperado el 17 de febrero de 2023, de:https://www.visa.com.mx/la-diferencia-visa/impacto-global/visanet-poder-conectar-mundo.html#:~:text=En%20t%C3%A9rminos%20de%20su%20capacidad,con%20un%20rendimiento%20sin%20igual",
+          url: "https://www.visa.com.mx/la-diferencia-visa/impacto-global/visanet-poder-conectar-mundo.html#:~:text=En%20t%C3%A9rminos%20de%20su%20capacidad,con%20un%20rendimiento%20sin%20igual",
         },
         {
-          label: "Polygon PoS Overview",
-          url: "https://docs.polygon.technology/pos/overview/",
+          label: "[6] García P. El Bitcoin y las criptomonedas: ¿El dinero del futuro? ENAE. Recuperado el 1 de marzo de 2021, de: https://www.enae.es/blog/el-bitcoin-y-las-criptomonedas-el-dinero-del-futuro?gclid=Cj0KCQiA6LyfBhC3ARIsAG4gkF9yUjoyckdK976ETlowm1hblGHr6-du54K4wHN833Tf9l9_Q9nrof4aAsJdEALw_wcB&_adin=11551547647",
+          url: "https://www.enae.es/blog/el-bitcoin-y-las-criptomonedas-el-dinero-del-futuro?gclid=Cj0KCQiA6LyfBhC3ARIsAG4gkF9yUjoyckdK976ETlowm1hblGHr6-du54K4wHN833Tf9l9_Q9nrof4aAsJdEALw_wcB&_adin=11551547647",
         },
         {
-          label: "BNB Chain Docs",
-          url: "https://docs.bnbchain.org/",
-        },
-        {
-          label: "Avalanche PlatformVM Architecture",
-          url: "https://build.avax.network/docs/primary-network/platformvm-architecture",
-        },
-        {
-          label: "CoinGecko API - Market data reference set",
-          url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=algorand,solana,ripple,polygon-ecosystem-token,binancecoin,avalanche-2",
+          label: "[7] Brooks, D. Criptomonedas: qué es el \"problema de los generales bizantinos” y por qué explica el origen del bitcoin. BBC News Mundo. Recuperado el 1 de marzo de 2022, de: https://www.bbc.com/mundo/noticias-51380491",
+          url: "https://www.bbc.com/mundo/noticias-51380491",
         },
       ],
     },
@@ -2806,48 +2798,184 @@ export const guideFallbackSectionsEn: Record<string, GuideSection[]> = {
       ],
       references: [
         {
-          label: "What is a DAO? (NYT en Español)",
+          label: "[1] Roose K. ¿Qué es una DAO? La guía cripto para despistados, New York Times en español. Recuperado el 20 de marzo de 2024, de: https://www.nytimes.com/es/interactive/2022/03/29/espanol/dao-que-es.html",
           url: "https://www.nytimes.com/es/interactive/2022/03/29/espanol/dao-que-es.html",
         },
         {
-          label: "What is a DAO? (Cointelegraph ES)",
+          label: "[2] ¿Qué es DAO? Cointelegraph en español. Recuperado el 20 de marzo de 2024, de: https://es.cointelegraph.com/learn/what-is-a-decentralized-autonomous-organization-and-how-does-a-dao-work",
           url: "https://es.cointelegraph.com/learn/what-is-a-decentralized-autonomous-organization-and-how-does-a-dao-work",
         },
         {
-          label: "Company shares: definitions and types (GBM Academy)",
+          label: "[3] Acciones de una empresa: Definición, tipos y ventajas. GBM academy. Recuperado el 20 de marzo de 2024, de: https://gbm.com/academy/que-son-las-acciones-definicion-tipos-y-ventajas/",
           url: "https://gbm.com/academy/que-son-las-acciones-definicion-tipos-y-ventajas/",
         },
         {
-          label: "Class A vs Class B shares (FasterCapital)",
+          label: "[4] Acciones Clase B frente a Clase A diferencias y consideraciones clave. Faster Capital. Recuperado el 20 de marzo de 2024, de: https://fastercapital.com/es/contenido/Acciones-Clase-B-frente-a--Clase-A--diferencias-y-consideraciones-clave.html",
           url: "https://fastercapital.com/es/contenido/Acciones-Clase-B-frente-a--Clase-A--diferencias-y-consideraciones-clave.html",
         },
         {
-          label: "Blockchain governance (LinkedIn)",
-          url: "https://www.linkedin.com/pulse/gobernanza-de-la-blockchain-%C3%A1lvaro-garay-i2j8f/",
+          label: "[5] Garay A.  Gobernanza de la Blockchain. Aprende enseñando, Linked In. Recuperado el 20 de marzo de 2024, de:  https://www.linkedin.com/pulse/gobernanza-de-la-blockchain-%C3%A1lvaro-garay-i2j8f/?originalSubdomain-es https://es.cointelegraph.com/explained/governance-the-key-to-decentralization-and-development-of-blockchain-projects",
+          url: "https://www.linkedin.com/pulse/gobernanza-de-la-blockchain-%C3%A1lvaro-garay-i2j8f/?originalSubdomain-es",
         },
         {
-          label: "Governance models in Ethereum Enterprise Alliance (FasterCapital)",
+          label: "[6] Explorando modelos de gobernanza dentro de Ethereum Enterprise Alliance EEE. Faster Capital. Recuperado el 20 de marzo de 2024, de: https://fastercapital.com/es/contenido/Explorando-modelos-de-gobernanza-dentro-de-Ethereum-Enterprise-Alliance--EEE.html",
           url: "https://fastercapital.com/es/contenido/Explorando-modelos-de-gobernanza-dentro-de-Ethereum-Enterprise-Alliance--EEE.html",
         },
         {
-          label: "Cardano governance debates (Cointelegraph ES)",
+          label: "[7] Jimenez, R. Labitconf: \"La Constitución Mínima Viable protagoniza debates sobre el futuro gobierno de Cardano\", afirma experto. Cointelegraph en español. Recuperado el 20 de marzo, de:   https://es.cointelegraph.com/news/labitconf-minimum-viable-constitution-at-the-center-of-debate-on-cardanos-future-governance-says-expert",
           url: "https://es.cointelegraph.com/news/labitconf-minimum-viable-constitution-at-the-center-of-debate-on-cardanos-future-governance-says-expert",
         },
         {
-          label: "Blockchain governance guide (Ripio)",
+          label: "[8] Juarros, S. Gestión y gobernanza de blockchains. Ripio. Recuperado el 20 de marzo de 2024, de: https://launchpad.ripio.com/guias-capitulos/gestion-y-gobernanza-de-blockchains",
           url: "https://launchpad.ripio.com/guias-capitulos/gestion-y-gobernanza-de-blockchains",
         },
         {
-          label: "NEAR governance constitution (Cripteros)",
+          label: "[9] NEAR y su Constitución: La Revolución de la Gobernanza en el Mundo de las Criptomonedas. Crypto news. Recuperado el 20 de marzo de 2024, de: https://cripteros.com/near-protocol-y-su-constitucion/",
           url: "https://cripteros.com/near-protocol-y-su-constitucion/",
         },
         {
-          label: "Polkadot governance overview",
+          label: "[10] Gobernanza de Polkadot. Polkadot en español. Recuperado el 20 de marzo de 2024, de: https://polkadot.network/blog/gobernanza-de-polkadot",
           url: "https://polkadot.network/blog/gobernanza-de-polkadot",
         },
         {
-          label: "Cardano voting and decision process (Forum Cardano)",
+          label: "[11] Favio, A. Votación y toma de decisiones (vista rápida). Forum Cardano. Recuperado el 20 de marzo de 2024, de: https://forum.cardano.org/t/votacion-y-toma-de-decisiones-vista-rapida/46562",
           url: "https://forum.cardano.org/t/votacion-y-toma-de-decisiones-vista-rapida/46562",
+        },
+      ],
+    },
+  ],
+  "level-3-guide-13-pools-liquidez-defi": [
+    {
+      title: "Introducción",
+      imageUrl: "https://placehold.co/1200x630/0f172a/c4b5fd?text=Guide+13+Introduction",
+      paragraphs: [
+        "Liquidity pools are a core component of DeFi because they replace the traditional order book with automated market-making mechanisms.",
+        "This guide explains execution logic, incentive design, and the main operational risks when providing liquidity.",
+      ],
+    },
+    {
+      title: "Conceptos básicos",
+      imageUrl: "https://placehold.co/1200x630/1e293b/93c5fd?text=Liquidity+Pools+Basics",
+      paragraphs: [
+        "A liquidity pool is a smart-contract reserve funded by users so swaps can be executed without relying on a centralized matching engine.",
+        "Liquidity providers receive fees and, in many protocols, additional token incentives.",
+      ],
+    },
+    {
+      title: "Desarrollo",
+      imageUrl: "https://placehold.co/1200x630/172554/fde68a?text=Development",
+      paragraphs: [
+        "DeFi execution combines contract-level rules, automated pricing formulas, and incentive layers that keep pools liquid over time.",
+      ],
+    },
+    {
+      title: "¿Qué son las pools de liquidez?",
+      imageUrl: "https://placehold.co/1200x630/1f2937/86efac?text=What+Are+Liquidity+Pools",
+      paragraphs: [
+        "AMMs such as Uniswap use mathematical formulas to quote and settle swaps, instead of matching individual buy and sell orders [3].",
+        "Higher pool depth generally reduces slippage for similar order sizes.",
+      ],
+    },
+    {
+      title: "Yield farming, staking y liquidity mining",
+      imageUrl: "https://placehold.co/1200x630/082f49/67e8f9?text=Yield+Farming+and+Liquidity+Mining",
+      paragraphs: [
+        "Yield farming often means rotating capital across protocols to optimize returns [4].",
+        "Staking and liquidity mining can look similar from the outside, but risk profiles differ significantly depending on token volatility and contract design.",
+      ],
+    },
+    {
+      title: "Protocolos relevantes",
+      imageUrl: "https://placehold.co/1200x630/1e1b4b/a5b4fc?text=Relevant+Protocols",
+      paragraphs: [
+        "Common reference protocols include Uniswap, Aave, SushiSwap, PancakeSwap, Curve, and aggregators such as 1inch [7][8][9][10][11][12].",
+        "Protocol selection should prioritize security history, execution quality, and liquidity structure, not only headline APY.",
+      ],
+    },
+    {
+      title: "Riesgos operativos y de mercado",
+      imageUrl: "https://placehold.co/1200x630/312e81/c4b5fd?text=Operational+and+Market+Risks",
+      paragraphs: [
+        "Main risks include impermanent loss, smart-contract vulnerabilities, liquidity fragmentation, and abrupt changes in token incentives.",
+        "A robust process requires validating contract risk, pool composition, governance quality, and realistic exit liquidity before allocating capital.",
+      ],
+    },
+    {
+      title: "Conclusión",
+      imageUrl: "https://placehold.co/1200x630/082f49/7dd3fc?text=Conclusion",
+      paragraphs: [
+        "Liquidity provision in DeFi can be effective when approached with a risk-first framework and clear operating rules.",
+        "The objective is not to chase the highest advertised yield, but to sustain risk-adjusted execution quality over time.",
+      ],
+    },
+    {
+      title: "Notas al pie",
+      imageUrl: "https://placehold.co/1200x630/0f172a/e2e8f0?text=Footnotes",
+      paragraphs: [
+        "Additional notes from the original source material.",
+      ],
+      bullets: [
+        "1. Pignoración is the act of leaving an asset as collateral in a pledge arrangement with a lender or pawn entity.",
+      ],
+    },
+    {
+      title: "Referencias",
+      imageUrl: "https://placehold.co/1200x630/111827/d1d5db?text=References",
+      paragraphs: [
+        "Reference set from the original material.",
+      ],
+      references: [
+        {
+          label: "[1] Finanzas descentralizadas: Guía de principiantes para obtener ingresos pasivos con DeFi. Cointelegraph en español. Recuperado el 20 de marzo de 2024, de: https://es.cointelegraph.com/learn/decentralized-finance-a-beginners-guide-to-earning-passive-income-with-defi",
+          url: "https://es.cointelegraph.com/learn/decentralized-finance-a-beginners-guide-to-earning-passive-income-with-defi",
+        },
+        {
+          label: "[2] ¿Qué son las pools de liquidez? Metlabs desarrollo Blockchain. Linked In. Recuperado el 20 de marzo de 2024, de: https://www.linkedin.com/pulse/qué-son-las-pools-de-liquidez-metlabsdesarrolloblockchain-pdbvf/?trk=news-guest_share-article",
+          url: "https://www.linkedin.com/pulse/qué-son-las-pools-de-liquidez-metlabsdesarrolloblockchain-pdbvf/?trk=news-guest_share-article",
+        },
+        {
+          label: "[3] Adams, H. Uniswap v3 Core. Uniswap. Recuperado el 20 de marzo de 2024, de: https://uniswap.org/whitepaper-v3.pdf",
+          url: "https://uniswap.org/whitepaper-v3.pdf",
+        },
+        {
+          label: "[4] ¿Qué es el Yield Farming? Bit 2 me academy. Recuperado el 20 de marzo de 2024, de: https://academy.bit2me.com/que-es-el-yield-farming/",
+          url: "https://academy.bit2me.com/que-es-el-yield-farming/",
+        },
+        {
+          label: "[4] Yield farming vs. Staking vs. Liquidity mining. Phemex. Recuperado el 20 de marzo de 2024, de: https://phemex.com/es/academy/yield-farming-vs-staking-vs-liquidity-mining",
+          url: "https://phemex.com/es/academy/yield-farming-vs-staking-vs-liquidity-mining",
+        },
+        {
+          label: "[5] Liquidity mining: Conozca los mejores proyectos de minería de liquidez en 2023. Be in Crypto. Recuperado el 20 de marzo de 2024, de: https://es.beincrypto.com/liquidity-mining-mejores-proyectos-2023/",
+          url: "https://es.beincrypto.com/liquidity-mining-mejores-proyectos-2023/",
+        },
+        {
+          label: "[6] ¿Qué es el Liquidity Mining o Minería con Liquidez o Capital? Crypto plaza. Recuperado el 20 de marzo de 2024, de: https://cryptoplaza.es/que-es-el-liquidity-mining-o-mineria-con-liquidez-o-capital/#:~:text=La%20definición%20de%20Liquidity%20Mining,entre%20todo%20el%20capital%20aportado",
+          url: "https://cryptoplaza.es/que-es-el-liquidity-mining-o-mineria-con-liquidez-o-capital/#:~:text=La%20definición%20de%20Liquidity%20Mining,entre%20todo%20el%20capital%20aportado",
+        },
+        {
+          label: "[7] Maldonado, J. ¿Qué es AAVE y cómo funciona? Cointelegraph en español. Recuperado el 20 de marzo de 2024, de: https://es.cointelegraph.com/explained/what-is-aave-and-how-does-it-work",
+          url: "https://es.cointelegraph.com/explained/what-is-aave-and-how-does-it-work",
+        },
+        {
+          label: "[8] Maldonado, J. ¿Qué es Uniswap y cómo funciona? Cointelegraph en español. Recuperado el 20 de marzo de 2024, de: https://es.cointelegraph.com/explained/what-is-uniswap-and-how-does-it-work",
+          url: "https://es.cointelegraph.com/explained/what-is-uniswap-and-how-does-it-work",
+        },
+        {
+          label: "[9] Maldonado, J. ¿Qué es SushiSwap y cómo funciona? Cointelegraph en español. Recuperado el 20 de marzo de 2024, de: https://es.cointelegraph.com/explained/what-is-sushiswap-and-how-does-it-work",
+          url: "https://es.cointelegraph.com/explained/what-is-sushiswap-and-how-does-it-work",
+        },
+        {
+          label: "[10] ¿Qué es y cómo funciona Pancake Swap? Bit 2 me academy. Recuperado el 20 de marzo de 2024, de: https://academy.bit2me.com/que-es-como-funciona-pancakeswap/",
+          url: "https://academy.bit2me.com/que-es-como-funciona-pancakeswap/",
+        },
+        {
+          label: "[11] Maldonado, J. ¿Qué es Curve Finance y cómo funciona? Cointelegraph en español. Recuperado el 20 de marzo de 2024, de: https://es.cointelegraph.com/explained/what-is-curve-finance-and-how-does-it-work",
+          url: "https://es.cointelegraph.com/explained/what-is-curve-finance-and-how-does-it-work",
+        },
+        {
+          label: "[12] Acerca de 1 inch. Coinbase. Recuperado el 20 de marzo de 2024, de: https://www.coinbase.com/es/price/1inch#:~%E2%84%A2:text=11NCH%2520es%2520un%2520token%2520de,entre%25201os%2520DEX%25",
+          url: "https://www.coinbase.com/es/price/1inch#:~%E2%84%A2:text=11NCH%2520es%2520un%2520token%2520de,entre%25201os%2520DEX%25",
         },
       ],
     },
@@ -2947,18 +3075,54 @@ export const guideFallbackSectionsEn: Record<string, GuideSection[]> = {
         "Core references for implementation and risk governance.",
       ],
       references: [
-        { label: "Fetch.ai Documentation", url: "https://fetch.ai/docs/concepts" },
-        { label: "Bittensor Documentation", url: "https://docs.learnbittensor.org/" },
-        { label: "Ocean Protocol Documentation", url: "https://docs.oceanprotocol.com/" },
-        { label: "Ocean Token and decentralized AI context", url: "https://docs.oceanprotocol.com/discover/ocean-token" },
-        { label: "Chainlink Functions Documentation", url: "https://docs.chain.link/chainlink-functions" },
-        { label: "EIP-4337", url: "https://eips.ethereum.org/EIPS/eip-4337" },
-        { label: "ERC-4337 docs", url: "https://docs.erc4337.io/core-standards/erc-4337" },
-        { label: "NIST AI RMF resources", url: "https://www.nist.gov/itl/ai-risk-management-framework/ai-risk-management-framework-resources" },
-        { label: "NIST AI RMF 1.0 PDF", url: "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf" },
-        { label: "NIST Generative AI profile PDF", url: "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf" },
-        { label: "FTC crypto scam consumer advice", url: "https://consumer.ftc.gov/articles/what-know-about-cryptocurrency-scams" },
-        { label: "FTC crypto scam losses release", url: "https://www.ftc.gov/news-events/news/press-releases/2022/06/new-analysis-finds-consumers-reported-losing-more-1-billion-cryptocurrency-scams-2021" },
+        {
+          label: "[1] Fetch.ai. (2026). Documentation: Concepts and agents infrastructure. Recuperado el 23 de marzo de 2026, de: https://fetch.ai/docs/concepts",
+          url: "https://fetch.ai/docs/concepts",
+        },
+        {
+          label: "[2] Bittensor. (2026). Official documentation. Recuperado el 23 de marzo de 2026, de: https://docs.learnbittensor.org/",
+          url: "https://docs.learnbittensor.org/",
+        },
+        {
+          label: "[3] Ocean Protocol Foundation. (2026). Official documentation. Recuperado el 23 de marzo de 2026, de: https://docs.oceanprotocol.com/",
+          url: "https://docs.oceanprotocol.com/",
+        },
+        {
+          label: "[4] Ocean Protocol Foundation. (2026). OCEAN token and decentralized AI context. Recuperado el 23 de marzo de 2026, de: https://docs.oceanprotocol.com/discover/ocean-token",
+          url: "https://docs.oceanprotocol.com/discover/ocean-token",
+        },
+        {
+          label: "[5] Chainlink Labs. (2026). Chainlink Functions documentation. Recuperado el 23 de marzo de 2026, de: https://docs.chain.link/chainlink-functions",
+          url: "https://docs.chain.link/chainlink-functions",
+        },
+        {
+          label: "[6] Ethereum Foundation. (2026). EIP-4337: Account abstraction using alt mempool. Recuperado el 23 de marzo de 2026, de: https://eips.ethereum.org/EIPS/eip-4337",
+          url: "https://eips.ethereum.org/EIPS/eip-4337",
+        },
+        {
+          label: "[7] ERC-4337 Community. (2026). ERC-4337 core standard overview. Recuperado el 23 de marzo de 2026, de: https://docs.erc4337.io/core-standards/erc-4337",
+          url: "https://docs.erc4337.io/core-standards/erc-4337",
+        },
+        {
+          label: "[8] National Institute of Standards and Technology (NIST). (2026). AI Risk Management Framework resources. Recuperado el 23 de marzo de 2026, de: https://www.nist.gov/itl/ai-risk-management-framework/ai-risk-management-framework-resources",
+          url: "https://www.nist.gov/itl/ai-risk-management-framework/ai-risk-management-framework-resources",
+        },
+        {
+          label: "[9] National Institute of Standards and Technology (NIST). (2023). AI RMF 1.0 (NIST AI 100-1). Recuperado el 23 de marzo de 2026, de: https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf",
+          url: "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf",
+        },
+        {
+          label: "[10] National Institute of Standards and Technology (NIST). (2024). Generative AI Profile (NIST AI 600-1). Recuperado el 23 de marzo de 2026, de: https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+          url: "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+        },
+        {
+          label: "[11] Federal Trade Commission (FTC). (2026). Consumer advice: What to know about cryptocurrency and scams. Recuperado el 23 de marzo de 2026, de: https://consumer.ftc.gov/articles/what-know-about-cryptocurrency-scams",
+          url: "https://consumer.ftc.gov/articles/what-know-about-cryptocurrency-scams",
+        },
+        {
+          label: "[12] Federal Trade Commission (FTC). (2022). Press release: Losses in cryptocurrency scams. Recuperado el 23 de marzo de 2026, de: https://www.ftc.gov/news-events/news/press-releases/2022/06/new-analysis-finds-consumers-reported-losing-more-1-billion-cryptocurrency-scams-2021",
+          url: "https://www.ftc.gov/news-events/news/press-releases/2022/06/new-analysis-finds-consumers-reported-losing-more-1-billion-cryptocurrency-scams-2021",
+        },
       ],
     },
   ],
@@ -3073,18 +3237,54 @@ export const guideFallbackSectionsEn: Record<string, GuideSection[]> = {
         "Core prevention and enforcement references.",
       ],
       references: [
-        { label: "FTC - Cryptocurrency scams overview", url: "https://consumer.ftc.gov/articles/what-know-about-cryptocurrency-scams" },
-        { label: "FTC - Losses in crypto scams", url: "https://www.ftc.gov/news-events/news/press-releases/2022/06/new-analysis-finds-consumers-reported-losing-more-1-billion-cryptocurrency-scams-2021" },
-        { label: "SEC Investor Alert (crypto-asset scam lures)", url: "https://www.sec.gov/oiea/investor-alert-5-ways-fraudsters-may-lure-victims-scams-involving-crypto-asset" },
-        { label: "Investor.gov alert (group chat scams)", url: "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-alerts/gateway-to-investment-scams" },
-        { label: "CFTC/SEC warning on fraudulent crypto trading websites", url: "https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/watch_out_for_digital_fraud.html" },
-        { label: "IC3 Annual Reports", url: "https://www.ic3.gov/AnnualReport" },
-        { label: "IC3 PSA 2024", url: "https://www.ic3.gov/PSA/2024/PSA240318" },
-        { label: "FinCEN alert on pig butchering scam", url: "https://www.fincen.gov/news/news-releases/fincen-issues-alert-prevalent-virtual-currency-investment-scam-commonly-known" },
-        { label: "SEC Press Release 2024-134", url: "https://www.sec.gov/newsroom/press-releases/2024-134" },
-        { label: "SEC Press Release 2025-144", url: "https://www.sec.gov/newsroom/press-releases/2025-144-sec-charges-three-purported-crypto-asset-trading-platforms-four-investment-clubs-scheme-targeted" },
-        { label: "U.S. DOJ civil forfeiture complaint (2025)", url: "https://www.justice.gov/opa/pr/united-states-files-civil-forfeiture-complaint-against-225m-funds-involved-cryptocurrency" },
-        { label: "TRM Labs 2026 Crypto Crime Report", url: "https://www.trmlabs.com/reports-and-whitepapers/2026-crypto-crime-report" },
+        {
+          label: "[1] Federal Trade Commission (FTC). (2026). Consumer advice: What to know about cryptocurrency and scams. Recuperado el 23 de marzo de 2026, de: https://consumer.ftc.gov/articles/what-know-about-cryptocurrency-scams",
+          url: "https://consumer.ftc.gov/articles/what-know-about-cryptocurrency-scams",
+        },
+        {
+          label: "[2] Federal Trade Commission (FTC). (2022). Press release: Consumers reported losing more than $1 billion in crypto scams since 2021. Recuperado el 23 de marzo de 2026, de: https://www.ftc.gov/news-events/news/press-releases/2022/06/new-analysis-finds-consumers-reported-losing-more-1-billion-cryptocurrency-scams-2021",
+          url: "https://www.ftc.gov/news-events/news/press-releases/2022/06/new-analysis-finds-consumers-reported-losing-more-1-billion-cryptocurrency-scams-2021",
+        },
+        {
+          label: "[3] U.S. Securities and Exchange Commission (SEC). (2023). Investor alert: 5 ways fraudsters may lure victims into scams involving crypto asset securities. Recuperado el 23 de marzo de 2026, de: https://www.sec.gov/oiea/investor-alert-5-ways-fraudsters-may-lure-victims-scams-involving-crypto-asset",
+          url: "https://www.sec.gov/oiea/investor-alert-5-ways-fraudsters-may-lure-victims-scams-involving-crypto-asset",
+        },
+        {
+          label: "[4] Investor.gov (SEC). (2024). Group chats as a gateway to investment scams. Recuperado el 23 de marzo de 2026, de: https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-alerts/gateway-to-investment-scams",
+          url: "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-alerts/gateway-to-investment-scams",
+        },
+        {
+          label: "[5] Commodity Futures Trading Commission (CFTC) & U.S. Securities and Exchange Commission (SEC). (2024). Investor alert: Watch out for fraudulent digital asset and “crypto” trading websites. Recuperado el 23 de marzo de 2026, de: https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/watch_out_for_digital_fraud.html",
+          url: "https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/watch_out_for_digital_fraud.html",
+        },
+        {
+          label: "[6] Federal Bureau of Investigation (FBI) - Internet Crime Complaint Center (IC3). (2026). Annual reports portal. Recuperado el 23 de marzo de 2026, de: https://www.ic3.gov/AnnualReport",
+          url: "https://www.ic3.gov/AnnualReport",
+        },
+        {
+          label: "[7] Federal Bureau of Investigation (FBI) - IC3. (2024). Public service announcement: Annual report and fraud flyer. Recuperado el 23 de marzo de 2026, de: https://www.ic3.gov/PSA/2024/PSA240318",
+          url: "https://www.ic3.gov/PSA/2024/PSA240318",
+        },
+        {
+          label: "[8] Financial Crimes Enforcement Network (FinCEN). (2023). Alert: Virtual currency investment scam (“Pig Butchering”). Recuperado el 23 de marzo de 2026, de: https://www.fincen.gov/news/news-releases/fincen-issues-alert-prevalent-virtual-currency-investment-scam-commonly-known",
+          url: "https://www.fincen.gov/news/news-releases/fincen-issues-alert-prevalent-virtual-currency-investment-scam-commonly-known",
+        },
+        {
+          label: "[9] U.S. Securities and Exchange Commission (SEC). (2024). Press release 2024-134: Relationship investment scams with fake crypto platforms. Recuperado el 23 de marzo de 2026, de: https://www.sec.gov/newsroom/press-releases/2024-134",
+          url: "https://www.sec.gov/newsroom/press-releases/2024-134",
+        },
+        {
+          label: "[10] U.S. Securities and Exchange Commission (SEC). (2025). Press release 2025-144: Scheme targeting retail investors on social media. Recuperado el 23 de marzo de 2026, de: https://www.sec.gov/newsroom/press-releases/2025-144-sec-charges-three-purported-crypto-asset-trading-platforms-four-investment-clubs-scheme-targeted",
+          url: "https://www.sec.gov/newsroom/press-releases/2025-144-sec-charges-three-purported-crypto-asset-trading-platforms-four-investment-clubs-scheme-targeted",
+        },
+        {
+          label: "[11] U.S. Department of Justice (DOJ). (2025). Civil forfeiture complaint against $225M linked to cryptocurrency confidence scams. Recuperado el 23 de marzo de 2026, de: https://www.justice.gov/opa/pr/united-states-files-civil-forfeiture-complaint-against-225m-funds-involved-cryptocurrency",
+          url: "https://www.justice.gov/opa/pr/united-states-files-civil-forfeiture-complaint-against-225m-funds-involved-cryptocurrency",
+        },
+        {
+          label: "[12] TRM Labs. (2026). Crypto Crime Report 2026. Recuperado el 23 de marzo de 2026, de: https://www.trmlabs.com/reports-and-whitepapers/2026-crypto-crime-report",
+          url: "https://www.trmlabs.com/reports-and-whitepapers/2026-crypto-crime-report",
+        },
       ],
     },
   ],
@@ -3200,23 +3400,74 @@ export const guideFallbackSectionsEn: Record<string, GuideSection[]> = {
         "Official and primary references used for legal status checks.",
       ],
       references: [
-        { label: "EUR-Lex summary - MiCA (Regulation EU 2023/1114)", url: "https://eur-lex.europa.eu/EN/legal-content/summary/european-crypto-assets-regulation-mica.html" },
-        { label: "ESMA MiCA page and interim register context", url: "https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation/markets-crypto-assets-regulation-mica" },
-        { label: "Congress.gov S.1582 GENIUS Act", url: "https://www.congress.gov/bill/119th-congress/senate-bill/1582" },
-        { label: "Congress.gov H.R.3633 Digital Asset Market Clarity Act", url: "https://www.congress.gov/bill/119th-congress/house-bill/3633" },
-        { label: "Library of Congress - China crypto trading document (2021)", url: "https://www.loc.gov/item/global-legal-monitor/2021-10-13/china-central-bank-issues-new-regulatory-document-on-cryptocurrency-trading/" },
-        { label: "SFC Hong Kong VATP lists", url: "https://www.sfc.hk/en/Welcome-to-the-Fintech-Contact-Point/Virtual-assets/Virtual-asset-trading-platforms-operators/Lists-of-virtual-asset-trading-platforms" },
-        { label: "HKMA stablecoin issuer regime notice", url: "https://www.hkma.gov.hk/eng/news-and-media/press-releases/2025/07/20250729-4/" },
-        { label: "Brazil Lei 14.478/2022", url: "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/Lei/L14478.htm" },
-        { label: "Banco Central do Brasil regulatory note", url: "https://www.bcb.gov.br/en/pressdetail/2639/nota" },
-        { label: "Argentina CNV RG 994/2024", url: "https://www.argentina.gob.ar/normativa/nacional/resoluci%C3%B3n-994-2024-397598/texto" },
-        { label: "Argentina CNV PSAV notice", url: "https://www.argentina.gob.ar/noticias/la-cnv-crea-el-registro-de-proveedores-de-servicios-de-activos-virtuales-psav" },
-        { label: "El Salvador assembly decrees (2025)", url: "https://www.asamblea.gob.sv/leyes-y-decretos/decretos-por-anios/2025/0disponible" },
-        { label: "IMF Press Release 25/043 (El Salvador EFF)", url: "https://www.imf.org/en/News/Articles/2025/02/26/pr25043-el-salvador-imf-approves-new-40-month-us1-bn-eff-arr" },
-        { label: "CMF Chile Fintec implementation note", url: "https://www.cmfchile.cl/portal/prensa/615/w3-article-77135.html" },
-        { label: "DOF Mexico Fintech Law", url: "https://www.dof.gob.mx/nota_detalle.php?codigo=5515623&fecha=09/03/2018" },
-        { label: "SHCP/Banxico/CNBV warning on virtual assets", url: "https://www.gob.mx/shcp/prensa/banco-de-mexico-shcp-y-cnbv-advierten-sobre-riesgos-de-utilizar-activos-virtuales-275819" },
-        { label: "Banxico virtual assets position", url: "https://www.banxico.org.mx/sistemas-de-pago/sobre-activos-virtuales-rie.html" },
+        {
+          label: "[1] European Union. (2023). Regulation (EU) 2023/1114 on Markets in Crypto-assets (MiCA). Recuperado el 23 de marzo de 2026, de: https://eur-lex.europa.eu/EN/legal-content/summary/european-crypto-assets-regulation-mica.html",
+          url: "https://eur-lex.europa.eu/EN/legal-content/summary/european-crypto-assets-regulation-mica.html",
+        },
+        {
+          label: "[2] European Securities and Markets Authority (ESMA). (2026). Markets in Crypto-Assets Regulation (MiCA) and interim register. Recuperado el 23 de marzo de 2026, de: https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation/markets-crypto-assets-regulation-mica",
+          url: "https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation/markets-crypto-assets-regulation-mica",
+        },
+        {
+          label: "[3] United States Congress. (2025). S.1582 GENIUS Act (Public Law No: 119-27). Recuperado el 23 de marzo de 2026, de: https://www.congress.gov/bill/119th-congress/senate-bill/1582",
+          url: "https://www.congress.gov/bill/119th-congress/senate-bill/1582",
+        },
+        {
+          label: "[4] United States Congress. (2025). H.R.3633 Digital Asset Market Clarity Act of 2025. Recuperado el 23 de marzo de 2026, de: https://www.congress.gov/bill/119th-congress/house-bill/3633",
+          url: "https://www.congress.gov/bill/119th-congress/house-bill/3633",
+        },
+        {
+          label: "[5] Library of Congress. (2021). China: Central bank issues new regulatory document on cryptocurrency trading. Recuperado el 23 de marzo de 2026, de: https://www.loc.gov/item/global-legal-monitor/2021-10-13/china-central-bank-issues-new-regulatory-document-on-cryptocurrency-trading/",
+          url: "https://www.loc.gov/item/global-legal-monitor/2021-10-13/china-central-bank-issues-new-regulatory-document-on-cryptocurrency-trading/",
+        },
+        {
+          label: "[6] Securities and Futures Commission (SFC) Hong Kong. (2026). Lists of virtual asset trading platforms. Recuperado el 23 de marzo de 2026, de: https://www.sfc.hk/en/Welcome-to-the-Fintech-Contact-Point/Virtual-assets/Virtual-asset-trading-platforms-operators/Lists-of-virtual-asset-trading-platforms",
+          url: "https://www.sfc.hk/en/Welcome-to-the-Fintech-Contact-Point/Virtual-assets/Virtual-asset-trading-platforms-operators/Lists-of-virtual-asset-trading-platforms",
+        },
+        {
+          label: "[7] Hong Kong Monetary Authority (HKMA). (2025). Implementation of regulatory regime for stablecoin issuers. Recuperado el 23 de marzo de 2026, de: https://www.hkma.gov.hk/eng/news-and-media/press-releases/2025/07/20250729-4/",
+          url: "https://www.hkma.gov.hk/eng/news-and-media/press-releases/2025/07/20250729-4/",
+        },
+        {
+          label: "[8] Presidência da República do Brasil. (2022). Lei 14.478/2022. Recuperado el 23 de marzo de 2026, de: https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/Lei/L14478.htm",
+          url: "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/Lei/L14478.htm",
+        },
+        {
+          label: "[9] Banco Central do Brasil. (2024). BCB details rules on virtual assets (Resolutions 519, 520, 521). Recuperado el 23 de marzo de 2026, de: https://www.bcb.gov.br/en/pressdetail/2639/nota",
+          url: "https://www.bcb.gov.br/en/pressdetail/2639/nota",
+        },
+        {
+          label: "[10] Comisión Nacional de Valores (Argentina). (2024). Resolución General 994/2024 (Registro PSAV). Recuperado el 23 de marzo de 2026, de: https://www.argentina.gob.ar/normativa/nacional/resoluci%C3%B3n-994-2024-397598/texto",
+          url: "https://www.argentina.gob.ar/normativa/nacional/resoluci%C3%B3n-994-2024-397598/texto",
+        },
+        {
+          label: "[11] Comisión Nacional de Valores (Argentina). (2024). Creación del Registro PSAV. Recuperado el 23 de marzo de 2026, de: https://www.argentina.gob.ar/noticias/la-cnv-crea-el-registro-de-proveedores-de-servicios-de-activos-virtuales-psav",
+          url: "https://www.argentina.gob.ar/noticias/la-cnv-crea-el-registro-de-proveedores-de-servicios-de-activos-virtuales-psav",
+        },
+        {
+          label: "[12] Asamblea Legislativa de El Salvador. (2025). Decretos por año 2025 (incluye Decreto 199: reforma Ley Bitcoin). Recuperado el 23 de marzo de 2026, de: https://www.asamblea.gob.sv/leyes-y-decretos/decretos-por-anios/2025/0disponible",
+          url: "https://www.asamblea.gob.sv/leyes-y-decretos/decretos-por-anios/2025/0disponible",
+        },
+        {
+          label: "[13] International Monetary Fund (IMF). (2025). Press Release 25/043: EFF El Salvador and Bitcoin risk treatment. Recuperado el 23 de marzo de 2026, de: https://www.imf.org/en/News/Articles/2025/02/26/pr25043-el-salvador-imf-approves-new-40-month-us1-bn-eff-arr",
+          url: "https://www.imf.org/en/News/Articles/2025/02/26/pr25043-el-salvador-imf-approves-new-40-month-us1-bn-eff-arr",
+        },
+        {
+          label: "[14] Comisión para el Mercado Financiero (Chile). (2025). Implementación Ley Fintec y registro/autorización de prestadores. Recuperado el 23 de marzo de 2026, de: https://www.cmfchile.cl/portal/prensa/615/w3-article-77135.html",
+          url: "https://www.cmfchile.cl/portal/prensa/615/w3-article-77135.html",
+        },
+        {
+          label: "[15] Diario Oficial de la Federación (México). (2018). Ley para Regular las Instituciones de Tecnología Financiera. Recuperado el 23 de marzo de 2026, de: https://www.dof.gob.mx/nota_detalle.php?codigo=5515623&fecha=09/03/2018",
+          url: "https://www.dof.gob.mx/nota_detalle.php?codigo=5515623&fecha=09/03/2018",
+        },
+        {
+          label: "[16] Secretaría de Hacienda y Crédito Público (SHCP), Banco de México y CNBV. (2021). Comunicado sobre riesgos de activos virtuales. Recuperado el 23 de marzo de 2026, de: https://www.gob.mx/shcp/prensa/banco-de-mexico-shcp-y-cnbv-advierten-sobre-riesgos-de-utilizar-activos-virtuales-275819",
+          url: "https://www.gob.mx/shcp/prensa/banco-de-mexico-shcp-y-cnbv-advierten-sobre-riesgos-de-utilizar-activos-virtuales-275819",
+        },
+        {
+          label: "[17] Banco de México. (2026). Sobre los activos virtuales: riesgos y posicionamiento. Recuperado el 23 de marzo de 2026, de: https://www.banxico.org.mx/sistemas-de-pago/sobre-activos-virtuales-rie.html",
+          url: "https://www.banxico.org.mx/sistemas-de-pago/sobre-activos-virtuales-rie.html",
+        },
       ],
     },
   ],

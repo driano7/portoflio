@@ -95,6 +95,11 @@ const englishGuideMeta: Record<string, LocalizedMeta> = {
     title: "Guide 12: What Is a DAO",
     description: "Blockchain governance models, voting mechanics, and decentralized organizational structures.",
   },
+  "level-3-guide-13-pools-liquidez-defi": {
+    title: "Guide 13: Liquidity Pools and DeFi Execution",
+    description:
+      "How liquidity pools, yield farming, and liquidity mining work, including key operational and market risks.",
+  },
   "level-3-guide-14-papel-ia-entorno-cripto": {
     title: "Guide 14: The Role of Artificial Intelligence in the Crypto Ecosystem",
     description:
@@ -191,6 +196,10 @@ const sectionTitleEn: Record<string, string> = {
   "Forks": "Forks",
   "Gobernanza on-chain y off-chain": "On-chain and off-chain governance",
   "Ejemplos de gobernanza": "Governance examples",
+  "¿Qué son las pools de liquidez?": "What are liquidity pools?",
+  "Yield farming, staking y liquidity mining": "Yield farming, staking, and liquidity mining",
+  "Protocolos relevantes": "Relevant protocols",
+  "Riesgos operativos y de mercado": "Operational and market risks",
   "¿Por qué converge la IA con cripto?": "Why AI and crypto converge",
   "Infraestructura descentralizada para IA": "Decentralized infrastructure for AI",
   "Agentes autónomos on-chain y off-chain": "Autonomous on-chain and off-chain agents",
