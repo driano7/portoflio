@@ -7,10 +7,16 @@ export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
 function isAuthorized(request: NextRequest, expectedSecret: string) {
+  const normalize = (value: string) => value.trim().replace(/^['"]|['"]$/g, "");
+
   const authHeader = request.headers.get("authorization") ?? "";
-  const bearer = authHeader.startsWith("Bearer ") ? authHeader.slice(7).trim() : "";
-  const queryToken = request.nextUrl.searchParams.get("token") ?? "";
-  return bearer === expectedSecret || queryToken === expectedSecret;
+  const bearerMatch = authHeader.match(/^Bearer\s+(.+)$/i);
+  const bearer = bearerMatch ? normalize(bearerMatch[1]) : "";
+  const queryTokenRaw = request.nextUrl.searchParams.get("token") ?? "";
+  const queryToken = normalize(queryTokenRaw).replace(/ /g, "+");
+  const expected = normalize(expectedSecret);
+
+  return bearer === expected || queryToken === expected;
 }
 
 export async function GET(request: NextRequest) {
@@ -54,4 +60,3 @@ export async function GET(request: NextRequest) {
     );
   }
 }
-

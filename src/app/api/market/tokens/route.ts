@@ -25,9 +25,17 @@ export async function GET() {
 
     updateMarketHistory(tokens);
 
+    const canEstimateChart = (priceUsd: number | null, change24h: number | null) =>
+      typeof priceUsd === "number" &&
+      Number.isFinite(priceUsd) &&
+      typeof change24h === "number" &&
+      Number.isFinite(change24h);
+
     const enrichedTokens = tokens.map((token) => ({
       ...token,
-      hasChartData: getMarketChartPoints(token.symbol).length >= 2,
+      hasChartData:
+        getMarketChartPoints(token.symbol).length >= 2 ||
+        canEstimateChart(token.priceUsd, token.change24h),
     }));
 
     return NextResponse.json({
