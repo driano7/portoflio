@@ -439,7 +439,7 @@ export function About() {
 
           <div className="mt-2 text-lg leading-8 text-zinc-700 dark:text-zinc-300 sm:mt-4">
             <div className="relative">
-              <div aria-hidden className="pointer-events-none invisible absolute inset-x-0 top-0 -z-10">
+              <div aria-hidden className="pointer-events-none invisible h-0 overflow-hidden">
                 {cards.map((card, index) => (
                   <article
                     key={`measure-${card.id}`}

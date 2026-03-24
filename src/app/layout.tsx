@@ -9,6 +9,7 @@ import { SiteFooter } from "@/components/common/site-footer";
 import { MobileDocNav } from "@/components/common/mobile-doc-nav";
 import { ScrollToTopOnRoute } from "@/components/common/scroll-to-top-on-route";
 import { resolveAppLocale } from "@/i18n/resolve-locale";
+import { buildRootMetadata, resolveSiteUrl } from "@/lib/seo";
 import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from '@/components/ui/toaster';
 
@@ -40,59 +41,34 @@ const themeInitScript = `
 })();
 `;
 
-const resolveMetadataBase = () => {
-  const rawUrl =
-    process.env.NEXT_PUBLIC_SITE_URL ||
-    process.env.URL ||
-    process.env.DEPLOY_PRIME_URL ||
-    (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
-
-  const normalized = rawUrl.startsWith("http://") || rawUrl.startsWith("https://")
-    ? rawUrl
-    : `https://${rawUrl}`;
-
-  return new URL(normalized);
+const metadataBase = resolveSiteUrl();
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${metadataBase.toString()}#website`,
+      url: metadataBase.toString(),
+      name: "Donovan Riaño",
+      inLanguage: ["es-MX", "en-US"],
+    },
+    {
+      "@type": "Person",
+      "@id": `${metadataBase.toString()}#person`,
+      name: "Donovan Riaño",
+      url: metadataBase.toString(),
+      jobTitle: "Creative Director & Computer Engineer",
+      sameAs: [
+        "https://www.linkedin.com/in/driano7",
+        "https://github.com/driano7",
+        "https://www.instagram.com/mrcripto_/",
+        "https://www.tiktok.com/@mrcripto_",
+      ],
+    },
+  ],
 };
 
-const metadataBase = resolveMetadataBase();
-const ogImageUrl = new URL("/donovan.jpeg", metadataBase).toString();
-
-export const metadata: Metadata = {
-  metadataBase,
-  title: 'Donovan Riaño | Sitio personal',
-  description:
-    'Ingeniero en Computación y Creative Director especializado en UX/UI, producto, Web3 e IA. Este es mi sitio personal con proyectos, investigación y construcción de soluciones digitales para negocio.',
-  openGraph: {
-    title: 'Donovan Riaño | Sitio personal',
-    description:
-      'Ingeniero en Computación y Creative Director especializado en UX/UI, producto, Web3 e IA. Conoce mis proyectos, experiencia y visión.',
-    url: metadataBase.toString(),
-    siteName: 'Donovan Riaño',
-    locale: 'es_MX',
-    type: 'website',
-    images: [
-      {
-        url: ogImageUrl,
-        width: 1200,
-        height: 1200,
-        alt: 'Donovan Riaño',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Donovan Riaño | Sitio personal',
-    description:
-      'Ingeniero en Computación y Creative Director. UX/UI, producto, Web3 e IA aplicados a soluciones reales.',
-    images: [ogImageUrl],
-  },
-  manifest: "/manifest.webmanifest?v=20260326",
-  icons: {
-    icon: [{ url: "/icon?v=20260326", type: "image/png" }],
-    apple: [{ url: "/apple-icon?v=20260326", sizes: "180x180", type: "image/png" }],
-    shortcut: ["/favicon.ico?v=20260326"],
-  },
-};
+export const metadata: Metadata = buildRootMetadata();
 
 export const dynamic = "force-dynamic";
 
@@ -108,6 +84,10 @@ export default async function RootLayout({
     <html lang={locale} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
         <link rel="icon" type="image/png" sizes="32x32" href="/icon?v=20260326" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon?v=20260326" />
         <link rel="shortcut icon" href="/favicon.ico?v=20260326" />

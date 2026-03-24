@@ -1,4 +1,7 @@
+import type { Metadata } from "next";
+
 import { Projects } from "@/components/sections/projects";
+import { buildPageMetadata } from "@/lib/seo";
 
 export type Repository = {
   id: number;
@@ -10,6 +13,13 @@ export type Repository = {
   language: string | null;
   pushed_at: string;
 };
+
+export const metadata: Metadata = buildPageMetadata({
+  title: "Proyectos y Portafolio | Donovan Riaño",
+  description:
+    "Portafolio técnico y proyectos recientes: productos, integraciones y repositorios activos de Donovan Riaño.",
+  path: "/projects",
+});
 
 async function getRepos(): Promise<Repository[]> {
   let timeoutId: ReturnType<typeof setTimeout> | undefined;

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
@@ -11,6 +12,7 @@ import { fetchAndParseGoogleDoc } from "@/lib/google-docs";
 import { educationGuides, getGuideBySlug, getGuideIndex } from "@/lib/education-guides";
 import { guideFallbackSectionsEn } from "@/lib/education-guides-content-en";
 import { localizeGuideMeta, localizeSectionTitle } from "@/lib/education-guides-i18n";
+import { buildPageMetadata } from "@/lib/seo";
 import type { AppLocale } from "@/i18n/routing";
 import { resolveAppLocale } from "@/i18n/resolve-locale";
 
@@ -41,6 +43,28 @@ type PageProps = {
 };
 
 export const dynamic = "force-dynamic";
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const guide = getGuideBySlug(slug);
+
+  if (!guide) {
+    return buildPageMetadata({
+      title: "Guía de educación | Donovan Riaño",
+      description: "Guía educativa de finanzas DeFi y CeFi.",
+      path: "/web3/education",
+    });
+  }
+
+  const locale = await resolveAppLocale() as AppLocale;
+  const localizedGuide = localizeGuideMeta(guide, locale);
+
+  return buildPageMetadata({
+    title: `${localizedGuide.title} | Donovan Riaño`,
+    description: localizedGuide.description,
+    path: `/web3/education/${guide.slug}`,
+  });
+}
 
 type RenderableSection = {
   id: string;

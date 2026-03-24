@@ -1,4 +1,14 @@
+import type { Metadata } from "next";
+
 import { About } from "@/components/sections/about";
+import { buildPageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = buildPageMetadata({
+  title: "Sobre mí | Donovan Riaño",
+  description:
+    "Conoce la trayectoria de Donovan Riaño: ingeniería, UX/UI, producto, Web3 e IA aplicados a proyectos con enfoque de negocio.",
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (

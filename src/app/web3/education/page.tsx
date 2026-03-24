@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { getTranslations } from "next-intl/server";
@@ -5,10 +6,18 @@ import { getTranslations } from "next-intl/server";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { educationGuides } from "@/lib/education-guides";
 import { localizeGuideMeta } from "@/lib/education-guides-i18n";
+import { buildPageMetadata } from "@/lib/seo";
 import type { AppLocale } from "@/i18n/routing";
 import { resolveAppLocale } from "@/i18n/resolve-locale";
 
 export const dynamic = "force-dynamic";
+
+export const metadata: Metadata = buildPageMetadata({
+  title: "Guías de Educación DeFi y CeFi | Donovan Riaño",
+  description:
+    "Índice completo de guías DeFi y CeFi: fundamentos, estrategia, seguridad y regulación en español e inglés.",
+  path: "/web3/education",
+});
 
 export default async function EducationIndexPage() {
   const locale = await resolveAppLocale() as AppLocale;

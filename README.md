@@ -22,3 +22,23 @@ To keep it updated without user traffic, this repo includes a GitHub Actions sch
 
 - `COINMARKETCAP_API_KEY` (or `CMC_API_KEY`)
 - `MARKET_CRON_SECRET` (same value used in GitHub secret)
+
+## SEO Indexing (Google + Social)
+
+This project now includes:
+- `robots.txt` route (`src/app/robots.ts`)
+- `sitemap.xml` route (`src/app/sitemap.ts`)
+- Canonical/Open Graph metadata per route
+- JSON-LD structured data in the root layout
+- Verification meta tags via environment variables
+
+### Optional verification env vars
+
+- `GOOGLE_SITE_VERIFICATION`
+- `FACEBOOK_DOMAIN_VERIFICATION`
+- `PINTEREST_SITE_VERIFICATION`
+- `FACEBOOK_APP_ID` (or `NEXT_PUBLIC_FACEBOOK_APP_ID`)
+
+### Site URL env var (recommended)
+
+- `NEXT_PUBLIC_SITE_URL` (for canonical URLs, robots host/sitemap, OG absolute URLs)
