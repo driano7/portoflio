@@ -37,7 +37,7 @@ export function MarketTickerToggle() {
             onClick={() => setOpen(false)}
             className="fixed inset-0 z-[60] bg-black/48 backdrop-blur-[3px]"
           />
-          <div className="absolute right-0 top-[calc(100%+0.55rem)] z-[70] w-[min(98vw,54rem)] rounded-2xl border border-black/10 bg-white/92 p-3 md:p-4 shadow-2xl backdrop-blur-md dark:border-white/10 dark:bg-zinc-950/82">
+          <div className="fixed inset-x-2 top-[calc(env(safe-area-inset-top)+4.6rem)] z-[70] max-h-[calc(100dvh-env(safe-area-inset-top)-5.2rem)] overflow-y-auto rounded-2xl border border-black/10 bg-white/92 p-3 shadow-2xl backdrop-blur-md dark:border-white/10 dark:bg-zinc-950/82 sm:absolute sm:inset-x-auto sm:right-0 sm:top-[calc(100%+0.55rem)] sm:w-[min(96vw,54rem)] sm:max-h-[min(80dvh,40rem)] sm:p-4">
             <div className="mb-2 flex items-center justify-end">
               <button
                 type="button"

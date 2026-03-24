@@ -2333,6 +2333,893 @@ export const guideFallbackSectionsEn: Record<string, GuideSection[]> = {
       ],
     },
   ],
+  "level-2-guide-10-identidad-digital-web3": [
+    {
+      title: "Introducción",
+      imageUrl: "https://placehold.co/1200x630/0f172a/c4b5fd?text=Introduction+Digital+Identity+Web3",
+      paragraphs: [
+        "Digital identity is a core pillar of Web 3.0 and directly connects with NFTs, the metaverse, and decentralized applications.",
+        "Its main promise is user sovereignty over personal data: what is shared, with whom, under which conditions, and for how long.",
+        "This guide explains the practical building blocks behind that promise and the real tradeoffs in privacy, governance, and adoption.",
+      ],
+    },
+    {
+      title: "Conceptos básicos",
+      imageUrl: "https://placehold.co/1200x630/1e293b/93c5fd?text=Basic+Concepts",
+      paragraphs: [
+        "Web3 identity separates authentication from mass surveillance by using cryptographic proofs and decentralized identifiers.",
+        "The goal is not anonymity at all costs, but selective disclosure: prove what is needed without exposing everything else.",
+      ],
+    },
+    {
+      title: "Decentralized Identifications (DIDs)",
+      imageUrl: "https://placehold.co/1200x630/172554/fde68a?text=DIDs",
+      paragraphs: [
+        "DIDs are decentralized, unique, and verifiable identifiers that can be anchored to blockchain systems [1].",
+        "They allow users to log into services without repeating legacy identity patterns where every platform stores full personal records.",
+      ],
+      bullets: [
+        "Higher privacy and lower identity theft exposure.",
+        "Better human verification options against bot farms and synthetic accounts.",
+        "Multiple identifiers for different contexts (personal, professional, financial).",
+        "Reduced data extraction by platforms and ad networks [2].",
+        "Fewer single points of failure through decentralized architecture.",
+        "Cleaner user experience by reducing password dependency.",
+      ],
+    },
+    {
+      title: "Desarrollo",
+      imageUrl: "https://placehold.co/1200x630/1f2937/86efac?text=Development",
+      paragraphs: [
+        "Digital identity in Web3 is implemented through a stack: identifiers, verifiable credentials, cryptographic privacy tools, and wallet-based execution.",
+        "In practice, the system is hybrid: some verification happens on-chain, while other checks and attestations remain off-chain.",
+      ],
+    },
+    {
+      title: "¿Qué es la tecnología trustless?",
+      imageUrl: "https://placehold.co/1200x630/082f49/67e8f9?text=Trustless+Technology",
+      paragraphs: [
+        "Trustless systems reduce dependence on human intermediaries by using transparent code and cryptographic verification.",
+        "In interoperable environments, smart contracts validate rules between chains and participants [3].",
+        "The main risk is not the concept itself, but weak implementation: vulnerable bridges or poorly designed contracts.",
+      ],
+    },
+    {
+      title: "Zero knowledge proof (ZKP)",
+      imageUrl: "https://placehold.co/1200x630/1e1b4b/a5b4fc?text=Zero+Knowledge+Proof",
+      paragraphs: [
+        "Zero-Knowledge Proof allows one party to prove a statement is true without disclosing the underlying sensitive data [4].",
+        "For digital identity, this enables selective proof: age, residency, or membership verification without exposing full documents.",
+      ],
+    },
+    {
+      title: "¿Qué son los soulbound tokens (SBTs)?",
+      imageUrl: "https://placehold.co/1200x630/312e81/c4b5fd?text=Soulbound+Tokens",
+      paragraphs: [
+        "SBTs are non-transferable tokens linked to a specific identity profile [5].",
+        "Instead of being traded like NFTs, they are designed for credentials, reputation, and attestations (education, work, community participation).",
+      ],
+    },
+    {
+      title: "Diferencias entre los SBTs y los DIDs",
+      imageUrl: "https://placehold.co/1200x630/0b1324/fca5a5?text=SBTs+vs+DIDs",
+      paragraphs: [
+        "DIDs and SBTs are complementary, not mutually exclusive [6].",
+      ],
+      bullets: [
+        "DID: decentralized identifier for authentication and interoperability.",
+        "SBT: non-transferable credential linked to an identity context.",
+        "DID: portable identity address.",
+        "SBT: proof of attributes, history, or reputation.",
+      ],
+    },
+    {
+      title: "Worldcoin",
+      imageUrl: "https://placehold.co/1200x630/111827/fde68a?text=Worldcoin",
+      paragraphs: [
+        "Worldcoin proposes personhood verification through biometric capture (iris) and token incentives [7].",
+        "Its approach raises debate because identity infrastructure and biometric flows are managed by a private initiative [8].",
+        "The central concern is data governance: consent, retention, misuse risk, and incident response in case of leaks.",
+      ],
+    },
+    {
+      title: "Cómo las compañías de tech se tendrán que adaptar a esto.",
+      imageUrl: "https://placehold.co/1200x630/1f2937/93c5fd?text=Big+Tech+Adaptation",
+      paragraphs: [
+        "Big tech business models have historically depended on large-scale data capture and monetization.",
+        "If user-controlled identity scales, competitive advantage shifts from data extraction toward trust, utility, and transparent value exchange [9].",
+      ],
+    },
+    {
+      title: "Relación del entorno Crypto y la IA",
+      imageUrl: "https://placehold.co/1200x630/172554/86efac?text=Crypto+and+AI",
+      paragraphs: [
+        "As AI-generated content and autonomous agents grow, proving human presence becomes more relevant across finance and social platforms.",
+        "That is why Proof of Humanity and Proof of Personhood models are being tested in parallel with Web3 identity systems.",
+        "The challenge is to prevent abuse without creating new centralized identity choke points.",
+      ],
+    },
+    {
+      title: "Conclusión",
+      imageUrl: "https://placehold.co/1200x630/082f49/7dd3fc?text=Conclusion",
+      paragraphs: [
+        "Web3 identity is not just a login upgrade; it is a structural redesign of how people prove and protect who they are online.",
+        "The opportunity is significant, but so are the governance and privacy risks.",
+        "The practical route is clear: selective disclosure, cryptographic verification, and strict operational discipline in personal data management.",
+      ],
+    },
+    {
+      title: "Referencias",
+      imageUrl: "https://placehold.co/1200x630/111827/d1d5db?text=References",
+      paragraphs: [
+        "Source set used for this guide.",
+      ],
+      references: [
+        {
+          label: "Identidad Digital Web 3 [Qué es y Casos de Uso Reales] (LinkedIn)",
+          url: "https://www.linkedin.com/pulse/identidad-digital-web3-qué-es-y-casos-de-uso-reales-juan-merodio/?originalSubdomain=es",
+        },
+        {
+          label: "Algorithm for Identification and Analysis of Targeted Advertising (LACCEI)",
+          url: "https://www.laccei.org/LACCEI2022-BocaRaton/full_papers/FP57.pdf",
+        },
+        {
+          label: "DeFi security and trustless bridges (Cointelegraph ES)",
+          url: "https://es.cointelegraph.com/news/defi-security-how-trustless-bridges-can-help-protect-users",
+        },
+        {
+          label: "What is Zero-Knowledge Proof and how does it impact blockchain? (Binance Academy)",
+          url: "https://academy.binance.com/es/articles/what-is-zero-knowledge-proof-and-how-does-it-impact-blockchain",
+        },
+        {
+          label: "What are Soulbound Tokens (SBT)? (Binance Academy)",
+          url: "https://academy.binance.com/es/articles/what-are-soulbound-tokens-sbt",
+        },
+        {
+          label: "Soulbound Tokens vs Self-Sovereign Identity (Cryptonews)",
+          url: "https://cryptonews.com/exclusives/soulbound-tokens-vs-self-sovereign-identity-web3s-search-for-a-digital-id-solution.htm",
+        },
+        {
+          label: "Worldcoin arrives in Mexico in exchange for biometric data (R3D)",
+          url: "https://r3d.mx/2023/08/02/worldcoin-llega-a-mexico-con-la-promesa-de-criptomonedas-a-cambio-de-datos-biometricos/",
+        },
+        {
+          label: "Worldcoin to allow government and businesses to use ID system (Cointelegraph ES)",
+          url: "https://es.cointelegraph.com/news/worldcoin-to-allow-government-and-businesses-to-use-id-system",
+        },
+        {
+          label: "Web3 and user pushback against big tech (Cinco Días)",
+          url: "https://cincodias.elpais.com/cincodias/2021/12/24/companias/1640338509_178295.html",
+        },
+      ],
+    },
+  ],
+  "level-3-guide-11-criptomonedas-2": [
+    {
+      title: "Introducción",
+      imageUrl: "https://placehold.co/1200x630/0f172a/c4b5fd?text=Guide+11+Introduction",
+      paragraphs: [
+        "This guide opens Phase 3 with a comparative view of major networks beyond Bitcoin.",
+        "The focus is practical: interoperability, governance, consensus models, throughput, and ecosystem positioning.",
+      ],
+    },
+    {
+      title: "Altcoins",
+      imageUrl: "https://placehold.co/1200x630/1e293b/93c5fd?text=Altcoins",
+      paragraphs: [
+        "Altcoins (alternative coins) are crypto assets created after Bitcoin, usually to solve specific technical or economic limitations.",
+        "A practical generation-based lens is still useful for learning:",
+      ],
+      bullets: [
+        "First generation: transfer of value without intermediaries (Bitcoin).",
+        "Second generation: smart contracts and dApps (Ethereum).",
+        "Third generation: stronger interoperability, scalability, and governance flexibility (Polkadot, Cardano, and others).",
+      ],
+    },
+    {
+      title: "Desarrollo",
+      imageUrl: "https://placehold.co/1200x630/172554/fde68a?text=Development",
+      paragraphs: [
+        "This section compares Polkadot, Cardano, Algorand, Solana, XRPL, Polygon, BNB Chain, and Avalanche using the same criteria.",
+        "Market cap and all-time high references are aligned to the source set used in the original guide.",
+      ],
+    },
+    {
+      title: "Polkadot",
+      imageUrl: "https://placehold.co/1200x630/1f2937/fca5a5?text=Polkadot",
+      paragraphs: [
+        "Polkadot is generally positioned as a Layer 0 interoperability protocol connecting multiple specialized chains.",
+        "It uses Nominated Proof of Stake (NPoS) and on-chain governance (OpenGov) for proposal and execution flows.",
+      ],
+      bullets: [
+        "Interoperability: Yes, via Relay Chain and parachains.",
+        "Governance: Yes, on-chain voting and treasury processes.",
+        "Consensus: NPoS.",
+        "Documentation: https://docs.polkadot.com/reference/polkadot-hub/consensus-and-security/relay-chain/",
+      ],
+    },
+    {
+      title: "Cardano",
+      imageUrl: "https://placehold.co/1200x630/082f49/67e8f9?text=Cardano",
+      paragraphs: [
+        "Cardano is a research-driven PoS network focused on formal methods, security, and gradual governance evolution.",
+      ],
+      bullets: [
+        "Interoperability: Partial, expanding through ecosystem tools and sidechains.",
+        "Governance: Yes, community-led governance architecture is evolving.",
+        "Consensus: Ouroboros (PoS family).",
+        "Documentation: https://docs.cardano.org/",
+      ],
+    },
+    {
+      title: "Algorand",
+      imageUrl: "https://placehold.co/1200x630/312e81/c4b5fd?text=Algorand",
+      paragraphs: [
+        "Algorand is designed for rapid finality and low-friction operation through Pure Proof of Stake.",
+      ],
+      bullets: [
+        "Interoperability: Yes, through integrations and bridge ecosystems.",
+        "TPS: High throughput, effective rates vary by load and setup.",
+        "Governance: Yes, governance/staking programs evolved over time.",
+        "Consensus: Pure Proof of Stake (PPoS).",
+        "Documentation: https://dev.algorand.co/ and https://algorand.co/technology",
+      ],
+    },
+    {
+      title: "Solana",
+      imageUrl: "https://placehold.co/1200x630/0b1324/d8b4fe?text=Solana",
+      paragraphs: [
+        "Solana combines Proof of Stake with Proof of History for high-frequency sequencing and execution.",
+      ],
+      bullets: [
+        "Interoperability: Mostly via external bridges and protocol integrations.",
+        "TPS: High throughput architecture; effective throughput varies by conditions.",
+        "Governance: Validator and ecosystem governance models are active.",
+        "Consensus: PoS + PoH.",
+        "Documentation: https://solana.com/docs",
+      ],
+    },
+    {
+      title: "Ripple",
+      imageUrl: "https://placehold.co/1200x630/111827/fde68a?text=Ripple+XRPL",
+      paragraphs: [
+        "Ripple is the company; XRPL is the public ledger with its own consensus process among validators.",
+      ],
+      bullets: [
+        "Interoperability: Expanding via tooling and bridge initiatives.",
+        "TPS: Common ecosystem reference around ~1,500 TPS (context dependent).",
+        "Governance: Amendment-based protocol governance.",
+        "Consensus: XRPL federated consensus model.",
+        "Documentation: https://xrpl.org/docs/concepts/consensus-protocol/consensus-structure",
+      ],
+    },
+    {
+      title: "Polygon",
+      imageUrl: "https://placehold.co/1200x630/1e1b4b/a5b4fc?text=Polygon",
+      paragraphs: [
+        "Polygon extends Ethereum scalability through multiple components, including PoS infrastructure and interoperability layers.",
+      ],
+      bullets: [
+        "Interoperability: Yes, multi-chain orientation with AggLayer strategy.",
+        "TPS: Variable by network and workload.",
+        "Governance: Yes, evolving token and staking governance framework.",
+        "Consensus: PoS architecture connected to Ethereum ecosystem.",
+        "Documentation: https://docs.polygon.technology/pos/overview/",
+      ],
+    },
+    {
+      title: "Binance Chain",
+      imageUrl: "https://placehold.co/1200x630/1f2937/93c5fd?text=BNB+Chain",
+      paragraphs: [
+        "BNB Chain includes EVM-oriented infrastructure and validator-based operation for broad dApp support.",
+      ],
+      bullets: [
+        "Interoperability: Yes, with bridge and cross-chain tooling.",
+        "TPS: Variable by component and conditions.",
+        "Governance: Yes, validator-driven governance processes.",
+        "Consensus: PoSA in BNB Smart Chain.",
+        "Documentation: https://docs.bnbchain.org/",
+      ],
+    },
+    {
+      title: "Avalanche",
+      imageUrl: "https://placehold.co/1200x630/172554/86efac?text=Avalanche",
+      paragraphs: [
+        "Avalanche uses a family of consensus mechanisms and chain specialization for performance and modularity.",
+      ],
+      bullets: [
+        "Interoperability: Yes, through subnets/L1 design and ecosystem connectors.",
+        "TPS: Variable by chain and subnet configuration.",
+        "Governance: Yes, through protocol and community improvement paths.",
+        "Consensus: PoS + Avalanche/Snowman family.",
+        "Documentation: https://build.avax.network/docs/primary-network/platformvm-architecture",
+      ],
+    },
+    {
+      title: "Conclusión",
+      imageUrl: "https://placehold.co/1200x630/082f49/7dd3fc?text=Conclusion",
+      paragraphs: [
+        "There is no universal best network; each protocol optimizes a different set of tradeoffs.",
+        "The right way to compare ecosystems is by architecture, governance quality, operational reliability, and use-case fit.",
+      ],
+    },
+    {
+      title: "Agradecimientos",
+      imageUrl: "https://placehold.co/1200x630/111827/f9a8d4?text=Acknowledgements",
+      paragraphs: [
+        "Thanks for continuing this technical track. The objective is to keep advanced topics practical, readable, and execution-oriented.",
+      ],
+    },
+    {
+      title: "Referencias",
+      imageUrl: "https://placehold.co/1200x630/111827/d1d5db?text=References",
+      paragraphs: [
+        "Primary technical and market references used in this guide.",
+      ],
+      references: [
+        {
+          label: "Polkadot Developer Docs - Relay Chain",
+          url: "https://docs.polkadot.com/reference/polkadot-hub/consensus-and-security/relay-chain/",
+        },
+        {
+          label: "Cardano Documentation",
+          url: "https://docs.cardano.org/",
+        },
+        {
+          label: "Algorand Technology",
+          url: "https://algorand.co/technology",
+        },
+        {
+          label: "Solana Docs",
+          url: "https://solana.com/docs",
+        },
+        {
+          label: "XRPL Consensus Structure",
+          url: "https://xrpl.org/docs/concepts/consensus-protocol/consensus-structure",
+        },
+        {
+          label: "Polygon PoS Overview",
+          url: "https://docs.polygon.technology/pos/overview/",
+        },
+        {
+          label: "BNB Chain Docs",
+          url: "https://docs.bnbchain.org/",
+        },
+        {
+          label: "Avalanche PlatformVM Architecture",
+          url: "https://build.avax.network/docs/primary-network/platformvm-architecture",
+        },
+        {
+          label: "CoinGecko API - Market data reference set",
+          url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=algorand,solana,ripple,polygon-ecosystem-token,binancecoin,avalanche-2",
+        },
+      ],
+    },
+  ],
+  "level-3-guide-12-que-es-una-dao": [
+    {
+      title: "Introducción",
+      imageUrl: "https://placehold.co/1200x630/0f172a/c4b5fd?text=Guide+12+Introduction",
+      paragraphs: [
+        "Many blockchain governance patterns are inspired by real-world corporate and political structures, but redesigned with programmable rules.",
+        "DAOs emerged as one of the clearest attempts to operationalize collective decision-making in open digital systems.",
+      ],
+    },
+    {
+      title: "Conceptos básicos",
+      imageUrl: "https://placehold.co/1200x630/1e293b/93c5fd?text=Basic+Concepts+DAO",
+      paragraphs: [
+        "A DAO (Decentralized Autonomous Organization) is a coordination model where governance rules and execution logic are encoded and publicly auditable [1][2].",
+      ],
+    },
+    {
+      title: "Votos y tokens",
+      imageUrl: "https://placehold.co/1200x630/172554/fde68a?text=Votes+and+Tokens",
+      paragraphs: [
+        "Voting rights in DAOs are often represented through tokens or NFTs, with design choices that resemble corporate share structures [3][4].",
+      ],
+      bullets: [
+        "Voting power can be flat, weighted, delegated, or capped.",
+        "Treasury control can be fully community-based or committee-assisted.",
+        "Governance design directly affects decentralization quality.",
+      ],
+    },
+    {
+      title: "Desarrollo",
+      imageUrl: "https://placehold.co/1200x630/1f2937/86efac?text=Development",
+      paragraphs: [
+        "DAO governance is not only voting UI; it includes proposal filters, quorum rules, execution rights, treasury permissions, and emergency controls.",
+      ],
+    },
+    {
+      title: "¿Qué es la Gobernanza?",
+      imageUrl: "https://placehold.co/1200x630/082f49/67e8f9?text=What+is+Governance",
+      paragraphs: [
+        "Governance is the process by which a protocol or organization decides how rules evolve over time [5].",
+      ],
+      bullets: [
+        "Protocol governance: network-level upgrades and risk parameters.",
+        "Application governance: product direction, treasury, incentives, and operations.",
+      ],
+    },
+    {
+      title: "Gobernanza en proyectos robustos",
+      imageUrl: "https://placehold.co/1200x630/1e1b4b/a5b4fc?text=Governance+Models",
+      paragraphs: [
+        "Mature ecosystems usually combine centralized and decentralized layers to balance execution speed and legitimacy [6].",
+      ],
+      bullets: [
+        "Centralized: faster execution, lower community sovereignty.",
+        "Decentralized: higher legitimacy, slower coordination.",
+        "Hybrid: practical compromise used by many production protocols.",
+      ],
+    },
+    {
+      title: "Política en la Blockchain",
+      imageUrl: "https://placehold.co/1200x630/312e81/c4b5fd?text=Politics+in+Blockchain",
+      paragraphs: [
+        "Every governance system needs constitutional logic: rights, duties, process validity, and conflict resolution [7].",
+        "Blockchain makes process traceable, but does not eliminate social conflict or strategic behavior.",
+      ],
+    },
+    {
+      title: "Forks",
+      imageUrl: "https://placehold.co/1200x630/0b1324/d8b4fe?text=Forks",
+      paragraphs: [
+        "Forks are codebase splits reflecting technical or political disagreements in a network.",
+        "Hard forks create incompatible rule sets; soft forks preserve partial compatibility.",
+      ],
+    },
+    {
+      title: "Gobernanza on-chain y off-chain",
+      imageUrl: "https://placehold.co/1200x630/111827/fde68a?text=Onchain+Offchain+Governance",
+      paragraphs: [
+        "On-chain governance executes decision and settlement in protocol state.",
+        "Off-chain governance happens in forums, teams, and committees before or alongside on-chain voting [8].",
+      ],
+    },
+    {
+      title: "Ejemplos de gobernanza",
+      imageUrl: "https://placehold.co/1200x630/1f2937/93c5fd?text=Governance+Examples",
+      paragraphs: [
+        "Different ecosystems implement governance with different structures and tradeoffs.",
+      ],
+      bullets: [
+        "NEAR: constitutional and organizational governance layers [9].",
+        "Polkadot: on-chain referenda and structured technical/governance bodies [10].",
+        "Cardano: delegated governance evolution with dReps and stakeholder participation [11].",
+      ],
+    },
+    {
+      title: "Conclusión",
+      imageUrl: "https://placehold.co/1200x630/082f49/7dd3fc?text=Conclusion",
+      paragraphs: [
+        "DAO literacy is essential to evaluate protocol quality beyond token price action.",
+        "Strong governance does not guarantee success, but weak governance almost guarantees fragility.",
+      ],
+    },
+    {
+      title: "Referencias",
+      imageUrl: "https://placehold.co/1200x630/111827/d1d5db?text=References",
+      paragraphs: [
+        "Reference set from the original material.",
+      ],
+      references: [
+        {
+          label: "What is a DAO? (NYT en Español)",
+          url: "https://www.nytimes.com/es/interactive/2022/03/29/espanol/dao-que-es.html",
+        },
+        {
+          label: "What is a DAO? (Cointelegraph ES)",
+          url: "https://es.cointelegraph.com/learn/what-is-a-decentralized-autonomous-organization-and-how-does-a-dao-work",
+        },
+        {
+          label: "Company shares: definitions and types (GBM Academy)",
+          url: "https://gbm.com/academy/que-son-las-acciones-definicion-tipos-y-ventajas/",
+        },
+        {
+          label: "Class A vs Class B shares (FasterCapital)",
+          url: "https://fastercapital.com/es/contenido/Acciones-Clase-B-frente-a--Clase-A--diferencias-y-consideraciones-clave.html",
+        },
+        {
+          label: "Blockchain governance (LinkedIn)",
+          url: "https://www.linkedin.com/pulse/gobernanza-de-la-blockchain-%C3%A1lvaro-garay-i2j8f/",
+        },
+        {
+          label: "Governance models in Ethereum Enterprise Alliance (FasterCapital)",
+          url: "https://fastercapital.com/es/contenido/Explorando-modelos-de-gobernanza-dentro-de-Ethereum-Enterprise-Alliance--EEE.html",
+        },
+        {
+          label: "Cardano governance debates (Cointelegraph ES)",
+          url: "https://es.cointelegraph.com/news/labitconf-minimum-viable-constitution-at-the-center-of-debate-on-cardanos-future-governance-says-expert",
+        },
+        {
+          label: "Blockchain governance guide (Ripio)",
+          url: "https://launchpad.ripio.com/guias-capitulos/gestion-y-gobernanza-de-blockchains",
+        },
+        {
+          label: "NEAR governance constitution (Cripteros)",
+          url: "https://cripteros.com/near-protocol-y-su-constitucion/",
+        },
+        {
+          label: "Polkadot governance overview",
+          url: "https://polkadot.network/blog/gobernanza-de-polkadot",
+        },
+        {
+          label: "Cardano voting and decision process (Forum Cardano)",
+          url: "https://forum.cardano.org/t/votacion-y-toma-de-decisiones-vista-rapida/46562",
+        },
+      ],
+    },
+  ],
+  "level-3-guide-14-papel-ia-entorno-cripto": [
+    {
+      title: "Introducción",
+      imageUrl: "https://placehold.co/1200x630/0f172a/c4b5fd?text=Guide+14+Introduction",
+      paragraphs: [
+        "AI and crypto are converging because they solve complementary problems: decision intelligence, automation, traceability, and open execution.",
+        "This guide focuses on practical value and operational risk, not hype narratives.",
+      ],
+    },
+    {
+      title: "Conceptos básicos",
+      imageUrl: "https://placehold.co/1200x630/1e293b/93c5fd?text=Basic+Concepts+AI+Crypto",
+      paragraphs: [
+        "In production environments, useful AI in crypto is usually assistive, constrained, and policy-driven.",
+      ],
+      bullets: [
+        "Analytical AI: risk scoring, anomaly detection, signal classification.",
+        "Generative AI: support workflows, documentation, and user guidance.",
+        "Agents: software entities executing predefined tasks across systems.",
+      ],
+    },
+    {
+      title: "¿Por qué converge la IA con cripto?",
+      imageUrl: "https://placehold.co/1200x630/172554/fde68a?text=Why+AI+Converges+with+Crypto",
+      paragraphs: [
+        "AI needs data, compute, and incentives; crypto provides open market coordination for those layers [1][2][3].",
+        "Crypto, in turn, needs stronger automation and filtering in 24/7 adversarial environments.",
+      ],
+    },
+    {
+      title: "Desarrollo",
+      imageUrl: "https://placehold.co/1200x630/1f2937/86efac?text=Development",
+      paragraphs: [
+        "The stack can be read in five layers: infrastructure, data, execution, wallet abstraction, and risk governance.",
+      ],
+    },
+    {
+      title: "Infraestructura descentralizada para IA",
+      imageUrl: "https://placehold.co/1200x630/082f49/67e8f9?text=Decentralized+AI+Infrastructure",
+      paragraphs: [
+        "Networks like Fetch.ai, Bittensor, and Ocean illustrate market-based approaches to autonomous coordination, AI compute, and data monetization [1][2][3][4].",
+      ],
+    },
+    {
+      title: "Agentes autónomos on-chain y off-chain",
+      imageUrl: "https://placehold.co/1200x630/1e1b4b/a5b4fc?text=Autonomous+Agents",
+      paragraphs: [
+        "Autonomous agents must run with explicit constraints: permissions, budget caps, execution boundaries, and monitoring controls.",
+      ],
+    },
+    {
+      title: "El rol de los datos: oráculos, calidad y trazabilidad",
+      imageUrl: "https://placehold.co/1200x630/312e81/c4b5fd?text=Data+Oracles+Traceability",
+      paragraphs: [
+        "Data quality is the hard boundary of AI reliability.",
+        "In smart-contract contexts, external data access must be verifiable and resilient, which is why oracle frameworks matter [5].",
+      ],
+    },
+    {
+      title: "Wallets inteligentes y automatización (Account Abstraction)",
+      imageUrl: "https://placehold.co/1200x630/0b1324/d8b4fe?text=Account+Abstraction",
+      paragraphs: [
+        "ERC-4337 makes programmable wallets practical without changing base consensus, enabling secure automation patterns for AI-assisted workflows [6][7].",
+      ],
+    },
+    {
+      title: "Riesgos reales del cruce IA + cripto",
+      imageUrl: "https://placehold.co/1200x630/111827/fde68a?text=Real+Risks",
+      paragraphs: [
+        "Main risks include model hallucinations, poisoned data, weak API dependencies, over-automation, and synthetic fraud campaigns.",
+        "A robust baseline uses risk-by-design and governance standards such as NIST AI RMF and GenAI profile guidance [8][9][10].",
+      ],
+    },
+    {
+      title: "Aplicaciones prácticas para LATAM",
+      imageUrl: "https://placehold.co/1200x630/1f2937/93c5fd?text=Practical+LATAM+Applications",
+      paragraphs: [
+        "High-impact LATAM use cases include antifraud workflows, remittance intelligence, risk triage for unbanked users, and educational copilots for safe onboarding.",
+      ],
+    },
+    {
+      title: "Conclusión",
+      imageUrl: "https://placehold.co/1200x630/082f49/7dd3fc?text=Conclusion",
+      paragraphs: [
+        "AI in crypto creates value when architecture and controls come before automation.",
+        "The winning sequence is: trusted data, constrained execution, auditable policy, then scale.",
+      ],
+    },
+    {
+      title: "Referencias",
+      imageUrl: "https://placehold.co/1200x630/111827/d1d5db?text=References",
+      paragraphs: [
+        "Core references for implementation and risk governance.",
+      ],
+      references: [
+        { label: "Fetch.ai Documentation", url: "https://fetch.ai/docs/concepts" },
+        { label: "Bittensor Documentation", url: "https://docs.learnbittensor.org/" },
+        { label: "Ocean Protocol Documentation", url: "https://docs.oceanprotocol.com/" },
+        { label: "Ocean Token and decentralized AI context", url: "https://docs.oceanprotocol.com/discover/ocean-token" },
+        { label: "Chainlink Functions Documentation", url: "https://docs.chain.link/chainlink-functions" },
+        { label: "EIP-4337", url: "https://eips.ethereum.org/EIPS/eip-4337" },
+        { label: "ERC-4337 docs", url: "https://docs.erc4337.io/core-standards/erc-4337" },
+        { label: "NIST AI RMF resources", url: "https://www.nist.gov/itl/ai-risk-management-framework/ai-risk-management-framework-resources" },
+        { label: "NIST AI RMF 1.0 PDF", url: "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf" },
+        { label: "NIST Generative AI profile PDF", url: "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf" },
+        { label: "FTC crypto scam consumer advice", url: "https://consumer.ftc.gov/articles/what-know-about-cryptocurrency-scams" },
+        { label: "FTC crypto scam losses release", url: "https://www.ftc.gov/news-events/news/press-releases/2022/06/new-analysis-finds-consumers-reported-losing-more-1-billion-cryptocurrency-scams-2021" },
+      ],
+    },
+  ],
+  "level-3-guide-15-estafas-cripto-modo-preventivo": [
+    {
+      title: "Introducción",
+      imageUrl: "https://placehold.co/1200x630/0f172a/c4b5fd?text=Guide+15+Introduction",
+      paragraphs: [
+        "Fraud is one of the biggest barriers to crypto adoption.",
+        "This guide is written in preventive mode: concrete controls before signing, approving, depositing, or trusting third-party signals.",
+      ],
+    },
+    {
+      title: "Conceptos básicos",
+      imageUrl: "https://placehold.co/1200x630/1e293b/93c5fd?text=Basic+Fraud+Concepts",
+      paragraphs: [
+        "A crypto scam is any setup that uses deception, manipulation, or technical abuse to move your assets to attacker-controlled addresses.",
+      ],
+      bullets: [
+        "Social engineering: you are manipulated into authorizing the loss yourself.",
+        "Technical compromise: malicious links, contracts, software, or devices.",
+        "Fake legitimacy: cloned brands, spoofed support, fabricated testimonials.",
+        "Operational blind spots: no checklist before high-risk actions.",
+      ],
+    },
+    {
+      title: "Desarrollo",
+      imageUrl: "https://placehold.co/1200x630/172554/fde68a?text=Development",
+      paragraphs: [
+        "The typologies below repeat across cycles with different narratives but similar mechanics [1][2][3].",
+      ],
+    },
+    {
+      title: "Estafas de inversión y plataformas falsas",
+      imageUrl: "https://placehold.co/1200x630/1f2937/86efac?text=Fake+Platforms",
+      paragraphs: [
+        "Typical pattern: guaranteed high returns, fake dashboards, withdrawal barriers, and escalating deposits [3][4][5].",
+      ],
+    },
+    {
+      title: "Phishing, drainer y robo de llaves",
+      imageUrl: "https://placehold.co/1200x630/082f49/67e8f9?text=Phishing+and+Drainers",
+      paragraphs: [
+        "Attackers push users to sign malicious approvals or reveal seed phrases/private keys.",
+        "Rule: seed phrases never belong in forms, chats, bots, or fake support channels.",
+      ],
+    },
+    {
+      title: "Rug pulls, honeypots y contratos maliciosos",
+      imageUrl: "https://placehold.co/1200x630/1e1b4b/a5b4fc?text=Rugpulls+Honeypots",
+      paragraphs: [
+        "Rug pull: liquidity or project abandonment by insiders.",
+        "Honeypot: users can buy but cannot sell due to hidden contract logic.",
+      ],
+    },
+    {
+      title: "Suplantación, soporte falso y recuperación fraudulenta",
+      imageUrl: "https://placehold.co/1200x630/312e81/c4b5fd?text=Impersonation+and+Fake+Support",
+      paragraphs: [
+        "After an initial scam, attackers often return as 'recovery experts' requesting additional payments.",
+        "Always validate official channels and avoid incident handling through unsolicited direct messages [6][7][8].",
+      ],
+    },
+    {
+      title: "Estafas P2P y OTC",
+      imageUrl: "https://placehold.co/1200x630/0b1324/d8b4fe?text=P2P+and+OTC+Scams",
+      paragraphs: [
+        "Main risk is counterparty fraud: fake proofs, payment reversals, triangulation, and account compromise.",
+      ],
+    },
+    {
+      title: "Checklist preventivo antes de mover fondos",
+      imageUrl: "https://placehold.co/1200x630/111827/fde68a?text=Preventive+Checklist",
+      paragraphs: [
+        "Repeatable operating discipline is your best defense.",
+      ],
+      bullets: [
+        "Verify domains, apps, and official channels before connecting wallets.",
+        "Separate hot wallet operations from cold storage custody.",
+        "Limit approvals and revoke permissions periodically.",
+        "Use strong 2FA in email, exchange, and critical accounts.",
+        "Run test transactions before material transfers.",
+        "Document tx hashes, counterparties, and operation evidence.",
+      ],
+    },
+    {
+      title: "Qué hacer si ya fuiste víctima",
+      imageUrl: "https://placehold.co/1200x630/1f2937/93c5fd?text=Incident+Response",
+      paragraphs: [
+        "If compromised, act quickly: contain damage and preserve evidence.",
+      ],
+      bullets: [
+        "Isolate the affected wallet and stop new interactions.",
+        "Revoke approvals where possible.",
+        "Move remaining assets to a clean wallet from a secure environment.",
+        "Rotate credentials and 2FA across linked services.",
+        "Report through official channels and law-enforcement paths [4][6][9].",
+      ],
+    },
+    {
+      title: "Conclusión",
+      imageUrl: "https://placehold.co/1200x630/082f49/7dd3fc?text=Conclusion",
+      paragraphs: [
+        "Most major crypto scams exploit repeated unsafe habits, not complex technology alone.",
+        "Strong outcomes come from technical hygiene, emotional discipline, and strict operating checklists.",
+      ],
+    },
+    {
+      title: "Referencias",
+      imageUrl: "https://placehold.co/1200x630/111827/d1d5db?text=References",
+      paragraphs: [
+        "Core prevention and enforcement references.",
+      ],
+      references: [
+        { label: "FTC - Cryptocurrency scams overview", url: "https://consumer.ftc.gov/articles/what-know-about-cryptocurrency-scams" },
+        { label: "FTC - Losses in crypto scams", url: "https://www.ftc.gov/news-events/news/press-releases/2022/06/new-analysis-finds-consumers-reported-losing-more-1-billion-cryptocurrency-scams-2021" },
+        { label: "SEC Investor Alert (crypto-asset scam lures)", url: "https://www.sec.gov/oiea/investor-alert-5-ways-fraudsters-may-lure-victims-scams-involving-crypto-asset" },
+        { label: "Investor.gov alert (group chat scams)", url: "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-alerts/gateway-to-investment-scams" },
+        { label: "CFTC/SEC warning on fraudulent crypto trading websites", url: "https://www.cftc.gov/LearnAndProtect/AdvisoriesAndArticles/watch_out_for_digital_fraud.html" },
+        { label: "IC3 Annual Reports", url: "https://www.ic3.gov/AnnualReport" },
+        { label: "IC3 PSA 2024", url: "https://www.ic3.gov/PSA/2024/PSA240318" },
+        { label: "FinCEN alert on pig butchering scam", url: "https://www.fincen.gov/news/news-releases/fincen-issues-alert-prevalent-virtual-currency-investment-scam-commonly-known" },
+        { label: "SEC Press Release 2024-134", url: "https://www.sec.gov/newsroom/press-releases/2024-134" },
+        { label: "SEC Press Release 2025-144", url: "https://www.sec.gov/newsroom/press-releases/2025-144-sec-charges-three-purported-crypto-asset-trading-platforms-four-investment-clubs-scheme-targeted" },
+        { label: "U.S. DOJ civil forfeiture complaint (2025)", url: "https://www.justice.gov/opa/pr/united-states-files-civil-forfeiture-complaint-against-225m-funds-involved-cryptocurrency" },
+        { label: "TRM Labs 2026 Crypto Crime Report", url: "https://www.trmlabs.com/reports-and-whitepapers/2026-crypto-crime-report" },
+      ],
+    },
+  ],
+  "level-3-guide-16-principios-regulacion-criptomonedas": [
+    {
+      title: "Introducción",
+      imageUrl: "https://placehold.co/1200x630/0f172a/c4b5fd?text=Guide+16+Introduction",
+      paragraphs: [
+        "Crypto regulation is no longer optional context. It directly affects market access, product design, custody, and user protection.",
+        "This guide closes Phase 3 with a comparative legal map focused on MiCA, U.S. legislative progress, China, LATAM, and Mexico.",
+      ],
+    },
+    {
+      title: "Conceptos básicos",
+      imageUrl: "https://placehold.co/1200x630/1e293b/93c5fd?text=Basic+Regulatory+Concepts",
+      paragraphs: [
+        "There is no single global crypto law. Most jurisdictions regulate through layered frameworks: securities, payments, AML/CFT, consumer protection, and prudential supervision.",
+      ],
+      bullets: [
+        "Issuer rules: who can issue and under what backing requirements.",
+        "Intermediary rules: exchange, broker, and custody obligations.",
+        "Conduct rules: disclosure, conflicts, market abuse restrictions.",
+        "Financial stability rules: reserve quality and redemption controls.",
+      ],
+    },
+    {
+      title: "Principios de regulación en cripto",
+      imageUrl: "https://placehold.co/1200x630/172554/fde68a?text=Regulatory+Principles",
+      paragraphs: [
+        "Across jurisdictions, robust regulation usually follows similar principles:",
+      ],
+      bullets: [
+        "Same activity, same risk, same regulation.",
+        "Segregation of client assets from proprietary assets.",
+        "Auditable governance and risk controls.",
+        "Clear reserve and redemption transparency.",
+        "Cross-border supervisory coordination.",
+      ],
+    },
+    {
+      title: "MiCA en Europa: alcance y estatus",
+      imageUrl: "https://placehold.co/1200x630/1f2937/86efac?text=MiCA+Europe",
+      paragraphs: [
+        "MiCA (Regulation (EU) 2023/1114) is the first comprehensive regional crypto framework in the EU [1].",
+        "ART/EMT provisions applied from June 30, 2024, and the broader regime from December 30, 2024 [1][2].",
+      ],
+    },
+    {
+      title: "Estados Unidos: Ley GENIUS y Ley CLARITY",
+      imageUrl: "https://placehold.co/1200x630/082f49/67e8f9?text=GENIUS+and+CLARITY",
+      paragraphs: [
+        "In the U.S., stablecoin and market-structure tracks advanced on separate rails.",
+        "GENIUS (S.1582) reached Public Law status in 2025 according to Congress.gov [3].",
+        "CLARITY (H.R.3633) advanced in the House and remains part of the broader market-structure path [4].",
+      ],
+    },
+    {
+      title: "China continental y Hong Kong: dos vías regulatorias",
+      imageUrl: "https://placehold.co/1200x630/1e1b4b/a5b4fc?text=China+and+Hong+Kong",
+      paragraphs: [
+        "Mainland China keeps a restrictive posture toward crypto trading and speculation [5].",
+        "Hong Kong follows a licensed virtual-asset framework with supervised platform regimes and stablecoin rules [6][7].",
+      ],
+    },
+    {
+      title: "Latinoamérica: panorama regulatorio comparado",
+      imageUrl: "https://placehold.co/1200x630/312e81/c4b5fd?text=LATAM+Regulation",
+      paragraphs: [
+        "LATAM regulation is heterogeneous: some countries prioritize registry and AML, others move toward fuller licensing frameworks.",
+      ],
+      bullets: [
+        "Brazil: Lei 14.478 and central-bank-led regulatory implementation [8][9].",
+        "Argentina: PSAV registry under CNV framework [10][11].",
+        "El Salvador: Bitcoin-law reforms and IMF program constraints [12][13].",
+        "Chile: Fintec-law implementation under CMF oversight [14].",
+      ],
+    },
+    {
+      title: "México: estatus actual",
+      imageUrl: "https://placehold.co/1200x630/0b1324/d8b4fe?text=Mexico+Status",
+      paragraphs: [
+        "Mexico does not recognize crypto assets as legal tender.",
+        "The Fintech Law defines virtual assets and allows operation under specific regulatory conditions [15].",
+        "Public authorities (SHCP, Banxico, CNBV) have repeatedly highlighted risk and perimeter limits for financial institutions [16][17].",
+      ],
+    },
+    {
+      title: "Checklist regulatorio para proyectos y usuarios",
+      imageUrl: "https://placehold.co/1200x630/111827/fde68a?text=Regulatory+Checklist",
+      paragraphs: [
+        "Before launching or scaling operations, validate jurisdictional exposure and regulatory perimeter.",
+      ],
+      bullets: [
+        "Map user jurisdictions and applicable legal obligations.",
+        "Classify activity: issuance, exchange, custody, advisory, payments.",
+        "Implement AML/KYC and transaction-monitoring policies.",
+        "Define disclosure and risk communication standards.",
+        "Document governance and incident-response processes.",
+      ],
+    },
+    {
+      title: "Conclusión",
+      imageUrl: "https://placehold.co/1200x630/082f49/7dd3fc?text=Conclusion",
+      paragraphs: [
+        "Regulatory clarity in crypto is progressing unevenly but materially.",
+        "The practical edge for builders and operators is jurisdiction-aware execution with compliance-by-design.",
+      ],
+    },
+    {
+      title: "Referencias",
+      imageUrl: "https://placehold.co/1200x630/111827/d1d5db?text=References",
+      paragraphs: [
+        "Official and primary references used for legal status checks.",
+      ],
+      references: [
+        { label: "EUR-Lex summary - MiCA (Regulation EU 2023/1114)", url: "https://eur-lex.europa.eu/EN/legal-content/summary/european-crypto-assets-regulation-mica.html" },
+        { label: "ESMA MiCA page and interim register context", url: "https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation/markets-crypto-assets-regulation-mica" },
+        { label: "Congress.gov S.1582 GENIUS Act", url: "https://www.congress.gov/bill/119th-congress/senate-bill/1582" },
+        { label: "Congress.gov H.R.3633 Digital Asset Market Clarity Act", url: "https://www.congress.gov/bill/119th-congress/house-bill/3633" },
+        { label: "Library of Congress - China crypto trading document (2021)", url: "https://www.loc.gov/item/global-legal-monitor/2021-10-13/china-central-bank-issues-new-regulatory-document-on-cryptocurrency-trading/" },
+        { label: "SFC Hong Kong VATP lists", url: "https://www.sfc.hk/en/Welcome-to-the-Fintech-Contact-Point/Virtual-assets/Virtual-asset-trading-platforms-operators/Lists-of-virtual-asset-trading-platforms" },
+        { label: "HKMA stablecoin issuer regime notice", url: "https://www.hkma.gov.hk/eng/news-and-media/press-releases/2025/07/20250729-4/" },
+        { label: "Brazil Lei 14.478/2022", url: "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/Lei/L14478.htm" },
+        { label: "Banco Central do Brasil regulatory note", url: "https://www.bcb.gov.br/en/pressdetail/2639/nota" },
+        { label: "Argentina CNV RG 994/2024", url: "https://www.argentina.gob.ar/normativa/nacional/resoluci%C3%B3n-994-2024-397598/texto" },
+        { label: "Argentina CNV PSAV notice", url: "https://www.argentina.gob.ar/noticias/la-cnv-crea-el-registro-de-proveedores-de-servicios-de-activos-virtuales-psav" },
+        { label: "El Salvador assembly decrees (2025)", url: "https://www.asamblea.gob.sv/leyes-y-decretos/decretos-por-anios/2025/0disponible" },
+        { label: "IMF Press Release 25/043 (El Salvador EFF)", url: "https://www.imf.org/en/News/Articles/2025/02/26/pr25043-el-salvador-imf-approves-new-40-month-us1-bn-eff-arr" },
+        { label: "CMF Chile Fintec implementation note", url: "https://www.cmfchile.cl/portal/prensa/615/w3-article-77135.html" },
+        { label: "DOF Mexico Fintech Law", url: "https://www.dof.gob.mx/nota_detalle.php?codigo=5515623&fecha=09/03/2018" },
+        { label: "SHCP/Banxico/CNBV warning on virtual assets", url: "https://www.gob.mx/shcp/prensa/banco-de-mexico-shcp-y-cnbv-advierten-sobre-riesgos-de-utilizar-activos-virtuales-275819" },
+        { label: "Banxico virtual assets position", url: "https://www.banxico.org.mx/sistemas-de-pago/sobre-activos-virtuales-rie.html" },
+      ],
+    },
+  ],
   "glossary-guide-10-defi-web3": [
     {
       title: "Introducción",

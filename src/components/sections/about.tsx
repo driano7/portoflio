@@ -221,7 +221,7 @@ export function About() {
     if (!tallestCardHeight) return;
 
     const viewportWidth = window.innerWidth;
-    const stackTail = viewportWidth < 768 ? 56 : viewportWidth < 1024 ? 86 : 136;
+    const stackTail = viewportWidth < 768 ? 36 : viewportWidth < 1024 ? 86 : 136;
     setStackHeight(Math.ceil(tallestCardHeight + stackTail));
   }, []);
 
@@ -352,7 +352,7 @@ export function About() {
   const visibleCards = [first, second, third];
 
   return (
-    <div className="relative py-24 sm:py-32 animate-fade-in">
+    <div className="relative animate-fade-in pt-24 pb-16 sm:py-32">
       {isAboutVisible && !atPageBottom ? (
         <div
           aria-hidden
@@ -394,7 +394,7 @@ export function About() {
             </button>
           </div>
 
-          <div className="mt-2 sm:mt-4 text-lg leading-8 text-zinc-700 dark:text-zinc-300 text-justify">
+          <div className="mt-2 text-lg leading-8 text-zinc-700 dark:text-zinc-300 sm:mt-4">
             <div className="relative">
               <div aria-hidden className="pointer-events-none invisible absolute inset-x-0 top-0 -z-10">
                 {cards.map((card, index) => (
@@ -414,7 +414,7 @@ export function About() {
                           <h3 className="text-xl sm:text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mb-4">
                             {card.title}
                           </h3>
-                          <div className="space-y-4 text-base sm:text-lg leading-8 text-zinc-700 dark:text-zinc-300">
+                          <div className="space-y-4 text-base leading-8 text-zinc-700 dark:text-zinc-300 sm:text-lg [&_p]:text-justify [&_p]:[text-align-last:left]">
                             {card.content}
                           </div>
                         </div>
@@ -494,10 +494,13 @@ export function About() {
                             <h3 className="text-xl sm:text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mb-4">
                               {card.title}
                             </h3>
-                            <div className="space-y-4 text-base sm:text-lg leading-8 text-zinc-700 dark:text-zinc-300">
+                            <div className="space-y-4 text-base leading-8 text-zinc-700 dark:text-zinc-300 sm:text-lg [&_p]:text-justify [&_p]:[text-align-last:left]">
                               {isTopCard ? (
                                 typingReady ? (
-                                  <ScrollTyping key={`typing-${card.id}-${activeIndex}-${typingRun}`}>
+                                  <ScrollTyping
+                                    key={`typing-${card.id}-${activeIndex}-${typingRun}`}
+                                    className="[&_p]:text-justify [&_p]:[text-align-last:left]"
+                                  >
                                     {card.content}
                                   </ScrollTyping>
                                 ) : (

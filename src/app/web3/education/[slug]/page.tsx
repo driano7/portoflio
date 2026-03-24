@@ -4,6 +4,8 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { BtcGuideChart } from "@/components/sections/btc-guide-chart";
+import { EthGuideChart } from "@/components/sections/eth-guide-chart";
 import { LoopingGuideImage } from "@/components/ui/looping-guide-image";
 import { ScrollRevealStagger } from "@/components/ui/scroll-reveal-stagger";
 import { fetchAndParseGoogleDoc } from "@/lib/google-docs";
@@ -268,49 +270,62 @@ export default async function EducationGuidePage({ params }: PageProps) {
                   </p>
                 </CardHeader>
                 <CardContent className="space-y-10 text-zinc-300 text-justify">
-                  {sections.map((section) => (
-                    <section key={section.id} id={section.id} className="scroll-mt-24 space-y-4">
-                      <h2 className="text-xl text-white font-semibold">{section.title}</h2>
-                      {section.imageUrl && (
-                        <LoopingGuideImage
-                          src={section.imageUrl}
-                          alt={section.title}
-                          className="h-[240px] sm:h-[300px] lg:h-[340px]"
-                        />
-                      )}
-                      <ScrollRevealStagger className="space-y-4">
-                        {section.blocks.map((block, blockIndex) => {
-                          if (block.type === "paragraph") {
-                            return <p key={`${section.id}-p-${blockIndex}`}>{block.text}</p>;
-                          }
+                  {sections.map((section) => {
+                    const shouldRenderBtcChartBeforeSection =
+                      guide.slug === "level-1-guide-3-bitcoin-blockchain-smart-contracts" &&
+                      /cómo se determina el valor de btc|how btc value is determined/i.test(section.title);
+                    const shouldRenderEthChartBeforeSection =
+                      guide.slug === "level-2-guide-4-que-es-ethereum" &&
+                      /qué son los gases o fees|what are gas fees/i.test(section.title);
 
-                          return (
-                            <ul key={`${section.id}-l-${blockIndex}`} className="list-disc pl-5 space-y-2">
-                              {block.items.map((item, itemIndex) => (
-                                <li key={`${section.id}-li-${itemIndex}`}>{item}</li>
-                              ))}
-                            </ul>
-                          );
-                        })}
-                        {section.references && section.references.length > 0 && (
-                          <ol className="list-decimal pl-5 space-y-2">
-                            {section.references.map((reference, refIndex) => (
-                              <li key={`${section.id}-ref-${refIndex}`}>
-                                <a
-                                  href={reference.url}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="underline hover:text-zinc-100 transition-colors"
-                                >
-                                  {normalizeReferenceLabel(reference.label)}
-                                </a>
-                              </li>
-                            ))}
-                          </ol>
-                        )}
-                      </ScrollRevealStagger>
-                    </section>
-                  ))}
+                    return (
+                      <div key={section.id} className="space-y-6">
+                        {shouldRenderBtcChartBeforeSection ? <BtcGuideChart isEs={locale === "es"} /> : null}
+                        {shouldRenderEthChartBeforeSection ? <EthGuideChart isEs={locale === "es"} /> : null}
+                        <section id={section.id} className="scroll-mt-24 space-y-4">
+                          <h2 className="text-xl text-white font-semibold">{section.title}</h2>
+                          {section.imageUrl && (
+                            <LoopingGuideImage
+                              src={section.imageUrl}
+                              alt={section.title}
+                              className="h-[240px] sm:h-[300px] lg:h-[340px]"
+                            />
+                          )}
+                          <ScrollRevealStagger className="space-y-4">
+                            {section.blocks.map((block, blockIndex) => {
+                              if (block.type === "paragraph") {
+                                return <p key={`${section.id}-p-${blockIndex}`}>{block.text}</p>;
+                              }
+
+                              return (
+                                <ul key={`${section.id}-l-${blockIndex}`} className="list-disc pl-5 space-y-2">
+                                  {block.items.map((item, itemIndex) => (
+                                    <li key={`${section.id}-li-${itemIndex}`}>{item}</li>
+                                  ))}
+                                </ul>
+                              );
+                            })}
+                            {section.references && section.references.length > 0 && (
+                              <ol className="list-decimal pl-5 space-y-2">
+                                {section.references.map((reference, refIndex) => (
+                                  <li key={`${section.id}-ref-${refIndex}`}>
+                                    <a
+                                      href={reference.url}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="underline hover:text-zinc-100 transition-colors"
+                                    >
+                                      {`[${refIndex + 1}] ${normalizeReferenceLabel(reference.label)}`}
+                                    </a>
+                                  </li>
+                                ))}
+                              </ol>
+                            )}
+                          </ScrollRevealStagger>
+                        </section>
+                      </div>
+                    );
+                  })}
 
                   <div className="pt-4 border-t border-zinc-800 grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {previousGuide ? (

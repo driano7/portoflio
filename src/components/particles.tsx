@@ -59,6 +59,11 @@ export function Particles({
 
     const resize = () => {
       const rect = container.getBoundingClientRect();
+      const isDesktopViewport = window.matchMedia('(min-width: 1024px)').matches;
+      const effectiveParticleCount = isDesktopViewport
+        ? Math.round(particleCount * 1.15)
+        : particleCount;
+
       canvas.width = Math.max(1, Math.floor(rect.width * dpr));
       canvas.height = Math.max(1, Math.floor(rect.height * dpr));
       canvas.style.width = `${Math.floor(rect.width)}px`;
@@ -66,15 +71,18 @@ export function Particles({
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
       const baseColor = getParticleColor(theme);
-      const accentCount = Math.round(particleCount * normalizedAccentRatio);
-      const accentMap = Array.from({ length: particleCount }, (_, index) => index < accentCount);
+      const accentCount = Math.round(effectiveParticleCount * normalizedAccentRatio);
+      const accentMap = Array.from(
+        { length: effectiveParticleCount },
+        (_, index) => index < accentCount,
+      );
 
       for (let i = accentMap.length - 1; i > 0; i -= 1) {
         const j = Math.floor(Math.random() * (i + 1));
         [accentMap[i], accentMap[j]] = [accentMap[j], accentMap[i]];
       }
 
-      dotsRef.current = Array.from({ length: particleCount }, (_, index) => ({
+      dotsRef.current = Array.from({ length: effectiveParticleCount }, (_, index) => ({
         ...(accentMap[index]
           ? {
               x: Math.random() * rect.width,

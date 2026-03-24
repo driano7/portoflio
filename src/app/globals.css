@@ -76,6 +76,11 @@
     @apply border-border;
   }
 
+  html,
+  body {
+    overscroll-behavior-y: none;
+  }
+
   body {
     @apply bg-background text-foreground;
     scroll-behavior: smooth;
@@ -510,7 +515,7 @@
 
 @media (max-width: 767px) {
   .about-card-stack {
-    height: 820px;
+    height: 760px;
   }
 
   .about-stack-item--middle {

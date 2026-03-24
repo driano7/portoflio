@@ -10,6 +10,7 @@ type MarketToken = {
   symbol: string;
   priceUsd: number | null;
   change24h: number | null;
+  hasChartData?: boolean;
 };
 
 type MarketResponse = {
@@ -216,6 +217,9 @@ export function DefiMarketTicker() {
   };
 
   const handleToggleChart = (symbol: string) => {
+    const token = visibleTokens.find((item) => item.symbol === symbol);
+    if (!token?.hasChartData) return;
+
     setOpenChartSymbol((current) => (current === symbol ? null : symbol));
 
     const existing = chartBySymbol[symbol];
@@ -256,20 +260,22 @@ export function DefiMarketTicker() {
                   {up ? <ArrowUpRight className="h-3.5 w-3.5" /> : <ArrowDownRight className="h-3.5 w-3.5" />}
                   {formatPercent(token.change24h)}
                 </p>
-                <button
-                  type="button"
-                  onClick={() => handleToggleChart(token.symbol)}
-                  className="mt-1.5 inline-flex text-[11px] font-semibold text-violet-600 transition-colors hover:text-violet-700 dark:text-violet-300 dark:hover:text-violet-200"
-                >
-                  {isEs ? "Ver gráfica" : "View chart"}
-                </button>
+                {token.hasChartData ? (
+                  <button
+                    type="button"
+                    onClick={() => handleToggleChart(token.symbol)}
+                    className="mt-1.5 inline-flex text-[11px] font-semibold text-violet-600 transition-colors hover:text-violet-700 dark:text-violet-300 dark:hover:text-violet-200"
+                  >
+                    {isEs ? "Ver gráfica" : "View chart"}
+                  </button>
+                ) : null}
               </div>
             );
           })}
         </div>
       )}
 
-      {selectedToken ? (
+      {selectedToken?.hasChartData ? (
         <div className="mt-3 rounded-xl border border-violet-300/40 bg-white/85 p-3 dark:border-violet-500/30 dark:bg-zinc-950/65">
           <div className="mb-2 flex items-center justify-between">
             <p className="text-xs font-semibold text-zinc-900 dark:text-zinc-100">
@@ -345,4 +351,3 @@ export function DefiMarketTicker() {
     </div>
   );
 }
-

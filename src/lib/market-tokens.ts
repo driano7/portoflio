@@ -18,6 +18,7 @@ export type MarketToken = {
   symbol: string;
   priceUsd: number | null;
   change24h: number | null;
+  hasChartData?: boolean;
 };
 
 export async function fetchLatestMarketTokens(apiKey: string): Promise<MarketToken[]> {
@@ -60,4 +61,3 @@ export async function fetchLatestMarketTokens(apiKey: string): Promise<MarketTok
     clearTimeout(timeout);
   }
 }
-

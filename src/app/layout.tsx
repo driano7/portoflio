@@ -86,8 +86,11 @@ export const metadata: Metadata = {
       'Ingeniero en Computación y Creative Director. UX/UI, producto, Web3 e IA aplicados a soluciones reales.',
     images: [ogImageUrl],
   },
+  manifest: "/manifest.webmanifest?v=20260326",
   icons: {
-    icon: "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡️</text></svg>",
+    icon: [{ url: "/icon?v=20260326", type: "image/png" }],
+    apple: [{ url: "/apple-icon?v=20260326", sizes: "180x180", type: "image/png" }],
+    shortcut: ["/favicon.ico?v=20260326"],
   },
 };
 
@@ -105,6 +108,10 @@ export default async function RootLayout({
     <html lang={locale} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        <link rel="icon" type="image/png" sizes="32x32" href="/icon?v=20260326" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon?v=20260326" />
+        <link rel="shortcut icon" href="/favicon.ico?v=20260326" />
+        <link rel="manifest" href="/manifest.webmanifest?v=20260326" />
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>
         <NextIntlClientProvider locale={locale} messages={messages}>

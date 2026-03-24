@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { updateMarketHistory } from "@/lib/market-history";
+import { getMarketChartPoints, updateMarketHistory } from "@/lib/market-history";
 import { fetchLatestMarketTokens } from "@/lib/market-tokens";
 
 export const dynamic = "force-dynamic";
@@ -25,10 +25,15 @@ export async function GET() {
 
     updateMarketHistory(tokens);
 
+    const enrichedTokens = tokens.map((token) => ({
+      ...token,
+      hasChartData: getMarketChartPoints(token.symbol).length >= 2,
+    }));
+
     return NextResponse.json({
       updatedAt: new Date().toISOString(),
       currency: "USD",
-      tokens,
+      tokens: enrichedTokens,
     });
   } catch (error) {
     const message = error instanceof Error ? error.message : "Unknown market error";
