@@ -1,8 +1,9 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import type { Repository } from "@/app/projects/page";
 import Link from "next/link";
-import { ArrowUpRight, CalendarClock, GitFork, Globe2, Star } from "lucide-react";
+import { ArrowUpRight, CalendarClock, ChevronDown, ChevronUp, GitFork, Globe2, Star } from "lucide-react";
 import { formatDistanceToNow } from "date-fns";
 import { GitHubContributions } from "./github-contributions";
 import { ScrollRevealStagger } from "@/components/ui/scroll-reveal-stagger";
@@ -13,15 +14,87 @@ type ProjectsProps = {
   projects: Repository[];
 };
 
+function DropdownIconButton({
+  open,
+  onClick,
+  ariaLabel,
+}: {
+  open: boolean;
+  onClick: () => void;
+  ariaLabel: string;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-label={ariaLabel}
+      className="no-frosted group relative h-9 w-9 overflow-hidden rounded-full border border-violet-400/35 bg-zinc-900/60 text-zinc-100 transition-transform duration-200 hover:scale-105 hover:border-violet-300/60 active:scale-95 dark:bg-zinc-950/70"
+    >
+      <span className="pointer-events-none absolute inset-0 theme-toggle-gradient" aria-hidden />
+      <span className="pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" aria-hidden />
+      <span className="relative inline-flex h-full w-full items-center justify-center">
+        {open ? <ChevronUp className="h-4 w-4 text-violet-200" /> : <ChevronDown className="h-4 w-4 text-violet-200" />}
+      </span>
+    </button>
+  );
+}
+
 export function Projects({ projects }: ProjectsProps) {
   const locale = useLocale() as AppLocale;
   const isEs = locale === "es";
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const [isProjectsVisible, setIsProjectsVisible] = useState(false);
+  const [atPageBottom, setAtPageBottom] = useState(false);
+  const [xocoOpen, setXocoOpen] = useState(false);
+  const [strawberryOpen, setStrawberryOpen] = useState(false);
   const latestProjects = projects.slice(0, 7);
   const getDisplayProjectName = (name: string) =>
     name.toLowerCase() === "portoflio" ? "Portfolio" : name;
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollBottom = window.innerHeight + window.scrollY;
+      const pageHeight = document.documentElement.scrollHeight;
+      setAtPageBottom(scrollBottom >= pageHeight - 24);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    const node = sectionRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        setIsProjectsVisible(Boolean(entry?.isIntersecting));
+      },
+      { threshold: 0.18 },
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="projects" className="relative py-20">
+    <section id="projects" ref={sectionRef} className="relative py-20">
+      {isProjectsVisible && !atPageBottom ? (
+        <div
+          aria-hidden
+          className="pointer-events-none fixed left-1/2 bottom-28 z-40 -translate-x-1/2 sm:hidden"
+        >
+          <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-violet-400/35 bg-zinc-900/70 text-violet-200 shadow-lg backdrop-blur-md dark:bg-zinc-950/75">
+            <ChevronDown className="h-5 w-5 animate-bounce" />
+          </span>
+        </div>
+      ) : null}
       <div className="container mx-auto px-4 animate-fade-in">
         <div className="mx-auto mb-8 max-w-5xl text-center">
           <h2 className="text-4xl font-black leading-tight tracking-tight text-zinc-900 dark:text-white md:text-5xl">
@@ -51,8 +124,15 @@ export function Projects({ projects }: ProjectsProps) {
         </div>
 
         <div className="mt-8 rounded-[2rem] border border-violet-300/40 bg-zinc-100/75 p-5 dark:border-violet-500/25 dark:bg-zinc-950/80 md:p-6">
-          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-violet-400/50 bg-violet-500/10 px-3 py-1 text-xs font-semibold text-violet-700 dark:border-violet-400/40 dark:text-violet-300">
-            {isEs ? "Proyecto en desarrollo" : "Project in progress"}
+          <div className="mb-3 flex items-center justify-between gap-3">
+            <div className="inline-flex items-center gap-2 rounded-full border border-violet-400/50 bg-violet-500/10 px-3 py-1 text-xs font-semibold text-violet-700 dark:border-violet-400/40 dark:text-violet-300">
+              {isEs ? "Proyecto en desarrollo" : "Project in progress"}
+            </div>
+            <DropdownIconButton
+              open={xocoOpen}
+              onClick={() => setXocoOpen((prev) => !prev)}
+              ariaLabel={isEs ? "Desplegar información de Xoco Suite" : "Toggle Xoco Suite details"}
+            />
           </div>
           <h3 className="text-2xl font-bold text-zinc-900 dark:text-white md:text-3xl">
             {isEs
@@ -64,83 +144,98 @@ export function Projects({ projects }: ProjectsProps) {
               ? "Proyecto en el que he estado trabajando durante los últimos meses. Xoco Suite es un software integral para restaurantes y negocios de alimentos que conecta sitio web, app de cliente y punto de venta en una sola arquitectura de producto. El POS se integra directamente con la app de cliente para sincronizar pedidos en tiempo real y habilitar una operación continua entre atención, cocina y servicio."
               : "A project I have been building over the last few months. Xoco Suite is an integrated software product for restaurants and food businesses that connects website, client app, and point of sale in one architecture. The POS is directly integrated with the client app to sync orders in real time and enable continuous operations across service, kitchen, and support."}
           </p>
-          <p className="mt-3 max-w-5xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 md:text-base">
-            {isEs
-              ? "La solución incorpora métricas avanzadas, gestión de higiene y cumplimiento alineada a organismos gubernamentales, y una capa de pagos moderna: gracias al acuerdo con "
-              : "The solution includes advanced metrics, hygiene and compliance management aligned with government entities, and a modern payment layer: thanks to an agreement with "}
-            <Link
-              href="https://blokko.io"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline hover:text-zinc-900 dark:hover:text-zinc-200"
-            >
-              blokko.io
-            </Link>
-            {isEs
-              ? ", permite recibir pagos en cripto o en rieles latinoamericanos como PIX, SPEI y Mercado Libre, con liquidación al día siguiente en moneda local, bajo una experiencia equivalente a una transacción con tarjeta Visa o Master card."
-              : ", it supports crypto payments and LATAM payment rails such as PIX, SPEI, and Mercado Libre, with next-day settlement in local currency under an experience equivalent to a Visa or Master card transaction."}
-          </p>
-          <div className="mt-4 flex flex-wrap items-center gap-2">
-            <Link
-              href="https://v0-xoco-suite-landing.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-900/60 px-3 py-2 text-xs text-zinc-200 transition-colors hover:border-violet-400/50 hover:text-white"
-            >
-              {isEs ? "Landing Xoco Suite" : "Xoco Suite landing"}
-              <ArrowUpRight className="h-3.5 w-3.5" />
-            </Link>
-            <Link
-              href="https://xococafe.site"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-900/60 px-3 py-2 text-xs text-zinc-200 transition-colors hover:border-violet-400/50 hover:text-white"
-            >
-              {isEs ? "Demo app cliente" : "Client app demo"}
-              <ArrowUpRight className="h-3.5 w-3.5" />
-            </Link>
-          </div>
+          {xocoOpen ? (
+            <div className="defi-dropdown-reveal">
+              <p className="mt-3 max-w-5xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 md:text-base">
+                {isEs
+                  ? "La solución incorpora métricas avanzadas, gestión de higiene y cumplimiento alineada a organismos gubernamentales, y una capa de pagos moderna: gracias al acuerdo con "
+                  : "The solution includes advanced metrics, hygiene and compliance management aligned with government entities, and a modern payment layer: thanks to an agreement with "}
+                <Link
+                  href="https://blokko.io"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-zinc-900 dark:hover:text-zinc-200"
+                >
+                  blokko.io
+                </Link>
+                {isEs
+                  ? ", permite recibir pagos en cripto o en rieles latinoamericanos como PIX, SPEI y Mercado Libre, con liquidación al día siguiente en moneda local, bajo una experiencia equivalente a una transacción con tarjeta Visa o Master card."
+                  : ", it supports crypto payments and LATAM payment rails such as PIX, SPEI, and Mercado Libre, with next-day settlement in local currency under an experience equivalent to a Visa or Master card transaction."}
+              </p>
+              <div className="mt-4 flex flex-wrap items-center gap-2">
+                <Link
+                  href="https://v0-xoco-suite-landing.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-900/60 px-3 py-2 text-xs text-zinc-200 transition-colors hover:border-violet-400/50 hover:text-white"
+                >
+                  {isEs ? "Landing Xoco Suite" : "Xoco Suite landing"}
+                  <ArrowUpRight className="h-3.5 w-3.5" />
+                </Link>
+                <Link
+                  href="https://xococafe.site"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-900/60 px-3 py-2 text-xs text-zinc-200 transition-colors hover:border-violet-400/50 hover:text-white"
+                >
+                  {isEs ? "Demo app cliente" : "Client app demo"}
+                  <ArrowUpRight className="h-3.5 w-3.5" />
+                </Link>
+              </div>
+            </div>
+          ) : null}
         </div>
 
         <div className="mt-8 rounded-[2rem] border border-violet-300/40 bg-zinc-100/75 p-5 dark:border-violet-500/25 dark:bg-zinc-950/80 md:p-6">
-          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-violet-400/50 bg-violet-500/10 px-3 py-1 text-xs font-semibold text-violet-700 dark:border-violet-400/40 dark:text-violet-300">
-            {isEs ? "Proyecto conceptual" : "Concept project"}
+          <div className="mb-3 flex items-center justify-between gap-3">
+            <div className="inline-flex items-center gap-2 rounded-full border border-violet-400/50 bg-violet-500/10 px-3 py-1 text-xs font-semibold text-violet-700 dark:border-violet-400/40 dark:text-violet-300">
+              {isEs ? "Proyecto conceptual" : "Concept project"}
+            </div>
+            <DropdownIconButton
+              open={strawberryOpen}
+              onClick={() => setStrawberryOpen((prev) => !prev)}
+              ariaLabel={isEs ? "Desplegar información de Strawberry Wallet" : "Toggle Strawberry Wallet details"}
+            />
           </div>
           <h3 className="text-2xl font-bold text-zinc-900 dark:text-white md:text-3xl">
             {isEs
               ? "Strawberry Wallet + ZK Proofs"
               : "Strawberry Wallet + ZK Proofs"}
           </h3>
-          <p className="mt-3 max-w-5xl text-sm leading-relaxed text-zinc-700 dark:text-zinc-300 md:text-base">
-            {isEs
-              ? "Concepto de wallet enfocada en privacidad y usabilidad. Usa Zero-Knowledge Proofs para validar información sin exponer datos sensibles."
-              : "A wallet concept focused on privacy and usability. It uses Zero-Knowledge Proofs to validate information without exposing sensitive data."}
-          </p>
-          <p className="mt-2 max-w-5xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 md:text-base">
-            {isEs
-              ? "Objetivo: seguridad operativa con mejor experiencia de usuario para pagos y transferencias en entornos Web3."
-              : "Goal: stronger operational security with a better user experience for Web3 payments and transfers."}
-          </p>
-          <div className="mt-4 flex flex-wrap items-center gap-2">
-            <Link
-              href="https://strawberrywallet.netlify.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-900/60 px-3 py-2 text-xs text-zinc-200 transition-colors hover:border-violet-400/50 hover:text-white"
-            >
-              {isEs ? "Abrir app Strawberry" : "Open Strawberry app"}
-              <ArrowUpRight className="h-3.5 w-3.5" />
-            </Link>
-            <Link
-              href="https://github.com/driano7/StrawberryWallet"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-900/60 px-3 py-2 text-xs text-zinc-200 transition-colors hover:border-violet-400/50 hover:text-white"
-            >
-              {isEs ? "Repo Strawberry Wallet" : "Strawberry Wallet repo"}
-              <ArrowUpRight className="h-3.5 w-3.5" />
-            </Link>
-          </div>
+          {strawberryOpen ? (
+            <div className="defi-dropdown-reveal">
+              <p className="mt-3 max-w-5xl text-sm leading-relaxed text-zinc-700 dark:text-zinc-300 md:text-base">
+                {isEs
+                  ? "Concepto de wallet enfocada en privacidad y usabilidad. Usa Zero-Knowledge Proofs para validar información sin exponer datos sensibles."
+                  : "A wallet concept focused on privacy and usability. It uses Zero-Knowledge Proofs to validate information without exposing sensitive data."}
+              </p>
+              <p className="mt-2 max-w-5xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 md:text-base">
+                {isEs
+                  ? "Objetivo: seguridad operativa con mejor experiencia de usuario para pagos y transferencias en entornos Web3."
+                  : "Goal: stronger operational security with a better user experience for Web3 payments and transfers."}
+              </p>
+              <div className="mt-4 flex flex-wrap items-center gap-2">
+                <Link
+                  href="https://strawberrywallet.netlify.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-900/60 px-3 py-2 text-xs text-zinc-200 transition-colors hover:border-violet-400/50 hover:text-white"
+                >
+                  {isEs ? "Abrir app Strawberry" : "Open Strawberry app"}
+                  <ArrowUpRight className="h-3.5 w-3.5" />
+                </Link>
+                <Link
+                  href="https://github.com/driano7/StrawberryWallet"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-900/60 px-3 py-2 text-xs text-zinc-200 transition-colors hover:border-violet-400/50 hover:text-white"
+                >
+                  {isEs ? "Repo Strawberry Wallet" : "Strawberry Wallet repo"}
+                  <ArrowUpRight className="h-3.5 w-3.5" />
+                </Link>
+              </div>
+            </div>
+          ) : null}
         </div>
 
         <div className="mt-12 mb-6 flex items-center justify-between gap-3">
