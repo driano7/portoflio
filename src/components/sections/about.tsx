@@ -408,8 +408,12 @@ export function About() {
       ) : null}
       <div className="container mx-auto px-4">
         <div id="about" ref={sectionRef} className="mx-auto max-w-2xl lg:max-w-4xl">
-          <h2 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-4xl text-center">
-            {isEs ? <>Sobre <span className="text-violet-400">mí</span></> : <>About <span className="text-violet-400">Me</span></>}
+          <h2 className="landing-reveal-title text-3xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-4xl text-center">
+            <span className="landing-reveal-title__line">
+              <span>
+                {isEs ? <>Sobre <span className="text-violet-400">mí</span></> : <>About <span className="text-violet-400">Me</span></>}
+              </span>
+            </span>
           </h2>
 
           <div className="mt-2 flex items-center justify-center gap-3 sm:hidden">

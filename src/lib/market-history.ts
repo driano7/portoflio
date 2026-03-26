@@ -152,7 +152,7 @@ function readHistory(): MarketHistoryFile {
 function writeHistory(history: MarketHistoryFile) {
   const storagePath = getStoragePath();
   ensureParentDir(storagePath);
-  fs.writeFileSync(storagePath, JSON.stringify(history), "utf8");
+  fs.writeFileSync(storagePath, `${JSON.stringify(history, null, 2)}\n`, "utf8");
 }
 
 function toDateKey(date: Date) {

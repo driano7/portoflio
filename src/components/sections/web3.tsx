@@ -134,10 +134,20 @@ export function Web3() {
         <div className="mx-auto max-w-2xl lg:max-w-4xl">
           <ScrollRevealStagger className="space-y-16">
             <div id="defi-cefi" ref={sectionRef} className="space-y-8 scroll-mt-24">
-              <h3 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-3xl text-center">
-                {isEs ? "Finanzas " : ""}
-                <span className="text-violet-400">DeFi y CeFi</span>
-                {!isEs ? " Finance" : ""}
+              <h3 className="landing-reveal-title text-2xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-3xl text-center">
+                <span className="landing-reveal-title__line">
+                  <span>
+                    {isEs ? (
+                      <>
+                        Finanzas <span className="text-violet-400">DeFi y CeFi</span>
+                      </>
+                    ) : (
+                      <>
+                        <span className="text-violet-400">DeFi y CeFi</span> Finance
+                      </>
+                    )}
+                  </span>
+                </span>
               </h3>
 
               <div id="investments" className="space-y-8 scroll-mt-24">

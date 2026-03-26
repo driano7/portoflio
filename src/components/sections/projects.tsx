@@ -7,6 +7,7 @@ import { ArrowUpRight, CalendarClock, ChevronDown, ChevronUp, GitFork, Globe2, S
 import { formatDistanceToNow } from "date-fns";
 import { GitHubContributions } from "./github-contributions";
 import { ScrollRevealStagger } from "@/components/ui/scroll-reveal-stagger";
+import { ScrollTyping } from "@/components/ui/scroll-typing";
 import { useLocale } from "next-intl";
 import type { AppLocale } from "@/i18n/routing";
 
@@ -97,22 +98,26 @@ export function Projects({ projects }: ProjectsProps) {
       ) : null}
       <div className="container mx-auto px-4 animate-fade-in">
         <div className="mx-auto mb-8 max-w-5xl text-center">
-          <h2 className="text-4xl font-black leading-tight tracking-tight text-zinc-900 dark:text-white md:text-5xl">
-            {isEs ? (
-              <>
-                Mis portafolios y <span className="text-violet-500 dark:text-violet-400">contribuciones</span> en tiempo real
-              </>
-            ) : (
-              <>
-                My portfolios and real-time <span className="text-violet-500 dark:text-violet-400">contributions</span>
-              </>
-            )}
+          <h2 className="landing-reveal-title text-4xl font-black leading-tight tracking-tight text-zinc-900 dark:text-white md:text-5xl">
+            <span className="landing-reveal-title__line">
+              <span>
+                {isEs ? (
+                  <>
+                    Mis portafolios y <span className="text-violet-500 dark:text-violet-400">contribuciones</span> en tiempo real
+                  </>
+                ) : (
+                  <>
+                    My portfolios and real-time <span className="text-violet-500 dark:text-violet-400">contributions</span>
+                  </>
+                )}
+              </span>
+            </span>
           </h2>
-          <p className="mx-auto mt-4 max-w-3xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 md:text-base">
+          <ScrollTyping className="mx-auto mt-4 max-w-3xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 md:text-base">
             {isEs
               ? "Seguimiento profesional de actividad en GitHub con visualización de contribuciones y una selección curada de repositorios recientes."
               : "Professional tracking of GitHub activity with contribution visualization and a curated selection of recent repositories."}
-          </p>
+          </ScrollTyping>
         </div>
 
         <div className="rounded-[2rem] border border-violet-300/40 bg-zinc-100/70 p-4 dark:border-violet-500/20 dark:bg-zinc-950/70 md:p-6">
