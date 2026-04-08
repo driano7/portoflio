@@ -150,6 +150,7 @@ export function DefiMarketTicker() {
     const fetchMarket = async () => {
       if (document.visibilityState === "hidden") return;
       try {
+        // Internal API wrapper around CoinMarketCap keeps provider credentials off the client.
         const res = await fetch("/api/market/tokens", { cache: "no-store" });
         const payload = (await res.json()) as MarketResponse;
         if (!res.ok) throw new Error(payload.error ?? "Market request failed");
@@ -216,6 +217,7 @@ export function DefiMarketTicker() {
     }));
 
     try {
+      // Internal route, not a direct provider call.
       const res = await fetch(`/api/market/token-chart?symbol=${encodeURIComponent(symbol)}`, {
         cache: "no-store",
       });

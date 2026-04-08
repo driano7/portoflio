@@ -14,6 +14,7 @@ export function ThemeSwitcher() {
     const nextTheme = resolvedTheme === "light" ? "dark" : "light"
     const applyTheme = () => setTheme(nextTheme)
 
+    // Reusable motion boundary: keep this UX treatment in the shared shell, not in page-level content.
     if (
       typeof document !== "undefined" &&
       typeof window !== "undefined" &&

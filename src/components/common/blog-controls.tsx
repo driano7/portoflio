@@ -6,6 +6,7 @@ import { ThemeSwitcher } from "@/components/theme-switcher";
 
 export function BlogControls() {
   return (
+    // Reusable header controls stay centralized so locale/theme/market features remain consistent.
     <div className="flex items-center gap-1">
       <MarketTickerToggle />
       <LanguageSwitcher />

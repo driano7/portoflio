@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return buildPageMetadata({
       title: "Guía de educación | Donovan Riaño",
       description: "Guía educativa de finanzas DeFi y CeFi.",
-      path: "/web3/education",
+      canonicalPath: "/web3/education",
     });
   }
 
@@ -62,7 +62,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return buildPageMetadata({
     title: `${localizedGuide.title} | Donovan Riaño`,
     description: localizedGuide.description,
-    path: `/web3/education/${guide.slug}`,
+    canonicalPath: `/web3/education/${guide.slug}`,
   });
 }
 

@@ -14,6 +14,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: toAbsoluteUrl("/servicios"),
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: toAbsoluteUrl("/blog"),
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: toAbsoluteUrl("/casos"),
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
+    {
       url: toAbsoluteUrl("/about"),
       lastModified,
       changeFrequency: "monthly",
@@ -37,6 +55,42 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.85,
     },
+    {
+      url: toAbsoluteUrl("/servicios/creacion-sitios-web"),
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: toAbsoluteUrl("/servicios/seo-para-empresas"),
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: toAbsoluteUrl("/blog/seo-tecnico-nextjs-app-router"),
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
+    {
+      url: toAbsoluteUrl("/blog/seo-entidades-schemadotorg"),
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
+    {
+      url: toAbsoluteUrl("/casos/sitio-para-empresa-b2b"),
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
+    {
+      url: toAbsoluteUrl("/casos/seo-local-para-negocio"),
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
   ];
 
   const guideRoutes: MetadataRoute.Sitemap = educationGuides.map((guide) => ({
@@ -48,4 +102,3 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [...staticRoutes, ...guideRoutes];
 }
-

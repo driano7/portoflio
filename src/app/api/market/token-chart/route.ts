@@ -81,6 +81,7 @@ export async function GET(request: NextRequest) {
   }
 
   try {
+    // Fallback estimation keeps the UI usable until enough stored history exists.
     const latest = await fetchLatestMarketTokens(apiKey);
     const token = latest.find((item) => item.symbol.toUpperCase() === symbol);
 

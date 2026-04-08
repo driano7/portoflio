@@ -30,6 +30,7 @@ export async function fetchLatestMarketTokens(apiKey: string): Promise<MarketTok
   const timeout = setTimeout(() => controller.abort(), 9000);
 
   try {
+    // Third-party market data adapter: keep provider-specific request details isolated here.
     const response = await fetch(url.toString(), {
       method: "GET",
       headers: {

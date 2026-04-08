@@ -21,12 +21,14 @@ export type Repository = {
   coverImageUrl?: string | null;
 };
 
-export const metadata: Metadata = buildPageMetadata({
-  title: "Proyectos y Portafolio | Donovan Riaño",
-  description:
-    "Portafolio técnico y proyectos recientes: productos, integraciones y repositorios activos de Donovan Riaño.",
-  path: "/projects",
-});
+export function generateMetadata(): Metadata {
+  return buildPageMetadata({
+    title: "Proyectos y Portafolio | Donovan Riaño",
+    description:
+      "Portafolio técnico y proyectos recientes: productos, integraciones y repositorios activos de Donovan Riaño.",
+    canonicalPath: "/projects",
+  });
+}
 
 async function getRepos(): Promise<Repository[]> {
   const requestHeaders: Record<string, string> = {

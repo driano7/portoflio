@@ -33,6 +33,7 @@ export function MobileDocNav() {
   return (
     <>
       <div className="pointer-events-none fixed inset-x-0 bottom-4 z-[70] px-4 sm:hidden">
+        {/* Reusable mobile navigation shell for all content sections. */}
         <nav
           className={cn(
             "pointer-events-auto relative mx-auto flex w-full max-w-md items-center justify-between gap-2 rounded-[1.6rem] border px-3 py-1 shadow-2xl backdrop-blur-xl",

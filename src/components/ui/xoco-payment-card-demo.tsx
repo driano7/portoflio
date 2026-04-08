@@ -43,6 +43,7 @@ export function XocoPaymentCardDemo({ playSequence, cardholder }: XocoPaymentCar
   const [typedName, setTypedName] = useState("");
   const [sequenceId, setSequenceId] = useState(0);
   const [sequenceDone, setSequenceDone] = useState(false);
+  // Product-specific demo, not a generic shared payment component.
   const normalizedCardholder = useMemo(() => cardholder.toUpperCase().slice(0, 19), [cardholder]);
 
   useEffect(() => {

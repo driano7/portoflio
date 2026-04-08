@@ -44,6 +44,7 @@ export async function GET(request: NextRequest) {
   }
 
   try {
+    // Scheduler boundary: this route is the only place that should be called by automation.
     const tokens = await fetchLatestMarketTokens(apiKey);
     updateMarketHistory(tokens);
 

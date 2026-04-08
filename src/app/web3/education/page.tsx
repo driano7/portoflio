@@ -12,12 +12,14 @@ import { resolveAppLocale } from "@/i18n/resolve-locale";
 
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = buildPageMetadata({
-  title: "Guías de Educación DeFi y CeFi | Donovan Riaño",
-  description:
-    "Índice completo de guías DeFi y CeFi: fundamentos, estrategia, seguridad y regulación en español e inglés.",
-  path: "/web3/education",
-});
+export function generateMetadata(): Metadata {
+  return buildPageMetadata({
+    title: "Guías de Educación DeFi y CeFi | Donovan Riaño",
+    description:
+      "Índice completo de guías DeFi y CeFi: fundamentos, estrategia, seguridad y regulación en español e inglés.",
+    canonicalPath: "/web3/education",
+  });
+}
 
 export default async function EducationIndexPage() {
   const locale = await resolveAppLocale() as AppLocale;

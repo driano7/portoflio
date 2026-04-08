@@ -21,6 +21,7 @@ export async function GET() {
   }
 
   try {
+    // Internal endpoint that proxies a third-party market feed and persists snapshots locally.
     const tokens = await fetchLatestMarketTokens(apiKey);
 
     updateMarketHistory(tokens);

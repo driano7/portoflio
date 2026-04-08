@@ -152,6 +152,7 @@ export async function fetchAndParseGoogleDoc(docId: string): Promise<ParsedDoc |
   const exportUrl = `https://docs.google.com/document/d/${docId}/export?format=txt`;
 
   try {
+    // Third-party adapter: isolate Google Docs network access here so content code stays clean.
     const res = await fetch(exportUrl, {
       next: { revalidate: 3600 },
       headers: {

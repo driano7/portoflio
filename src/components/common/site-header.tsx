@@ -42,6 +42,7 @@ export function SiteHeader({ className }: SiteHeaderProps) {
           "border-black/5 bg-white/80 text-zinc-900 dark:border-white/10 dark:bg-black/60 dark:text-zinc-100",
         )}
       >
+        {/* Reusable shared shell navigation: layout logic, not page-specific content. */}
         <nav className="hidden items-center justify-center gap-1 sm:absolute sm:left-1/2 sm:flex sm:-translate-x-1/2">
           {navItems.map((item) => {
             const Icon = item.icon;

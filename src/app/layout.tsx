@@ -8,8 +8,14 @@ import { SiteHeader } from "@/components/common/site-header";
 import { SiteFooter } from "@/components/common/site-footer";
 import { MobileDocNav } from "@/components/common/mobile-doc-nav";
 import { ScrollToTopOnRoute } from "@/components/common/scroll-to-top-on-route";
+import { Seo } from "@/components/seo/Seo";
 import { resolveAppLocale } from "@/i18n/resolve-locale";
-import { buildRootMetadata, resolveSiteUrl } from "@/lib/seo";
+import {
+  buildOrganizationEntity,
+  buildRootMetadata,
+  buildWebSiteEntity,
+  seoConfig,
+} from "@/lib/seo";
 import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from '@/components/ui/toaster';
 
@@ -41,33 +47,6 @@ const themeInitScript = `
 })();
 `;
 
-const metadataBase = resolveSiteUrl();
-const structuredData = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": `${metadataBase.toString()}#website`,
-      url: metadataBase.toString(),
-      name: "Donovan Riaño",
-      inLanguage: ["es-MX", "en-US"],
-    },
-    {
-      "@type": "Person",
-      "@id": `${metadataBase.toString()}#person`,
-      name: "Donovan Riaño",
-      url: metadataBase.toString(),
-      jobTitle: "Creative Director & Computer Engineer",
-      sameAs: [
-        "https://www.linkedin.com/in/driano7",
-        "https://github.com/driano7",
-        "https://www.instagram.com/mrcripto_/",
-        "https://www.tiktok.com/@mrcripto_",
-      ],
-    },
-  ],
-};
-
 export const metadata: Metadata = buildRootMetadata();
 
 export const dynamic = "force-dynamic";
@@ -84,9 +63,14 @@ export default async function RootLayout({
     <html lang={locale} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        {/* Reusable site schema: safe to share across pages within this site. */}
+        <Seo
+          entities={[
+            buildOrganizationEntity(seoConfig),
+            buildWebSiteEntity(seoConfig, {
+              inLanguage: [locale, ...seoConfig.site.locales.filter((item) => item !== locale)],
+            }),
+          ]}
         />
         <link rel="icon" type="image/png" sizes="32x32" href="/icon?v=20260326" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon?v=20260326" />

@@ -32,6 +32,7 @@ export function GitHubContributions({ username }: GitHubContributionsProps) {
 			const link = document.createElement("link");
 			link.id = CALENDAR_CSS_ID;
 			link.rel = "stylesheet";
+			// Third-party CDN asset: the calendar widget is not owned by this repo.
 			link.href = "https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css";
 			document.head.appendChild(link);
 		};
@@ -54,6 +55,7 @@ export function GitHubContributions({ username }: GitHubContributionsProps) {
 
 				const script = document.createElement("script");
 				script.id = CALENDAR_SCRIPT_ID;
+				// Third-party CDN asset: keep external widget loading isolated here.
 				script.src = "https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js";
 				script.async = true;
 				script.onload = () => resolve();
